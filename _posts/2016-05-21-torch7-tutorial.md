@@ -296,4 +296,3 @@ end
 If you look at the code in the repo, you'll find that I have divided training into `main.py` and `train.py` scripts.
 In `main.lua`, we manage the configuration of the neural network and criterion.
 In `train.lua`, I wrote a `Trainer` class with `Trainer:train()` and `Trainer:validate()` methods very similar to `train()` function above except with some logging.
-This class will allow us to switch models and criterions easily in `main.lua`.

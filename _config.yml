@@ -5,6 +5,7 @@ baseurl: "/"
 url: "https://chsasank.github.io/"
 paginate:	2 # The number of posts to show per page on your homepage
 name: "Sasank Chilamkurthy"
+email: 'sasankchilamkurthy@gmail.com'
 markdown: kramdown
 permalink: none
 kramdown:
@@ -13,3 +14,4 @@ gems:
   - jekyll-paginate
   - jekyll-compose
   - jekyll-sass-converter
+  - jekyll-textile-converter
