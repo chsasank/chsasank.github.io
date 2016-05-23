@@ -4,17 +4,20 @@ title: About
 permalink: /about/
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut ac augue libero.
-Fusce ac tempor dolor. Ut est dui, gravida a consequat aliquet, fermentum
-sodales risus. Suspendisse eu arcu id mi ornare facilisis non id nisl. Maecenas
-nec congue arcu, non semper neque. Proin mollis nisl diam, eu ultrices diam
-facilisis et. Integer fringilla lorem quis semper venenatis.
+Hello!
 
-Aliquam vestibulum purus enim. Sed rhoncus interdum erat id consequat. Nulla
-cursus venenatis massa, quis convallis lacus condimentum vel. Etiam mollis,
-orci ac pharetra commodo, diam lectus hendrerit eros, ac elementum magna augue
-sed tellus. Maecenas molestie, nisi ut sodales scelerisque, purus neque
-imperdiet dui, mollis elementum sem augue vel ipsum. Nulla lacinia arcu at quam
-lobortis, vitae interdum tellus fermentum. Cum sociis natoque penatibus et
-magnis dis parturient montes, nascetur ridiculus mus. Fusce sodales semper erat, eu fringilla ligula vulputate id. Maecenas quis libero pellentesque lacus
-egestas vehicula sit amet et neque. Nulla nec facilisis sem. Pellentesque rutrum elementum molestie.
+My name is Sasank.
+I work at Fractal Analytics. 
+My work involves deep learning on medical images obtained from radiology and pathology.
+Yep, it's quite cool :)
+
+I live in Mumbai, although I am from Vijayawada, Andhra Pradesh.
+I did my UG here in Mumbai at Indian Institute of Technology, Bombay. 
+I majored in Electrical Engineering and minored in Mathematics.
+I was mainly interested in Computer Vision.
+
+I have strong music tastes. I love rock and classical music. 
+I am getting into Carnatic music these days. I really like Annammaya's songs. 
+
+I read a lot of books, mostly classics.
+I should maintain a list somewhere, hopefully along with a short review.

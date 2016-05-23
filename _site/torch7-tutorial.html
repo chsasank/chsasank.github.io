@@ -6,11 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width,minimum-scale=1">
 
-  <title>Sasank&#39;s Blog</title>
-  <meta name="description" content="Code. Books. Languages.
-">
+  <title>Torch Tutorial for PlantVillage Challenge</title>
+  <meta name="description" content="There is this interesting challenge called PlantVillage challenge hosted on a newly built platform, crowdai.In this challenge, you are required to identify t...">
 
-  <link rel="canonical" href="https://chsasank.github.io//">
+  <link rel="canonical" href="https://chsasank.github.io//torch7-tutorial.html">
   <link rel="alternate" type="application/rss+xml" title="Sasank's Blog" href="https://chsasank.github.io//feed.xml">
 
   <script type="application/ld+json">
@@ -18,12 +17,11 @@
 {
   "@context": "http://schema.org",
   "@type": "NewsArticle",
-  "mainEntityOfPage": "https://chsasank.github.io//",
-  "headline": "Sasank&#39;s Blog",
-  "datePublished": "2016-05-23T12:59:20+05:30",
-  "dateModified": "2016-05-23T12:59:20+05:30",
-  "description": "Code. Books. Languages.
-",
+  "mainEntityOfPage": "https://chsasank.github.io//torch7-tutorial.html",
+  "headline": "Torch Tutorial for PlantVillage Challenge",
+  "datePublished": "2016-05-21T00:00:00+05:30",
+  "dateModified": "2016-05-21T00:00:00+05:30",
+  "description": "There is this interesting challenge called PlantVillage challenge hosted on a newly built platform, crowdai.In this challenge, you are required to identify t...",
   "author": {
     "@type": "Person",
     "name": "Sasank Chilamkurthy"
@@ -450,28 +448,16 @@ code {
 </header>
 
 
-    <main>
+    <article>
+
+  <h2 itemprop="name"><a href="" itemprop="url">Torch Tutorial for PlantVillage Challenge</a></h2>
+
+  <div class="post-meta">
+    <time datetime="21 May 2016">21 May 2016</time>
+  </div>
 
   <section>
-      <h1>Sasank's Blog</h1>
-      <h3>Code. Books. Languages.
-</h3>
-  </section>
-
-  <div>
-    
-      <article itemscope itemtype="http://schema.org/BlogPosting" role="article">
-
-          <header>
-            <h2 itemprop="name"><a href="/torch7-tutorial.html" itemprop="url">Torch Tutorial for PlantVillage Challenge</a></h2>
-          </header>
-
-          <div class="post-meta">
-            <time datetime="21 May 2016">21 May 2016</time>
-          </div>
-
-          <section itemprop="description">
-            <p>There is this interesting challenge called <a href="https://www.crowdai.org/challenges/1">PlantVillage challenge</a> hosted on a newly built platform, <a href="https://www.crowdai.org">crowdai</a>.
+    <p>There is this interesting challenge called <a href="https://www.crowdai.org/challenges/1">PlantVillage challenge</a> hosted on a newly built platform, <a href="https://www.crowdai.org">crowdai</a>.
 In this challenge, you are required to identify the disease of a plant from an image of its leaf.</p>
 
 <p>Dataset include both healthy and diseased leaves. Training dataset has 21917 images.
@@ -505,8 +491,7 @@ Just read the <a href="http://neuralnetworksanddeeplearning.com/chap6.html#intro
 We’ll divide the images into two directories, <code class="highlighter-rouge">train</code> and <code class="highlighter-rouge">val</code> for training and validation sets respectively.
 I used a simple bash script to do this:</p>
 
-<div class="highlighter-rouge">
-  <pre class="highlight"><code><span class="nb">cd </span>directory/contaning/c_0c_1...etcdirectories
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="nb">cd </span>directory/contaning/c_0c_1...etcdirectories
 mkdir -p train val
 <span class="k">for </span>i <span class="k">in</span> <span class="o">{</span>0..37<span class="o">}</span>; <span class="k">do </span>mkdir val/c_<span class="nv">$i</span>; <span class="k">done
 </span>mv c_<span class="k">*</span> train
@@ -519,8 +504,7 @@ find . -iname <span class="k">*</span>.jpg | shuf | head -n 2100| xargs -I<span 
 <p>This will move random 2100 images (about 10% of the dataset) in to <code class="highlighter-rouge">val</code> directory and rest into <code class="highlighter-rouge">train</code> directory.
 Directory structure should now look like:</p>
 
-<div class="highlighter-rouge">
-  <pre class="highlight"><code>.
+<div class="highlighter-rouge"><pre class="highlight"><code>.
 ├── train
 │   ├── c_0
 │   │   ├── img_name.JPG
@@ -555,8 +539,7 @@ Essentially, code<span id="side1" class="margin-toggle sidenote-number"></span>
 
 <p><code class="highlighter-rouge">datasets/plantvillage.lua</code>:</p>
 
-<div class="highlighter-rouge">
-  <pre class="highlight"><code>require 'paths'
+<div class="highlighter-rouge"><pre class="highlight"><code>require 'paths'
 t = require 'datasets/transforms.lua'
 
 function DataGen:__init(path)
@@ -640,8 +623,7 @@ end
 <p>Complete code for this class with some error catching is at <code class="highlighter-rouge">datasets/plantvillage.lua</code>. 
 We can now simply use a <code class="highlighter-rouge">DataGen</code> object to write a <code class="highlighter-rouge">for</code> loop to iterate over all the images:</p>
 
-<div class="highlighter-rouge">
-  <pre class="highlight"><code>for input, target in dataGen:trainGenerator(batchSize) do
+<div class="highlighter-rouge"><pre class="highlight"><code>for input, target in dataGen:trainGenerator(batchSize) do
     -- code to train your model
 end
 </code></pre>
@@ -658,8 +640,7 @@ It’s quite easy to code up a model.</p>
 
 <p><code class="highlighter-rouge">models/alexnet.lua</code>:</p>
 
-<div class="highlighter-rouge">
-  <pre class="highlight"><code>require 'nn'
+<div class="highlighter-rouge"><pre class="highlight"><code>require 'nn'
 
 function createModel(opt)
     opt = opt or {}
@@ -723,8 +704,7 @@ Forward and backward passes for <code class="highlighter-rouge">criterion</code>
 
 <p>We’ll use <a href="https://github.com/torch/optim/blob/master/doc/index.md#optim.adam">adam</a> optimizer from <code class="highlighter-rouge">optim</code> package to make the updates to the network. A minimal training script will look like:</p>
 
-<div class="highlighter-rouge">
-  <pre class="highlight"><code>require 'nn'
+<div class="highlighter-rouge"><pre class="highlight"><code>require 'nn'
 require 'datasets/plantvillage.lua'
 require 'models/alexnet.lua'
 
@@ -772,22 +752,15 @@ In <code class="highlighter-rouge">main.lua</code>, we manage the configuration 
 In <code class="highlighter-rouge">train.lua</code>, I wrote a <code class="highlighter-rouge">Trainer</code> class with <code class="highlighter-rouge">Trainer:train()</code> and <code class="highlighter-rouge">Trainer:validate()</code> methods very similar to <code class="highlighter-rouge">train()</code> function above except with some logging.
 This class will allow us to switch models and criterions easily in <code class="highlighter-rouge">main.lua</code>.</p>
 
-          </section>
+  </section>
 
-      </article>
-    
-  </div>
-
-  <nav role="navigation">
-    
-  </nav>
-
-</main>
-
-<footer class="site-footer">
+    <footer class="site-footer">
    <section class="copyright">All content copyright <a href="mailto:">Sasank Chilamkurthy</a> &copy; 2016 &bull; All rights reserved.</section>
 </footer>
 
+
+  </div>
+</article>
 
   </body>
 </html>

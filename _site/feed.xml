@@ -1,24 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Lau Siaw Young - Articles</title>
-    <description>A beautiful, fast, AMP-compliant Jekyll theme based on Tufte CSS.
+    <title>Sasank Chilamkurthy - Articles</title>
+    <description>Code. Books. Languages.
 </description>
     <link>
-    https://github.com/siawyoung/immaculate</link>
+    https://chsasank.github.io/</link>
     
       
       <item>
-        <title>Immaculate Showcase</title>
+        <title>Torch Tutorial for PlantVillage Challenge</title>
         
-          <description>&lt;p&gt;This is an example post showcasing the various features of &lt;a href=&quot;https://github.com/siawyoung/immaculate&quot;&gt;Immaculate&lt;/a&gt; and &lt;a href=&quot;https://github.com/edwardtufte/tufte-css&quot;&gt;Tufte CSS&lt;/a&gt;. Refer to the Markdown source of this post for a better understanding!&lt;/p&gt;
+          <description>&lt;p&gt;There is this interesting challenge called &lt;a href=&quot;https://www.crowdai.org/challenges/1&quot;&gt;PlantVillage challenge&lt;/a&gt; hosted on a newly built platform, &lt;a href=&quot;https://www.crowdai.org&quot;&gt;crowdai&lt;/a&gt;.
+In this challenge, you are required to identify the disease of a plant from an image of its leaf.&lt;/p&gt;
 
 </description>
         
-        <pubDate>Wed, 30 Mar 2016 00:00:00 +0800</pubDate>
+        <pubDate>Sat, 21 May 2016 00:00:00 +0530</pubDate>
         <link>
-        https://github.com/siawyoung/immaculate/immaculate-showcase.html</link>
-        <guid isPermaLink="true">https://github.com/siawyoung/immaculate/immaculate-showcase.html</guid>
+        https://chsasank.github.io//torch7-tutorial.html</link>
+        <guid isPermaLink="true">https://chsasank.github.io//torch7-tutorial.html</guid>
       </item>
       
     

@@ -4,4 +4,5 @@ title: Contact
 permalink: /contact/
 ---
 
-File issues at [https://github.com/siawyoung/immaculate/issues](https://github.com/siawyoung/immaculate/issues)!
+* Github: [github.com/chsasank](https://github.com/chsasank)
+* Email: [sasankchilamkurthy@gmail.com](mailto:sasankchilamkurthy@gmail.com)

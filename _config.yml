@@ -1,13 +1,15 @@
-title: Immaculate
+title: Sasank's Blog
 description: >
-  A beautiful, fast, AMP-compliant Jekyll theme based on Tufte CSS.
-baseurl: "/immaculate"
-url: "https://github.com/siawyoung/immaculate"
+  Code. Books. Languages.
+baseurl: "/"
+url: "https://chsasank.github.io/"
 paginate:	2 # The number of posts to show per page on your homepage
-name: "Lau Siaw Young"
+name: "Sasank Chilamkurthy"
 markdown: kramdown
 permalink: none
 kramdown:
   parse_block_html: true
 gems:
   - jekyll-paginate
+  - jekyll-compose
+  - jekyll-sass-converter
