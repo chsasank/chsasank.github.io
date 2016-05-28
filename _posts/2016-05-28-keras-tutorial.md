@@ -367,9 +367,10 @@ This is but a model for beginners. For state of the art solutions of the problem
 
 ### Conclusion
 
--- TODO
-In this tutorial, we have learnt how to use CNNs to solve computer vision problems.
-We have used Keras
+In this tutorial, we have learnt how to use convolutional networks to solve a computer vision problem.
+We have used keras deep learning framework to implement convnets in python.
+We have achieved peformance close to human level performance.
+We also have seen a way to improve the accuracy of the model: by augmentation of the training data.
 
 References:
 
