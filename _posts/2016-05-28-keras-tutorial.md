@@ -3,7 +3,7 @@ layout: post
 title: Keras Tutorial - Computer Vision
 ---
 
-In this tutorial{%sidenote side2 Tutorial asssumes you have some basic working knowlege of machine learning and numpy.%}, we will get our hands dirty with deep learning by solving a real world problem.
+In this tutorial{%sidenote side2 Tutorial assumes you have some basic working knowledge of machine learning and numpy.%}, we will get our hands dirty with deep learning by solving a real world problem.
 The problem we are gonna tackle is [The German Traffic Sign Recognition Benchmark](http://benchmark.ini.rub.de/?section=gtsrb&subsection=news)(GTSRB).
 The problem is to to recognize the traffic sign from the images.
 Solving this problem is essential for self-driving cars to operate on roads.
@@ -24,7 +24,7 @@ Just read the [first section](http://neuralnetworksanddeeplearning.com/chap6.htm
 
 *Note about the code:* 
 This tutorial is 
-A recommened way to run the code in this tutorial and experiment with it is [Jupyter notebook](http://jupyter.org).
+A recommended way to run the code in this tutorial and experiment with it is [Jupyter notebook](http://jupyter.org).
 A notebook with slightly improved code is available [here](https://github.com/chsasank/Traffic-Sign-Classification.keras/blob/master/Traffic%20Sign%20Classification.ipynb).
 
 
@@ -352,7 +352,7 @@ model.fit_generator(datagen.flow(X_train, Y_train, batch_size=batch_size),
 With this model, I get 98.29% accuracy on test set.
 
 Frankly, I haven't done much parameter tuning. 
-I'll make a small list of things which can be tried to imporve the model:
+I'll make a small list of things which can be tried to improve the model:
 
 * Try different network architectures. Try deeper and shallower networks.
 * Try adding [BatchNormalization](http://keras.io/layers/normalization/) layers to the network.
@@ -367,9 +367,9 @@ This is but a model for beginners. For state of the art solutions of the problem
 
 ### Conclusion
 
-In this tutorial, we have learnt how to use convolutional networks to solve a computer vision problem.
+In this tutorial, we have learned how to use convolutional networks to solve a computer vision problem.
 We have used keras deep learning framework to implement convnets in python.
-We have achieved peformance close to human level performance.
+We have achieved performance close to human level performance.
 We also have seen a way to improve the accuracy of the model: by augmentation of the training data.
 
 References:
