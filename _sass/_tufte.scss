@@ -85,6 +85,20 @@ article { position: relative;
 section { padding-top: 1rem;
           padding-bottom: 1rem; }
 
+
+td, th {
+    padding: 7px 3px 6px;
+    border-collapse: collapse;
+    border-bottom: 1px solid #eee;
+}
+
+th {
+    font-weight: bold;
+    padding-bottom: 4px;
+    letter-spacing: 1px;
+    border-bottom-width: 3px;
+}
+
 p, ol, ul, .pagination a, .pagination em, table { font-size: 1.4rem; }
 
 p { line-height: 2rem;
