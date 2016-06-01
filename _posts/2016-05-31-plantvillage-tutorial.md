@@ -397,7 +397,10 @@ end
 ```
 
 ## Results
-I have trained the alexnet model with the above augmentation technique for 120 epochs. I get a F-Score of 0.99 with this  :). 
+I have trained the alexnet model with the above augmentation technique for 120 epochs. On a machine with Nvidia Titan X, each epoch took about 3/4 minutes. It took about 7 hrs<span id="code-bugs" class="margin-toggle sidenote-number"></span> to train the network. 
+<span class="sidenote">On my Macbook Air, each *epoch* takes this much time.</span> 
+
+I get a F-Score of 0.99 with this network :). 
 
 I also have trained resnet-34 ([ResNet](http://arxiv.org/abs/1512.03385) is the winner of the latest imagenet challenge) and got almost the same F-Score. 
 
