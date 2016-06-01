@@ -3,13 +3,20 @@ layout: post
 title: Keras Tutorial - Computer Vision
 ---
 
-In this tutorial{%sidenote side2 Tutorial assumes you have some basic working knowledge of machine learning and numpy.%}, we will get our hands dirty with deep learning by solving a real world problem.
+In this tutorial
+<span id="reqs" class="margin-toggle sidenote-number"></span>
+<span class="sidenote">Tutorial assumes you have some basic working knowledge of machine learning and numpy.</span>
+, we will get our hands dirty with deep learning by solving a real world problem.
 The problem we are gonna tackle is [The German Traffic Sign Recognition Benchmark](http://benchmark.ini.rub.de/?section=gtsrb&subsection=news)(GTSRB).
 The problem is to to recognize the traffic sign from the images.
 Solving this problem is essential for self-driving cars to operate on roads.
-Here are representative images for each of the traffic sign classes in the GTSRB dataset:
 
-{% image /assets/images/traffic/classes.jpg 867 495 %}
+<span class="marginnote" margin-bottom='100px' >
+    Representative images for each of the traffic sign classes in the GTSRB dataset
+</span>
+<figure>
+<amp-img width="867" height="495" layout="responsive" src="/assets/images/traffic/classes.jpg"></amp-img>
+</figure>
 
 The dataset features 43 different signs under various sizes, lighting conditions, occlusions and is very similar to real-life data. 
 Training set includes about 39000 images while test set has around 12000 images. 
@@ -30,7 +37,9 @@ A notebook with slightly improved code is available [here](https://github.com/ch
 
 We will implement our CNNs in [Keras](http://keras.io). 
 Keras is a deep learning library written in python and allows us to do quick experimentation.
-Let's start by installing Keras and other libraries{% sidenote tip Protip: Use [anaconda python](https://www.continuum.io/downloads) distribution %}:
+Let's start by installing Keras and other libraries:
+<span id="tip" class="margin-toggle sidenote-number"></span>
+<span class="sidenote">Protip: Use <a href="https://www.continuum.io/downloads">anaconda python</a> distribution.</span>
 
 ```
 $ sudo pip install keras scikit-image pandas
@@ -59,6 +68,15 @@ As you can see from the representative images above, images vary a lot in illumi
 They also vary in size. So, let's write a function to do 
 [histogram equalization](https://en.wikipedia.org/wiki/Histogram_equalization)
 in HSV color space and resize the images to a standard size:
+<span class="marginnote" margin-bottom='100px' >
+    <amp-img width='156' height='152' src='/assets/images/traffic/input.png' alt="input to preprocess_img"></amp-img>
+    <br>Input image to `preprocess_img` (scaled 4x)
+</span>
+<span class="marginnote">
+    <br>
+    <amp-img src='/assets/images/traffic/output.png'  width='192' height='192'  alt="output from preprocess_img"></amp-img>
+    <br> Processed image (scaled 4x) 
+</span>
 
 ```python
 import numpy as np
@@ -88,13 +106,7 @@ def preprocess_img(img):
 
     return img
 ```
-Input image to `preprocess_img` (scaled 4x):
 
-![input](/assets/images/traffic/input.png)
-
-Processed image (scaled 4x):
-
-![output](/assets/images/traffic/output.png)
 
 Let's preprocess all the training images are store into numpy arrays. 
 We'll also get labels of images from paths. 
@@ -286,7 +298,9 @@ acc = np.sum(y_pred==y_test)/np.size(y_pred)
 print("Test accuracy = {}".format(acc))
 ```
 
-Which outputs on my system{%sidenote side2 Results may change a bit because the weights of the neural network are randomly initialized %}:
+Which outputs on my system
+<span id="results" class="margin-toggle sidenote-number"></span>
+<span class="sidenote">Results may change a bit because the weights of the neural network are randomly initialized.</span>:
 
 ```
 12630/12630 [==============================] - 2s

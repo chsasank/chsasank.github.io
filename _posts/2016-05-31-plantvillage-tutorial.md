@@ -5,14 +5,25 @@ title: Torch Tutorial for PlantVillage Challenge
 
 There is this interesting challenge called [PlantVillage challenge](https://www.crowdai.org/challenges/1) hosted on a newly built platform, [crowdai](https://www.crowdai.org). In this challenge, you are required to identify the disease of a plant from an image of its leaf.
 
-Dataset include both healthy and diseased leaves. Training dataset has 21917 images. There are 38 classes of crop-disease pairs in the dataset:
+Dataset include both 38 classes of healthy and diseased leaves. Training dataset has 21917 images.
 
-{% image /assets/images/plantvillage/classes.jpg 600 500 %}
+<span class="marginnote" margin-bottom='100px' >
+    38 classes of crop-disease pairs in the dataset
+</span>
+<figure>
+<amp-img width="600" height="500" layout="responsive" src="/assets/images/plantvillage/classes.jpg"></amp-img>
+</figure>
 
 We'll use popular deep learning platform [torch](http://torch.ch) to solve this problem. This will be a hands-on tutorial covering training of Alexnet
-{% sidenote alexnet [ImageNet Classification with Deep Convolutional Neural Networks](https://papers.nips.cc/paper/4824-imagenet-classification-with-deep-convolutional-neural-networks.pdf) %}.
+<span id="alexnet" class="margin-toggle sidenote-number"></span>
+<span class="sidenote"><a href="https://papers.nips.cc/paper/4824-imagenet-classification-with-deep-convolutional-neural-networks.pdf">ImageNet Classification with Deep Convolutional Neural Networks</a></span>
+.
+
 Tutorial will be accompanied by a [repo containing complete working code](https://github.com/chsasank/plantvillage-challenge).
-It will include ResNet{% sidenote resnet [Deep Residual Learning for Image Recognition](https://arxiv.org/abs/1512.03385) %} along with Alexnet. 
+It will include ResNet
+<span id="resnet" class="margin-toggle sidenote-number"></span>
+<span class="sidenote"><a href="https://arxiv.org/abs/1512.03385">Deep Residual Learning for Image Recognition</a></span>
+along with Alexnet. 
 
 This tutorial assumes familiarity with convolutional neural networks (CNNs) and torch. Here are some resources to get started:
 
@@ -152,7 +163,8 @@ Code to do these transformations is in `datasets/transforms.lua`. Most of it is 
 
 We will load the images in batches and do all this processing/augmentation on the fly. This is done by writing a class named `DataGen` . 
 Essentially, code
-{% sidenote side1 Understanding how iterators work in lua can be a little tricky. Read the following [ documentation](https://www.lua.org/pil/7.1.html) for details. %} 
+<span id="iterators" class="margin-toggle sidenote-number"></span>
+<span class="sidenote">Understanding how iterators work in lua can be a little tricky. Read the following <a href="https://www.lua.org/pil/7.1.html">documentation</a> for details.</span> 
 can be summarized as :
 
 `datasets/plantvillage.lua`:
@@ -389,7 +401,9 @@ I have trained the alexnet model with the above augmentation technique for 120 e
 
 I also have trained resnet-34 ([ResNet](http://arxiv.org/abs/1512.03385) is the winner of the latest imagenet challenge) and got almost the same F-Score. 
 
-You can train these yourself using [accompaying repo](https://github.com/chsasank/plantvillage-challenge){% sidenote sidelast Feel free to mail me if you have found any bugs. %} :
+You can train these yourself using [accompaying repo](https://github.com/chsasank/plantvillage-challenge)
+<span id="code-bugs" class="margin-toggle sidenote-number"></span>
+<span class="sidenote">Feel free to mail me if you have found any bugs.</span> :
 
 ```
 git clone git@github.com:chsasank/plantvillage-challenge.git
