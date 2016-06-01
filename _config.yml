@@ -1,7 +1,7 @@
 title: Sasank's Blog
 description: >
   Code. Books. Languages.
-baseurl: "/"
+baseurl: ""
 url: "https://chsasank.github.io/"
 paginate:	2 # The number of posts to show per page on your homepage
 name: "Sasank Chilamkurthy"
