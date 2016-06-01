@@ -1,7 +1,4 @@
 ---
-author: sasankchilamkurthy
-comments: true
-date: 2015-03-06 13:50:27+00:00
 layout: post
 title: తమిళ అక్షరమాల - தமிழ் அருச்சவடி
 categories:
