@@ -41,7 +41,7 @@ Let's start by installing Keras and other libraries:
 <span id="tip" class="margin-toggle sidenote-number"></span>
 <span class="sidenote">Protip: Use <a href="https://www.continuum.io/downloads">anaconda python</a> distribution.</span>
 
-```
+```bash
 $ sudo pip install keras scikit-image pandas
 ```
 
@@ -113,7 +113,7 @@ We'll also get labels of images from paths.
 We'll convert targets to one-hot form as is required by keras:
 
 
-```
+```python
 from skimage import io
 import os
 import glob
@@ -160,7 +160,7 @@ To attach a fully connected layer (aka dense layer) to a convolutional layer, we
 
 Go through the documentation of keras (relevant documentation : [here](http://keras.io/layers/convolutional/) and [here](http://keras.io/layers/core/)) to understand what parameters for each of the layers mean.
 
-```
+```python
 from keras.models import Sequential
 from keras.layers import Dense, Dropout, Activation, Flatten
 from keras.layers import Convolution2D, MaxPooling2D
@@ -200,7 +200,7 @@ We need to specify,
 * `optimizer` : We use standard stochastic gradient descent with Nesterov momentum. 
 * `metric` : Since we are dealing with a classification problem, our metric is accuracy. 
 
-```
+```python
 from keras.optimizers import SGD
 
 model = cnn_model()
@@ -232,7 +232,7 @@ These features are implemented via [`callback` feature](http://keras.io/callback
 `callback` are a set of functions that will applied at given stages of training procedure like end of an epoch of training. 
 Keras provides inbuilt functions for both learning rate scheduling and model checkpointing.
 
-```
+```python
 from keras.callbacks import LearningRateScheduler, ModelCheckpoint
 
 def lr_schedule(epoch):
@@ -276,7 +276,7 @@ Congratulations! You have just trained your first deep learning model.
 ### Evaluation
 Let's quickly load test data and evaluate our model on it:
 
-```
+```python
 import pandas as pd
 test = pd.read_csv('GT-final_test.csv',sep=';')
 
@@ -330,7 +330,7 @@ This can be done by slightly
 Rather than generating and saving such images to hard disk, we will generate them on the fly during training.
 This can be done directly using [built-in functionality](http://keras.io/preprocessing/image/) of keras.
 
-```
+```python
 from keras.preprocessing.image import ImageDataGenerator
 from sklearn.cross_validation import train_test_split
 
