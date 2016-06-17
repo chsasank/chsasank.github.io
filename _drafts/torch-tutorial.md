@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Deep Learning With Torch
+author: Preetham Sreenivas
 ---
 
 [Torch](http://torch.ch/) is a scientific computing framework built on top of Lua[JIT]. The `nn` package and the ecosystem around it provide a very powerful framework for building deep learning models striking a perfect balance between speed and flexibility. 
