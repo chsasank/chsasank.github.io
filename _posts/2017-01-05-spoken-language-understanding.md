@@ -244,9 +244,9 @@ $ python main.py
 
 ### Improvements
 
-One drawback with our current model is that there is no lookahead. i.e, output $$o_t$$ depends only on the current and previous words but not on the words next to it. One can imagine clues about the properties of the current word is also held by next word. 
+One drawback with our current model is that there is no lookahead. i.e, output $$o_t$$ depends only on the current and previous words but not on the words next to it. One can imagine that clues about the properties of the current word is also held by next word. 
 
-Lookahead can easily be implemented by having a convolutional layer before RNN and word embeddings:
+Lookahead can easily be implemented by having a convolutional layer before RNN and after word embeddings:
 
 ```
 model = Sequential()
