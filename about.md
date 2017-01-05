@@ -7,7 +7,7 @@ permalink: /about/
 Hello!
 
 My name is Sasank.
-I work at Fractal Analytics. 
+I work at [Qure.ai](www.qure.ai). 
 My work involves deep learning on medical images obtained from radiology and pathology.
 Yep, it's quite cool :)
 
