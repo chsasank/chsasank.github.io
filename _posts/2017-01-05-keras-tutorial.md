@@ -30,7 +30,6 @@ You can read more about them in very readable *Neural Networks and Deep Learning
 Just read the [first section](http://neuralnetworksanddeeplearning.com/chap6.html#introducing_convolutional_networks) in this chapter if you are in a hurry. 
 
 *Note about the code:* 
-This tutorial is 
 A recommended way to run the code in this tutorial and experiment with it is [Jupyter notebook](http://jupyter.org).
 A notebook with slightly improved code is available [here](https://github.com/chsasank/Traffic-Sign-Classification.keras/blob/master/Traffic%20Sign%20Classification.ipynb).
 
