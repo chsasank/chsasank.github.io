@@ -3,7 +3,7 @@ $baseurl: '{{ site.baseurl }}';
 $grey-color: #828282;
 
 @import 'tufte';
-// @import 'syntax-highlighting';
+@import 'syntax-highlighting';
 
 main {
   margin-top: 20px;

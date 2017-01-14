@@ -202,7 +202,7 @@ for i in range(n_epochs):
 To measure the accuracy of the model, we use `model.predict_on_batch()` and 
 `metrics.accuracy.conlleval()`.
 
-```
+```python
 from metrics.accuracy import conlleval
 
 labels_pred_val = []
@@ -248,7 +248,7 @@ One drawback with our current model is that there is no lookahead. i.e, output $
 
 Lookahead can easily be implemented by having a convolutional layer before RNN and after word embeddings:
 
-```
+```python
 model = Sequential()
 model.add(Embedding(n_vocab,100))
 model.add(Convolution1D(128, 5, border_mode='same', activation='relu'))

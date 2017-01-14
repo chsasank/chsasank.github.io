@@ -48,7 +48,7 @@ We add `SpatialBatchNormalization` to the standard alexnet model to speed up the
 
 `models/alexnet.lua`:
 
-```
+```lua
 require 'nn'
 
 local SpatialConvolution = nn.SpatialConvolution
@@ -169,7 +169,7 @@ can be summarized as :
 
 `datasets/plantvillage.lua`:
 
-```
+```lua
 require 'paths'
 t = require 'datasets/transforms.lua'
 
@@ -255,7 +255,7 @@ end
 Complete code for this class with some error catching is at `datasets/plantvillage.lua`. 
 We can now simply use a `DataGen` object to write a `for` loop to iterate over all the images:
 
-```
+```lua
 for input, target in dataGen:trainGenerator(batchSize) do
     -- code to train your model
 end
@@ -273,7 +273,7 @@ We'll use stochastic gradient descent with momentum ([`optim.sgd`](https://githu
 
 Our training script will look like:
 
-```
+```lua
 require 'nn'
 require 'datasets/plantvillage.lua'
 require 'models/alexnet.lua'
@@ -365,7 +365,7 @@ We will then average the output from all these as our prediction.
 
 Our evaluation script then looks like:
 
-```
+```lua
 local function findImages(dir)
     -- Returns a table with all the image paths found in 
     -- dir using 'find'
@@ -408,7 +408,7 @@ You can train these yourself using [accompaying repo](https://github.com/chsasan
 <span id="code-bugs" class="margin-toggle sidenote-number"></span>
 <span class="sidenote">Feel free to mail me if you have found any bugs.</span> :
 
-```
+```bash
 git clone git@github.com:chsasank/plantvillage-challenge.git
 cd plantvillage-challenge
 
