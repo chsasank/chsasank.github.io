@@ -29,6 +29,7 @@ pre {
   width: 52.5%;
   padding-left: 2.5%;
   overflow-x: auto;
+  background-color: #fefef9 ; 
 }
 
 @media (max-width: 760px) {
@@ -43,3 +44,9 @@ code {
   font-size: 1.125rem;
   line-height: 1.6;
 }
+
+.marginnote code{ font-size: 1rem; }
+
+.sidenote code { font-size: 1rem; }
+
+
