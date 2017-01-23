@@ -157,7 +157,7 @@ In the above code, you've not really used lua interpretor; you've run the lua co
 You might rather want to create a module which you can load into a lua interpretor using 
 
 ```
-> mylib = require `mylib`
+> mylib = require "mylib"
 ```
 
 To do this, you'll have to register your functions by creating a array of `luaL_Reg` and a function `luaopen_mylib`. 
@@ -246,7 +246,7 @@ Lua 5.2.4  Copyright (C) 1994-2015 Lua.org, PUC-Rio
 Now, you should be able to wrap any C library by writing a lua wrapper.
 We still have some caveats: 
 
-1. We will have to write a wrapping function for each of the functions in your C library. This is repetitive and can be a potential source for bugs. 
+1. We will have to write a wrapping function for each of the functions in your C library to 'parse' the arguments(`luaL_checknumber` etc.). This is repetitive and can be a potential source for bugs. 
 2. C doesn't have classes. What if your library is in C++? You cannot easily wrap classes like above. You will have to mess with metatables and so on.
 
 A solution to both of these is to use [Swig](http://www.swig.org/). Swig allows you to wrap C/C++ classes/functions into many languages like python, lua, java quite easily. In a later post, we will see how to use swig and wrap a simple library.
