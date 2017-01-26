@@ -1,6 +1,6 @@
 ---
 layout: post
-title: తమిళ అక్షరమాల - தமிழ் அருச்சவடி
+title: తమిళ అక్షరమాల
 categories:
 - தமிழ்
 tags:
