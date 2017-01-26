@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Torch Tutorial for PlantVillage Challenge
+title: Torch Tutorial - PlantVillage Challenge
 ---
 
 There is this interesting challenge called [PlantVillage challenge](https://www.crowdai.org/challenges/1) hosted on a newly built platform, [crowdai](https://www.crowdai.org). In this challenge, you are required to identify the disease of a plant from an image of its leaf.

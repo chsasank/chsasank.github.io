@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Keras Tutorial: Traffic Sign Recognition
+title: Keras Tutorial - Traffic Sign Recognition
 ---
 
 In this tutorial
