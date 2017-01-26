@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Spoken Language Understanding with Keras
+title: Keras Tutorial: Spoken Language Understanding
 ---
 
 In previous tutorial, we have had a introduction to convolutional neural networks(CNNs) and keras deep learning framework. We have used them to solve a computer vision(CV) problem: traffic sign recognition. 
