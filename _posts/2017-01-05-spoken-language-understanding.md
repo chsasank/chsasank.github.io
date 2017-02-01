@@ -266,3 +266,7 @@ We also have made an improvement to our model.
 
 To improve the model further, we could try using word embeddings learnt on a  large corpus like Wikipedia. Also, there are variants of RNNs like LSTM or GRU which can be experimented with.
 
+### References
+
+1. Grégoire Mesnil, Xiaodong He, Li Deng and Yoshua Bengio. Investigation of Recurrent-Neural-Network Architectures and Learning Methods for Spoken Language Understanding. Interspeech, 2013. [pdf](http://www.iro.umontreal.ca/~lisa/pointeurs/RNNSpokenLanguage2013.pdf)
+2. Recurrent Neural Networks with Word Embeddings, [theano tutorial](http://deeplearning.net/tutorial/rnnslu.html)
