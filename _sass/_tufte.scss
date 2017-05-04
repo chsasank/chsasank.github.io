@@ -133,7 +133,7 @@ blockquote .footer { width: 50%;
                     font-size: 1.1rem;
                     text-align: right; }
 
-ol, ul { width: 45%;
+ol, ul { width: 50%;
          -webkit-padding-start: 5%;
          -webkit-padding-end: 5%; }
 
@@ -222,6 +222,14 @@ img { max-width: 100%; }
                    top: -0.5rem; }
 
 p, footer, table, div.table-wrapper-small, div.supertable-wrapper > p, div.booktabs-wrapper { width: 55%; }
+
+hr{
+  width: 55%;
+  margin-left:0;  
+  text-align:left;
+}
+
+
 
 div.fullwidth, table.fullwidth { width: 100%; }
 
