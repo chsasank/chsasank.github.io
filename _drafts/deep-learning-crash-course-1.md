@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Deep Learning Crash Course
+title: Deep Learning Crash Course Part 1
 author: Sasank Chilamkurthy
 ---
 
@@ -12,10 +12,10 @@ Let's recap what a derivative is.
 
 ### Derivative
 
-Derivative of function $$f(v)$$ ($$f'(v)$$ or $$\frac{df}{dv}$$) measures sensitivity of change in $$f(v)$$ with respect of change in $$v$$.
+Derivative of function $f(v)$ ($f'(v)$ or $\frac{df}{dv}$) measures sensitivity of change in $f(v)$ with respect of change in $v$.
 
 <span class="marginnote" margin-bottom='100px' >
-    <b>Derivative Illustration</b>: Red is for positive $$v$$ direction and green is for negative $$v$$ direction. Source: Wikipedia.
+    <b>Derivative Illustration</b>: Red is for positive $v$ direction and green is for negative $v$ direction. Source: Wikipedia.
 </span>
 <figure>
 <amp-img width="450" height="427" layout="fixed" src="/assets/images/crash_course/small_differential.gif"></amp-img>
@@ -25,7 +25,7 @@ Direction (i.e sign) of the derivative at a points gives the direction of (great
 
 ### Gradient
 
-The gradient is a multi-variable generalization of the derivative. It is a vector valued function. For function $$ f(v_1, v_2, \ldots, v_n) $$, gradient is a vector whose components are $$n$$ partial derivatives of $$f$$:
+The gradient is a multi-variable generalization of the derivative. It is a vector valued function. For function $ f(v_1, v_2, \ldots, v_n) $, gradient is a vector whose components are $n$ partial derivatives of $f$:
  
 $$ \nabla f = (\frac{\partial f}{\partial v_1 }, \frac{\partial f}{\partial v_2 }, \ldots, \frac{\partial f}{\partial v_n })$$ 
 
@@ -41,7 +41,7 @@ Similar to derivative, direction of the gradient at a point is the steepest asce
 
 ## Optimization
 
-Given a function $$ C(v_1, v_2, \ldots, v_n) $$, how do we optimize it? i.e, find a point which minimizes this function globally. 
+Given a function $ C(v_1, v_2, \ldots, v_n) $, how do we optimize it? i.e, find a point which minimizes this function globally. 
 
 This is a very generic problem; lot of practical and theoretical problems can be posed in this form. So, there is no general answer.
 
@@ -85,8 +85,8 @@ Great! Let's put together our algorithm:
 </span>
 
 ---
-1. Start at a random point: $$v$$
-2. Update $$v$$ in the direction of steepest descent: $$ v \rightarrow v' = v -\eta \nabla C  $$
+1. Start at a random point: $v$
+2. Update $v$ in the direction of steepest descent: $ v \rightarrow v' = v -\eta \nabla C $
 3. Iterate step 2 until convergence.
 
 ---
@@ -97,35 +97,35 @@ Great! Let's put together our algorithm:
 
 <img src='/assets/images/crash_course/Gradient_descent.svg' height="400">
 
-Here $$\eta$$ is called *learning rate*. If it is too small, algorithm can be very slow and might take too many iterations to converge. If it is too large, algorithm might not even converge.
+Here $\eta$ is called *learning rate*. If it is too small, algorithm can be very slow and might take too many iterations to converge. If it is too large, algorithm might not even converge.
 
 ### Example: Regression
 
 Let's apply the things learnt above on linear regression problem. Here's a recap of linear regression:
 
-> Our model is $$ y(x) = wx + b $$. Parameters are $$ v = (w, b) $$
-> We are given training pairs $$(x^1, y^1), (x^2, y^2), \ldots, (x^n, y^n)$$.
+> Our model is $ y(x) = wx + b $. Parameters are $ v = (w, b) $
+> We are given training pairs $(x^1, y^1), (x^2, y^2), \ldots, (x^n, y^n)$.
 > <span id="pairs" class="margin-toggle sidenote-number"></span>
 
 <span class="sidenote">
 Notation clarifiction: Here, superscripts are indices, not powers
 </span>
 
-> We want to find $$w$$ and $$b$$ which minimize the following 
+> We want to find $w$ and $b$ which minimize the following 
 > cost/loss function:
 > 
 > $$ C(w, b) = \frac{1}{n} \sum_{i = 1}^{n} C_i(w, b) = \frac{1}{2n} \sum_{i = 1}^{n} \| y(x^i) - y^i\|^2 $$
 > 
 > where
-> $$ C_i(w, b) = \frac{1}{2} \| y(x^i) - y^i\|^2 = \frac{1}{2} \| wx^i + b - y^i\|^2 $$ is the loss of the model for $$i$$ th training pair.
+> $ C_i(w, b) = \frac{1}{2} \| y(x^i) - y^i\|^2 = \frac{1}{2} \| wx^i + b - y^i\|^2 $ is the loss of the model for $$i$$ th training pair.
 
 Let's calculate gradients,
 
 $$ \nabla C = \frac{1}{n} \sum_{i = 1}^{n} \nabla C_i $$ 
 
-where $$\nabla C_i$$ is computed using:
+where $\nabla C_i$ is computed using:
 
-$$ \nabla C_i = \left( \frac{\partial C_i}{\partial w}, \frac{\partial C_i}{\partial b}  \right) = \left( (wx^i + b - y^i)x^i, (wx^i + b - y^i) \right) $$
+$$ \nabla C_i = \left( \frac{\partial C_i}{\partial w}, \frac{\partial C_i}{\partial b}  \right) = \left( (wx^i + b - y^i)x^i, (wx^i + b - y^i) \right)$$
 
 Update rule is
 
@@ -133,17 +133,17 @@ $$ v \rightarrow v' = v -\eta \nabla C = v -\frac{\eta}{n} \sum_{i = 1}^{n} \nab
 
 ### Stochastic Gradient Descent
 
-In the above example, what if we have very large number of samples i.e $$n \gg 0$$? 
-At every optimization step, we have to compute $$\nabla C_i$$ for each sample $$ i = 1, 2, \ldots, n $$. This can be very time consuming!
+In the above example, what if we have very large number of samples i.e $n \gg 0$? 
+At every optimization step, we have to compute $\nabla C_i$ for each sample $ i = 1, 2, \ldots, n $. This can be very time consuming!
 
-Can we approximate $$\nabla C$$ with a very few samples? Yes!
+Can we approximate $\nabla C$ with a very few samples? Yes!
 
 $$ \nabla C = \frac{1}{n} \sum_{i = 1}^{n} \nabla C_i \approx \frac{1}{m} \sum_{j \in S_m} \nabla C_j $$ 
 
-where $$S_m$$ is random subset of size $$m \ll n $$ of $${1, 2, \ldots,n}$$.
+where $S_m$ is random subset of size $m \ll n $ of ${1, 2, \ldots,n}$.
 It turns out that this approximation, even though estimated only from a small random subset of samples, is good enough for convergence of gradient descent. This subset of data is called *minibatch* and this technique is called *stochastic gradient descent*.
 
-Then stochastic gradient descent works by picking a randomly chosen subset of data and trains (i.e updates $$v$$) with gradient approximation computed from them. Next, another subset is picked up and trained with them. And so on, until we've exhausted all the training data, which is said to complete an *epoch* of training. Concretely, following is the stochastic gradient descent algorithm.
+Then stochastic gradient descent works by picking a randomly chosen subset of data and trains (i.e updates $v$) with gradient approximation computed from them. Next, another subset is picked up and trained with them. And so on, until we've exhausted all the training data, which is said to complete an *epoch* of training. Concretely, following is the stochastic gradient descent algorithm.
 
 <span class="marginnote">
     **Algorithm**: Stochastic Gradient Descent
@@ -152,8 +152,8 @@ Then stochastic gradient descent works by picking a randomly chosen subset of da
 ---
 For a fixed number of epochs, repeat:
 
-1. Randomly partition the data into minibatches each of size $$m$$
-2. For each minibatch $$S_m$$ repeat:
+1. Randomly partition the data into minibatches each of size $m$
+2. For each minibatch $S_m$ repeat:
     1. Update the parameters using 
 
     $$ v \rightarrow v' = v -\frac{\eta}{m} \sum_{i \in S_m} \nabla C_j $$
@@ -162,14 +162,14 @@ For a fixed number of epochs, repeat:
 
 ## Neural Networks
 
-With this background, we are ready to start on neural networks. TODO
+With this background, we are ready to start with neural networks.
 
 ### Perceptron
 
 Perceptron, a type of artificial neuron was developed in the 1950s and 1960s. 
 Today, it's more common to use Rectified Linear Units (ReLUs). Nevertheless, it's worth taking time to understand the older models.
 
-So how do perceptrons work? A perceptron takes several inputs, $$ x_1, x_2, \ldots x_n $$ and produces a single output:
+So how do perceptrons work? A perceptron takes several inputs, $ x_1, x_2, \ldots x_n $ and produces a single output:
 
 <span class="marginnote">
     **Illustration**: Perceptron Model. <a href="http://neuralnetworksanddeeplearning.com/chap1.html">Source</a>.
@@ -177,13 +177,13 @@ So how do perceptrons work? A perceptron takes several inputs, $$ x_1, x_2, \ldo
 
 <img src='/assets/images/crash_course/tikz0.png' height="138">
 
-*Weights* $$ w_1, w_2, \ldots w_n $$ decide the importance of each of the inputs on output $$y(x)$$. There is also a *threshold* $$b$$ to decide the output. These are the parameters of the model. 
+*Weights* $ w_1, w_2, \ldots w_n $ decide the importance of each of the inputs on output $y(x)$. There is also a *threshold* $b$ to decide the output. These are the parameters of the model.
 
 The expression of the output is 
 
 $$ y(x) = \sigma\left(\sum_j w_j x_j - b\right) $$
 
-where $$\sigma(z)$$ is step function,
+where $\sigma(z)$ is step function,
 $$ 
 \begin{eqnarray}
   \sigma(z) & = & \left\{ \begin{array}{ll}
@@ -194,8 +194,7 @@ $$
 $$
 
 Therefore
-$$ 
-\begin{eqnarray}
+$$\begin{eqnarray}
     y(x) & = & \left\{ \begin{array}{ll}
       0 & \mbox{if } \sum_j w_j x_j \leq b \\
       1 & \mbox{if } \sum_j w_j x_j > b
@@ -254,16 +253,16 @@ How do we learn the parameters of the above model? Gradient Descent!
 </span>
 However, the network is very discontinuous. In fact, a small change in the weights or bias of any single perceptron in the network can sometimes cause the output of that perceptron to completely flip, say from 0 to 1. This makes it very difficult for gradient descent to converge.
 
-How do we overcome this? What is the source of this discontinuity? Remember that output of perceptron is given by $$ y(x) = \sigma\left(\sum_j w_j x_j - b\right) $$
-where $$\sigma(z)$$ is step function
-$$ 
+How do we overcome this? What is the source of this discontinuity? Remember that output of perceptron is given by $ y(x) = \sigma\left(\sum_j w_j x_j - b\right) $
+where $\sigma(z)$ is step function
+$$
 \begin{eqnarray}
   \sigma(z) & = & \left\{ \begin{array}{ll}
       0 & \mbox{if } z \leq 0 \\
       1 & \mbox{if } z > 0
       \end{array} \right.
 \end{eqnarray}
-$$. This $$\sigma(z)$$ is the source of discontinuity. Can we replace step function with a smoother version of it?
+$$. This $\sigma(z)$ is the source of discontinuity. Can we replace step function with a smoother version of it?
 
 Check out the following function:
 
@@ -275,7 +274,7 @@ $$
 If you graph it, it's quite clear that this function is smoothed out version of a step function. This function is called *sigmoid*.
 
 <span class="marginnote">
-    **Illustration**: Sigmoid function. When $$z$$ is large and positive, Then $$e^{-z} \approx 0$$ and so $$\sigma(z) \approx 1$$. Suppose on the other hand that $$z$$ is very negative. Then $$e^{-z} \rightarrow \infty$$, and $$\sigma(z) \approx 0$$.
+    **Illustration**: Sigmoid function. When $z$ is large and positive, Then $e^{-z} \approx 0$ and so $\sigma(z) \approx 1$. Suppose on the other hand that $z$ is very negative. Then $e^{-z} \rightarrow \infty$, and $\sigma(z) \approx 0$.
     <a href="http://neuralnetworksanddeeplearning.com/chap1.html">Source</a>.
 </span>
 <img src='/assets/images/crash_course/sigmoid.svg' height="290">
@@ -289,11 +288,11 @@ and activation functions.
 
 ### Activation and Loss Functions
 
-By now, you have seen that general form of a artificial neuron is $$y(x) = \sigma\left( w^T x + b\right)$$. 
+By now, you have seen that general form of a artificial neuron is $y(x) = \sigma\left( w^T x + b\right)$. 
 <span id="activation" class="margin-toggle sidenote-number"></span>
 <span class="sidenote">
-    I have rewritten sum $$\sum_j w_j x_j$$ as dot product $$w^Tx$$ and changed the sign of $$b$$.
-</span>. Here the function $$\sigma(z)$$ is called *activation function*. So far, we have seen two different activations:
+    I have rewritten sum $\sum_j w_j x_j$ as dot product $w^Tx$ and changed the sign of $b$.
+</span>. Here the function $\sigma(z)$ is called *activation function*. So far, we have seen two different activations:
 
 1. Step function
 2. Sigmoid function
@@ -321,12 +320,12 @@ More specifically, because of vanishing and exploding gradients problem. Read mo
 
 Let's discuss loss/cost functions now. We will make two assumptions about our cost function:
 
-1. The cost function can be written as an average over cost functions $$C_i$$ for individual training examples, $$(x^i, y^i)$$. 
-   i.e, $$C = \frac{1}{n} \sum_{i = 1}^{n} C_i$$ 
+1. The cost function can be written as an average over cost functions $C_i$ for individual training examples, $(x^i, y^i)$. 
+   i.e, $C = \frac{1}{n} \sum_{i = 1}^{n} C_i$ 
 2. Cost can be written as a function of the outputs from the neural network. 
-   i.e, $$C_i = L(y(x^i), y^i)$$ where $$y(x)$$ is the output from the network. 
+   i.e, $C_i = L(y(x^i), y^i)$ where $y(x)$ is the output from the network. 
 
-In the case of regression, we used $$L_2$$ loss, $$L(o, y) = \frac{1}{2} \| o - y\|^2$$. We could have also used $$L_1$$ loss, $$L(o, y) = \| o - y \|_{L_1} $$. 
+In the case of regression, we used $L_2$ loss, $L(o, y) = \frac{1}{2} \| o - y\|^2$. We could have also used $L_1$ loss, $L(o, y) = \| o - y \|_{L_1} $. 
 
 **Cross Entropy Loss:**
 
@@ -338,19 +337,19 @@ What if we have a classification problem? What loss do we use? Consider the foll
 </span>
 <img src='/assets/images/crash_course/tikz12.png' height="447">
 
-Here, we have output $$o$$ of size 10 and a target class $$y$$. We could have used $$L_1(o, e_y)$$ or $$L_2(o, e_y)$$ loss where $$e_y$$ is $$y$$th unit vector. But it turns out that this doesn't work very well.
+Here, we have output $o$ of size 10 and a target class $y$. We could have used $L_1(o, e_y)$ or $L_2(o, e_y)$ loss where $e_y$ is $y$th unit vector. But it turns out that this doesn't work very well.
 
 Instead, We will consider the outputs as a probability distribution over 10 classes and use what is called a cross entropy loss:
 
 $$ L(o, y) = - \log(o_y) $$
 
-To understand this function, realize that $$o_y$$ is the output probability of the target class $$y$$. Minimizing negative of log of this probability, maximizes the probability. Also, $$L \geq 0 $$ because $$\log(x) < 0 $$ for $$x \in [0, 1] $$.
+To understand this function, realize that $o_y$ is the output probability of the target class $y$. Minimizing negative of log of this probability, maximizes the probability. Also, $L \geq 0 $ because $\log(x) < 0 $ for $x \in [0, 1] $.
 
 **Softmax Activation:**
 
-If we use cross entropy loss, we cannot use sigmoids as activations of output layer because sigmoids do not guarantee a probability distribution. Although each component of the output is in $$[0, 1]$$, they need not add up to 1.
+If we use cross entropy loss, we cannot use sigmoids as activations of output layer because sigmoids do not guarantee a probability distribution. Although each component of the output is in $[0, 1]$, they need not add up to 1.
 
-We therefore use an activation layer called *softmax*. According to this function, the activation $$a_j$$ of the $$j$$th output neuron is
+We therefore use an activation layer called *softmax*. According to this function, the activation $a_j$ of the $j$th output neuron is
 
 $$ a_j = \frac{e^{z_j}}{\sum_k e^{z_k}} $$
 
@@ -358,10 +357,10 @@ where in the denominator we sum over all the output neurons.
 
 This expression may seem opaque if you are not familiar with it. Observe the following:
 
-1. Activations are positive: $$a_j \geq 0$$
-2. Activations sum to 1: $$\sum_j a_j = 1$$
-3. If you increase $$z_m$$ keeping others constant, $$a_m$$ increases. Other activations decrease to ensure sum remains 1.
-4. If $$z_m$$ is much larger than the others, $$a_m \approx 1$$ and $$a_k \approx 0$$ for $$ k \neq m $$.
+1. Activations are positive: $a_j \geq 0$
+2. Activations sum to 1: $\sum_j a_j = 1$
+3. If you increase $z_m$ keeping others constant, $a_m$ increases. Other activations decrease to ensure sum remains 1.
+4. If $z_m$ is much larger than the others, $a_m \approx 1$ and $a_k \approx 0$ for $ k \neq m $.
 
 Therefore softmax is a probability distribution which behaves like smooth version of `argmax`.
 
@@ -369,7 +368,7 @@ Therefore softmax is a probability distribution which behaves like smooth versio
 
 We have so far discussed the model component of neural networks. We haven't yet discussed how we learn the parameters of the networks.
 
-As expected, we will use stochastic gradient descent. For this, we need gradients of $$C_i$$, loss for the $$i$$th training example. Computation of this quantity, $$ \nabla C_i$$ is slightly involved. Let's start with writing the expression for $$C_i$$. Let's represent all the parameters of the network with $$\theta$$:
+As expected, we will use stochastic gradient descent. For this, we need gradients of $C_i$, loss for the $i$th training example. Computation of this quantity, $ \nabla C_i$ is slightly involved. Let's start with writing the expression for $C_i$. Let's represent all the parameters of the network with $$\theta$$:
 
 
 $$ C_i(\theta) = L\left(y(x^i, \theta), y^i \right)$$
@@ -384,26 +383,26 @@ $$ C_i(\theta) = L\left(y(x^i, \theta), y^i \right)$$
 
 Let's break the above function into composition of functions (or layers).
 
-$$ C = y_n \circ \ y_{n-1} \circ \cdots \circ y_1$$
+$ C = y_n \circ \ y_{n-1} \circ \cdots \circ y_1$
 
-Here, $$i$$th 
+Here, $i$th 
 <span id="backprop" class="margin-toggle sidenote-number"></span>
 <span class="sidenote">
-    In particular, $$C = o_n = y_n(u_n) = L(u_n, x_i)$$
+    In particular, $C = o_n = y_n(u_n) = L(u_n, x_i)$
 </span>
-function takes in input $$u_i$$ and outputs 
+function takes in input $u_i$ and outputs 
 
 $$o_i = y_i(u_i, \theta_i)  \tag{1}$$ 
 
-where $$\theta_i$$ are learnable parameters of this function.
-Since output of $$i-1$$th layer is fed to $$i$$th layer as input, 
+where $\theta_i$ are learnable parameters of this function.
+Since output of $i-1$th layer is fed to $i$th layer as input, 
 
 $$u_i = o_{i-1} \tag{2}$$
 
-We require $$\nabla C = \left(\frac{\partial C}{\partial\theta_1}, \frac{\partial C}{\partial\theta_2}, \ldots, \frac{\partial C}{\partial\theta_n}\right)$$. Therefore, we need to compute
+We require $\nabla C = \left(\frac{\partial C}{\partial\theta_1}, \frac{\partial C}{\partial\theta_2}, \ldots, \frac{\partial C}{\partial\theta_n}\right)$. Therefore, we need to compute
 
-$$ \frac{\partial C}{\partial\theta_j} = \frac{\partial o_n}{\partial\theta_j} 
-\text{ for } j = 1, 2, \dots n $$
+$ \frac{\partial C}{\partial\theta_j} = \frac{\partial o_n}{\partial\theta_j} 
+\text{ for } j = 1, 2, \dots n $
 
 To compute this quantity, we will compute generic
 <span id="backprop" class="margin-toggle sidenote-number"></span>
@@ -411,7 +410,7 @@ To compute this quantity, we will compute generic
     You will see ahead why this quantity is useful.
 </span>:
 
-$$ \frac{\partial o_i}{\partial \theta_j} $$
+$ \frac{\partial o_i}{\partial \theta_j} $
 
 Before getting started, let's write down the chain rule. Chain rule is the underlying operation of our algorithm.
 
@@ -425,22 +424,22 @@ $$
 
 ---
 
-If $$ j > i $$, 
+If $ j > i $, 
 
 $$ \frac{\partial o_i}{\partial \theta_j} = 0 \tag{4}$$
 
 because output of the functions in back doesn't depend on parameters of layer in the front.
 
-If $$ j = i $$, using equation (1) and the fact that $$u_i$$ and $$\theta_i$$ are independent,
+If $ j = i $, using equation (1) and the fact that $u_i$ and $\theta_i$ are independent,
 
 $$ 
 \frac{\partial o_i}{\partial \theta_i} = \frac{\partial y_i}{\partial \theta_i}
  \tag{5}
 $$
 
-$$\frac{\partial y_i}{\partial \theta_i}$$ is a computable quantity which depends on the form of function $$y_i$$.
+$\frac{\partial y_i}{\partial \theta_i}$ is a computable quantity which depends on the form of function $y_i$.
 
-If $$ j < i $$, using equation (1), (2), chain rule (3), 
+If $ j < i $, using equation (1), (2), chain rule (3), 
 
 $$ 
 \begin{align}
@@ -458,7 +457,7 @@ $$
 \tag{6}
 $$
 
-Like $$\frac{\partial y_i}{\partial \theta_i}$$, $$\frac{\partial y_i}{\partial u_i}$$ is a computable quantity which depends on $$y_i$$.
+Like $\frac{\partial y_i}{\partial \theta_i}$, $\frac{\partial y_i}{\partial u_i}$ is a computable quantity which depends on $y_i$.
 
 Let's put everything together and compute the required quantity:
 
@@ -473,7 +472,7 @@ $$
 \end{align}
 $$
 
-Now, algorithm to compute gradients $$\nabla C$$, i.e. $$\frac{\partial C}{\partial \theta_j}$$ for all $$j$$ is fairly clear:
+Now, algorithm to compute gradients $\nabla C$, i.e. $\frac{\partial C}{\partial \theta_j}$ for all $j$ is fairly clear:
 
 <span class="marginnote" margin-bottom='100px' >
     **Algorithm**: Backpropogation
@@ -483,18 +482,18 @@ Now, algorithm to compute gradients $$\nabla C$$, i.e. $$\frac{\partial C}{\part
 
 // Forward pass:
 
-1. Set $$ u_0 = x $$
-2. For $$i = 1, \dots n $$, do
-    1. Store $$u_i = y_i(u_{i-1}, \theta_i)$$
+1. Set $ u_0 = x $
+2. For $i = 1, \dots n $, do
+    1. Store $u_i = y_i(u_{i-1}, \theta_i)$
 
 // Backward pass:
 
-1. Set $$ \texttt{buffer} = 1 $$
-2. For $$ j = n, n-1, \dots 1 $$, do
-    1. Store $$\frac{\partial C}{\partial \theta_j} = \frac{\partial y_j}{\partial \theta_j} * \texttt{buffer} $$
-    2. Update $$ \texttt{buffer} = \frac{\partial y_j}{\partial u_j} * \texttt{buffer} $$
+1. Set $ \texttt{buffer} = 1 $
+2. For $ j = n, n-1, \dots 1 $, do
+    1. Store $\frac{\partial C}{\partial \theta_j} = \frac{\partial y_j}{\partial \theta_j} * \texttt{buffer} $
+    2. Update $ \texttt{buffer} = \frac{\partial y_j}{\partial u_j} * \texttt{buffer} $
 
-Return $$\left(\frac{\partial C}{\partial\theta_1}, \frac{\partial C}{\partial\theta_2}, \ldots, \frac{\partial C}{\partial\theta_n}\right)$$.
+Return $\left(\frac{\partial C}{\partial\theta_1}, \frac{\partial C}{\partial\theta_2}, \ldots, \frac{\partial C}{\partial\theta_n}\right)$.
 
 ----
 
