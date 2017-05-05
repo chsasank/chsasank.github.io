@@ -78,7 +78,7 @@ simple algorithm which is guaranteed to converge to minima. Convex
 functions have only one minima. They look something like this:
 
 \begin{figure}
-  \includegraphics[width=100mm]{valley.png}
+  \includegraphics[width=90mm]{valley.png}
   \caption{A 2d convex function. 
   			\href{http://neuralnetworksanddeeplearning.com/chap1.html}{Source}.}
 \end{figure}
@@ -89,7 +89,7 @@ is put at a random point on the valley and allowed to roll. Our common
 sense tells that ball will eventually roll to the bottom of the valley.
 
 \begin{figure}
-  \includegraphics[width=50mm]{valley_with_ball}
+  \includegraphics[width=90mm]{valley_with_ball}
   \caption{Gradient descent illustration: a ball on a valley.
 \href{http://neuralnetworksanddeeplearning.com/chap1.html}{Source}.}
 \end{figure}
@@ -105,14 +105,14 @@ Great! Let's put together our algorithm:
 \caption{Gradient Descent}
 \begin{algorithmic}[1]
   \STATE Start at a random point: \(v\)
-  \WHILE{\(v\) doesn't converge}
+  \WHILE{\(v\) hasn't converged}
   \STATE Update \(v\) in the direction of steepest descent: 
       \[v \rightarrow v' = v -\eta \nabla C\]
   \ENDWHILE
 \end{algorithmic}
 \end{algorithm}
 
-\begin{marginfigure}[-40mm]
+\begin{marginfigure}[-10mm]
   \includegraphics[width=50mm]{Gradient_descent}
   \caption{Gradient descent on a series of level sets.
   \href{https://en.wikipedia.org/wiki/Gradient_descent}{Source}.}
