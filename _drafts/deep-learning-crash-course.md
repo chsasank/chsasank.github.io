@@ -86,7 +86,7 @@ Great! Let's put together our algorithm:
 
 ---
 1. Start at a random point: $$v$$
-2. Move the ball in direction of steepest descent: $$ v \rightarrow v' = v -\eta \nabla C  $$
+2. Update $$v$$ in the direction of steepest descent: $$ v \rightarrow v' = v -\eta \nabla C  $$
 3. Iterate step 2 until convergence.
 
 ---
@@ -468,12 +468,12 @@ $$
 &= \frac{\partial y_n}{\partial u_n} * \frac{\partial o_{n-1}}{\partial \theta_j}\\
 &= \frac{\partial y_n}{\partial u_n} * \frac{\partial y_{n-1}}{\partial u_{n-1}} * \frac{\partial o_{n-2}}{\partial \theta_j} \\
 &\vdots \\
-&= \frac{\partial y_n}{\partial u_n} * \frac{\partial y_{n-1}}{\partial u_{n-1}} * \cdots * \frac{\partial o_j}{\partial \theta_j}\\
-&= \frac{\partial y_n}{\partial u_n} * \frac{\partial y_{n-1}}{\partial u_{n-1}} * \cdots * \frac{\partial y_j}{\partial \theta_j}
+&= \frac{\partial y_n}{\partial u_n} * \frac{\partial y_{n-1}}{\partial u_{n-1}} * \cdots * \frac{\partial y_{j-1}}{\partial u_{j-1}} * \frac{\partial o_j}{\partial \theta_j}\\
+&= \frac{\partial y_n}{\partial u_n} * \frac{\partial y_{n-1}}{\partial u_{n-1}} * \cdots * \frac{\partial y_{j-1}}{\partial u_{j-1}} * \frac{\partial y_j}{\partial \theta_j}
 \end{align}
 $$
 
-Now, algorithm to compute gradients $$\nabla C$$, i.e. $$\frac{\partial C}{\partial \theta_j}$$ for all j is fairly clear:
+Now, algorithm to compute gradients $$\nabla C$$, i.e. $$\frac{\partial C}{\partial \theta_j}$$ for all $$j$$ is fairly clear:
 
 <span class="marginnote" margin-bottom='100px' >
     **Algorithm**: Backpropogation
@@ -497,4 +497,5 @@ Now, algorithm to compute gradients $$\nabla C$$, i.e. $$\frac{\partial C}{\part
 Return $$\left(\frac{\partial C}{\partial\theta_1}, \frac{\partial C}{\partial\theta_2}, \ldots, \frac{\partial C}{\partial\theta_n}\right)$$.
 
 ----
- 
+
+Although this derivation is for scalar functions, it will work with vector functions with a few modifications.
