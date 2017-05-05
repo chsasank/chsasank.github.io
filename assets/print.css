@@ -1,0 +1,6 @@
+@media print
+   {
+      body {
+      	zoom: 30%;
+      }
+   }
