@@ -219,7 +219,7 @@ That's the basic mathematical model. A way you can think about the perceptron is
 >  Now, suppose you absolutely adore cheese, so much so that you're happy to go to the festival even if your boyfriend or girlfriend is uninterested and the festival is hard to get to.
 >  But perhaps you really loathe bad weather, and there's no way you'd go to the festival if the weather is bad. You can use perceptrons to model this kind of decision-making.
 >  
->   You can use perceptrons to model this kind of decision-making. One way to do this is to choose a weight $$w_1=6$$ for the weather, and $$w_2=2$$ and $$w_3=2$$ for the other conditions and threshold (or more aptly, *bias*) term $$b = 5$$. By varying the weights and the threshold, we can get different models of decision-making.
+>   You can use perceptrons to model this kind of decision-making. One way to do this is to choose a weight $w_1=6$ for the weather, and $w_2=2$ and $w_3=2$ for the other conditions and threshold (or more aptly, *bias*) term $b = 5$. By varying the weights and the threshold, we can get different models of decision-making.
 
 ---
 

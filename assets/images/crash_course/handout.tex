@@ -14,6 +14,7 @@
     urlcolor=blue,
 }
 
+
 \title{Deep Learning Training Program}
 \author{Sasank Chilamkurthy, Qure.ai}
 \date{May 10, 2017}
@@ -24,7 +25,7 @@
 
 \section{Calculus: Recap}\label{calculus-recap}
 
-Let's recap what a derivative is.
+Let's begin with a short recap of calculus.
 
 \subsection{Derivative}\label{derivative}
 
@@ -33,7 +34,7 @@ measures sensitivity of change in \(f(v)\) with respect of change in
 \(v\).
 
 \begin{marginfigure}
-  \includegraphics[height=50mm]{differential.png}
+  \includegraphics[width=\linewidth]{differential.png}
   \caption{Derivative illustration. Red is for positive \(v\)
 direction and green is for negative \(v\) direction.
 \href{https://en.wikipedia.org/wiki/Derivative}{Source}.}
@@ -53,7 +54,7 @@ gradient is a vector whose components are \(n\) partial derivatives of
 
 
 \begin{marginfigure}
-  \includegraphics[height=50mm]{gradient.png}
+  \includegraphics[width=\linewidth]{gradient.png}
   \caption{Gradient of the 2D function \(f(x, y) = xe^{−(x^2 + y^2)}\) is
 plotted as blue arrows over the pseudocolor (red is for high values
 while blue is for low values) plot of the function.
@@ -74,26 +75,21 @@ problems can be posed in this form. So, there is no general answer.
 
 \subsection{Gradient Descent}\label{gradient-descent}
 
-\begin{marginfigure}
-  \includegraphics[width=60mm]{valley.png}
-  \caption{A 2d convex function as a valley. 
-        \href{http://neuralnetworksanddeeplearning.com/chap1.html}{Source}.}
-\end{marginfigure}
-
-
 However, for a class of functions called convex functions, there is a
 simple algorithm which is guaranteed to converge to minima. Convex
-functions have only one minima. They look something like a valley:
+functions have only one minima. They look something like a valley.
 
 To motivate our algorithm, imagine a ball
-is put at a random point on our valley and allowed to roll. Our common
+is put at a random point on our valley and allowed to roll (figure \ref{fig:valley}) . Our common
 sense tells that ball will eventually roll to the bottom of the valley.
 
-\begin{figure}
-  \includegraphics[width=90mm]{valley_with_ball}
+\begin{figure}[htb!]
+  \includegraphics[width=60mm]{valley_with_ball}
   \caption{Gradient descent illustration: a ball on a valley.
 \href{http://neuralnetworksanddeeplearning.com/chap1.html}{Source}.}
+\label{fig:valley}
 \end{figure}
+
 
 Let's roughly simulate the motion of the ball! Key observation is that
 the ball moves in the steepest direction of descent. This is negative
@@ -102,11 +98,6 @@ of the gradient's direction.
 
 Great! Let's put together our algorithm:
 
-\begin{marginfigure}
-  \includegraphics[width=50mm]{Gradient_descent}
-  \caption{Gradient descent on a series of level sets.
-  \href{https://en.wikipedia.org/wiki/Gradient_descent}{Source}.}
-\end{marginfigure}
 
 \begin{algorithm}
 \caption{Gradient Descent}
@@ -120,6 +111,11 @@ Great! Let's put together our algorithm:
 \end{algorithm}
 
 
+\begin{marginfigure}
+  \includegraphics[width=\linewidth]{Gradient_descent}
+  \caption{Gradient descent on a series of level sets.
+  \href{https://en.wikipedia.org/wiki/Gradient_descent}{Source}.}
+\end{marginfigure}
 
 Here \(\eta\) is called \emph{learning rate}. If it is too small,
 algorithm can be very slow and might take too many iterations to
@@ -131,9 +127,9 @@ Let's apply the things learnt above on linear regression problem. Here's
 a recap of linear regression:
 
 \begin{quote}
-Our model is \(y(x) = wx + b\). Parameters are \(v = (w, b)\) We are
+Our model is \(y(x) = wx + b\). Parameters are \(v = (w, b)\). We are
 given training pairs \((x^1, y^1), (x^2, y^2), \ldots, (x^n, y^n)\)
-\sidenote{ Notation clarifiction: Here, superscripts are indices, not powers }.
+\sidenote{Notation clarifiction: Here, superscripts are indices, not powers}.
 
 We want to find \(w\) and \(b\) which minimize the following cost/loss
 function:
@@ -208,13 +204,14 @@ Perceptron, a type of artificial neuron was developed in the 1950s and
 Nevertheless, it's worth taking time to understand the older models.
 
 So how do perceptrons work? A perceptron takes several inputs,
-\(x_1, x_2, \ldots x_n\) and produces a single output:
+\(x_1, x_2, \ldots x_n\) and produces a single output (figure \ref{fig:percp}).
 
 
 \begin{figure}
-  \includegraphics[width=60mm]{tikz0}
+  \includegraphics[width=0.5\linewidth]{tikz0}
   \caption{ Perceptron Model.
 \href{http://neuralnetworksanddeeplearning.com/chap1.html}{Source}. }
+\label{fig:percp}
 \end{figure}
 
 
@@ -248,15 +245,32 @@ evidence. An example
 \sidenote{This example is straight from
 \href{http://neuralnetworksanddeeplearning.com/chap1.html}{here}}:
 
+\begin{quote}
+Suppose the weekend is coming up, and you've heard that there's going to be a cheese festival in your city. You like cheese, and are trying to decide whether or not to go to the festival. You might make your decision by weighing up three factors:
+
+\begin{itemize}
+\item Is the weather good?
+\item Does your boyfriend or girlfriend want to accompany you?
+\item Is the festival near public transit? (You don't own a car).
+\end{itemize}
+We can represent these three factors by corresponding binary variables \(x_1\), \(x_2\) and \(x_3\)
+ 
+Now, suppose you absolutely adore cheese, so much so that you're happy to go to the festival even if your boyfriend or girlfriend is uninterested and the festival is hard to get to. But perhaps you really loathe bad weather, and there's no way you'd go to the festival if the weather is bad. You can use perceptrons to model this kind of decision-making.
+ 
+You can use perceptrons to model this kind of decision-making. One way to do this is to choose a weight \(w_1=6\) for the weather, and \(w_2=2\) and \(w_3=2\) for the other conditions and threshold (or more aptly, \emph{bias}) term \(b = 5\). By varying the weights and the threshold, we can get different models of decision-making.
+\end{quote}
+
+
 Another way perceptrons can be used is to compute the elementary logical
 functions we usually think of as underlying computation, functions such
-as \texttt{AND}, \texttt{OR}, and \texttt{NAND}. Check that following
-perceptron implements \texttt{NAND}:
+as \texttt{AND}, \texttt{OR}, and \texttt{NAND}. Check that
+perceptron in \ref{fig:nand} implements \texttt{NAND}:
 
 \begin{figure}
-  \includegraphics[width=60mm]{tikz2}
+  \includegraphics[width=0.5\linewidth]{tikz2}
   \caption{\texttt{NAND} implemented by perceptron.
 \href{http://neuralnetworksanddeeplearning.com/chap1.html}{Source} }
+\label{fig:nand}
 \end{figure}
 
 If you are familiar with digital logic, you will know that \texttt{NAND}
@@ -270,12 +284,13 @@ for perceptrons.
 Although perceptron isn't a complete model of human decision-making, the
 above example illustrates how a perceptron can weigh up different kinds
 of evidence in order to make decisions. And it should seem plausible
-that a complex network of perceptrons could make quite subtle decisions
+that a complex network of perceptrons could make quite subtle decisions. (figure \ref{fig:mlp})
 
 \begin{figure}
-  \includegraphics[height=35mm]{tikz1}
+  \includegraphics[width=\linewidth]{tikz1}
   \caption{Multi layer perceptron.
 \href{http://neuralnetworksanddeeplearning.com/chap1.html}{Source} }
+\label{fig:mlp}
 \end{figure}
 
 This network is called \emph{Multi layered perceptron (MLP)}. In this
@@ -325,7 +340,7 @@ If you graph it, it's quite clear that this function is smoothed out
 version of a step function. This function is called \emph{sigmoid}.
 
 \begin{marginfigure}
-  \includegraphics[width=50mm]{sigmoid}
+  \includegraphics[width=\linewidth]{sigmoid}
   \caption{Sigmoid function. When \(z\) is large and
   positive, Then \(e^{-z} \approx 0\) and so \(\sigma(z) \approx 1\).
   Suppose on the other hand that \(z\) is very negative. Then
@@ -356,7 +371,7 @@ Let me introduce another activation function, \emph{rectifier} or
 \emph{rectified linear unit} (ReLU):
 
 \begin{marginfigure}
-\includegraphics[width=50mm]{relu}
+\includegraphics[width=\linewidth]{relu}
 \caption{ ReLU.
 \href{http://neuralnetworksanddeeplearning.com/chap3.html}{Source}. }
 \end{marginfigure}
@@ -371,8 +386,8 @@ never see sigmoid activation function in modern deep neural networks.
 
 \subsection{Loss functions}
 
-To train any machine learning model, we need to measure who well 
-the model fits to training set. This is called loss/cost
+To train any machine learning model, we need to measure how well 
+the model fits to training set. Such a function is called loss/cost
 \sidenote{I use terms loss function and
 cost function interchangeably.} function.
 In regression problem we discussed before, cost function was 
@@ -399,20 +414,21 @@ loss, \(L_1(o, y) = | o - y |\).
 \subsection{Cross Entropy Loss}
 
 What if we have a classification problem? What loss do we use? Consider
-a MLP for digit classification on the right.
+a MLP for digit classification on the right (figure \ref{fig:mlp-digit}).
 
-\begin{marginfigure}
-  \includegraphics[width=70mm]{tikz12}
+\begin{marginfigure}[20mm]
+  \includegraphics[width=65mm]{tikz12}
   \caption{ MLP for digit classification.
   \href{http://neuralnetworksanddeeplearning.com/chap1.html\%22}{Source}.
   }
+\label{fig:mlp-digit}
 \end{marginfigure}
 
 Here, we have output \(o\) of size 10 and a target class \(y\). We could
 have used \(L_1(o, e_y)\) or \(L_2(o, e_y)\) loss where \(e_y\) is
 \(y\)th unit vector. But it turns out that this doesn't work very well.
 
-Instead, we will consider the outputs as a probability distribution over
+Instead, we will consider the outputs as a probability distribution over the
 10 classes and use what is called a cross entropy loss:
 
 \[ L(o, y) = - \log(o_y) \]
@@ -420,14 +436,14 @@ Instead, we will consider the outputs as a probability distribution over
 To understand this function, realize that \(o_y\), $y$th output is the predicted
 probability of the target class \(y\). Minimizing negative of log of
 this probability, maximizes the probability. Also, \(L \geq 0\) because
-\(\log(x) < 0\) for \(x \in [0, 1]\).
+\(\log(x) \leq 0\) for \(x \in [0, 1]\).
 
 \subsection{Softmax Activation}
 
 If we use cross entropy loss, we cannot use sigmoids as activations of
 output layer because sigmoids do not guarantee a probability
-distribution. Although each component of the output will be in \([0, 1]\),
-they need not add up to 1.
+distribution (Although each component of the output will be in \([0, 1]\),
+they need not add up to 1.)
 
 We therefore use an activation layer called \emph{softmax}. According to
 this function, the activation \(a_j\) of the \(j\)th output neuron is
@@ -480,7 +496,7 @@ in general)\sidenote{Dropping subscript for brevity}
 \end{figure*}
 
 
-Here, \(l\)th \sidenote{ In particular,
+Here, \(l\)th \sidenote[][5mm]{ In particular,
 \(C = o_L = f_L(u_L) = L(u_L, y^i)\) } layer/function takes in input
 \(u_l\) and outputs \(o_l\)
 
@@ -609,7 +625,7 @@ you're designing a logical circuit to multiply two numbers. Chances are
 your circuit will look something like this:
 
 \begin{figure}
-\includegraphics[width=70mm]{circuit_multiplication}
+\includegraphics[width=0.7\linewidth]{circuit_multiplication}
 \caption{Logical circuit for multiplication.
 \href{http://neuralnetworksanddeeplearning.com/chap5.html\%22}{Source}.
 }
@@ -620,7 +636,7 @@ layers of abstraction. Consider the following network:
 
 
 \begin{figure}
-\includegraphics[height=50mm]{tikz36}
+\includegraphics[width=\linewidth]{tikz36}
 \caption{Deep Neural Network.
 \href{http://neuralnetworksanddeeplearning.com/chap5.html\%22}{Source}.}
 \end{figure}
@@ -671,7 +687,7 @@ Let's go back to the problem of handwritten digit recognition. MLP looks
 like this:
 
 \begin{figure}
-  \includegraphics[height=60mm]{mnist_net.png}
+  \includegraphics[width=\linewidth]{mnist_net.png}
   \caption{MLP for MNIST.
   \href{http://neuralnetworksanddeeplearning.com/chap5.html\%22}{Source}.}
 \end{figure}
@@ -716,7 +732,7 @@ Instead, we only make connections in small, localized regions of the
 input image.
 
 \begin{figure}
-\includegraphics[height=60mm]{conv1}
+\includegraphics[width=0.8\linewidth]{conv1}
 \caption{Local receptive fields of convolution.
 \href{http://neuralnetworksanddeeplearning.com/chap6.html\%22}{Source}.
 }
@@ -732,29 +748,31 @@ to analyze its particular local receptive field.
 We then slide the local receptive field across the entire input image.
 For each local receptive field, there is a different hidden neuron in
 the first hidden layer. To illustrate this concretely, let's start with
-a local receptive field in the top-left corner:
+a local receptive field in the top-left corner (figure \ref{fig:conv2s})
 
 \begin{figure}
-  \includegraphics[width=100mm]{conv2}
+  \includegraphics[width=\linewidth]{conv2}
   \caption{Convolution.
 \href{http://neuralnetworksanddeeplearning.com/chap6.html\%22}{Source}.
 }
+\label{fig:conv2s}
 \end{figure}
 
 
 Then we slide the local receptive field over by one pixel
-\sidenote{ Sometimes a different
+\sidenote[][-10mm]{ Sometimes a different
 \emph{stride} length (e.g, 2) is used.} to the right (i.e., by one
 neuron), to connect to a second hidden neuron
-\sidenote{ Note that if we have a \(28\times 28\) input
+\sidenote[][-8mm]{ Note that if we have a \(28\times 28\) input
 image, and \(5\times 5\) local receptive fields, then there will be \(24\times 24\) neurons
-in the hidden layer.}:
+in the hidden layer.} (figure \ref{fig:conv2sd})
 
 \begin{figure}
-  \includegraphics[width=100mm]{conv3}
+  \includegraphics[width=\linewidth]{conv3}
   \caption{Slide the convolution.
 \href{http://neuralnetworksanddeeplearning.com/chap6.html\%22}{Source}.
 }
+\label{fig:conv2sd}
 \end{figure}
 
 
@@ -767,44 +785,49 @@ neurons.
 
 Sharing weights and biases means that all the neurons in the first
 hidden layer detect exactly the same feature just at different locations
-in the input image. To see why this makes sense, consider the following
-convolution filter:
+in the input image. To see why this makes sense, consider the
+convolution filter in figure \ref{fig:1}
 
-\begin{figure}
-\includegraphics[width=110mm]{conv_example1.png}
+\begin{figure}[!htb]
+\includegraphics[width=0.7\linewidth]{conv_example1.png}
 \caption{A convolutional filter.
 \href{https://adeshpande3.github.io/adeshpande3.github.io/A-Beginner's-Guide-To-Understanding-Convolutional-Neural-Networks/}{Source}.
 }
+\label{fig:1}
 \end{figure}
 
-Let's take an example image and apply convolution on a receptive filed:
+Let's take an example image and apply convolution on a receptive field (figure \ref{fig:conv2}, \ref{fig:conv3}).
 
-\begin{figure}
-\includegraphics[width=110mm]{conv_example2.png}
-\caption{Convolution on an example image.
-\href{https://adeshpande3.github.io/adeshpande3.github.io/A-Beginner's-Guide-To-Understanding-Convolutional-Neural-Networks/}{Source}.
+\begin{figure}[!htb]
+   \includegraphics[width=\linewidth]{conv_example2.png}
+   \caption{Convolution on an example image.
+            \href{https://adeshpande3.github.io/adeshpande3.github.io/A-Beginner's-Guide-To-Understanding-Convolutional-Neural-Networks/}{Source}.
 }
+	\label{fig:conv2}
 \end{figure}
 
-\begin{figure}
-\includegraphics[width=110mm]{conv_example3.png}
-\caption{Apply convolution.
-\href{https://adeshpande3.github.io/adeshpande3.github.io/A-Beginner's-Guide-To-Understanding-Convolutional-Neural-Networks/}{Source}.
+\begin{figure}[!htb]
+   \includegraphics[width=\linewidth]{conv_example3.png}
+   \caption{Apply convolution.
+    \href{https://adeshpande3.github.io/adeshpande3.github.io/A-Beginner's-Guide-To-Understanding-Convolutional-Neural-Networks/}{Source}.
+\label{fig:conv3}
 }
 \end{figure}
 
 Basically, in the input image, if there is a shape that generally
 resembles the curve that this filter is representing, then all of the
 multiplications summed together will result in a large value! Now let's
-see what happens when we move our filter.
+see what happens when we move our filter (figure \ref{fig:conv4}).
 
-\begin{figure}
-\includegraphics[width=110mm]{conv_example4.png}
+\begin{figure}[!htb]
+\includegraphics[width=\linewidth]{conv_example4.png}
 \caption{Apply convolution at a different receptive field.
 \href{https://adeshpande3.github.io/adeshpande3.github.io/A-Beginner's-Guide-To-Understanding-Convolutional-Neural-Networks/}{Source}.
 }
+\label{fig:conv4}
 \end{figure}
 
+Output turns out to be zero.
 Therefore, this convolution picks up a right bending curve wherever it
 is on . To put it in slightly more abstract terms, convolutional
 networks are well adapted to the translation invariance of images: move
@@ -813,10 +836,10 @@ a picture of a cat (say) a little ways, and it's still an image of a cat
 The network structure I've described so far can detect just a single
 kind of localized feature. To do image recognition we'll need more than
 one \textbf{feature map}. And so a complete convolutional layer consists
-of several different feature maps
+of several different feature maps.
 
 \begin{figure}
-\includegraphics[width=110mm]{conv4.png}
+\includegraphics[width=\linewidth]{conv4.png}
 \caption{Apply convolution at a different receptive field.
 \href{http://neuralnetworksanddeeplearning.com/chap6.html}{Source}.
 }
@@ -847,26 +870,30 @@ each unit in the pooling layer may summarize a region of (say) 2x2
 neurons in the previous layer. As a concrete example, one common
 procedure for pooling is known as \emph{max-pooling}. In max-pooling, a
 pooling unit simply outputs the maximum activation in the 2x2 input
-region, as illustrated in the following diagram:
+region, as illustrated in figure \ref{fig:pool}.
 
-\begin{figure}
-\includegraphics[width=100mm]{max_pooling}
+\begin{figure}[!htb]
+\includegraphics[width=0.8\linewidth]{max_pooling}
 \caption{Pooling Layer.
 \href{http://neuralnetworksanddeeplearning.com/chap6.html}{Source}. }
+\label{fig:pool}
 \end{figure}
 
-Note that since we have 24×24 neurons output from the convolutional
-layer, after pooling we have 12×12 neurons.
+Note that since we have 24x
+24 neurons output from the convolutional
+layer, after pooling we have 12x
+12 neurons.
 
 As mentioned above, the convolutional layer usually involves more than a
 single feature map. We apply max-pooling to each feature map separately.
 So if there were three feature maps, the combined convolutional and
-max-pooling layers would look like:
+max-pooling layers would look like figure \ref{fig:pool2}.
 
 \begin{figure}
-\includegraphics[width=100mm]{max_pooling2}
+\includegraphics[width=\linewidth]{max_pooling2}
 \caption{Convolution and pooling layer.
 \href{http://neuralnetworksanddeeplearning.com/chap6.html}{Source}. }
+\label{fig:pool2}
 \end{figure}
 
 We can think of max-pooling as a way for the network to ask whether a
@@ -884,11 +911,11 @@ early successes \sidenote{LeNet is published in
 1998! CNNs are not exactly new.} of convolutional networks: LeNet. This
 is the \emph{architecture} of LeNet:
 
-\begin{figure}
-\includegraphics[width=150mm]{lenet.png}
-\caption{LeNet architecture
+\begin{figure*}
+\includegraphics[width=\linewidth]{lenet.png}
+\caption{LeNet architecture.
 \href{http://yann.lecun.com/exdb/publis/pdf/lecun-01a.pdf}{Source}. }
-\end{figure}
+\end{figure*}
 
 Let's go over each of the component layers of LeNet:
 \sidenote{ I actually describe slightly modified
@@ -899,7 +926,7 @@ version of LeNet. }
   \textbf{Input}: Gray scale image of size 32 x 32.
 \item
   \textbf{C1}: Convolutional layer of 6 feature maps, kernel size (5, 5)
-  and stride 1. Output size therefore is 6 X 28 x 28. Number of
+  and stride 1. Output size therefore is 6x28x28. Number of
   trainable parameters is \((5*5 + 1) * 6 = 156\).
 \item
   \textbf{S2}: Pooling/subsampling layer with kernel size (2, 2) and
@@ -944,21 +971,24 @@ cost function by adding \(L_1\)/\(L_2\) norm of parameters respectively.
 
 Dropout is radically different for regularization. We modify the network
 itself instead of the cost function. Suppose we're trying to train a
-network:
+network in figure \ref{fig:dropout1}
 
-\begin{figure}
+\begin{figure}[!hbt]
 \includegraphics[width=60mm]{dropout1.png}
+\caption{Network before dropout}
+\label{fig:dropout1}
 \end{figure}
 
 
 With dropout, We start by randomly (and temporarily) deleting half the
 hidden neurons in the network, while leaving the input and output
-neurons untouched. After doing this, we'll end up with a network along
-the following lines.
+neurons untouched. After doing this, we'll end up with a network like in figure \ref{fig:dropout2}.
 
 
-\begin{figure}
+\begin{figure}[!hbt]
 \includegraphics[width=60mm]{dropout2.png}
+\caption{Network after dropout}
+\label{fig:dropout2}
 \end{figure}
 
 
@@ -1003,17 +1033,21 @@ write digits.
 Obtaining more training data can be expensive, and so is not always
 possible in practice. However, there's another idea which can work
 nearly as well, and that's to artificially expand the training data.
+
 Suppose, for example, that we take an MNIST training image of a five,
+and rotate it by a small amount, let's say 15 degrees (figures \ref{fig:mnist1}, \ref{fig:mnist2}).
 
-\begin{figure}
+\begin{marginfigure}
   \includegraphics[width=30mm]{more_data_5.png}
-\end{figure}
+  \caption{Example tranining image}
+  \label{fig:mnist1}
+\end{marginfigure}
 
-and rotate it by a small amount, let's say 15 degrees:
-
-\begin{figure}
+\begin{marginfigure}
   \includegraphics[width=30mm]{more_data_rotated_5.png}
-\end{figure}
+  \caption{Rotated training image}
+  \label{fig:mnist2}
+\end{marginfigure}
 
 
 It's still recognizably the same digit. And yet at the pixel level it's
@@ -1075,25 +1109,27 @@ Scale Visual Recognition Challenge (ILSVRC), where algorithms compete
 recognition challenge is conducted on a subset of ImageNet: 1.2 million
 images with 1000 classes.
 
-Here are example images and the recognition results:
+Figure \ref{fig:imagenet} shows a few example images and their recognition results:
 \begin{figure}
-\includegraphics[width=110mm]{imagenet.png}
+\includegraphics[width=\linewidth]{imagenet.png}
 \caption{Images from imagenet.
 \href{http://mappingignorance.org/fx/media/2013/04/Deep-learning-5.png}{Source}.
-}  
+} 
+\label{fig:imagenet}
 \end{figure}
 
 
 \href{https://papers.nips.cc/paper/4824-imagenet-classification-with-deep-convolutional-neural-networks.pdf}{Alexnet}
 was the first CNN to participate in ILSVRC and won the 2012 challenge by
 a significant margin. This lead to a renaissance of CNNs for visual
-recognition. This is the architecture:
-\begin{figure}
-\includegraphics[width=110mm]{alexnet.png}
+recognition. Figure \ref{fig:alexnet} shows its architecture.
+\begin{figure*}[!hbt]
+\includegraphics[width=0.9\linewidth]{alexnet.png}
 \caption{Alexnet architecture.
 \href{http://mappingignorance.org/fx/media/2013/04/Deep-learning-5.png}{Source}.
-}  
-\end{figure}
+}
+\label{fig:alexnet}
+\end{figure*}
 
 
 It isn't too different from LeNet we discussed before. Over the years,
@@ -1110,14 +1146,15 @@ newer CNN architectures won this challenge. Notable ones are
   \href{https://arxiv.org/abs/1512.03385}{ResNet}
 \end{itemize}
 
-You will keep on hearing these architectures if you work more on CNNs. Here
+You will keep on hearing these architectures if you work more on CNNs. Figure \ref{fig:top1}
 are the accuracies from these networks:
 
 \begin{figure}
-  \includegraphics[width=70mm]{imagenet-top1.png}
+  \includegraphics[width=\linewidth]{imagenet-top1.png}
   \caption{Top 1 accuracies on ILSVRC.
 \href{https://chaosmail.github.io/deeplearning/2016/10/22/intro-to-deep-learning-for-computer-vision/\#Canziani16}{Source}.
 }
+\label{fig:top1}
 \end{figure}
 
 \subsection{Transfer Learning}\label{transfer-learning}
@@ -1174,7 +1211,7 @@ train:
 \item[GPU]: \textasciitilde{} 1 min
 \end{description}
 
-And this was with meager dataset of 400 images. Imagine working with a
+And this was with a meagre dataset of 400 images. Imagine working with a
 dataset of the scale of ImageNet. GPUs are essential if you are serious
 about deep learning.
 
