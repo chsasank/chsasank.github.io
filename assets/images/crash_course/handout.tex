@@ -472,7 +472,7 @@ of the network with \(\theta\):
 Let's break the above function into composition of layers (or functions
 in general)\sidenote{Dropping subscript for brevity}
 
-\[ C = y_L \circ \ y_{L-1} \circ \cdots \circ y_l \circ \cdots \circ y_1 \]
+\[ C = f_L \circ \ f_{L-1} \circ \cdots \circ f_l \circ \cdots \circ f_1 \]
 
 \begin{figure*}
   \includegraphics[width=\linewidth]{backprop.png}
@@ -481,11 +481,11 @@ in general)\sidenote{Dropping subscript for brevity}
 
 
 Here, \(l\)th \sidenote{ In particular,
-\(C = o_L = y_L(u_L) = L(u_L, y^i)\) } layer/function takes in input
+\(C = o_L = f_L(u_L) = L(u_L, y^i)\) } layer/function takes in input
 \(u_l\) and outputs \(o_l\)
 
 \begin{equation}
-o_l = y_l(u_l, \theta_l) \label{eq:1}
+o_l = f_l(u_l, \theta_l) \label{eq:1}
 \end{equation}
 
 
@@ -515,7 +515,6 @@ the underlying operation of our algorithm.
 
 \begin{framed}
 \textbf{Chain Rule}: For function f(x, y), 
-
 \begin{equation}
 \frac{\partial f}{\partial t} = \frac{\partial f}{\partial x} * \frac{\partial x}{\partial t} + \frac{\partial f}{\partial y} * \frac{\partial y}{\partial t}
 \label{eq:3}
@@ -537,44 +536,44 @@ If \(m = l\), using equation \eqref{eq:1} and the fact that \(u_l\) and
 \(\theta_l\) are independent,
 
 \begin{equation}
-\frac{\partial o_l}{\partial \theta_l} = \frac{\partial y_l}{\partial \theta_l}
+\frac{\partial o_l}{\partial \theta_l} = \frac{\partial f_l}{\partial \theta_l}
 \label{eq:5}
 \end{equation}
 
-\(\frac{\partial y_l}{\partial \theta_l}\) is a computable quantity
-which depends on the form of layer \(y_l\).
+\(\frac{\partial f_l}{\partial \theta_l}\) is a computable quantity
+which depends on the form of layer \(f_l\).
 
 If \(m < l\), using equation \eqref{eq:1}, \eqref{eq:2}, chain rule \eqref{eq:3},
 
 \begin{align*}
-\frac{\partial o_m}{\partial \theta_l} &= \frac{\partial y_m}{\partial \theta_l}\\
-&= \frac{\partial y_m}{\partial u_m} * \frac{\partial u_m}{\partial \theta_l} + \frac{\partial y_m}{\partial \theta_m} * \frac{\partial \theta_m}{\partial \theta_l}\\
-&= \frac{\partial y_m}{\partial u_m} * \frac{\partial u_m}{\partial \theta_l}\\
-&= \frac{\partial y_m}{\partial u_m} * \frac{\partial o_{m-1}}{\partial \theta_l}
+\frac{\partial o_m}{\partial \theta_l} &= \frac{\partial f_m}{\partial \theta_l}\\
+&= \frac{\partial f_m}{\partial u_m} * \frac{\partial u_m}{\partial \theta_l} + \frac{\partial f_m}{\partial \theta_m} * \frac{\partial \theta_m}{\partial \theta_l}\\
+&= \frac{\partial f_m}{\partial u_m} * \frac{\partial u_m}{\partial \theta_l}\\
+&= \frac{\partial f_m}{\partial u_m} * \frac{\partial o_{m-1}}{\partial \theta_l}
 \end{align*}
 
 
 Therefore,
 
 \begin{equation}
-\frac{\partial o_m}{\partial \theta_l} = \frac{\partial y_m}{\partial u_m} * \frac{\partial o_{m-1}}{\partial \theta_l}
+\frac{\partial o_m}{\partial \theta_l} = \frac{\partial f_m}{\partial u_m} * \frac{\partial o_{m-1}}{\partial \theta_l}
 \label{eq:6}
 \end{equation}
 
-Like \(\frac{\partial y_l}{\partial \theta_l}\),
-\(\frac{\partial y_l}{\partial u_l}\) is a computable quantity which
-depends on layer \(y_l\).
+Like \(\frac{\partial f_l}{\partial \theta_l}\),
+\(\frac{\partial f_l}{\partial u_l}\) is a computable quantity which
+depends on layer \(f_l\).
 
 \noindent Let's put everything together and compute the required quantity
 \sidenote{Apply \eqref{eq:6} repetitively}:
 
 \begin{align*}
 \frac{\partial C}{\partial \theta_l} &= \frac{\partial o_L}{\partial \theta_l}\\
-&= \frac{\partial y_L}{\partial u_L} * \frac{\partial o_{L-1}}{\partial \theta_l}\\
-&= \frac{\partial y_L}{\partial u_L} * \frac{\partial y_{L-1}}{\partial u_{L-1}} * \frac{\partial o_{L-2}}{\partial \theta_l} \\
+&= \frac{\partial f_L}{\partial u_L} * \frac{\partial o_{L-1}}{\partial \theta_l}\\
+&= \frac{\partial f_L}{\partial u_L} * \frac{\partial f_{L-1}}{\partial u_{L-1}} * \frac{\partial o_{L-2}}{\partial \theta_l} \\
 &\vdots \\
-&= \frac{\partial y_L}{\partial u_L} * \frac{\partial y_{L-1}}{\partial u_{L-1}} * \cdots * \frac{\partial y_{l-1}}{\partial u_{l-1}} * \frac{\partial o_l}{\partial \theta_l}\\
-&= \frac{\partial y_L}{\partial u_L} * \frac{\partial y_{L-1}}{\partial u_{L-1}} * \cdots * \frac{\partial y_{l-1}}{\partial u_{l-1}} * \frac{\partial y_l}{\partial \theta_l}
+&= \frac{\partial f_L}{\partial u_L} * \frac{\partial f_{L-1}}{\partial u_{L-1}} * \cdots * \frac{\partial f_{l-1}}{\partial u_{l-1}} * \frac{\partial o_l}{\partial \theta_l}\\
+&= \frac{\partial f_L}{\partial u_L} * \frac{\partial f_{L-1}}{\partial u_{L-1}} * \cdots * \frac{\partial f_{l-1}}{\partial u_{l-1}} * \frac{\partial f_l}{\partial \theta_l}
 \end{align*}
 
 Now, algorithm to compute gradients \(\nabla C\), i.e.
@@ -586,13 +585,13 @@ Now, algorithm to compute gradients \(\nabla C\), i.e.
   \STATE \{Forward pass\}
   \STATE Set \(u_0 = x\)
   \FOR {\(l = 1, \dots L\)}
-  	\STATE Store \(u_l = y_l(u_{l-1}, \theta_l)\)
+  	\STATE Store \(u_l = f_l(u_{l-1}, \theta_l)\)
   \ENDFOR
   \STATE \{Backward pass\}
   \STATE {Set \(\texttt{buffer} = 1\)}
   \FOR {\(l = L, L-1, \dots 1\)}
-  	\STATE Store \(\frac{\partial C}{\partial \theta_l} = \frac{\partial y_l}{\partial \theta_l} * \texttt{buffer}\)
-  	\STATE Update \(\texttt{buffer} = \frac{\partial y_l}{\partial u_l} * \texttt{buffer}\)
+  	\STATE Store \(\frac{\partial C}{\partial \theta_l} = \frac{\partial f_l}{\partial \theta_l} * \texttt{buffer}\)
+  	\STATE Update \(\texttt{buffer} = \frac{\partial f_l}{\partial u_l} * \texttt{buffer}\)
   \ENDFOR 
   \RETURN \(\left(\frac{\partial C}{\partial\theta_1}, \frac{\partial C}{\partial\theta_2}, \ldots, \frac{\partial C}{\partial\theta_L}\right)\).
 \end{algorithmic}
@@ -649,15 +648,15 @@ Let's try to understand why are deep networks hard to train:
   data without generalization.
 \item
   Gradients are unstable. Recall the expression for the gradients,
-  \(\frac{\partial C}{\partial \theta_l} = \frac{\partial y_L}{\partial u_L} * \frac{\partial y_{L-1}}{\partial u_{L-1}} * \cdots * \frac{\partial y_{l-1}}{\partial u_{l-1}} * \frac{\partial y_l}{\partial \theta_l}\).
-  If few of \(\frac{\partial y_m}{\partial u_m} \ll 1\), they will
+  \(\frac{\partial C}{\partial \theta_l} = \frac{\partial f_L}{\partial u_L} * \frac{\partial f_{L-1}}{\partial u_{L-1}} * \cdots * \frac{\partial f_{l-1}}{\partial u_{l-1}} * \frac{\partial f_l}{\partial \theta_l}\).
+  If few of \(\frac{\partial f_m}{\partial u_m} \ll 1\), they will
   multiply up and make
   \(\frac{\partial C}{\partial \theta_l} \approx 0\)
   \sidenote{ This is the reason why sigmoids are avoided. For sigmoid,
-  \(\frac{\partial y}{\partial u} = \frac{d \sigma}{d z}|_{z=u}\) is
+  \(\frac{\partial f}{\partial u} = \frac{d \sigma}{d z}|_{z=u}\) is
   close to zero if \(u\) is either too large or too small. It's maximum
   is only \(1/4\) }. Similarly if few of
-  \(\frac{\partial y_m}{\partial u_m} \gg 1\), they make
+  \(\frac{\partial f_m}{\partial u_m} \gg 1\), they make
   \(\frac{\partial C}{\partial \theta_l} \to \infty\). 
 \end{enumerate}
 
@@ -1036,10 +1035,10 @@ initialization of parameters to be optimized is important. To understand
 better, recall the unstable gradient problem. This is the equation of
 gradients for parameters in \(j\)th layer:
 
-\[\frac{\partial C}{\partial \theta_l} = \frac{\partial y_L}{\partial u_L} * \frac{\partial y_{L-1}}{\partial u_{L-1}} * \cdots * \frac{\partial y_{l-1}}{\partial u_{l-1}} * \frac{\partial y_l}{\partial \theta_l}\]
+\[\frac{\partial C}{\partial \theta_l} = \frac{\partial f_L}{\partial u_L} * \frac{\partial f_{L-1}}{\partial u_{L-1}} * \cdots * \frac{\partial f_{l-1}}{\partial u_{l-1}} * \frac{\partial f_l}{\partial \theta_l}\]
 
 If a layer is not properly initialized, it scales inputs by \(k\), i.e
-\(\frac{\partial y_m}{\partial u_m} \approx k\). Therefore gradients of
+\(\frac{\partial f_m}{\partial u_m} \approx k\). Therefore gradients of
 parameters in \(l\) th layer is
 
 \[\frac{\partial C}{\partial \theta_l} = k^{L - l}\]
