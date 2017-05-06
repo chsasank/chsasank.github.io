@@ -1,5 +1,5 @@
 \documentclass[a4paper]{tufte-handout}
- 
+
 \usepackage{algorithm,algorithmic}
 \usepackage{graphicx}
 \usepackage{framed}
@@ -32,12 +32,12 @@ Derivative of function \(f(v)\) (\(f'(v)\) or \(\frac{df}{dv}\))
 measures sensitivity of change in \(f(v)\) with respect of change in
 \(v\).
 
-\begin{figure}
+\begin{marginfigure}
   \includegraphics[height=50mm]{differential.png}
   \caption{Derivative illustration. Red is for positive \(v\)
 direction and green is for negative \(v\) direction.
 \href{https://en.wikipedia.org/wiki/Derivative}{Source}.}
-\end{figure}
+\end{marginfigure}
 
 Direction (i.e sign) of the derivative at a points gives the direction
 of (greatest) increment of the function at that point.
@@ -52,13 +52,13 @@ gradient is a vector whose components are \(n\) partial derivatives of
 \[ \nabla f = (\frac{\partial f}{\partial v_1 }, \frac{\partial f}{\partial v_2 }, \ldots, \frac{\partial f}{\partial v_n })\]
 
 
-\begin{figure}
+\begin{marginfigure}
   \includegraphics[height=50mm]{gradient.png}
   \caption{Gradient of the 2D function \(f(x, y) = xe^{−(x^2 + y^2)}\) is
 plotted as blue arrows over the pseudocolor (red is for high values
 while blue is for low values) plot of the function.
 \href{https://en.wikipedia.org/wiki/Gradient}{Source}.}
-\end{figure}
+\end{marginfigure}
 
 
 Similar to derivative, direction of the gradient at a point is the
@@ -74,19 +74,19 @@ problems can be posed in this form. So, there is no general answer.
 
 \subsection{Gradient Descent}\label{gradient-descent}
 
+\begin{marginfigure}
+  \includegraphics[width=60mm]{valley.png}
+  \caption{A 2d convex function as a valley. 
+        \href{http://neuralnetworksanddeeplearning.com/chap1.html}{Source}.}
+\end{marginfigure}
+
+
 However, for a class of functions called convex functions, there is a
 simple algorithm which is guaranteed to converge to minima. Convex
-functions have only one minima. They look something like this:
+functions have only one minima. They look something like a valley:
 
-\begin{figure}
-  \includegraphics[width=90mm]{valley.png}
-  \caption{A 2d convex function. 
-  			\href{http://neuralnetworksanddeeplearning.com/chap1.html}{Source}.}
-\end{figure}
-
-
-To motivate our algorithm, imagine this function as a valley and a ball
-is put at a random point on the valley and allowed to roll. Our common
+To motivate our algorithm, imagine a ball
+is put at a random point on our valley and allowed to roll. Our common
 sense tells that ball will eventually roll to the bottom of the valley.
 
 \begin{figure}
@@ -102,6 +102,12 @@ of the gradient's direction.
 
 Great! Let's put together our algorithm:
 
+\begin{marginfigure}
+  \includegraphics[width=50mm]{Gradient_descent}
+  \caption{Gradient descent on a series of level sets.
+  \href{https://en.wikipedia.org/wiki/Gradient_descent}{Source}.}
+\end{marginfigure}
+
 \begin{algorithm}
 \caption{Gradient Descent}
 \begin{algorithmic}[1]
@@ -113,11 +119,6 @@ Great! Let's put together our algorithm:
 \end{algorithmic}
 \end{algorithm}
 
-\begin{marginfigure}
-  \includegraphics[width=50mm]{Gradient_descent}
-  \caption{Gradient descent on a series of level sets.
-  \href{https://en.wikipedia.org/wiki/Gradient_descent}{Source}.}
-\end{marginfigure}
 
 
 Here \(\eta\) is called \emph{learning rate}. If it is too small,
@@ -220,7 +221,6 @@ So how do perceptrons work? A perceptron takes several inputs,
 \emph{Weights} \(w_1, w_2, \ldots w_n\) decide the importance of each of
 the inputs on output \(y(x)\). There is also a \emph{threshold} \(b\) to
 decide the output. These are the parameters of the model.
-
 The expression of the output is
 
 \[ y(x) = \sigma\left(\sum_j w_j x_j - b\right) \]
@@ -324,29 +324,24 @@ Check out the following function:
 If you graph it, it's quite clear that this function is smoothed out
 version of a step function. This function is called \emph{sigmoid}.
 
-\begin{figure}
-  \includegraphics[height=45mm]{sigmoid}
+\begin{marginfigure}
+  \includegraphics[width=50mm]{sigmoid}
   \caption{Sigmoid function. When \(z\) is large and
   positive, Then \(e^{-z} \approx 0\) and so \(\sigma(z) \approx 1\).
   Suppose on the other hand that \(z\) is very negative. Then
   \(e^{-z} \rightarrow \infty\), and \(\sigma(z) \approx 0\).
   \href{http://neuralnetworksanddeeplearning.com/chap1.html}{Source}.}
-\end{figure}
+\end{marginfigure}
 
-With the \emph{sigmoid neuron}, gradient descent usually converges.
+With the \emph{sigmoid neuron}, gradient descent can converges.
 Before computing gradients for gradient descent, we need to discuss loss
-functions\sidenote{I use terms loss function and
-cost function interchangeably.} and activation functions.
+and activation functions.
 
-
-\subsection{Activation and Loss
-Functions}\label{activation-and-loss-functions}
+\subsection{ReLU Activation}
 
 By now, you have seen that general form of a artificial neuron is
-\(y(x) = \sigma\left( w^T x + b\right)\).
-\sidenote{ I have rewritten sum
-\(\sum_j w_j x_j\) as dot product \(w^Tx\) and changed the sign of
-\(b\). }. Here the function \(\sigma(z)\) is called \emph{activation
+\(y(x) = \sigma\left(\sum_j w_j x_j - b\right)\).
+Here the function \(\sigma(z)\) is called \emph{activation
 function}. So far, we have seen two different activations:
 
 \begin{enumerate}
@@ -356,34 +351,35 @@ function}. So far, we have seen two different activations:
   Sigmoid function
 \end{enumerate}
 
-\noindent \emph{ReLU}:
 
 Let me introduce another activation function, \emph{rectifier} or
 \emph{rectified linear unit} (ReLU):
 
-\[\sigma(z) = \max(0, z)\]
-
-Its graph looks like this: 
-
-\begin{figure}
-\includegraphics[height=55mm]{relu}
+\begin{marginfigure}
+\includegraphics[width=50mm]{relu}
 \caption{ ReLU.
 \href{http://neuralnetworksanddeeplearning.com/chap3.html}{Source}. }
-\end{figure}
+\end{marginfigure}
 
-Because of technical reasons 
-\sidenote{ More
-specifically, because of vanishing and exploding gradients problem. Read
+\[\sigma(z) = \max(0, z)\]
+
+Because of reasons we describe later
+\sidenote{Vanishing gradients problem. Read
 more \href{http://neuralnetworksanddeeplearning.com/chap5.html}{here}},
 ReLUs are preferred activation functions these days. You will almost
 never see sigmoid activation function in modern deep neural networks.
 
-\hfill
+\subsection{Loss functions}
 
-\noindent \emph{Loss functions:}
+To train any machine learning model, we need to measure who well 
+the model fits to training set. This is called loss/cost
+\sidenote{I use terms loss function and
+cost function interchangeably.} function.
+In regression problem we discussed before, cost function was 
+\(C(w, b) = \frac{1}{2n} \sum_{i = 1}^{n} \| y(x^i) - y^i\|^2\). 
+Minimizing the cost function trains the model.
 
-Let's discuss loss/cost functions now. We will make two assumptions
-about our cost function:
+We will make two assumptions about our cost function:
 
 \begin{enumerate}
 \item
@@ -397,44 +393,40 @@ about our cost function:
 \end{enumerate}
 
 In the case of regression, we used \(L_2\) loss,
-\(L(o, y) = \frac{1}{2} \| o - y\|^2\). We could have also used \(L_1\)
-loss, \(L(o, y) = \| o - y \|_{L_1}\).
+\(L_2(o, y) = \frac{1}{2} \| o - y\|^2\). We could have also used \(L_1\)
+loss, \(L_1(o, y) = | o - y |\).
 
-\hfill
-
-\noindent \emph{Cross Entropy Loss:}
+\subsection{Cross Entropy Loss}
 
 What if we have a classification problem? What loss do we use? Consider
-the following MLP for digit classification:
+a MLP for digit classification on the right.
 
-\begin{figure}
-  \includegraphics[height=80mm]{tikz12}
+\begin{marginfigure}
+  \includegraphics[width=70mm]{tikz12}
   \caption{ MLP for digit classification.
   \href{http://neuralnetworksanddeeplearning.com/chap1.html\%22}{Source}.
   }
-\end{figure}
+\end{marginfigure}
 
 Here, we have output \(o\) of size 10 and a target class \(y\). We could
 have used \(L_1(o, e_y)\) or \(L_2(o, e_y)\) loss where \(e_y\) is
 \(y\)th unit vector. But it turns out that this doesn't work very well.
 
-Instead, We will consider the outputs as a probability distribution over
+Instead, we will consider the outputs as a probability distribution over
 10 classes and use what is called a cross entropy loss:
 
 \[ L(o, y) = - \log(o_y) \]
 
-To understand this function, realize that \(o_y\) is the output
+To understand this function, realize that \(o_y\), $y$th output is the predicted
 probability of the target class \(y\). Minimizing negative of log of
 this probability, maximizes the probability. Also, \(L \geq 0\) because
 \(\log(x) < 0\) for \(x \in [0, 1]\).
 
-\hfill
-
-\noindent \emph{Softmax Activation:}
+\subsection{Softmax Activation}
 
 If we use cross entropy loss, we cannot use sigmoids as activations of
 output layer because sigmoids do not guarantee a probability
-distribution. Although each component of the output is in \([0, 1]\),
+distribution. Although each component of the output will be in \([0, 1]\),
 they need not add up to 1.
 
 We therefore use an activation layer called \emph{softmax}. According to
@@ -465,10 +457,12 @@ smooth version of \texttt{argmax}.
 \subsection{Backpropogation}\label{backpropogation}
 
 We have so far discussed the model component of neural networks. We
-haven't yet discussed how we learn the parameters of the networks.
+haven't yet discussed how we learn the parameters of the networks 
+i.e, weights and biases of the layers.
 
 As expected, we will use stochastic gradient descent. For this, we need
-gradients of \(C_i\), loss for the \(i\)th training example. Computation
+gradients of \(C_i\), loss for the \(i\)th training example,  
+with respect to all the parameters of network. Computation
 of this quantity, \(\nabla C_i\) is slightly involved. Let's start with
 writing the expression for \(C_i\). Let's represent all the parameters
 of the network with \(\theta\):
@@ -478,12 +472,17 @@ of the network with \(\theta\):
 Let's break the above function into composition of layers (or functions
 in general)\sidenote{Dropping subscript for brevity}
 
-
 \[ C = y_L \circ \ y_{L-1} \circ \cdots \circ y_l \circ \cdots \circ y_1 \]
+
+\begin{figure*}
+  \includegraphics[width=\linewidth]{backprop.png}
+  \caption{Cost function as composition}
+\end{figure*}
+
 
 Here, \(l\)th \sidenote{ In particular,
 \(C = o_L = y_L(u_L) = L(u_L, y^i)\) } layer/function takes in input
-\(u_l\) and outputs
+\(u_l\) and outputs \(o_l\)
 
 \begin{equation}
 o_l = y_l(u_l, \theta_l) \label{eq:1}
@@ -501,7 +500,7 @@ u_l = o_{l-1} \label{eq:2}
 
 We require
 \(\nabla C = \left(\frac{\partial C}{\partial\theta_1}, \frac{\partial C}{\partial\theta_2}, \ldots, \frac{\partial C}{\partial\theta_L}\right)\).
-Therefore, we need to compute, for  \( j = 1, 2, \dots n \)
+Therefore, we need to compute, for  \( l = 1, 2, \dots L \)
 
 \[ \frac{\partial C}{\partial\theta_l} = \frac{\partial o_L}{\partial\theta_l} \]
 
@@ -515,7 +514,7 @@ Before getting started, let's write down the chain rule. Chain rule is
 the underlying operation of our algorithm.
 
 \begin{framed}
-For function f(x, y), 
+\textbf{Chain Rule}: For function f(x, y), 
 
 \begin{equation}
 \frac{\partial f}{\partial t} = \frac{\partial f}{\partial x} * \frac{\partial x}{\partial t} + \frac{\partial f}{\partial y} * \frac{\partial y}{\partial t}
@@ -531,8 +530,8 @@ If \(m > l\),
 \end{equation}
 
 
-because output of the functions in back doesn't depend on parameters of
-layer in the front.
+because output of the earlier layers doesn't depend on parameters of the later
+layer.
 
 If \(m = l\), using equation \eqref{eq:1} and the fact that \(u_l\) and
 \(\theta_l\) are independent,
@@ -603,7 +602,7 @@ Now, algorithm to compute gradients \(\nabla C\), i.e.
 Although this derivation is for scalar functions, it will work with
 vector functions with a few modifications.
 
-\section{Deep Neural Networks}\label{deep-neural-networks}
+\subsection{Deep Networks and why they are hard to train}\label{deep-neural-networks}
 
 Whenever you are asked to do any complex task, you usually break it down
 to sub tasks and solve the component subtasks. For instance, suppose
@@ -666,7 +665,7 @@ Keep these two points in mind. We will see several approaches to deep
 learning that to some extent manage to overcome or route around these.
 
 
-\subsection{Convolutional Neural
+\section{Convolutional Neural
 Networks}\label{convolutional-neural-networks}
 
 Let's go back to the problem of handwritten digit recognition. MLP looks
@@ -710,7 +709,7 @@ Convolutional neural networks use three basic ideas:
   Pooling.
 \end{enumerate}
 
-\noindent \textbf{Local receptive fileds}
+\subsection{Local receptive fileds}
 
 As per usual, we'll connect the input pixels to a layer of hidden
 neurons. But we won't connect every input pixel to every hidden neuron.
@@ -737,7 +736,7 @@ the first hidden layer. To illustrate this concretely, let's start with
 a local receptive field in the top-left corner:
 
 \begin{figure}
-  \includegraphics[height=60mm]{conv2}
+  \includegraphics[width=100mm]{conv2}
   \caption{Convolution.
 \href{http://neuralnetworksanddeeplearning.com/chap6.html\%22}{Source}.
 }
@@ -753,14 +752,14 @@ image, and \(5\times 5\) local receptive fields, then there will be \(24\times 2
 in the hidden layer.}:
 
 \begin{figure}
-  \includegraphics[height=60mm]{conv3}
+  \includegraphics[width=100mm]{conv3}
   \caption{Slide the convolution.
 \href{http://neuralnetworksanddeeplearning.com/chap6.html\%22}{Source}.
 }
 \end{figure}
 
 
-\noindent \textbf{Shared weights and biases}
+\subsection{Shared weights and biases}
 
 I've said that each hidden neuron has a bias and 5x5 weights connected
 to its local receptive field. What I did not yet mention is that we're
@@ -835,7 +834,7 @@ That's a total of 784x30 weights, plus an extra 30 biases, for a total
 of 23,550 parameters.
 
 
-\noindent \textbf{Pooling layers}
+\subsection{Pooling layers}
 
 In addition to the convolutional layers just described, convolutional
 neural networks also contain pooling layers. Pooling layers are usually
@@ -1032,14 +1031,14 @@ that reflect real-world variation.
 \subsection{Weight initialization and Batch
 Normalization}\label{weight-initialization-and-batch-normalization}
 
-Training neural networks is a highly non convex problem. Therefore,
+Training a neural network is a highly non convex problem. Therefore,
 initialization of parameters to be optimized is important. To understand
 better, recall the unstable gradient problem. This is the equation of
 gradients for parameters in \(j\)th layer:
 
 \[\frac{\partial C}{\partial \theta_l} = \frac{\partial y_L}{\partial u_L} * \frac{\partial y_{L-1}}{\partial u_{L-1}} * \cdots * \frac{\partial y_{l-1}}{\partial u_{l-1}} * \frac{\partial y_l}{\partial \theta_l}\]
 
-If each layer is not properly initialized, scales inputs by \(k\), i.e
+If a layer is not properly initialized, it scales inputs by \(k\), i.e
 \(\frac{\partial y_m}{\partial u_m} \approx k\). Therefore gradients of
 parameters in \(l\) th layer is
 
@@ -1071,9 +1070,9 @@ ILSVRC}\label{imagenet-dataset-and-ilsvrc}
 ImageNet is a \emph{huge} dataset for visual recognition research. It
 currently has about \emph{14 million} images tagged manually.
 
-ImageNet project runs an annual software contest, the ImageNet Large
-Scale Visual Recognition Challenge (ILSVRC), where software programs
-compete to correctly classify and detect objects and scenes. ILSVRC
+ImageNet project runs an annual contest, the ImageNet Large
+Scale Visual Recognition Challenge (ILSVRC), where algorithms compete
+ to correctly classify and detect objects and scenes. ILSVRC
 recognition challenge is conducted on a subset of ImageNet: 1.2 million
 images with 1000 classes.
 
@@ -1112,7 +1111,7 @@ newer CNN architectures won this challenge. Notable ones are
   \href{https://arxiv.org/abs/1512.03385}{ResNet}
 \end{itemize}
 
-You will keep on hearing these architectures if work more on CNNs. Here
+You will keep on hearing these architectures if you work more on CNNs. Here
 are the accuracies from these networks:
 
 \begin{figure}
@@ -1136,7 +1135,7 @@ internet and use them as your weight initializations. This is called
 
 This is a very powerful trick. For example,
 \href{http://pytorch.org/tutorials/beginner/transfer_learning_tutorial.html}{here}
-I used pretrained weights of ResNet-18 and trained a classifier to
+pretrained weights of ResNet-18 are used to train a classifier to
 classify ants and bees.
 
 \begin{figure}
@@ -1146,13 +1145,13 @@ classify ants and bees.
 }  
 \end{figure}
 
-This is the dataset I used:
+This is the dataset used:
 \begin{description}
 \item[Training]: 120 ants + 120 bees images
 \item[Testing]: 75 ants + 75 bees images
 \end{description}
 
-With this small dataset, I got around 95 \% accuracy!
+With this small dataset, accuracy is around 95 \% !
 
 Why does transfer learning work? 1.2 million images in imagenet cover
 wide diversity of real world images. Filters learned on imagenet will
@@ -1168,7 +1167,7 @@ GPUs dramatically speed up neural networks. This is because most of the
 neural network computation is just matrix multiplication and thus is
 readily vectorizable. GPUs excel at such computations.
 
-For example, look at the times taken by my transfer learning code to
+For example, look at the times taken by the above transfer learning code to
 train:
 
 \begin{description}
@@ -1230,7 +1229,7 @@ Don't be a hero!
   Your network should completely overfit on this data. If not play with
   learning rates. If you couldn't get your network to overfit, something
   is either wrong with your code/initializations or you need to pick a
-  powerful model.
+  more powerful model.
 \end{itemize}
 \end{quote}
 
