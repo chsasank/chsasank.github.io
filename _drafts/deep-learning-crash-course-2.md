@@ -207,7 +207,7 @@ Let's go over each of the component layers of LeNet:
 
 Dataset used was MNIST. It has 60,000 training images and 10,000 testing examples.
 
-## Tricks of the trade
+## Tricks of the Trade
 
 ### Dropout
 
@@ -370,4 +370,4 @@ How do I know what hyperparameters to use?
 But my model is not converging!
 
 > * Take a very small subset (like, 50 samples) of your dataset and train your network on this.
-> *  Your network should completely overfit on this data. If not play with learning rates. If you couldn't get network to overfit, something is either wrong with your code or you need to pick a powerful model
+> *  Your network should completely overfit on this data. If not play with learning rates. If you couldn't get your network to overfit, something is either wrong with your code/initializations or you need to pick a powerful model.

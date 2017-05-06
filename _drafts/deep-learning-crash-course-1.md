@@ -33,9 +33,7 @@ $$ \nabla f = (\frac{\partial f}{\partial v_1 }, \frac{\partial f}{\partial v_2 
     <b>Figure</b>: Gradient of the 2D function $f(x, y) = xe^{−(x^2 + y^2)}$ is plotted as blue arrows over the pseudocolor (red is for high values while blue is for low values) plot of the function. [Source](https://en.wikipedia.org/wiki/Gradient).
 </span>
 
-<figure>
-<amp-img width="560" height="420" layout="fixed" src="/assets/images/crash_course/gradient.png"></amp-img>
-</figure>
+<img width="560" src="/assets/images/crash_course/gradient.png">
 
 Similar to derivative, direction of the gradient at a point is the steepest ascent of the function starting from that point.
 
