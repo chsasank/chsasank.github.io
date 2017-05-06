@@ -30,7 +30,7 @@ Let's try to understand why are deep networks hard to train:
 
 1. Consider the number of parameters in the network. They are huge! If we have to connect 1000 unit hidden layer to 224x224 (50,176) image, we have $65,536*1000 \approx 50e6$ parameters in that layer alone! There are so many parameters that network can easily overfit on the data without generalization.
 2. Gradients are unstable. Recall the expression for the gradients,
-    $\frac{\partial C}{\partial \theta_l} = \frac{\partial y_L}{\partial u_L} * \frac{\partial y_{L-1}}{\partial u_{L-1}} * \cdots * \frac{\partial y_{l-1}}{\partial u_{l-1}} * \frac{\partial y_l}{\partial \theta_l}$. If few of $\frac{\partial y_m}{\partial u_m} \ll 1$, they will multiply up and make $\frac{\partial C}{\partial \theta_l} \approx 0 $.
+    $\frac{\partial C}{\partial \theta_l} = \frac{\partial y_L}{\partial u_L} * \frac{\partial y_{L-1}}{\partial u_{L-1}} * \cdots * \frac{\partial y_{l-1}}{\partial u_{l-1}} * \frac{\partial y_l}{\partial \theta_l}$. If few of $\frac{\partial y_m}{\partial u_m} \ll 1$, they will multiply up and make $\frac{\partial C}{\partial \theta_l} \approx 0$.
     <span id="backprop-sigmoid" class="margin-toggle sidenote-number"></span>
     Similarly if few of $\frac{\partial y_m}{\partial u_m} \gg 1$, they make $\frac{\partial C}{\partial \theta_l} \to \infty$.
 <span class="sidenote">
@@ -149,7 +149,7 @@ The network structure I've described so far can detect just a single kind of loc
 
 <span class="marginnote">
     **Figure**: Multiple feature maps.
-    [Source](https://adeshpande3.github.io/adeshpande3.github.io/A-Beginner's-Guide-To-Understanding-Convolutional-Neural-Networks/).
+    [Source](http://neuralnetworksanddeeplearning.com/chap6.html).
 </span>
 <img src='/assets/images/crash_course/conv4.png'>
 

@@ -402,8 +402,8 @@ $$u_l = o_{l-1} \tag{2}$$
 
 We require $\nabla C = \left(\frac{\partial C}{\partial\theta_1}, \frac{\partial C}{\partial\theta_2}, \ldots, \frac{\partial C}{\partial\theta_L}\right)$. Therefore, we need to compute
 
-$$ \frac{\partial C}{\partial\theta_j} = \frac{\partial o_L}{\partial\theta_j} 
-\text{ for } j = 1, 2, \dots n $$
+$$ \frac{\partial C}{\partial\theta_l} = \frac{\partial o_L}{\partial\theta_l} 
+\text{ for } l = 1, 2, \dots n $$
 
 To compute this quantity, we will compute generic
 <span id="backprop" class="margin-toggle sidenote-number"></span>
