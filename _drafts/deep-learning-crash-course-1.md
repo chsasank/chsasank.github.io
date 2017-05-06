@@ -381,7 +381,7 @@ $$ C_i(\theta) = L\left(y(x^i, \theta), y^i \right)$$
 </figure>
 </div>
 
-Let's break the above function into composition of functions (or layers).
+Let's break the above function into composition of layers (or functions in general).
 
 $$ C = y_n \circ \ y_{n-1} \circ \cdots \circ y_1 $$
 
