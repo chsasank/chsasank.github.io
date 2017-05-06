@@ -381,27 +381,30 @@ $$ C_i(\theta) = L\left(y(x^i, \theta), y^i \right)$$
 </figure>
 </div>
 
-Let's break the above function into composition of layers (or functions in general).
+Let's break the above function into composition of layers (or functions in general)<span id="brevity" class="margin-toggle sidenote-number"></span>
+<span class="sidenote">
+    Dropping subscript for brevity
+</span>
 
-$$ C = y_n \circ \ y_{n-1} \circ \cdots \circ y_1 $$
+$$ C = y_L \circ \ y_{L-1} \circ \cdots \circ y_l \circ \cdots \circ y_1 $$
 
-Here, $i$th 
+Here, $l$th 
 <span id="backprop" class="margin-toggle sidenote-number"></span>
 <span class="sidenote">
-    In particular, $C = o_n = y_n(u_n) = L(u_n, x_i)$
+    In particular, $C = o_L = y_L(u_L) = L(u_L, y^i)$
 </span>
-function takes in input $u_i$ and outputs 
+layer/function takes in input $u_l$ and outputs 
 
-$$o_i = y_i(u_i, \theta_i)  \tag{1}$$ 
+$$o_l = y_l(u_l, \theta_l)  \tag{1}$$ 
 
-where $\theta_i$ are learnable parameters of this function.
-Since output of $i-1$th layer is fed to $i$th layer as input, 
+where $\theta_l$ are learnable parameters of this layer.
+Since output of $l-1$th layer is fed to $l$ th layer as input, 
 
-$$u_i = o_{i-1} \tag{2}$$
+$$u_l = o_{l-1} \tag{2}$$
 
-We require $\nabla C = \left(\frac{\partial C}{\partial\theta_1}, \frac{\partial C}{\partial\theta_2}, \ldots, \frac{\partial C}{\partial\theta_n}\right)$. Therefore, we need to compute
+We require $\nabla C = \left(\frac{\partial C}{\partial\theta_1}, \frac{\partial C}{\partial\theta_2}, \ldots, \frac{\partial C}{\partial\theta_L}\right)$. Therefore, we need to compute
 
-$$ \frac{\partial C}{\partial\theta_j} = \frac{\partial o_n}{\partial\theta_j} 
+$$ \frac{\partial C}{\partial\theta_j} = \frac{\partial o_L}{\partial\theta_j} 
 \text{ for } j = 1, 2, \dots n $$
 
 To compute this quantity, we will compute generic
@@ -410,7 +413,7 @@ To compute this quantity, we will compute generic
     You will see ahead why this quantity is useful.
 </span>:
 
-$$ \frac{\partial o_i}{\partial \theta_j} $$
+$$ \frac{\partial o_m}{\partial \theta_l} $$
 
 Before getting started, let's write down the chain rule. Chain rule is the underlying operation of our algorithm.
 
@@ -424,55 +427,55 @@ $$
 
 ---
 
-If $j > i$, 
+If $m > l$, 
 
-$$ \frac{\partial o_i}{\partial \theta_j} = 0 \tag{4}$$
+$$ \frac{\partial o_m}{\partial \theta_l} = 0 \tag{4}$$
 
-because output of the functions in back doesn't depend on parameters of layer in the front.
+because output of the layers in back doesn't depend on parameters of layer in the front.
 
-If $j = i$, using equation (1) and the fact that $u_i$ and $\theta_i$ are independent,
+If $m = l$, using equation (1) and the fact that $u_l$ and $\theta_l$ are independent,
 
 $$ 
-\frac{\partial o_i}{\partial \theta_i} = \frac{\partial y_i}{\partial \theta_i}
+\frac{\partial o_l}{\partial \theta_l} = \frac{\partial y_l}{\partial \theta_l}
  \tag{5}
 $$
 
-$\frac{\partial y_i}{\partial \theta_i}$ is a computable quantity which depends on the form of function $y_i$.
+$\frac{\partial y_l}{\partial \theta_l}$ is a computable quantity which depends on the form of layer $y_l$.
 
-If $j < i$, using equation (1), (2), chain rule (3), 
+If $m < l$, using equation (1), (2), chain rule (3), 
 
 $$ 
 \begin{align}
-\frac{\partial o_i}{\partial \theta_j} &= \frac{\partial y_i}{\partial \theta_j}\\
-&= \frac{\partial y_i}{\partial u_i} * \frac{\partial u_i}{\partial \theta_j} + \frac{\partial y_i}{\partial \theta_i} * \frac{\partial \theta_i}{\partial \theta_j}\\
-&= \frac{\partial y_i}{\partial u_i} * \frac{\partial u_i}{\partial \theta_j}\\
-&= \frac{\partial y_i}{\partial u_i} * \frac{\partial o_{i-1}}{\partial \theta_j}
+\frac{\partial o_m}{\partial \theta_l} &= \frac{\partial y_m}{\partial \theta_l}\\
+&= \frac{\partial y_m}{\partial u_m} * \frac{\partial u_m}{\partial \theta_l} + \frac{\partial y_m}{\partial \theta_m} * \frac{\partial \theta_m}{\partial \theta_l}\\
+&= \frac{\partial y_m}{\partial u_m} * \frac{\partial u_m}{\partial \theta_l}\\
+&= \frac{\partial y_m}{\partial u_m} * \frac{\partial o_{m-1}}{\partial \theta_l}
 \end{align}
 $$
 
 Therefore,
 
 $$
-\frac{\partial o_i}{\partial \theta_j} = \frac{\partial y_i}{\partial u_i} * \frac{\partial o_{i-1}}{\partial \theta_j}
+\frac{\partial o_m}{\partial \theta_l} = \frac{\partial y_m}{\partial u_m} * \frac{\partial o_{m-1}}{\partial \theta_l}
 \tag{6}
 $$
 
-Like $\frac{\partial y_i}{\partial \theta_i}$, $\frac{\partial y_i}{\partial u_i}$ is a computable quantity which depends on $y_i$.
+Like $\frac{\partial y_l}{\partial \theta_l}$, $\frac{\partial y_l}{\partial u_l}$ is a computable quantity which depends on layer $y_l$.
 
 Let's put everything together and compute the required quantity:
 
 $$ 
 \begin{align}
-\frac{\partial C}{\partial \theta_j} &= \frac{\partial o_n}{\partial \theta_j}\\
-&= \frac{\partial y_n}{\partial u_n} * \frac{\partial o_{n-1}}{\partial \theta_j}\\
-&= \frac{\partial y_n}{\partial u_n} * \frac{\partial y_{n-1}}{\partial u_{n-1}} * \frac{\partial o_{n-2}}{\partial \theta_j} \\
+\frac{\partial C}{\partial \theta_l} &= \frac{\partial o_L}{\partial \theta_l}\\
+&= \frac{\partial y_L}{\partial u_L} * \frac{\partial o_{L-1}}{\partial \theta_l}\\
+&= \frac{\partial y_L}{\partial u_L} * \frac{\partial y_{L-1}}{\partial u_{L-1}} * \frac{\partial o_{L-2}}{\partial \theta_l} \\
 &\vdots \\
-&= \frac{\partial y_n}{\partial u_n} * \frac{\partial y_{n-1}}{\partial u_{n-1}} * \cdots * \frac{\partial y_{j-1}}{\partial u_{j-1}} * \frac{\partial o_j}{\partial \theta_j}\\
-&= \frac{\partial y_n}{\partial u_n} * \frac{\partial y_{n-1}}{\partial u_{n-1}} * \cdots * \frac{\partial y_{j-1}}{\partial u_{j-1}} * \frac{\partial y_j}{\partial \theta_j}
+&= \frac{\partial y_L}{\partial u_L} * \frac{\partial y_{L-1}}{\partial u_{L-1}} * \cdots * \frac{\partial y_{l-1}}{\partial u_{l-1}} * \frac{\partial o_l}{\partial \theta_l}\\
+&= \frac{\partial y_L}{\partial u_L} * \frac{\partial y_{L-1}}{\partial u_{L-1}} * \cdots * \frac{\partial y_{l-1}}{\partial u_{l-1}} * \frac{\partial y_l}{\partial \theta_l}
 \end{align}
 $$
 
-Now, algorithm to compute gradients $\nabla C$, i.e. $\frac{\partial C}{\partial \theta_j}$ for all $j$ is fairly clear:
+Now, algorithm to compute gradients $\nabla C$, i.e. $\frac{\partial C}{\partial \theta_l}$ for all $l$ is fairly clear:
 
 <span class="marginnote" margin-bottom='100px' >
     **Algorithm**: Backpropogation
@@ -483,17 +486,17 @@ Now, algorithm to compute gradients $\nabla C$, i.e. $\frac{\partial C}{\partial
 // Forward pass:
 
 1. Set $u_0 = x$
-2. For $i = 1, \dots n$, do
-    1. Store $u_i = y_i(u_{i-1}, \theta_i)$
+2. For $l = 1, \dots L$, do
+    1. Store $u_l = y_l(u_{l-1}, \theta_l)$
 
 // Backward pass:
 
 1. Set $\texttt{buffer} = 1$
-2. For $j = n, n-1, \dots 1$, do
-    1. Store $\frac{\partial C}{\partial \theta_j} = \frac{\partial y_j}{\partial \theta_j} * \texttt{buffer}$
-    2. Update $\texttt{buffer} = \frac{\partial y_j}{\partial u_j} * \texttt{buffer}$
+2. For $l = L, L-1, \dots 1$, do
+    1. Store $\frac{\partial C}{\partial \theta_l} = \frac{\partial y_l}{\partial \theta_l} * \texttt{buffer}$
+    2. Update $\texttt{buffer} = \frac{\partial y_l}{\partial u_l} * \texttt{buffer}$
 
-Return $\left(\frac{\partial C}{\partial\theta_1}, \frac{\partial C}{\partial\theta_2}, \ldots, \frac{\partial C}{\partial\theta_n}\right)$.
+Return $\left(\frac{\partial C}{\partial\theta_1}, \frac{\partial C}{\partial\theta_2}, \ldots, \frac{\partial C}{\partial\theta_L}\right)$.
 
 ----
 

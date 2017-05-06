@@ -30,9 +30,9 @@ Let's try to understand why are deep networks hard to train:
 
 1. Consider the number of parameters in the network. They are huge! If we have to connect 1000 unit hidden layer to 224x224 (50,176) image, we have $65,536*1000 \approx 50e6$ parameters in that layer alone! There are so many parameters that network can easily overfit on the data without generalization.
 2. Gradients are unstable. Recall the expression for the gradients,
-    $\frac{\partial C}{\partial \theta_j} = \frac{\partial y_n}{\partial u_n} * \frac{\partial y_{n-1}}{\partial u_{n-1}} * \cdots * \frac{\partial y_{j-1}}{\partial u_{j-1}} * \frac{\partial y_j}{\partial \theta_j}$. If few of $\frac{\partial y_i}{\partial u_i} \ll 1$, they will multiply up and make $\frac{\partial C}{\partial \theta_j} \approx 0 $.
+    $\frac{\partial C}{\partial \theta_l} = \frac{\partial y_L}{\partial u_L} * \frac{\partial y_{L-1}}{\partial u_{L-1}} * \cdots * \frac{\partial y_{l-1}}{\partial u_{l-1}} * \frac{\partial y_l}{\partial \theta_l}$. If few of $\frac{\partial y_m}{\partial u_m} \ll 1$, they will multiply up and make $\frac{\partial C}{\partial \theta_l} \approx 0 $.
     <span id="backprop-sigmoid" class="margin-toggle sidenote-number"></span>
-    Similarly if few of $\frac{\partial y_i}{\partial u_i} \gg 1$, they make $\frac{\partial C}{\partial \theta_j} \to \infty$.
+    Similarly if few of $\frac{\partial y_m}{\partial u_m} \gg 1$, they make $\frac{\partial C}{\partial \theta_l} \to \infty$.
 <span class="sidenote">
     This is the reason why sigmoids are avoided. For sigmoid, $\frac{\partial y}{\partial u} = \frac{d \sigma}{d z}|_{z=u}$ is close to zero if $u$ is either too large or too small. It's maximum is only $1/4$
 </span>
@@ -253,9 +253,9 @@ We call such expansion as *data augmentation*. Rotation is not the only way to a
 Training neural networks is a highly non convex problem. Therefore, initialization of parameters to be optimized is important. 
 To understand better, recall the unstable gradient problem. This is the equation of gradients for parameters in $j$th layer:
 
-$$\frac{\partial C}{\partial \theta_j} = \frac{\partial y_n}{\partial u_n} * \frac{\partial y_{n-1}}{\partial u_{n-1}} * \cdots * \frac{\partial y_{j-1}}{\partial u_{j-1}} * \frac{\partial y_j}{\partial \theta_j}$$
+$$\frac{\partial C}{\partial \theta_l} = \frac{\partial y_L}{\partial u_L} * \frac{\partial y_{L-1}}{\partial u_{L-1}} * \cdots * \frac{\partial y_{l-1}}{\partial u_{l-1}} * \frac{\partial y_l}{\partial \theta_l}$$
 
-If each layer is not properly initialized, scales inputs by $k$, i.e $\frac{\partial y_i}{\partial u_i} \approx k$. Therefore gradients of parameters in $l$ th layer is 
+If each layer is not properly initialized, scales inputs by $k$, i.e $\frac{\partial y_m}{\partial u_m} \approx k$. Therefore gradients of parameters in $l$ th layer is 
     
 $$\frac{\partial C}{\partial \theta_l} = k^{L - l}$$
 
