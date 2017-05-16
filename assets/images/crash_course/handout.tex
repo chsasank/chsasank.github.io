@@ -14,8 +14,7 @@
     urlcolor=blue,
 }
 
-
-\title{Deep Learning Training Program}
+\title{Deep Learning Crash Course}
 \author{Sasank Chilamkurthy, Qure.ai}
 \date{May 10, 2017}
 
@@ -46,7 +45,7 @@ of (greatest) increment of the function at that point.
 \subsection{Gradient}\label{gradient}
 
 The gradient is a multi-variable generalization of the derivative. It is
-a vector valued function. For function \(f(v_1, v_2, \ldots, v_n)\),
+a vector valued function. For a function \(f(v_1, v_2, \ldots, v_n)\),
 gradient is a vector whose components are \(n\) partial derivatives of
 \(f\):
 
@@ -76,7 +75,7 @@ problems can be posed in this form. So, there is no general answer.
 \subsection{Gradient Descent}\label{gradient-descent}
 
 However, for a class of functions called convex functions, there is a
-simple algorithm which is guaranteed to converge to minima. Convex
+simple algorithm which is guaranteed to converge to the global minimum. Convex
 functions have only one minima. They look something like a valley.
 
 To motivate our algorithm, imagine a ball
@@ -123,8 +122,8 @@ converge. If it is too large, algorithm might not even converge.
 
 \subsection{Example: Regression}\label{example-regression}
 
-Let's apply the things learnt above on linear regression problem. Here's
-a recap of linear regression:
+Let's apply the things learnt above on the linear regression problem. Here's
+a recap of the linear regression:
 
 \begin{quote}
 Our model is \(y(x) = wx + b\). Parameters are \(v = (w, b)\). We are
@@ -492,7 +491,7 @@ in general)\sidenote{Dropping subscript for brevity}
 
 \begin{figure*}
   \includegraphics[width=\linewidth]{backprop.png}
-  \caption{Cost function as composition}
+  \caption{Cost function as a composition of functions}
 \end{figure*}
 
 
@@ -622,23 +621,24 @@ vector functions with a few modifications.
 Whenever you are asked to do any complex task, you usually break it down
 to sub tasks and solve the component subtasks. For instance, suppose
 you're designing a logical circuit to multiply two numbers. Chances are
-your circuit will look something like this:
+your circuit will look something like figure \ref{fig:circuitmult}.
 
 \begin{figure}
 \includegraphics[width=0.7\linewidth]{circuit_multiplication}
 \caption{Logical circuit for multiplication.
 \href{http://neuralnetworksanddeeplearning.com/chap5.html\%22}{Source}.
 }
+\label{fig:circuitmult}
 \end{figure}
 
 Similarly deep neural networks (i.e lot of layers) can build up multiple
-layers of abstraction. Consider the following network:
-
+layers of abstraction. Consider the network in figure \ref{fig:dnn}.
 
 \begin{figure}
 \includegraphics[width=\linewidth]{tikz36}
 \caption{Deep Neural Network.
 \href{http://neuralnetworksanddeeplearning.com/chap5.html\%22}{Source}.}
+\label{fig:dnn}
 \end{figure}
 
 
@@ -659,7 +659,7 @@ Let's try to understand why are deep networks hard to train:
 \item
   Consider the number of parameters in the network. They are huge! If we
   have to connect 1000 unit hidden layer to 224x224 (50,176) image, we
-  have \(65,536*1000 \approx 50e6\) parameters in that layer alone!
+  have \(50,176*1000 + 1000 \approx 50e6\) parameters in that layer alone!
   There are so many parameters that network can easily overfit on the
   data without generalization.
 \item
@@ -684,12 +684,13 @@ learning that to some extent manage to overcome or route around these.
 Networks}\label{convolutional-neural-networks}
 
 Let's go back to the problem of handwritten digit recognition. MLP looks
-like this:
+like the MLP in figure \ref{fig:mnistmlp}
 
 \begin{figure}
   \includegraphics[width=\linewidth]{mnist_net.png}
   \caption{MLP for MNIST.
   \href{http://neuralnetworksanddeeplearning.com/chap5.html\%22}{Source}.}
+  \label{fig:mnistmlp}
 \end{figure}
 
 
@@ -1075,7 +1076,7 @@ If a layer is not properly initialized, it scales inputs by \(k\), i.e
 \(\frac{\partial f_m}{\partial u_m} \approx k\). Therefore gradients of
 parameters in \(l\) th layer is
 
-\[\frac{\partial C}{\partial \theta_l} = k^{L - l}\]
+\[\frac{\partial C}{\partial \theta_l} \approx k^{L - l}\]
 
 Thus, \(k > 1\) leads to extremely large gradients and \(k<1\) to very
 small gradients in initial layers. Therefore, we want
@@ -1227,7 +1228,7 @@ using Keras if you are new to deep learning.
 \noindent How do I know what architecture to use?
 
 \begin{quote}
-Don't be a hero!
+Don't be a hero!  -- Andrej Karpathy
 
 \begin{itemize}
 \item
@@ -1244,7 +1245,7 @@ Don't be a hero!
 \noindent How do I know what hyperparameters to use?
 
 \begin{quote}
-Don't be a hero!
+Don't be a hero! -- Andrej Karpathy
 
 \begin{itemize}
 \item
@@ -1269,5 +1270,36 @@ Don't be a hero!
 \end{itemize}
 \end{quote}
 
+\section{Recommended reading} 
+
+Find a list of recommended papers below:
+
+\begin{itemize}
+	\item Beginner/Essential
+		\begin{itemize}
+			\item \href{https://papers.nips.cc/paper/4824-imagenet-classification-with-deep-convolutional-neural-networks}{AlexNet} [2012]: Image Classification.
+			\item \href{https://arxiv.org/abs/1512.03385}{ResNet} [2015]: Latest and greatest architecture on ILSVRC.
+		\end{itemize}
+		
+	\item Intermediate
+		\begin{itemize}
+			\item \href{https://www.cs.toronto.edu/~hinton/absps/JMLRdropout.pdf}{Dropout} [2014]
+			\item \href{https://arxiv.org/abs/1502.03167}{BatchNorm} [2015]
+			\item \href{https://arxiv.org/abs/1502.01852}{He init scheme} [2015]: A weight initialization scheme.
+			\item \href{http://www.cv-foundation.org/openaccess/content_cvpr_2015/papers/Long_Fully_Convolutional_Networks_2015_CVPR_paper.pdf}{FCN} [2015]: Base paper for all deep learning based segmentation approaches.
+			\item \href{https://arxiv.org/abs/1506.02640}{YOLO} [2015]: Object detection pipeline in a single network.
+		\end{itemize}
+	\item Advanced
+		\begin{itemize}
+			\item \href{https://arxiv.org/abs/1506.01497}{Faster RCNN} [2015]: Object detection. Might feel quite involved because of too many moving parts. Won MSCOCO 2015 detection challenge.
+		\end{itemize}
+\end{itemize}
+
+
+This notes is based on following sources:
+\begin{description}
+\item[Neural Networks and Deep Learning]: This is a free online book hosted at \url{http://neuralnetworksanddeeplearning.com}. Lot of the figures, examples and sometimes text in this notes is from this book. It is a quite simple book to read. Do read if you want to make your fundamentals clearer.
+\item[Andrej Karpathy's slides and notes]: Slides hosted \href{https://docs.google.com/presentation/d/1Q1CmVVnjVJM_9CDk3B8Y6MWCavZOtiKmOLQ0XB7s9Vg/edit?usp=sharing}{here} and notes hosted \href{http://cs231n.github.io}{here}. His notes is really good.
+\end{description}
 
 \end{document}

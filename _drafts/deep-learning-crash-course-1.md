@@ -284,39 +284,45 @@ With the *sigmoid neuron*, gradient descent usually converges. Before computing 
 </span>
 and activation functions.
 
-### Activation and Loss Functions
+### ReLU Activation
 
-By now, you have seen that general form of a artificial neuron is $y(x) = \sigma\left( w^T x + b\right)$. 
-<span id="activation" class="margin-toggle sidenote-number"></span>
-<span class="sidenote">
-    I have rewritten sum $\sum_j w_j x_j$ as dot product $w^Tx$ and changed the sign of $b$.
-</span>. Here the function $\sigma(z)$ is called *activation function*. So far, we have seen two different activations:
+By now, you have seen that general form of a artificial neuron is
+$y(x) = \sigma\left(\sum_j w_j x_j - b\right)$. Here the function
+$\sigma(z)$ is called *activation function*. So far, we have seen two
+different activations:
 
-1. Step function
-2. Sigmoid function
+1.  Step function
 
-**ReLU:**
+2.  Sigmoid function
 
-Let me introduce another activation function, *rectifier* or *rectified linear unit* (ReLU):
+Let me introduce another activation function, *rectifier* or *rectified
+linear unit* (ReLU):
 
 $$\sigma(z) = \max(0, z)$$ 
 
 Its graph looks like this:
+
 <span class="marginnote">
     **Figure**: ReLU.
     [Source](http://neuralnetworksanddeeplearning.com/chap3.html).
 </span>
 <img src='/assets/images/crash_course/relu.svg' height="340">
 
-Because of technical reasons
-<span id="relu" class="margin-toggle sidenote-number"></span>
-<span class="sidenote">
+Because of reasons we describe later<span id="relu" class="margin-toggle sidenote-number"></span><span class="sidenote">
 More specifically, because of vanishing and exploding gradients problem. Read more [here](http://neuralnetworksanddeeplearning.com/chap5.html)
-</span>, ReLUs are preferred activation functions these days. You will almost never see sigmoid activation function in modern deep neural networks.
+</span>, ReLUs are preferred activation
+functions these days. You will almost never see sigmoid activation
+function in modern deep neural networks.
 
-**Loss functions:**
+### Loss functions
 
-Let's discuss loss/cost functions now. We will make two assumptions about our cost function:
+To train any machine learning model, we need to measure how well the
+model fits to training set. Such a function is called loss/cost
+function. In regression problem we discussed before, cost function was
+$C(w, b) = \frac{1}{2n} \sum_{i = 1}^{n} \| y(x^i) - y^i\|^2$.
+Minimizing the cost function trains the model.
+
+We will make two assumptions about our cost function:
 
 1. The cost function can be written as an average over cost functions $C_i$ for individual training examples, $(x^i, y^i)$. 
    i.e, $C = \frac{1}{n} \sum_{i = 1}^{n} C_i$ 
@@ -325,7 +331,7 @@ Let's discuss loss/cost functions now. We will make two assumptions about our co
 
 In the case of regression, we used $L_2$ loss, $L(o, y) = \frac{1}{2} \| o - y\|^2$. We could have also used $L_1$ loss, $L(o, y) = \| o - y \|_{L_1}$. 
 
-**Cross Entropy Loss:**
+### Cross Entropy Loss
 
 What if we have a classification problem? What loss do we use? Consider the following MLP for digit classification:
 
@@ -343,7 +349,7 @@ $$ L(o, y) = - \log(o_y) $$
 
 To understand this function, realize that $o_y$ is the output probability of the target class $y$. Minimizing negative of log of this probability, maximizes the probability. Also, $L \geq 0$ because $\log(x) < 0$ for $x \in [0, 1]$.
 
-**Softmax Activation:**
+### Softmax Activation
 
 If we use cross entropy loss, we cannot use sigmoids as activations of output layer because sigmoids do not guarantee a probability distribution. Although each component of the output is in $[0, 1]$, they need not add up to 1.
 
@@ -364,12 +370,23 @@ Therefore softmax is a probability distribution which behaves like smooth versio
 
 ### Backpropogation
 
-We have so far discussed the model component of neural networks. We haven't yet discussed how we learn the parameters of the networks.
+We have so far discussed the model component of neural networks. We
+haven’t yet discussed how we learn the parameters of the networks i.e,
+weights and biases of the layers.
 
-As expected, we will use stochastic gradient descent. For this, we need gradients of $C_i$, loss for the $i$th training example. Computation of this quantity, $\nabla C_i$ is slightly involved. Let's start with writing the expression for $C_i$. Let's represent all the parameters of the network with $\theta$:
+As expected, we will use stochastic gradient descent. For this, we need
+gradients of $C_i$, loss for the $i$th training example, with respect to
+all the parameters of network. Computation of this quantity,
+$\nabla C_i$ is slightly involved. Let’s start with writing the
+expression for $C_i$. Let’s represent all the parameters of the network
+with $\theta$:
 
+$$C_i(\theta) = L\left(y(x^i, \theta), y^i \right)$$
 
-$$ C_i(\theta) = L\left(y(x^i, \theta), y^i \right)$$
+Let’s break the above function into composition of layers (or functions
+in general)
+
+$$C = f_L \circ \ f_{L-1} \circ \cdots \circ f_l \circ \cdots \circ f_1$$
 
 <div>
 <figure class='fullwidth'>
@@ -379,13 +396,6 @@ $$ C_i(\theta) = L\left(y(x^i, \theta), y^i \right)$$
 </figure>
 </div>
 
-Let's break the above function into composition of layers (or functions in general)<span id="brevity" class="margin-toggle sidenote-number"></span>
-<span class="sidenote">
-    Dropping subscript for brevity
-</span>
-
-$$ C = y_L \circ \ y_{L-1} \circ \cdots \circ y_l \circ \cdots \circ y_1 $$
-
 Here, $l$th 
 <span id="backprop" class="margin-toggle sidenote-number"></span>
 <span class="sidenote">
@@ -393,7 +403,7 @@ Here, $l$th
 </span>
 layer/function takes in input $u_l$ and outputs 
 
-$$o_l = y_l(u_l, \theta_l)  \tag{1}$$ 
+$$o_l = f_l(u_l, \theta_l)  \tag{1}$$ 
 
 where $\theta_l$ are learnable parameters of this layer.
 Since output of $l-1$th layer is fed to $l$ th layer as input, 
@@ -499,3 +509,39 @@ Return $\left(\frac{\partial C}{\partial\theta_1}, \frac{\partial C}{\partial\th
 ----
 
 Although this derivation is for scalar functions, it will work with vector functions with a few modifications.
+
+
+### Deep Neural Networks and why they are hard to train
+
+Whenever you are asked to do any complex task, you usually break it down to sub tasks and solve the component subtasks. For instance, suppose you're designing a logical circuit to multiply two numbers. Chances are your circuit will look something like this:
+
+<span class="marginnote">
+    **Figure**: Logical circuit for multiplication.
+    [Source](http://neuralnetworksanddeeplearning.com/chap5.html").
+</span>
+<img src='/assets/images/crash_course/circuit_multiplication.png'>
+
+Similarly deep neural networks (i.e lot of layers) can build up multiple layers of abstraction. Consider the following network:
+
+<span class="marginnote">
+    **Figure**: Deep Neural Network.
+    [Source](http://neuralnetworksanddeeplearning.com/chap5.html").
+</span>
+<img src='/assets/images/crash_course/tikz36.png'>
+
+If we're doing visual pattern recognition, then the neurons in the first layer might learn to recognize edges, the neurons in the second layer could learn to recognize more complex shapes, say triangle or rectangles, built up from edges. The third layer would then recognize still more complex shapes. And so on. These multiple layers of abstraction seem likely to give deep networks a compelling advantage in learning to solve complex pattern recognition problems.
+
+How do we train such deep networks? Stochastic gradient descent as usual. But we'll run into trouble, with our deep networks not performing much (if at all) better than shallow networks.
+
+Let's try to understand why are deep networks hard to train:
+
+1. Consider the number of parameters in the network. They are huge! If we have to connect 1000 unit hidden layer to 224x224 (50,176) image, we have $65,536*1000 \approx 50e6$ parameters in that layer alone! There are so many parameters that network can easily overfit on the data without generalization.
+2. Gradients are unstable. Recall the expression for the gradients,
+    $\frac{\partial C}{\partial \theta_l} = \frac{\partial y_L}{\partial u_L} * \frac{\partial y_{L-1}}{\partial u_{L-1}} * \cdots * \frac{\partial y_{l-1}}{\partial u_{l-1}} * \frac{\partial y_l}{\partial \theta_l}$. If few of $\frac{\partial y_m}{\partial u_m} \ll 1$, they will multiply up and make $\frac{\partial C}{\partial \theta_l} \approx 0$.
+    <span id="backprop-sigmoid" class="margin-toggle sidenote-number"></span>
+    Similarly if few of $\frac{\partial y_m}{\partial u_m} \gg 1$, they make $\frac{\partial C}{\partial \theta_l} \to \infty$.
+<span class="sidenote">
+    This is the reason why sigmoids are avoided. For sigmoid, $\frac{\partial y}{\partial u} = \frac{d \sigma}{d z}|_{z=u}$ is close to zero if $u$ is either too large or too small. It's maximum is only $1/4$
+</span>
+
+Keep these two points in mind. We will see several approaches to deep learning that to some extent manage to overcome or route around these.

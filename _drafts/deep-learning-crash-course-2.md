@@ -4,42 +4,7 @@ title: Deep Learning Crash Course Part 2
 author: Sasank Chilamkurthy
 ---
 
-## Deep Neural Networks
-
-Whenever you are asked to do any complex task, you usually break it down to sub tasks and solve the component subtasks. For instance, suppose you're designing a logical circuit to multiply two numbers. Chances are your circuit will look something like this:
-
-<span class="marginnote">
-    **Figure**: Logical circuit for multiplication.
-    [Source](http://neuralnetworksanddeeplearning.com/chap5.html").
-</span>
-<img src='/assets/images/crash_course/circuit_multiplication.png'>
-
-Similarly deep neural networks (i.e lot of layers) can build up multiple layers of abstraction. Consider the following network:
-
-<span class="marginnote">
-    **Figure**: Deep Neural Network.
-    [Source](http://neuralnetworksanddeeplearning.com/chap5.html").
-</span>
-<img src='/assets/images/crash_course/tikz36.png'>
-
-If we're doing visual pattern recognition, then the neurons in the first layer might learn to recognize edges, the neurons in the second layer could learn to recognize more complex shapes, say triangle or rectangles, built up from edges. The third layer would then recognize still more complex shapes. And so on. These multiple layers of abstraction seem likely to give deep networks a compelling advantage in learning to solve complex pattern recognition problems.
-
-How do we train such deep networks? Stochastic gradient descent as usual. But we'll run into trouble, with our deep networks not performing much (if at all) better than shallow networks.
-
-Let's try to understand why are deep networks hard to train:
-
-1. Consider the number of parameters in the network. They are huge! If we have to connect 1000 unit hidden layer to 224x224 (50,176) image, we have $65,536*1000 \approx 50e6$ parameters in that layer alone! There are so many parameters that network can easily overfit on the data without generalization.
-2. Gradients are unstable. Recall the expression for the gradients,
-    $\frac{\partial C}{\partial \theta_l} = \frac{\partial y_L}{\partial u_L} * \frac{\partial y_{L-1}}{\partial u_{L-1}} * \cdots * \frac{\partial y_{l-1}}{\partial u_{l-1}} * \frac{\partial y_l}{\partial \theta_l}$. If few of $\frac{\partial y_m}{\partial u_m} \ll 1$, they will multiply up and make $\frac{\partial C}{\partial \theta_l} \approx 0$.
-    <span id="backprop-sigmoid" class="margin-toggle sidenote-number"></span>
-    Similarly if few of $\frac{\partial y_m}{\partial u_m} \gg 1$, they make $\frac{\partial C}{\partial \theta_l} \to \infty$.
-<span class="sidenote">
-    This is the reason why sigmoids are avoided. For sigmoid, $\frac{\partial y}{\partial u} = \frac{d \sigma}{d z}|_{z=u}$ is close to zero if $u$ is either too large or too small. It's maximum is only $1/4$
-</span>
-
-Keep these two points in mind. We will see several approaches to deep learning that to some extent manage to overcome or route around these.
-
-### Convolutional Neural Networks
+## Convolutional Neural Networks
 
 Let's go back to the problem of handwritten digit recognition. MLP looks like this:
 
@@ -61,7 +26,7 @@ Convolutional neural networks use three basic ideas:
 2. Shared weights
 3. Pooling. 
 
-**Local receptive fileds**
+### Local receptive fileds
 
 As per usual, we'll connect the input pixels to a layer of hidden neurons. But we won't connect every input pixel to every hidden neuron. Instead, we only make connections in small, localized regions of the input image.
 
@@ -99,7 +64,7 @@ Note that if we have a 28×28 input image, and 5×5 local receptive fields, then
 </span>
 <img src='/assets/images/crash_course/conv3.png'>
 
-**Shared weights and biases**
+### Shared weights and biases
 
 I've said that each hidden neuron has a bias and 5×5 weights connected to its local receptive field. What I did not yet mention is that we're going to use the same weights and bias for each of the 24×24 hidden neurons.
 
@@ -155,7 +120,7 @@ The network structure I've described so far can detect just a single kind of loc
 
 A big advantage of sharing weights and biases is that it greatly reduces the number of parameters involved in a convolutional network. For each feature map we need 25=5×5 shared weights, plus a single shared bias. So each feature map requires 26 parameters. If we have 20 feature maps that's a total of 20×26=520 parameters defining the convolutional layer. By comparison, suppose we had a fully connected first layer, with 784=28×28 input neurons, and a relatively modest 30 hidden neurons. That's a total of 784×30 weights, plus an extra 30 biases, for a total of 23,550 parameters.
 
-**Pooling layers**
+### Pooling layers
 
 In addition to the convolutional layers just described, convolutional neural networks also contain pooling layers. Pooling layers are usually used immediately after convolutional layers. What the *pooling layers* do is simplify the information in the output from the convolutional layer.
 
@@ -371,3 +336,37 @@ But my model is not converging!
 
 > * Take a very small subset (like, 50 samples) of your dataset and train your network on this.
 > *  Your network should completely overfit on this data. If not play with learning rates. If you couldn't get your network to overfit, something is either wrong with your code/initializations or you need to pick a powerful model.
+
+## Recommended reading
+
+Find a list of recommended papers below:
+
+Beginner/Essential:
+
+- [AlexNet](https://papers.nips.cc/paper/4824-imagenet-classification-with-deep-convolutional-neural-networks) \[2012\]: Image Classification.
+- [ResNet](https://arxiv.org/abs/1512.03385) \[2015\]: Latest and
+    greatest architecture on ILSVRC.
+
+Intermediate:
+
+-   [Dropout](https://www.cs.toronto.edu/~hinton/absps/JMLRdropout.pdf)\[2014\]
+-   [BatchNorm](https://arxiv.org/abs/1502.03167) \[2015\]
+-   [He init scheme](https://arxiv.org/abs/1502.01852) \[2015\]: A
+    weight initialization scheme.
+-   [FCN](http://www.cv-foundation.org/openaccess/content_cvpr_2015/papers/Long_Fully_Convolutional_Networks_2015_CVPR_paper.pdf)
+    \[2015\]: Base paper for all deep learning based
+    segmentation approaches.
+-   [YOLO](https://arxiv.org/abs/1506.02640) \[2015\]: Object
+    detection pipeline in a single network.
+
+Advanced:
+
+-   [Faster RCNN](https://arxiv.org/abs/1506.01497) \[2015\]:
+    Object detection. Might feel quite involved because of too many
+    moving parts. Won MSCOCO 2015 detection challenge.
+
+This notes is based on following sources:
+
+1. **Neural Networks and Deep Learning**: This is a free online book hosted at <http://neuralnetworksanddeeplearning.com>. Lot of the figures, examples and sometimes text in this notes is from this book. It is a quite simple book to read. Do read if you want to make your fundamentals clearer.
+2. **Andrej Karpathy’s slides and notes**: Slides hosted [here](https://docs.google.com/presentation/d/1Q1CmVVnjVJM_9CDk3B8Y6MWCavZOtiKmOLQ0XB7s9Vg/edit?usp=sharing) and notes hosted [here](http://cs231n.github.io). His notes is really good.
+
