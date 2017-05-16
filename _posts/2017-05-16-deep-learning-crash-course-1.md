@@ -4,6 +4,29 @@ title: Deep Learning Crash Course Part 1
 author: Sasank Chilamkurthy
 ---
 
+Deep learning is *the* thing in machine learning these days. I probably don't need to explain you the reason for buzz. This series of posts is a yet another attempt to teach deep learning. 
+
+My aim here is to 
+
+- Explain all the basics and practical advice you need 
+- This should be readable in less than 2/3 hours
+
+Obviously, I assume a few things about your knowledge:
+
+- You know basic machine learning; you know what training, validation and test sets are.
+- You learnt calculus and about gradients. I recap them anyway.
+
+I divide the crash course into two parts for convenience:
+
+- **Part 1**: Recap of calculus, gradient descent and neural networks
+- [**Part 2**](/deep-learning-crash-course-2.html): CNNs, tricks, practical advice.
+
+A printable version is available [here](/assets/images/crash_course/handout.pdf)
+<span id="handout-source" class="margin-toggle sidenote-number"></span>
+<span class="sidenote">
+source [here](/assets/images/crash_course/handout.tex)
+</span>.
+
 We will start with basics of optimization.
 
 ## Calculus: Recap
@@ -545,3 +568,5 @@ Let's try to understand why are deep networks hard to train:
 </span>
 
 Keep these two points in mind. We will see several approaches to deep learning that to some extent manage to overcome or route around these.
+
+Continue reading in [**Part 2**](/deep-learning-crash-course-2.html).

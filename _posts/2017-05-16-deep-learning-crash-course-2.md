@@ -4,6 +4,8 @@ title: Deep Learning Crash Course Part 2
 author: Sasank Chilamkurthy
 ---
 
+Continued from [**Part 1**](deep-learning-crash-course-1.html). We have so far seen MLPs and why they are hard to train. Now, we will develop networks which overcome these difficulties.
+
 ## Convolutional Neural Networks
 
 Let's go back to the problem of handwritten digit recognition. MLP looks like this:
