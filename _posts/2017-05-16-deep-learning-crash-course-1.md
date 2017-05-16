@@ -14,17 +14,17 @@ My aim here is to
 Obviously, I assume a few things about your knowledge:
 
 - You know basic machine learning; you know what training, validation and test sets are.
-- You learnt calculus and about gradients. I recap them anyway.
+- You know calculus and about gradients. I recap them anyway though.
 
 I divide the crash course into two parts for convenience:
 
-- **Part 1**: Recap of calculus, gradient descent and neural networks
-- [**Part 2**](/deep-learning-crash-course-2.html): CNNs, tricks, practical advice.
+- [**Part 1**](/deep-learning-crash-course-1.html): Recap of calculus, gradient descent and neural networks
+- [**Part 2**](/deep-learning-crash-course-2.html): CNNs, tricks, practical advice
 
 A printable version is available [here](/assets/images/crash_course/handout.pdf)
 <span id="handout-source" class="margin-toggle sidenote-number"></span>
 <span class="sidenote">
-source [here](/assets/images/crash_course/handout.tex)
+Tex source is [here](/assets/images/crash_course/handout.tex).
 </span>.
 
 We will start with basics of optimization.
@@ -569,4 +569,4 @@ Let's try to understand why are deep networks hard to train:
 
 Keep these two points in mind. We will see several approaches to deep learning that to some extent manage to overcome or route around these.
 
-Continue reading in [**Part 2**](/deep-learning-crash-course-2.html).
+Continue reading [**Part 2**](/deep-learning-crash-course-2.html).
