@@ -315,7 +315,6 @@ $\sigma(z)$ is called *activation function*. So far, we have seen two
 different activations:
 
 1.  Step function
-
 2.  Sigmoid function
 
 Let me introduce another activation function, *rectifier* or *rectified
@@ -341,7 +340,7 @@ function in modern deep neural networks.
 
 To train any machine learning model, we need to measure how well the
 model fits to training set. Such a function is called loss/cost
-function. In regression problem we discussed before, cost function was
+function. In the regression problem we discussed before, cost function was
 $C(w, b) = \frac{1}{2n} \sum_{i = 1}^{n} \| y(x^i) - y^i\|^2$.
 Minimizing the cost function trains the model.
 
@@ -364,7 +363,7 @@ What if we have a classification problem? What loss do we use? Consider the foll
 </span>
 <img src='/assets/images/crash_course/tikz12.png' height="447">
 
-Here, we have output $o$ of size 10 and a target class $y$. We could have used $L_1(o, e_y)$ or $L_2(o, e_y)$ loss where $e_y$ is $y$th unit vector. But it turns out that this doesn't work very well.
+Here, we have output $o$ of size 10 and a target class $y$. We could have used $L_1(o, e_y)$ or $L_2(o, e_y)$ loss where $e_y$ is $y$th standard unit vector. But it turns out that this doesn't work very well.
 
 Instead, We will consider the outputs as a probability distribution over 10 classes and use what is called a cross entropy loss:
 
@@ -374,9 +373,9 @@ To understand this function, realize that $o_y$ is the output probability of the
 
 ### Softmax Activation
 
-If we use cross entropy loss, we cannot use sigmoids as activations of output layer because sigmoids do not guarantee a probability distribution. Although each component of the output is in $[0, 1]$, they need not add up to 1.
+If we use cross entropy loss, we cannot use sigmoids as activations of output layer because sigmoids do not guarantee a probability distribution. This is because, although each component of the output is in $[0, 1]$, they need not add up to 1.
 
-We therefore use an activation layer called *softmax*. According to this function, the activation $a_j$ of the $j$th output neuron is
+We therefore use an activation layer/function called *softmax*. According to this function, the activation $a_j$ of the $j$th output neuron is
 
 $$ a_j = \frac{e^{z_j}}{\sum_k e^{z_k}} $$
 
@@ -386,7 +385,7 @@ This expression may seem opaque if you are not familiar with it. Observe the fol
 
 1. Activations are positive: $a_j \geq 0$
 2. Activations sum to 1: $\sum_j a_j = 1$
-3. If you increase $z_m$ keeping others constant, $a_m$ increases. Other activations decrease to ensure sum remains 1.
+3. If you increase $z_m$ keeping others constant, $a_m$ increases. Other activations decrease to ensure that the sum remains 1.
 4. If $z_m$ is much larger than the others, $a_m \approx 1$ and $a_k \approx 0$ for $k \neq m$.
 
 Therefore softmax is a probability distribution which behaves like smooth version of `argmax`.
@@ -531,12 +530,12 @@ Return $\left(\frac{\partial C}{\partial\theta_1}, \frac{\partial C}{\partial\th
 
 ----
 
-Although this derivation is for scalar functions, it will work with vector functions with a few modifications.
+Although this derivation is worked out for scalar functions, it will work with vector functions with a few modifications.
 
 
 ### Deep Neural Networks and why they are hard to train
 
-Whenever you are asked to do any complex task, you usually break it down to sub tasks and solve the component subtasks. For instance, suppose you're designing a logical circuit to multiply two numbers. Chances are your circuit will look something like this:
+Whenever you are asked to do any complex task, you usually break it down to subtasks and solve the component subtasks. For instance, suppose you're designing a logical circuit to multiply two numbers. Chances are your circuit will look something like this:
 
 <span class="marginnote">
     **Figure**: Logical circuit for multiplication.

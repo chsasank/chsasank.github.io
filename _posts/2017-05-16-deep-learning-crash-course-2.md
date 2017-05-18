@@ -320,7 +320,7 @@ What framework to use?
 
 How do I know what architecture to use?
 
-> Don't be a hero! 
+> Don't be a hero! - Andrej Karpathy
 > 
 > * Take whatever works best on ILSVRC (latest ResNet)
 > * Download a pretrained model
@@ -329,7 +329,7 @@ How do I know what architecture to use?
 
 How do I know what hyperparameters to use?
 
-> Don't be a hero!
+> Don't be a hero! - Andrej Karpathy
 > 
 > * Use whatever is reported to work best on ILSVRC. 
 > * Play with the regularization strength (dropout rates)
