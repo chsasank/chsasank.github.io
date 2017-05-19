@@ -1,0 +1,22 @@
+@charset "UTF-8";
+
+article.post-container{
+	padding: 0;
+}
+
+p.description{
+    /*color: #666;*/
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+p.description a{
+	background: none;
+}
+
+h1.title{
+	margin-top: 1rem; 
+}
