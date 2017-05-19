@@ -370,5 +370,5 @@ Advanced:
 This notes is based on following sources:
 
 1. **Neural Networks and Deep Learning**: This is a free online book hosted at <http://neuralnetworksanddeeplearning.com>. Lot of the figures, examples and sometimes text in this notes is from this book. It is a quite simple book to read. Do read if you want to make your fundamentals clearer.
-2. **Andrej Karpathy’s slides and notes**: Slides hosted [here](https://docs.google.com/presentation/d/1Q1CmVVnjVJM_9CDk3B8Y6MWCavZOtiKmOLQ0XB7s9Vg/edit?usp=sharing) and notes hosted [here](http://cs231n.github.io). His notes is really good.
+2. **Andrej Karpathy’s slides and notes**: Slides hosted [here](https://docs.google.com/presentation/d/1Q1CmVVnjVJM_9CDk3B8Y6MWCavZOtiKmOLQ0XB7s9Vg/edit?usp=sharing) and notes hosted [here](http://cs231n.github.io). His notes are really good.
 
