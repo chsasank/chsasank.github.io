@@ -1,6 +1,7 @@
 ---
 layout: page
 title: About
+order: 2
 permalink: /about/
 ---
 
@@ -8,7 +9,7 @@ Hello!
 
 My name is Sasank.
 I work at [Qure.ai](www.qure.ai). 
-My work involves deep learning on medical images obtained from radiology and pathology.
+My work involves deep learning on medical images obtained from radiology.
 Yep, it's quite cool :)
 
 I live in Mumbai, although I am from Vijayawada, Andhra Pradesh.

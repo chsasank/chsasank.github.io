@@ -1,7 +1,8 @@
 <header>
   <div class="page-links">
     <a class="page-link" href="{{ site.baseurl }}/">Home</a>
-    {% for my_page in site.pages %}
+    {% assign sorted_pages = site.pages | sort:"order" %}
+    {% for my_page in sorted_pages %}
       {% if my_page.title %}
       • <a class="page-link" href="{{ my_page.url | prepend: site.baseurl }}">{{ my_page.title }}</a>
       {% endif %}
