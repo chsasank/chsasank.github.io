@@ -1,17 +1,17 @@
 ---
 layout: page
-title: Archive
-order: 1
-permalink: /archive/
+title: Book Log
+order: 2
+permalink: /book_log/
 ---
 
 <ul>
     {% for post in site.posts %}
-    {% unless post.category| downcase contains 'book' %}
+    {% if post.category| downcase contains 'book' %}
     <li>
         <span class="post-date"> {{post.date | date: "%b %-d, %Y"}} </span>
         <a class="post-link" href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
     </li>
-    {% endunless %}
+    {% endif %}
     {% endfor %}
 </ul>

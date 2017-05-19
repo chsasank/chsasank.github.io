@@ -11,6 +11,7 @@ order: 0
 
   <div class='container'>
     {% for post in paginator.posts %}
+    {% unless post.category| downcase contains 'book' %}
       <article class='post-container' itemscope itemtype="http://schema.org/BlogPosting" role="article">
         <header>
           <h2 itemprop="name">
@@ -36,6 +37,7 @@ order: 0
           </a>
         </p>
       </article>
+    {% endunless %}
     {% endfor %}
   </div>
 
