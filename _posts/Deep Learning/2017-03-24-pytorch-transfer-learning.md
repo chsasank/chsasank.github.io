@@ -5,7 +5,7 @@ author: Sasank Chilamkurthy
 description: In this tutorial, you will learn how to train your network using transfer learning. You can read more about the transfer learning at cs231n notes.
 ---
 
-I have written this for [PyTorch official tutorials](http://pytorch.org/tutorials/). Please read this tutorial [there](http://pytorch.org/tutorials/beginner/transfer_learning_tutorial.html).
+I have written this for [PyTorch official tutorials](http://pytorch.org/tutorials/beginner/transfer_learning_tutorial.html). Please read this tutorial there.
 
 
 > In this tutorial, you will learn how to train your network using transfer learning. You can read more about the transfer learning at [cs231n notes](http://cs231n.github.io/transfer-learning/).
