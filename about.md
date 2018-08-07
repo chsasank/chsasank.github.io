@@ -8,7 +8,7 @@ permalink: /about/
 Hello!
 
 My name is Sasank.
-I work at [Qure.ai](www.qure.ai). 
+I work at [Qure.ai](http://www.qure.ai). 
 My work involves deep learning on medical images obtained from radiology.
 Yep, it's quite cool :)
 
