@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Introducing Python Package to Extract Deep Learning Features
+title: Simple Python Package to Extract Deep Learning Features
 ---
 
 Ever wanted to do a hacky computer vision project? But you don't want to invest time on learning/using complicated deep learning libraries like PyTorch or TensorFlow? Enter [`image_features`](https://github.com/chsasank/image_features):
