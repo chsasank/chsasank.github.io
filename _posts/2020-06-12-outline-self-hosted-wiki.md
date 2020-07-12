@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Self Host Your Wiki or Knowledge Base for Your Team
+title: Self Host a Wiki or Knowledge Base for Your Team
 author: Sasank Chilamkurthy
 ---
 
