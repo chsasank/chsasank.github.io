@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Self Host Your Wiki or Knowledge Base or Your Team
+title: Self Host Your Wiki or Knowledge Base for Your Team
 author: Sasank Chilamkurthy
 ---
 
@@ -8,9 +8,9 @@ How is your startup sharing knowledge with the rest of your team?
 We've been using slack's `#general` or `#random` channels to make announcements.
 We regularly post documents and PPTs slack channels so that they can be used by other people. We have a channel called `#setup` to post all IT related information like how to login to VPN etc.
 
-But after a few weeks, these docs/notes become super hard to find. As good slack's search is, you have to precisely know what you're loooking for. What we needed was a centralized knowledge base website - something like [Confluence](https://www.atlassian.com/software/confluence)
+But after a few weeks, these docs/notes become super hard to find. As good slack's search is, you have to precisely know what you're looking for. What we needed was a centralized knowledge base website - something like [Confluence](https://www.atlassian.com/software/confluence)
 
-But Confluence is clunkly and slow, and not cheap ($5/user). We experimented with [TiddlyWiki](https://tiddlywiki.com/). It calls itself 'a non-linear personal web notebook'. It's an opensource software which you can host on your servers or AWS. But its non linear organization makes it super unintutive and confusing.
+But Confluence is clunky and slow, and not cheap ($5/user). We experimented with [TiddlyWiki](https://tiddlywiki.com/). It calls itself 'a non-linear personal web notebook'. It's an opensource software which you can host on your servers or AWS. But its non linear organization makes it super unintuitive and confusing.
 
 ## Why Outline?
 
@@ -44,7 +44,7 @@ Follow the instructions. You'll have to create a slack app.
 <span class="marginnote">
    Slack app
 </span>
-<img src='/assets/images/outline/slack_app.png'>
+<img style="max-width: 75%;" src='/assets/images/outline/slack_app.png'>
 
 
 If you want to install HTTPS:
