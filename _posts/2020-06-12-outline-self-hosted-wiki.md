@@ -19,7 +19,7 @@ Then, I found [outline](https://www.getoutline.com/)! Outline is similar to Tidd
 <span class="marginnote">
     Outline has great UI
 </span>
-<img src='https://www.getoutline.com/screenshot.png'>
+<img src='https://www.getoutline.com/images/screenshot.png'>
 
 
 Best part of all of this is that *data doesn't leave your servers* if you self-host it!
