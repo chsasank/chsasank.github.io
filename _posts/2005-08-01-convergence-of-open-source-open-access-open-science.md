@@ -4,7 +4,9 @@ title: The Unacknowledged Convergence of Open Source, Open Access and Open Scien
 author: John Willinsky
 ---
 
-**NOTE**: This is *not* my article. This is just a reformat and mirror of a [paper by John Willinsky](https://firstmonday.org/article/view/1265/1185) because the original link renders slow.
+Author: John Willinsky
+
+**NOTE**: This is *not* my article. This is just a reformat and mirror of a [2005 paper by John Willinsky](https://firstmonday.org/article/view/1265/1185) because the original link renders slow.
 
 ## Abstract
 
