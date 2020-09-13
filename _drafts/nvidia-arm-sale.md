@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Nvidia's ARM acquisition will start AI winter 
+title: Nvidia's ARM acquisition will start AI winter
 author: Sasank Chilamkurthy
 ---
 
@@ -21,12 +21,12 @@ There's no denying the pervasiveness of AI in the modern world. AI is everywhere
 
 * In your pocket. Ever used Uber? [Uber uses AI](https://eng.uber.com/uber-ai-blog-2019/) to match you to drivers. Google assistant and Siri are obviously AI.
 * In your living room. It was only in [science fiction](https://www.youtube.com/watch?v=1ZXugicgn6U), until recently, [where you can say aloud](https://www.amazon.in/gp/help/customer/display.html?nodeId=GNQ59GMNBGBU3U8L) *Alexa, play Pink Floyd* and *Comfortably Numb* plays in background.
-* In your office. When you write a mail, have you received suggestions from gmail about your next sentence or phrase - as if [Google knows](https://www.techspot.com/news/74533-new-ai-powered-gmail-feature-can-write-emails.html) what you're about to type. 
+* In your office. When you write a mail, have you received suggestions from gmail about your next sentence or phrase - as if [Google knows](https://www.techspot.com/news/74533-new-ai-powered-gmail-feature-can-write-emails.html) what you're about to type.
 * In your hospital. If you end up having a stroke, your brain [might be saved](https://info.vrad.com/hubfs/CaseStudy_AI_GreaterRegional_1119%20(002).pdf?__hstc=&__hssc=&hsCtaTracking=e9be34c0-46d3-45e1-90d8-b8153c20804e%7C7abcaae7-6366-4ff0-ad77-834471104fe7) by AI's brain (!) without you ever knowing. AI is enabling faster treatment for strokes and better management of [diseases](https://arxiv.org/abs/2006.05509) and [even pandemics](https://www.technologyreview.com/2020/04/23/1000410/ai-triage-covid-19-patients-health-care/).
 
 These advances are a result of hard work of some of the brightest minds of the world. Alan Turing, the patron saint for computers, wrote a [seminal paper](https://en.wikipedia.org/wiki/Computing_Machinery_and_Intelligence) on AI in 1950 even before transistor based computers were a thing. Many preeminent computer scientists worked on AI as evidenced by [Turing Awards](https://en.wikipedia.org/wiki/Turing_Award) for them. More recently, two Canadian and a French researchers led the deep learning revolution which enabled all the above innovations.
 
-These advances in computer science were not gradual - [science doesn't work that way]((https://www.lri.fr/~mbl/Stanford/CS477/papers/Kuhn-SSR-2ndEd.pdf)). Science instead works in cycles of revolutions and setbacks<span id="hype" class="margin-toggle sidenote-number"></span>. 
+These advances in computer science were not gradual - [science doesn't work that way]((https://www.lri.fr/~mbl/Stanford/CS477/papers/Kuhn-SSR-2ndEd.pdf)). Science instead works in cycles of revolutions and setbacks<span id="hype" class="margin-toggle sidenote-number"></span>.
 <span class="sidenote">
 [Hype cycle](https://en.wikipedia.org/wiki/Hype_cycle) is another term for this
 </span> There were many years since 1950 when there was no significant progress in AI. AI scientists call these times [AI Winters](https://en.wikipedia.org/wiki/AI_winter).
@@ -74,7 +74,7 @@ Google has developed [TPUs](https://en.wikipedia.org/wiki/Tensor_processing_unit
 <br/>
 Most AI researchers, like myself, use consumer grade Nvidia GPUs for research. These are cheaper thanks to the competition from AMD in Gaming market.
 </span>
-Cloud providers like AWS, who power most of our web, offer no alternative to Nvidia for GPUs. Nvidia is able to charge significant markup for server-grade GPUs because of lack of competition. All of this is a great news for shareholders for Nvidia but is not so great for AI researchers and engineers. 
+Cloud providers like AWS, who power most of our web, offer no alternative to Nvidia for GPUs. Nvidia is able to charge significant markup for server-grade GPUs because of lack of competition. All of this is a great news for shareholders for Nvidia but is not so great for AI researchers and engineers.
 
 Nvidia's commercial interests mean that CUDA will never work on Nvidia's competition GPUs. This makes Nvidia fiercely anti-market, like any monopoly. This is also the reason why Nvidia resisted integration of GPUs to Open Source Linux operating system.  In 2012, [Linus Torvalds](https://en.wikipedia.org/wiki/Linus_Torvalds), the maintainer of Linux<span id="linus" class="margin-toggle sidenote-number"></span><span class="sidenote">
 and the patron saint of open source movement
@@ -86,13 +86,29 @@ with its [Jetson line of products](https://en.wikipedia.org/wiki/Nvidia_Jetson)
 
 ### Computers and their Architecture
 
-So far, we have discussed GPUs and AI. We have to digress a bit and discuss the history of computers themselves and computer architecture - how compute is organized *inside* the chips. We also have to get a perspective on mobiles aka smart phones.
+So far, we have discussed GPUs and AI. We have to digress a bit and discuss the history of computers themselves and computer architecture - how compute is organized *inside* the chips.
 
-A key moment in the history of computers is the discovery of transistors in 1947 at bell labs. Transistors were these little circuits made out of semi-conductors<span id="semi-conductors" class="margin-toggle sidenote-number"></span><span class="sidenote">Semi conductors are chemical materials whose electrical properties fall between metals (think electrical wire) and insulators (think plastic around the wire).
+A key moment in the history of computers was the discovery of transistors in 1947 at bell labs. Transistors are these little circuits made out of semi-conductors<span id="semi-conductors" class="margin-toggle sidenote-number"></span><span class="sidenote">Semi conductors are chemical materials whose electrical properties fall between metals (think electrical wire) and insulators (think plastic around the wire).
 </span> like silicon that allowed simulation of logic. Electrical circuits available until then<span id="vaccum tubes" class="margin-toggle sidenote-number"></span><span class="sidenote">[Vaccum tubes](https://en.wikipedia.org/wiki/Vacuum_tube) existed but they were too bulky.
 </span> were what mathematicians would call linear and didn't allow for logical computation.
-This kind of new circuits started to be called *Electronics*.
+New kind of circuits with transistors started to be called *Electronics*.
 Now you should have got why the computer industry is also called electronics or semi-conductor business and the reason behind the name of [silicon valley](https://en.wikipedia.org/wiki/Silicon_Valley).
+
+Second type of transistors called [MOSFETs](https://en.wikipedia.org/wiki/MOSFET) were soon discovered in 1959, also at Bell Labs. Many of these transistors could be fit on one piece of silicon die - called [integrated circuits](https://en.wikipedia.org/wiki/Integrated_circuit) or *chips*. Intel (stood **Int**egrated **El**ectronics) was founded in 1968 to manufacture silicon chips.
+It became obvious soon after that these chips could handle the logic we expected of computers - i.e chips are micro-processors aka CPUs! You use what are called [instruction sets](https://en.wikipedia.org/wiki/Instruction_set_architecture)<span class="margin-toggle sidenote-number"></span><span class="sidenote">Example instruction is to add two numbers A and B: `ADD A, B`
+</span> to program these chips.
+
+First true microprocessor, Intel 4004 was released in 1971. Computer architecture - organization of the transistors on the chips and instruction sets that are used to program them - evolved quickly. In 1978, Intel introduced landmark 8086 chip and followed up with 80186, 80286 etc chips over the years. These family of chips shared a similar architecture called [x86 architecture](https://en.wikipedia.org/wiki/X86). This architecture persists to today and is the base of chips found in almost all the desktops, laptops and servers<span class="margin-toggle sidenote-number"></span><span class="sidenote">Note the exclusion of smart phones!
+</span> to program these chips.
+
+x86 was not the only computer architecture available. Many of Intel's competitors including Motorola, IBM, Sun<span class="margin-toggle sidenote-number"></span><span class="sidenote">Note the exclusion of AMD, key competition to Intel. AMD uses x86 architecture and maintains compatibility with Intel processors.
+</span> and some academic institutions created alternate architectures. Key distinctions between these architectures is complexity of the instructions. x86 instructions tend to be complex and do multiple things at once while the competition tends to follow keep it simple stupid ([KISS](https://en.wikipedia.org/wiki/KISS_principle)) principle. Academics believed the latter set to be better but they never really caught on until very recently!
 
 
 ### ARM
+
+Stage is set to understand what ARM does! Let's get a perspective on another key technology - mobiles aka smart phones.
+
+Starting 90s, cellphones started appearing on the market allowing calls to be done from the pockets (2G). In 2000s, these phones started getting data / internet access (3G). Blackberry smartphones, now extinct breed were some of the first smartphones. In 2007, Apple released landmark smartphone iPhone and in 2008, Google collaborated with phone manufacturers to release Android breed of smartphones.
+
+These smartphones are essentially computers fit into our pocket and their compute power steadily grew over the years. Both iPhones and Androids used this curious new chips called ARM chips. ARM Holdings, the company behind the ARM, designed the chips and their architectures but didn't actually manufacture them!
