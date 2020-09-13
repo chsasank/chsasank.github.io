@@ -2,6 +2,7 @@
 layout: post
 title: Nvidia's ARM acquisition will start AI winter
 author: Sasank Chilamkurthy
+category: books
 ---
 
 It [looks like](https://www.theverge.com/2020/9/12/21434110/softbank-may-sell-arm-to-nvidia) Nvidia is closing in on deal with SoftBank to buy ARM for more than $40 billion. [Rumors and news](https://news.ycombinator.com/item?id=24009177) about the acquisition have been going around since at least August.
