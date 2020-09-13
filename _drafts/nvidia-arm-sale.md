@@ -24,7 +24,10 @@ There's no denying the pervasiveness of AI in the modern world. AI is everywhere
 
 These advances are a result of hard work of some of the brightest minds of the world. Alan Turing, the patron saint for computers, wrote a [seminal paper](https://en.wikipedia.org/wiki/Computing_Machinery_and_Intelligence) on AI in 1950 even before transistors were invented and computers were a thing. Many preeminent computer scientists worked on AI as evidenced by [Turing Awards](https://en.wikipedia.org/wiki/Turing_Award) for them. More recently, two Canadian and a French researchers led the deep learning revolution which enabled all the above innovations.
 
-These advances in computer science were not gradual - [science doesn't work that way]((https://www.lri.fr/~mbl/Stanford/CS477/papers/Kuhn-SSR-2ndEd.pdf)). Science instead works in cycles of revolutions and setbacks - [hype cycle](https://en.wikipedia.org/wiki/Hype_cycle) is another term for this. There were many years since 1950 when there was no significant progress in AI. AI scientists call these times [AI Winters](https://en.wikipedia.org/wiki/AI_winter).
+These advances in computer science were not gradual - [science doesn't work that way]((https://www.lri.fr/~mbl/Stanford/CS477/papers/Kuhn-SSR-2ndEd.pdf)). Science instead works in cycles of revolutions and setbacks<span id="hype" class="margin-toggle sidenote-number"></span>. 
+<span class="sidenote">
+[Hype cycle](https://en.wikipedia.org/wiki/Hype_cycle) is another term for this
+</span> There were many years since 1950 when there was no significant progress in AI. AI scientists call these times [AI Winters](https://en.wikipedia.org/wiki/AI_winter).
 
 <span class="marginnote">
     AI over years. [Source](https://towardsdatascience.com/history-of-the-first-ai-winter-6f8c2186f80b).
@@ -37,7 +40,7 @@ Latest deep learning revolution was caused by the availability of
 2. Huge amount of compute to deal with that data
 3. Highly open research and open source code
 
-As computers pervaded our world starting 90s, huge amounts of data were collected. You should have heard the maxim [*Data is the new oil*](https://www.wired.com/insights/2014/07/data-new-oil-digital-economy/). [ImageNet](https://en.wikipedia.org/wiki/ImageNet), a database of 14 million images each with a description of what's in the image, was very important for AI being where it is now. There were lot more open datasets like ImageNet that led AI revolution. These datasets were available to the most researchers and [competitions](https://en.wikipedia.org/wiki/ImageNet#History_of_the_ImageNet_challenge) were held between them to test out their methods.
+As computers pervaded our world starting 90s, huge amounts of data were collected. All of us have heard the maxim [*Data is the new oil*](https://www.wired.com/insights/2014/07/data-new-oil-digital-economy/). [ImageNet](https://en.wikipedia.org/wiki/ImageNet), a database of 14 million images each with a description of what's in the image, was very important for AI being where it is now. There were lot more open datasets like ImageNet that led AI revolution. These datasets were available to the most researchers and [competitions](https://en.wikipedia.org/wiki/ImageNet#History_of_the_ImageNet_challenge) were held between them to test out their methods.
 
 GPUs were critical to handle this data as CPUs failed to provide amount of compute required. [Moore's law](https://en.wikipedia.org/wiki/Moore%27s_law), which propounds exponential increase in compute power, stopped working for CPUs in about 2010s. GPUs, originally designed for gaming, provided an alternative to continue the Moore's law. They fit amount of computing power what was possible only with a ultra-expensive super computer. GPUs essentially democratized the super computers which were previously accessible to a select few.
 
