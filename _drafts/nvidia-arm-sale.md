@@ -44,7 +44,7 @@ GPUs were critical to handle this data as CPUs failed to provide amount of compu
 Finally, openness of the latest AI revolution has allowed researchers around the world to work together and generate explosive amount of research. AI researchers have [rejected](https://arxiv.org/help/stats/2018_by_area) traditional journals which guard the research behind paywalls <span id="opensciene" class="margin-toggle sidenote-number"></span>.<span class="sidenote">This is a topic for long form discussion in itself. Highly recommend [this paper from 2005](https://journals.uic.edu/ojs/index.php/fm/article/view/1265). Lot more cool stuff happened since publication of this paper</span>
 They also open source the code (i.e. methods) reproducing their research so that others can build upon them. This is a dream come true for any researcher - computer science or not.
 
-### Nvidia
+### Nvidia and AI
 
 Now that we understood the importance of GPUs for AI, it's time for us to examine the rise of Nvidia. Nvidia was and is the leading manufacturer of GPUs, even before the rise of AI. Not only in terms of hardware, it has been a key partner in the AI revolution for software too.
 
@@ -71,7 +71,12 @@ Most AI researchers, like myself, use consumer grade Nvidia GPUs for research. T
 </span>
 Cloud providers like AWS, who power most of our web, offer no alternative to Nvidia for GPUs. Nvidia is able to charge significant markup for server-grade GPUs because of lack of competition. All of this is a great news for shareholders for Nvidia but is not so great for AI researchers and engineers. 
 
-Nvidia's commercial interests mean that CUDA will never work on Nvidia's competition GPUs. This is the reason why Nvidia resisted integration of GPUs to Open Source Linux operating system.  In 2012, [Linus Torvalds](https://en.wikipedia.org/wiki/Linus_Torvalds), the maintainer of Linux<span id="linus" class="margin-toggle sidenote-number"></span><span class="sidenote">
+Nvidia's commercial interests mean that CUDA will never work on Nvidia's competition GPUs. This makes Nvidia fiercely anti-market, like any monopoly. This is also the reason why Nvidia resisted integration of GPUs to Open Source Linux operating system.  In 2012, [Linus Torvalds](https://en.wikipedia.org/wiki/Linus_Torvalds), the maintainer of Linux<span id="linus" class="margin-toggle sidenote-number"></span><span class="sidenote">
 and the patron saint of open source movement
 </span> famously called Nvidia the [single worst company](https://www.wired.com/2012/06/torvalds-nvidia-linux/) Linux community dealt with and publicly said [*Nvidia, F**k you*](https://www.youtube.com/watch?v=iYWzMvlj2RQ).
 
+Nvidia's consolidation of AI is nowhere at the end. It's aggressively pushing into embedded devices<span id="jetson" class="margin-toggle sidenote-number"></span><span class="sidenote">
+with its [Jetson line of products](https://en.wikipedia.org/wiki/Nvidia_Jetson)
+</span> and phones. This is the reason why it would want to acquire ARM. Now it's the time to look into what ARM does and how it fits into the equation.
+
+### ARM and Computer Architecture
