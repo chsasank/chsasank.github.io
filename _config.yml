@@ -9,6 +9,7 @@ markdown: kramdown
 permalink: none
 kramdown:
   parse_block_html: true
+plugins: [jekyll-paginate]
 gems:
   - jekyll-paginate
   - jekyll-compose
