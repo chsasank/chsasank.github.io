@@ -7,9 +7,9 @@ author: Sasank Chilamkurthy
 It [looks like](https://www.theverge.com/2020/9/12/21434110/softbank-may-sell-arm-to-nvidia) Nvidia is closing in on deal with SoftBank to buy ARM for more than $40mn. [Rumors and news](https://news.ycombinator.com/item?id=24009177) about the acquisition have been going around since at least August.
 [Everybody](https://www.ft.com/content/4970848d-7821-45dc-b8cb-211036be5d30) is [concerned](https://tech.newstatesman.com/business/hermann-hauser-nvidia-destroy-arm) [about](https://ownsnap.com/us-government-should-block-nvidia-from-acquiring-arm-open-source-is-in-danger-zone/) the [acquisition](https://ownsnap.com/us-government-should-block-nvidia-from-acquiring-arm-open-source-is-in-danger-zone/) [including](https://www.telegraph.co.uk/technology/2020/08/10/arm-sale-softbank-tragedy-tech-sector-says-former-city-minister/) [ARM's](https://www.bbc.com/news/technology-53678506) [co-founders](https://hothardware.com/news/arm-co-founders-question-nvidias-motives-softbank-deal) [themselves]((https://phonemantra.com/arm-co-founders-fear-nvidia-takeover/)).
 If so much has already been said about this, what's the point of this post? This post aims to add artificial intelligence (AI) to the conversation.
-To understand this point, we have to step back a bit and examine the history and business models of key players. I aim to keep the conversation accessible to someone unacquainted with technology and hence the lengthy post.
+To understand this point, we have to step back a bit and examine the history and business models of key players. I aim to keep the conversation accessible to someone unacquainted with technology and hence the length.
 
-## History and Business Models
+## History and Business of AI
 
 It's important to understand the history of AI research in detail before we appreciate the reasons for rise of Nvidia. We'll then continue with business models of ARM and finally end with SoftBank.
 
@@ -24,7 +24,7 @@ There's no denying the pervasiveness of AI in the modern world. AI is everywhere
 
 These advances are a result of hard work of some of the brightest minds of the world. Alan Turing, the patron saint for computers, wrote a [seminal paper](https://en.wikipedia.org/wiki/Computing_Machinery_and_Intelligence) on AI in 1950 even before transistors were invented and computers were a thing. Many preeminent computer scientists worked on AI as evidenced by [Turing Awards](https://en.wikipedia.org/wiki/Turing_Award) for them. More recently, two Canadian and a French researchers led the deep learning revolution which enabled all the above innovations.
 
-These advances in computer science were not gradual - [science doesn't work that way](https://www.lri.fr/~mbl/Stanford/CS477/papers/Kuhn-SSR-2ndEd.pdf). There were many years since 1950 when there was no significant progress. AI scientists call these times [AI Winters](https://en.wikipedia.org/wiki/AI_winter).
+These advances in computer science were not gradual - [science doesn't work that way]((https://www.lri.fr/~mbl/Stanford/CS477/papers/Kuhn-SSR-2ndEd.pdf)). Science instead works in cycles of revolutions and setbacks - [hype cycle](https://en.wikipedia.org/wiki/Hype_cycle) is another term for this. There were many years since 1950 when there was no significant progress in AI. AI scientists call these times [AI Winters](https://en.wikipedia.org/wiki/AI_winter).
 
 <span class="marginnote">
     AI over years. [Source](https://towardsdatascience.com/history-of-the-first-ai-winter-6f8c2186f80b).
@@ -37,14 +37,19 @@ Latest deep learning revolution was caused by the availability of
 2. Huge amount of compute to deal with that data
 3. Highly open research and open source code
 
-As computers pervaded our world, huge amounts of data were collected. Everybody should have heard the maxim [*Data is the new oil*](https://www.wired.com/insights/2014/07/data-new-oil-digital-economy/). [ImageNet](https://en.wikipedia.org/wiki/ImageNet), a database of 14 million images each with a description of what's in the image, was very important for AI being where it is now. There were lot more open datasets like ImageNet that led AI revolution. These datasets were available to the most researchers and [competitions](https://en.wikipedia.org/wiki/ImageNet#History_of_the_ImageNet_challenge) were held between them to test out their methods.
+As computers pervaded our world starting 90s, huge amounts of data were collected. You should have heard the maxim [*Data is the new oil*](https://www.wired.com/insights/2014/07/data-new-oil-digital-economy/). [ImageNet](https://en.wikipedia.org/wiki/ImageNet), a database of 14 million images each with a description of what's in the image, was very important for AI being where it is now. There were lot more open datasets like ImageNet that led AI revolution. These datasets were available to the most researchers and [competitions](https://en.wikipedia.org/wiki/ImageNet#History_of_the_ImageNet_challenge) were held between them to test out their methods.
 
 GPUs were critical to handle this data as CPUs failed to provide amount of compute required. [Moore's law](https://en.wikipedia.org/wiki/Moore%27s_law), which propounds exponential increase in compute power, stopped working for CPUs in about 2010s. GPUs, originally designed for gaming, provided an alternative to continue the Moore's law. They fit amount of computing power what was possible only with a ultra-expensive super computer. GPUs essentially democratized the super computers which were previously accessible to a select few.
 
-Finally, openness of the latest AI revolution has allowed researchers around the world to work together and generate explosive amount of research. AI researchers have [rejected](https://arxiv.org/help/stats/2018_by_area) traditional journals which guard the research behind paywalls. They also open source the code (i.e. methods) reproducing their research so that others can build upon them. This is a dream come true for any researcher - computer science or not.
+Finally, openness of the latest AI revolution has allowed researchers around the world to work together and generate explosive amount of research. AI researchers have [rejected](https://arxiv.org/help/stats/2018_by_area) traditional journals which guard the research behind paywalls <span id="resnet" class="margin-toggle sidenote-number"></span>.<span class="sidenote">This is a topic for long form discussion in itself. Highly recommend [this paper from 2005](https://journals.uic.edu/ojs/index.php/fm/article/view/1265). Lot more cool stuff happened since publication of this paper</span>
+They also open source the code (i.e. methods) reproducing their research so that others can build upon them. This is a dream come true for any researcher - computer science or not.
 
 ### Nvidia
 
-Now that we understood the importance of GPUs for AI, it's time for us to examine the rise of Nvidia.
+Now that we understood the importance of GPUs for AI, it's time for us to examine the rise of Nvidia. Nvidia was and is the leading manufacturer of GPUs, even before the rise of AI. Not only in terms of hardware, it has been a key partner in the AI revolution for software too.
 
-Nvidia was and is the leading manufacturer of GPUs, even before the rise of AI. Not only in terms of hardware, it has been a key partner in the rise of AI for software too. 
+Although GPUs store a lot of computing power, they were especially hard to program. Gaming industry recognized this and converged on a common library of tools called [OpenGL](https://en.wikipedia.org/wiki/OpenGL). However, none of these tools were useful to AI researchers because they're all about graphics while AI is about math. This is where Nvidia excelled - they provided this software library called [CUDA](https://en.wikipedia.org/wiki/CUDA) which made coding up math on GPUs easy.
+
+In 2012, a grad student from University of Toronto, Alex Krizhevsky (of [AlexNet Fame](https://papers.nips.cc/paper/4824-imagenet-classification-with-deep-convolutional-neural-networks.pdf)) used CUDA to create the first real Deep Learning model on the ImageNet dataset. Although deep learning ideas weren’t exactly new then, they never really caught on because of the lack of computation power required for them to work. CUDA allowed Alex to tap into the computation prowess which was originally designed for gaming.
+
+Nvidia, therefore, was a key contributor to the latest AI revolution. And there's lot of money in AI. Of course, this did not go unnoticed by the market.
