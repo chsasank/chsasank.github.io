@@ -121,3 +121,25 @@ Initially ARM chips tended to be underpowered compared to their x86 brethren. Ap
 
 Overall, ARM computers are going to be the future. If there's such a positive outlook for ARM, why is it up for sale. Curse the market and pandemic! ARM is wholly owned by a Japanese holding company called SoftBank. In 2019, Softbank [lost hell lot of money](https://www.cnbc.com/2020/05/18/softbank-ceo-calls-wework-investment-foolish-valuation-falls-to-2point9-billion.html) on IPO of another of its holding called WeWork. 2020 didn't help either with a pandemic. So, SoftBank is selling off ARM to cover its losses. What an unfortunate situation!
 
+## Why Nvidia's ARM Acquisition Will be A Disaster
+
+Summarizing the above discussion, a few things are quite clear:
+
+* AI requires huge amount of computational power provided by GPUs
+* Nvidia is a monopoly in AI computing
+* ARM is the future of computing
+
+Putting all these pieces together, it's no wonder that Nvidia wants to acquire ARM. If Nvidia acquires ARM, there'll be a complete consolidation of computing market and no appreciable competition. GPU market is already suffering due to the monopoly of Nvidia. Nvidia's propietarary software is at odds with rest of the open source ecosystem of AI.
+
+Previous acquisitions of open companies by not-so-open companies did not go well. Sun Microsystems developed many innovative technologies like Java, MySQL, ZFS and NFS. Sun was also an active contributor to Open Source. In 2010, it was acquired by it's competitor Oracle. Oracle essentially killed off Sun and its products after the acquisition.
+
+Nvidia has a lot of reasons to kill off ARM after the acquisition. Most of the customers of ARM's designs are competitors of Nvidia. Given the Nvidia's interests and anti-market nature, Oracle-Sun disaster is likely to repeat itself with Nvidia-ARM acquisition. Computing world will suffer from the absence of a reliable architecture. ARM's cofounders, Tudor Brown and Hermann Hauser, voiced [these](https://www.bbc.com/news/technology-53678506) [concerns](https://www.bbc.com/news/technology-53637463) publicly to BBC.
+
+In a [letter to Financial Times](https://www.ft.com/content/4970848d-7821-45dc-b8cb-211036be5d30), Hermann Hauser put forwards the idea that acquisition will hit technological sovereignty of UK and Europe. ARM is a British company employing about 2,500 employees in Cambridge, UK. ARM's acquisition by an American company will inevitably lead to job losses in UK. ARM is one of the last great European technology  companies and its owning by a US company will be a disaster for UK's sovergnity.
+
+
+## Why will this acquisition cause AI Winter
+
+Putting both of these in Nvidia's hands will essentially kill off the whole ecosystem.
+
+Eventually monopolies stop performing and start seeking rent on the market. This happened with Microsoft in 2000s as it consolidated PC market. It resisted and active contributed to the detriment of innovations in web browsers, operating systems and lot more. It required a big punch in the face with Linux and cloud servers for it to start innovating again.
