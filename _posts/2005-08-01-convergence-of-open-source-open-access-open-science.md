@@ -210,3 +210,211 @@ John E. Kelly, IBM’s senior vice president for technology and intellectual pro
 </span>. In scholarly publishing, the U.S. National Institutes of Health and other research funding agencies have begun to put albeit fairly gentle pressure on grant-holders to self–archive. And while journal publishers rightly continue to take the heat for charging prohibitively high subscription prices, their relatively generous self–archiving policies place their support of open access well ahead of many universities who have yet to establish institutional repositories that would support self–archiving among their faculty <span class="margin-toggle sidenote-number"></span><span class="sidenote">
 See, for example, the [Institutional Archives Registry](http://archives.eprints.org/) at the University of Southampton with a listing of 431 archives worldwide at this point . 
 </span>.
+
+<blockquote>
+  <p>Open access has the potential to make very close to the entire body of literature available to anyone with an Internet connection ... This would make a considerable difference to a wide range of scholars, students and others who are otherwise unable to obtain or afford access. What is holding back this far greater circulation of knowledge, at this point, is general lack of faculty awareness and interest in increasing access to published literature.</p>
+</blockquote>
+
+Now some might point to the use of the free–or–subscribe model in television and more recently radio broadcasting, and others will hold up this model as further instantiating society’s class basis. Yet it is by no means clear yet what open access means for the future of scholarly publishing or, if it prevails, all of the forms that it will take (author self–archiving, author fees, subscription journals offering delayed open access, sponsored open access journals, etc.) <span class="margin-toggle sidenote-number"></span><span class="sidenote">
+In high–energy physics, a very large proportion of the literature has been made freely available from arcXiv.org over the last 12 years, and subscription levels in the relevant journals have not been unduly affected. That is, the circulations of these journals declined at about the same rate as related journals in the field, as part of a larger publishing phenomenon that also speaks to the need for open access (Swan, 2005). 
+</span>
+. What is clear is that under current economic arrangements, open access has the potential to make very close to the entire body of literature available to anyone with an Internet connection through this free–or–subscribe model. This would make a considerable difference to a wide range of scholars, students and others interested in these public goods, but who are otherwise unable to obtain or afford access. What is holding back this far greater circulation of knowledge, at this point, is a general lack of faculty awareness and interest in increasing access to published literature <span class="margin-toggle sidenote-number"></span><span class="sidenote">
+The underwhelming response on the part of authors to this opportunity to contribute published work to institutional repositories, with a few exceptions such as in high–energy physics, has led to initiatives to establish institutional and granting agency mandates that would compel associated researchers to self–archive their published work (Harnad, 2005c). 
+</span>
+. It may be, as David holds with regard to open science generally, that this would create an entirely favorable arrangement for "maximizing the rate of growth of the stock of knowledge," while the increased access would serve to promote reputations and rewards, but it has yet to fully register with those who are in a position to make a difference <span class="margin-toggle sidenote-number"></span><span class="sidenote">
+David, 2003, p. 19. 
+</span>.
+
+## The unacknowledged convergence
+
+Given the extent of the analogies that seem readily apparent among open source, open access, and open science, I was a little surprised when Weber asks in his analysis of the open source phenomenon: "Are there knowledge domains that are structured similarly to the software problem?" <span class="margin-toggle sidenote-number"></span><span class="sidenote">
+Weber, 2004, p. 17. 
+</span>. Wouldn’t one place to turn for an answer to this question be his own line of work, as a professor of political science at the University of California, Berkeley? Academic labor within open science would also help answer his further question: "Is it possible to build a working economic system around the core notions of property rights as distribution?" <span class="margin-toggle sidenote-number"></span><span class="sidenote">
+Ibid. Weber (2004, p. 136) does speak of open source programmers choosing their own project “like a tenured professor able to write a book on whatever she wants” — but does not go beyond that level of connection between open source and open access. The open access parallel is also missing from von Hippel’s (2005, p. 177) analysis of open source software, despite his pointing to how it provides “major new opportunities for us all” in a democratization of innovation that is taking place “in firms and communities,” and is “driven by steadily better and cheaper computing and communications.” While Lerner and Tirole (2005, pp. 116, 118) note that the open source movement and academia have “many parallels,” they still seek to explain the mystery of open source through the “labor and industrial organization literatures,” while posing as “an interesting question … whether open access will have the same appeal for the economics community.” The question flies in the face of Research Papers in Economics (RePEc, http://repec.org/), which offers perhaps 200,000 working and published papers online, and the Social Science Research Network (SSRN, http://www.ssrn.com/index_sf.html), which makes only somewhat fewer resources freely available in economics and management. 
+</span>. Now I have no objection to Weber seeking to set out the terms that might lead to implementing open source approaches in other parts of the economy — and he mentions open–cola and openlaw — but I also think it important to see that scholarship has operated under a property–rights–as–distribution system for centuries, just as I think it urgent that he and others recognize that these property principles are currently at risk and need redressing <span class="margin-toggle sidenote-number"></span><span class="sidenote">
+Weber, 2004, p. 267. 
+</span>. For while scholarly communication is being distributed far more widely, in far greater quantity than at any point in this history, it cannot be said to be any more open to the world of readers and users (as their numbers have also grown considerably). It cannot be said to yet take full advantage of new publishing technologies to ensure that a greater proportion of the literature is available to a greater proportion of potential readers.
+
+This brings me back to David’s defense of open science as constituting a "public/academic research sector" which is "uniquely well suited to the goal of maximizing the rate of growth of the stock of reliable knowledge" <span class="margin-toggle sidenote-number"></span><span class="sidenote">
+David, 2003, pp. 19. 22. 
+</span>. Although David may not have addressed open access as a movement — even he practices it actively enough through Research Papers in Economics (RePEc, http://repec.org/), where many of his papers are available — he identifies the common issue at stake across these open initiatives: "High access charges imposed by holders of monopoly rights in intellectual property have overall consequences for the conduct of science that are particularly damaging to programs of exploratory research that are recognized to be vital for the long–term progress of knowledge–driven economies" <span class="margin-toggle sidenote-number"></span><span class="sidenote">
+David, 2003, p. 19. 
+</span>.
+
+What is currently missing among these open movements, whether in software development, scholarly publishing, or science more generally, is what was missing a few decades ago, Peter Suber recently pointed out to me, from the environmental movement. In those days, people were deeply concerned with local issues, or with particular aspects of the environment, be that water quality or air pollution, or with specific approaches to conservation issues, such as recycling. With time many of those involved in what we now call the environmental movement come to realize the common cause among all of their different efforts. Through such a realization, they were able to build make environmentalism into a popular movement and an everyday reality, and this served, of course, to further all of the original goals <span class="margin-toggle sidenote-number"></span><span class="sidenote">
+Environmental historian Samuel P. Hays (1998, p. 316) writes of how “the environmental thrust took its shape largely from the concerns of people in their daily lives: home, work and leisure … a preoccupation with a given place and the environmental quality of that place.” Against this personal impulse, Hays posits that political forces lead people to see the need to, on a national scale, “bring environmental objectives to the public arena and to focus on these public values in continuous and progressive fashion” (p. xxii). Ashok Swain (1997) points out that in India, convergence among three groups — which he identifies as the Crusading Ghandians, Appropriate Technology, and Ecological Marxists — has led to an “ideological plurality [which] in Indian Environmentalism has helped sharpen the terms of the debate … [and] advanced the formation of and collaboration among environmental organizations” (p. 829). 
+</span>.
+
+<blockquote>
+  <p>Universities "re–entering the world" with the intent to "serve the world" would do well to support faculty participation in open access archives and journals.</p>
+</blockquote>
+
+The current convergence among various open approaches to intellectual property represents a common commitment to a larger public sphere. These approaches extend well beyond the university and yet it remains the primary institutional force in sustaining this open economy. Still, its commitment to this openness has come into question, with talk of campus commercialization of knowledge. You can hear the ambiguity (if not temptation) around these issues, if you listen closely, in the recent words of Lee C. Bollinger, President of Columbia University and a First Amendment scholar: "We are now at a new period where universities are re–entering the world. If we don’t understand issues like poverty, modern communications and how the world looks from Nairobi and Bombay [Mumbai], we will not serve the world" <span class="margin-toggle sidenote-number"></span><span class="sidenote">
+Arenson and Kleinfield, 2005, p. A25. 
+</span>.
+
+Are universities currently re–entering the world on the side of a greater openness among intellectual properties or are they getting in on a greater share of knowledge–based property rights? Up to this point, the universities have fostered open science, and advanced open source software, even if both originated off campus in large measure. With the more recent of these open initiatives — open access — it falls almost entirely to the universities and their faculty to take the lead. Universities "re–entering the world" with the intent to "serve the world" would do well to support faculty participation in open access archives and journals. Open access to research and scholarship would foster a global exchange of public goods. It would extend and sustain an open, alternative economy for intellectual properties. It would strengthen the links between open source software — which is vital to providing open access to research — and the university’s long–standing tradition of open science. Given the encroachments, not to mention the temptations, of the knowledge business, this is no time to take the commonwealth of learning for granted. It falls to the members of that commonwealth to recognize and support the current convergence of open initiatives that represent dedicated efforts to ensure the future of that learning. 
+
+
+## About the author
+
+John Willinsky is Pacific Press Professor of Literacy and Technology at the University of British Columbia where he directs the Public Knowledge Project which has developed Open Journal Systems and other open source software that support open access formats for research and scholarship.
+Web: [http://www.lled.educ.ubc.ca/faculty/willinsky.htm](http://www.lled.educ.ubc.ca/faculty/willinsky.htm)
+E–mail: john [dot] willinsky [at] ubc [dot] ca
+
+## Acknowledgements
+
+The author wishes to thank Mary Barton for a thoughtful reading and response to this work, Anne White for her assistance, and the Fannie and Alan Leslie Center for the Humanities at Dartmouth College, where this piece was researched and written.
+
+## References
+
+<div class="small">
+
+Andrew Abbott, 2002. "The disciplines and the future," In: Steven Brint (editor). The future of the city of intellect: The changing American university. Stanford, Calif.: Stanford University Press, pp. 205–230.
+
+Robert C. Allen, 1983. "Collective invention," Journal of Economic Behavior & Organization, volume 4, number 1, pp. 1–24. http://dx.doi.org/10.1016/0167-2681(83)90023-9
+
+K.W. Arenson and N.R. Kleinfield, 2005. "Columbia’s President, an expert on free speech, gets an earful." New York Times (25 May), pp. A1, A25.
+
+Stanley Aronowitz, 2000. The knowledge factory: Dismantling the corporate university and creating true higher learning. Boston, Mass.: Beacon Press.
+
+Yochai Benkler, 2005. "Coase’s Penguin, or, Linux and the nature of the firm," In: Rishab Aiyer Ghosh (editor). CODE: Collaborative Ownership and Digital Economy. Cambridge, Mass.: MIT Press, pp. 169–206.
+
+Derek Bok, 2003. Universities in the marketplace: The commercialization of higher education. Princeton, N.J.: Princeton University Press.
+
+Boston Consulting Group, 2003. Boston Consulting Group/OSDN Hacker Survey. Boston, Mass.: Boston Consulting Group; see also http://www.ostg.com/bcg/, accessed 29 July 2005.
+
+Pierre Bourdieu, 1988. Homo academicus. Translated by Peter Collier. Stanford, Calif.: Stanford University Press.
+
+E.G. Campbell, B.R. Clarridge, M. Gokhale, L. Birenbaum, S. Hilgartner, N.A. Holtzman, and D. Blumenthal. 2002. "Data withholding in academic genetics: Evidence from a national survey," Journal of the American Medical Association, volume 287, number 4, pp. 473–480. http://dx.doi.org/10.1001/jama.287.4.473
+
+J.–M. Dalle, P.A. David, Rishab A. Ghosh, and W.E. Steinmueller, 2005. "Advancing economic research on the free and open source software mode of production," In: Marleen Wynants and Jan Cornelis (editors). How open is the future? Economic, social and cultural scenarios inspired by free and open source software. Brussels: Vrjie Universiteit Press, pp. 395–426.
+
+Paul A. David, 2004. "Understanding the emergence of ‘open science’ institutions: Functionalist economics in historical context," Industrial and Corporate Change, volume 13, number 4, pp. 571–589. http://dx.doi.org/10.1093/icc/dth023
+
+Paul A. David, 2003. "The economic logic of ‘open science’ and the balance between private property rights and the public," In: National Research Council. Office of International Scientific and Technical Information Programs. Steering Committee on the Role of Scientific and Technical Data and Information in the Public Domain. The role of scientific and technical data and information in the public domain: Proceedings of a Symposium. Washington, D.C.: National Research Council, pp. 19–34, and at http://www.nap.edu/catalog/10785.html, accessed 23 May 2005.
+
+Paul A. David, 2000. "The digital technology boomerang: New intellectual property rights threaten global ‘open science’," paper presented at the World Bank ABCDE (Europe) Conference (Paris), at http://www-econ.stanford.edu/faculty/workp/swp00016.html, accessed 29 July 2005.
+
+Paul A. David, 1998. "Common agency contracting and the emergence of ‘open science’ institutions," American Economic Review, volume 88, number 2, pp. 15–21.
+
+John Donlan, 2002–2004. "An economics of happiness," at http://www.onlink.net/johndonlan/aneconomicsofhappiness.html, accessed 1 June 2005.
+
+Richard Drayton, 2000. Nature’s government: Science, imperial Britain, and the "improvement" of the world. New Haven, Conn.: Yale University Press.
+
+William Eamon, 1985. "From the secrets of nature to public knowledge: The origins of the concept of openness in science." Minerva, volume 23 number. 3, pp. 321–347. http://dx.doi.org/10.1007/BF01096442
+
+Maryann P. Feldman and Pierre Desrochers, 2004. "Truth for its own sake: Academic culture and technology transfer at Johns Hopkins University," Minerva, volume 42, pp. 105–126. http://dx.doi.org/10.1023/B:MINE.0000030019.99709.a0
+
+Free Software Foundation, 1996–2004. "The free software definition," at http://www.gnu.org/philosophy/free-sw.html, accessed 15 April 2005.
+
+Peter Galli, 2005. "IBM gives 500 patents to open-source developers," eWeek.com (11 January), at http://www.eweek.com/article2/0,1759,1750358,00.asp, accessed 12 April 2005.
+
+Roger L. Geiger, 2004. Knowledge and money: Research universities and the paradox of the marketplace. Stanford, Calif.: Stanford University Press.
+
+Roger L. Geiger and Creso Sá, 2005. "Beyond technology transfer: US state policies to harness university research for economic development," Minerva, volume 43, number 1 (March). pp. 1–21. http://dx.doi.org/10.1007/s11024-004-6623-1
+
+Rishab Aiyer Ghosh, 2005. "Why collaboration is important (again)," In: Rishab Aiyer Ghosh (editor). CODE: Collaborative Ownership and Digital Economy. Cambridge, Mass.: MIT Press, pp. 1–5.
+
+Eric Gould, 2003. The university in a corporate culture. New Haven, Conn.: Yale University Press.
+
+Sandra G. Harding, 1991. Whose science? whose knowledge? Thinking from women’s lives. Ithaca, N.Y.: Cornell University Press.
+
+Stevan Harnad, 2005a. "Proposed update of BOAI definition of OA: Immediate and permanent," American Scientist–Open–Access–Forum (13 March), at http://www.ecs.soton.ac.uk/~harnad/Hypermail/Amsci/4419.html, accessed 13 April 2005.
+
+Stevan Harnad, 2005b. "Fast–forward on the green road to open access: The case against mixing up green and gold," Ariadne, issue 42 (January), at http://www.ariadne.ac.uk/issue42/harnad/, accessed 29 July 2005.
+
+Stevan Harnad, 2005c. "OA archives: Full–texts vs. metadata–only and other digital objects," American Scientist–Open–Access–Forum (9 June), at http://www.ecs.soton.ac.uk/~harnad/Hypermail/Amsci/4578.html, accessed 15 June 2005.
+
+Samuel P. Hays, 1998. Explorations in environmental history: Essays. Pittsburgh, Pa.: University of Pittsburgh Press.
+
+Eric von Hippel, 2005. Democratizing innovation. Cambridge, Mass.: MIT Press.
+
+J.R. Jacob, 1978. "Boyle’s atomism and the Restoration assault on pagan naturalism," Social Studies of Science, volume 8, number 2 (May), pp. 211–233. http://dx.doi.org/10.1177/030631277800800203
+
+Thomas Jefferson, 1816. "Thomas Jefferson to Charles Yancey," In: Thomas Jefferson on Politics & Government. ME 14:384, University of Virginia, at http://etext.virginia.edu/jefferson/quotations/jeff1600.htm, accessed 15 April 2005.
+
+Francis Johnson, 1940. "Gresham College: Precursor of the Royal Society," Journal of the History of Ideas, volume 1, number 4, pp. 413–438. http://dx.doi.org/10.2307/2707123
+
+Evelyn Fox Keller, 1985. Reflections on gender and science. New Haven, Conn.: Yale University Press.
+
+Peter Kollock, 1999. "The economies of online cooperation: Gifts and public goods in cyberspace," In: Marc A. Smith and Peter Kollock (editors). Communities in cyberspace. London: Routledge, pp. 220–240.
+
+David A. Kronick, 1976. A history of scientific & technical periodicals: The origins and development of the scientific and technical press, 1665–1790. Second edition. Metuchen, NJ: Scarecrow Press.
+
+Thomas S. Kuhn, 1962. The structure of scientific revolutions. Chicago: University of Chicago Press.
+
+Deepak Kumar (editor), 1991. Science and empire: Essays in Indian context, (1700–1947). Delhi: Anamika Prakashan.
+
+Bruno Latour and Steve Woolgar, 1979. Laboratory life: The construction of scientific facts. Beverly Hills, Calif.: Sage.
+
+Josh Lerner and Jean Tirole, 2005. "The economics of technology sharing: Open source and beyond," Journal of Economic Perspectives, volume 19, number 2, pp. 99–120. http://dx.doi.org/10.1257/0895330054048678
+
+Lawrence Lessig, 2004. Free culture: How big media uses technology and the law to lock down culture and control creativity. New York: Penguin.
+
+Yuwei Lin, in press. "Hybrid innovation: How does the collaboration between the FLOSS community and corporations happen?" Knowledge, Technology and Policy; draft version at http://opensource.mit.edu/papers/lin4_hybrid.pdf, accessed 29 July 2005.
+
+John Locke, 2002. The second treatise of government: and, A letter concerning toleration. Mineola, N.Y.: Dover.
+
+John Locke, 1812. "An essay concerning human understanding," In: John Locke. The works of John Locke. Volume 1. Eleventh edition. London: W. Otridge and Son.
+
+James Love and Tim Hubbard, 2005. "Paying for public goods," In: Rishab Aiyer Ghosh (editor). CODE: Collaborative Ownership and Digital Economy. Cambridge, Mass.: MIT Press, pp. 207–229.
+
+John Markoff, 2005. What the dormouse said —: How the sixties counterculture shaped the personal computer industry. New York: Viking.
+
+Karl Marx, 1887. Das capital. Volume 1. Translated by Samuel Moore and Edward Aveling. Moscow: Progress Publishers, at http://www.marxists.org/archive/marx/works/1867-c1/ch27.htm, accessed 15 April 2005.
+
+Robert K. Merton, 1970. Science, technology and society in seventeenth century England. New York: H. Fertig.
+Nature, 2004. "Open–source biology," Nature, volume 431, number 7008 (30 September), p. 491.
+
+Alessandro Nuvolari, 2004. "Collective invention during the British industrial revolution: The case of the Cornish pumping engine," Cambridge Journal of Economics, volume 28, number 3, pp. 347–363. http://dx.doi.org/10.1093/cje/28.3.347
+
+Open Source Initiative, 2005. "The open source definition," at http://www.opensource.org/docs/definition_plain.php, accessed 29 July 2005.
+
+Open University, 2005. "History of the OU," at http://www.open.ac.uk/about/ou/p3.shtml, accessed 15 April 2005.
+
+Tony Perkins, 2005. "Introducing the AO/technorati open media 100," at http://www.alwayson-network.com/comments.php?id=10852_0_5_0_C_C, accessed 15 April 2005.
+
+Karl Popper, 1971. The open society and its enemies. Fifth edition, revised. Princeton, N.J.: Princeton University Press.
+
+Red Hat, Inc., 2005. "Why subscriptions?" at http://www.redhat.com/en_us/USA/Home/Company/Why%2BSubscriptions/, accessed 29 July 2005.
+
+Monika Renneberg and Mark Walker, 1994. Science, technology, and national socialism. Cambridge: Cambridge University Press.
+
+Myra Reynolds, 1920. The learned lady in England, 1650–1760. Boston: Houghton Mifflin.
+
+Victor Rodriguez, 2005. "Material transfer agreements: Open science vs. proprietary claims," Nature Biotechnology, volume 23, number 4 (April), pp. 489–491. http://dx.doi.org/10.1038/nbt0405-489
+
+Jonathan Rose, 2001. The intellectual life of the British working classes. New Haven, Conn.: Yale University Press.
+
+Sheila Slaughter and Larry L. Leslie, 1997. Academic capitalism: Politics, policies, and the entrepreneurial university. Baltimore, Md.: Johns Hopkins University Press.
+
+Richard Stallman, 2005. "Copyright and globalization in the age of computer networks," In: Rishab Aiyer Ghosh (editor). CODE: Collaborative Ownership and Digital Economy. Cambridge, Mass.: MIT Press, pp. 317–335.
+
+Richard Stallman, 2004. "Free software — free society! Interview with Richard Stallman (+ transcript)," Indy Media UK, at http://www.indymedia.org.uk/en/2004/05/292609.html, accessed 10 April 2005.
+
+Richard Stallman, 1998. "The GNU Project," at http://www.indymedia.org.uk/en/2004/05/292609.html, accessed 29 July 2005.
+
+Ashok Swain, 1997. "Democratic consolidation: Environmental movements in India," Asian Survey, volume 37, number 9 (September), pp. 818–832. http://dx.doi.org/10.2307/2645699
+
+Alma Swan, 2005. "Self–archiving: It’s an author thing," paper presented at the Southampton Workshop on Institutional Open Access Repositories, University of Southampton, at http://www.eprints.org/jan2005/ppts/swan/ppt, accessed 13 May 2005.
+
+Ilkka Tuomi, 2005. "The future of open source: Trends and prospects," In: Marleen Wynants and Jan Cornelis (editors). How open is the future? Economic, social and cultural scenarios inspired by free and open source software. Brussels: Vrjie Universiteit Press, pp. 429–459.
+
+Jennifer Washburn, 2004. University, Inc.: The corporate corruption of American higher education. New York: Basic Books.
+
+Steven Weber, 2004. The success of open source. Cambridge, Mass.: Harvard University Press.
+
+John Willinsky, in press. Access principle: The case for open access to research and scholarship. Cambridge, Mass.: MIT Press.
+
+John Willinsky, 2003. "The nine flavors of open access publishing," Postgraduate Journal of Medicine, volume 49, number 3: pp. 263–267, and at http://www.jpgmonline.com/article.asp?issn=0022-3859;year=2003;volume=49;issue=3;spage=263;epage=267;aulast=Willinsky;type=0, accessed 2 June 2005.
+
+</div>
+
+## Editorial history
+
+Paper received 27 June 2005; accepted 19 July 2005.
+
+Copyright ©2005, First Monday
+
+Copyright ©2005, John Willinsky
