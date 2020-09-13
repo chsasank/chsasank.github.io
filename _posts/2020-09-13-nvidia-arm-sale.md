@@ -14,7 +14,7 @@ To understand this point, we have to step back a bit and examine the history and
 
 It's important to understand the history of AI research in detail before we appreciate the reasons for rise of Nvidia.
 We also have to digress deep into the history of computers themselves.
-We'll then continue with business models of ARM and finally end with SoftBank.
+We'll then continue with ARM and the reason for current sale.
 
 ### Artificial Intelligence (AI)
 
@@ -50,7 +50,7 @@ GPUs were critical to handle this data as CPUs failed to provide amount of compu
 Finally, openness of the latest AI revolution has allowed researchers around the world to work together and generate explosive amount of research. AI researchers have [rejected](https://arxiv.org/help/stats/2018_by_area) traditional journals which guard the research behind paywalls <span id="opensciene" class="margin-toggle sidenote-number"></span>.<span class="sidenote">This is a topic for long form discussion in itself. Highly recommend [this paper from 2005](https://journals.uic.edu/ojs/index.php/fm/article/view/1265). Lot more cool stuff happened since publication of this paper</span>
 They also open source the code (i.e. methods) reproducing their research so that others can build upon them. This is a dream come true for any researcher - computer science or not.
 
-### Nvidia and AI
+### GPUs and Nvidia
 
 Now that we understood the importance of GPUs for AI, it's time for us to examine the rise of Nvidia. Nvidia was and is the leading manufacturer of GPUs, even before the rise of AI. Not only in terms of hardware, it has been a key partner in the AI revolution for software too.
 
@@ -106,10 +106,18 @@ x86 was not the only computer architecture available. Many of Intel's competitor
 </span> and some academic institutions created alternate architectures. Key distinctions between these architectures is complexity of the instructions. x86 instructions tend to be complex and do multiple things at once while the competition tends to follow keep it simple stupid ([KISS](https://en.wikipedia.org/wiki/KISS_principle)) principle. Academics believed the latter set to be better but they never really caught on until very recently!
 
 
-### ARM
+### Smart Phones and ARM
 
 Stage is set to understand what ARM does! Let's get a perspective on another key technology - mobiles aka smart phones.
 
-Starting 90s, cellphones started appearing on the market allowing calls to be done from the pockets (2G). In 2000s, these phones started getting data / internet access (3G). Blackberry smartphones, now extinct breed were some of the first smartphones. In 2007, Apple released landmark smartphone iPhone and in 2008, Google collaborated with phone manufacturers to release Android breed of smartphones.
+Starting 90s, cellphones started appearing on the market allowing calls to be done from the pockets (2G). In 2000s, these phones started getting data / internet access (3G). Blackberry smartphones, now extinct breed were some of the first smartphones. In 2007, Apple released landmark smartphone [iPhone](https://en.wikipedia.org/wiki/IPhone_(1st_generation)) and in 2008, Google collaborated with phone manufacturers to release [Android](https://en.wikipedia.org/wiki/Android_(operating_system)) breed of smartphones.
 
-These smartphones are essentially computers fit into our pocket and their compute power steadily grew over the years. Both iPhones and Androids used this curious new chips called ARM chips. ARM Holdings, the company behind the ARM, designed the chips and their architectures but didn't actually manufacture them!
+Smartphones are essentially pocket sized computers and their compute power steadily grew over the years. Both iPhones and Androids used this curious new chips called ARM chips. ARM Holdings, the company behind the ARM, designed the chips and their architectures but does *not* actually manufacture them! ARM licenses its designs to manufacturers so that they can modify the designs and fabricate the chips<span class="margin-toggle sidenote-number"></span><span class="sidenote">This is a completely different business model! Also note how allowing people to edit designs is similar to open source!</span>. Curiously, ARM chips keep their instructions simple as opposed to x86's complex instructions - which academics always said was a better design. Key customers of ARM are Samsung, Qualcomm and Apple.
+
+Unlike desktops and laptops, smart phones have to be small and size of the battery you could fit on a small device is limited. Therefore, power consumption is a key consideration on why Apple and Google chose ARM chips as opposed to x86 chips. Intel and AMD [tried](https://en.wikipedia.org/wiki/Intel_Atom) to decrease power consumption for x86 chips but they were not successful. Both obliviously ignored the smartphone market assuming their bread and butter x86 market for desktop/laptop/server is not going anywhere. In 2020, this assumption is challenged - by none other than Apple!
+
+Initially ARM chips tended to be underpowered compared to their x86 brethren. Apple started designing its own ARM chips<span class="margin-toggle sidenote-number"></span><span class="sidenote">These chips were manufactured by Taiwanese giant [TSMC](https://en.wikipedia.org/wiki/TSMC)</span> for their iPhones and iPads. It's latest chip [A13](https://en.wikipedia.org/wiki/Apple_A13) proved to be as powerful as x86 chips while being super efficient! Meanwhile, its laptop lineup (MacBooks) tended to be plagued by heating issues and design limitations
+<span class="margin-toggle sidenote-number"></span><span class="sidenote">Apple wants their laptops thin and sleek. However, x86 chips' power consumption meant they needed fans to cool and space to keep these fans. So it ended up having to redesign the keyboards so that they are thin. This turned out to be a disaster.</span> stemming from x86 chips' power inefficiency. In June 2020, Apple has [announced](https://www.apple.com/in/newsroom/2020/06/apple-announces-mac-transition-to-apple-silicon/) that it is ditching Intel's x86 chips for its own ARM chips!
+
+Overall, ARM computers are going to be the future. If there's such a positive outlook for ARM, why is it up for sale. Curse the market and pandemic! ARM is wholly owned by a Japanese holding company called SoftBank. In 2019, Softbank [lost hell lot of money](https://www.cnbc.com/2020/05/18/softbank-ceo-calls-wework-investment-foolish-valuation-falls-to-2point9-billion.html) on IPO of another of its holding called WeWork. 2020 didn't help either with a pandemic. So, SoftBank is selling off ARM to cover its losses. What an unfortunate situation!
+
