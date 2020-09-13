@@ -9,9 +9,11 @@ It [looks like](https://www.theverge.com/2020/9/12/21434110/softbank-may-sell-ar
 If so much has already been said about this, what's the point of this post? This post aims to add artificial intelligence (AI) to the conversation.
 To understand this point, we have to step back a bit and examine the history and business models of key players. I aim to keep the conversation accessible to someone unacquainted with technology and hence the length.
 
-## Background: History and Business of AI
+## Background: History and Business of AI and Computers
 
-It's important to understand the history of AI research in detail before we appreciate the reasons for rise of Nvidia. We'll then continue with business models of ARM and finally end with SoftBank.
+It's important to understand the history of AI research in detail before we appreciate the reasons for rise of Nvidia.
+We also have to digress deep into the history of computers themselves.
+We'll then continue with business models of ARM and finally end with SoftBank.
 
 ### Artificial Intelligence (AI)
 
@@ -22,7 +24,7 @@ There's no denying the pervasiveness of AI in the modern world. AI is everywhere
 * In your office. When you write a mail, have you received suggestions from gmail about your next sentence or phrase - as if [Google knows](https://www.techspot.com/news/74533-new-ai-powered-gmail-feature-can-write-emails.html) what you're about to type. 
 * In your hospital. If you end up having a stroke, your brain [might be saved](https://info.vrad.com/hubfs/CaseStudy_AI_GreaterRegional_1119%20(002).pdf?__hstc=&__hssc=&hsCtaTracking=e9be34c0-46d3-45e1-90d8-b8153c20804e%7C7abcaae7-6366-4ff0-ad77-834471104fe7) by AI's brain (!) without you ever knowing. AI is enabling faster treatment for strokes and better management of [diseases](https://arxiv.org/abs/2006.05509) and [even pandemics](https://www.technologyreview.com/2020/04/23/1000410/ai-triage-covid-19-patients-health-care/).
 
-These advances are a result of hard work of some of the brightest minds of the world. Alan Turing, the patron saint for computers, wrote a [seminal paper](https://en.wikipedia.org/wiki/Computing_Machinery_and_Intelligence) on AI in 1950 even before transistors were invented and computers were a thing. Many preeminent computer scientists worked on AI as evidenced by [Turing Awards](https://en.wikipedia.org/wiki/Turing_Award) for them. More recently, two Canadian and a French researchers led the deep learning revolution which enabled all the above innovations.
+These advances are a result of hard work of some of the brightest minds of the world. Alan Turing, the patron saint for computers, wrote a [seminal paper](https://en.wikipedia.org/wiki/Computing_Machinery_and_Intelligence) on AI in 1950 even before transistor based computers were a thing. Many preeminent computer scientists worked on AI as evidenced by [Turing Awards](https://en.wikipedia.org/wiki/Turing_Award) for them. More recently, two Canadian and a French researchers led the deep learning revolution which enabled all the above innovations.
 
 These advances in computer science were not gradual - [science doesn't work that way]((https://www.lri.fr/~mbl/Stanford/CS477/papers/Kuhn-SSR-2ndEd.pdf)). Science instead works in cycles of revolutions and setbacks<span id="hype" class="margin-toggle sidenote-number"></span>. 
 <span class="sidenote">
@@ -82,4 +84,15 @@ Nvidia's consolidation of AI is nowhere at the end. It's aggressively pushing in
 with its [Jetson line of products](https://en.wikipedia.org/wiki/Nvidia_Jetson)
 </span> and phones. This is the reason why it would want to acquire ARM. Now it's the time to look into what ARM does and how it fits into the equation.
 
-### ARM and Computer Architecture
+### Computers and their Architecture
+
+So far, we have discussed GPUs and AI. We have to digress a bit and discuss the history of computers themselves and computer architecture - how compute is organized *inside* the chips. We also have to get a perspective on mobiles aka smart phones.
+
+A key moment in the history of computers is the discovery of transistors in 1947 at bell labs. Transistors were these little circuits made out of semi-conductors<span id="semi-conductors" class="margin-toggle sidenote-number"></span><span class="sidenote">Semi conductors are chemical materials whose electrical properties fall between metals (think electrical wire) and insulators (think plastic around the wire).
+</span> like silicon that allowed simulation of logic. Electrical circuits available until then<span id="vaccum tubes" class="margin-toggle sidenote-number"></span><span class="sidenote">[Vaccum tubes](https://en.wikipedia.org/wiki/Vacuum_tube) existed but they were too bulky.
+</span> were what mathematicians would call linear and didn't allow for logical computation.
+This kind of new circuits started to be called *Electronics*.
+Now you should have got why the computer industry is also called electronics or semi-conductor business and the reason behind the name of [silicon valley](https://en.wikipedia.org/wiki/Silicon_Valley).
+
+
+### ARM

@@ -20,3 +20,12 @@ p.description a{
 h1.title{
 	margin-top: 1rem; 
 }
+
+blockquote p {
+    font-size: 2rem;
+    line-height: 2.5rem;
+    padding: 1.4rem;
+    border-top: 10px solid #111;
+    border-bottom: 5px dotted #111;
+    width: 45%;
+}
