@@ -1,8 +1,7 @@
 ---
 layout: post
-title: Nvidia's ARM acquisition may start AI winter
+title: Why Nvidia's ARM Acquisition May Start AI Winter 
 author: Sasank Chilamkurthy
-category: books
 ---
 
 Nvidia has [announced](https://www.theverge.com/2020/9/13/21435507/nvidia-acquiring-arm-40-billion-chips-ai-deal) that it is buying ARM for more than $40 billion. [Rumors and news](https://news.ycombinator.com/item?id=24009177) about the acquisition have been going around since at least August but is confirmed by Nvidia in September.
