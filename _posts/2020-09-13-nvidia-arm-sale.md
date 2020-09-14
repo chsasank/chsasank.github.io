@@ -71,7 +71,7 @@ This, of course, did not go unnoticed by the market. Nvidia's stock price skyroc
 
 GPU hardware is not exclusive to Nvidia though - gaming existed long before there was any AI. AMD, who acquired [ATI](https://en.wikipedia.org/wiki/Radeon) and a key leader in CPU market, is also a key competitor in GPU hardware. Latest and greatest gaming consoles - both Microsoft's Xbox and Sony's PlayStation - use AMD's GPUs.
 
-However, GPU AI software (CUDA) works only on Nvidia GPUs. This means AI is *exclusive* to Nvidia GPUs. CUDA became a strong moot for Nvidia's commercial traction. Basically there's no competition for hardware for AI.
+However, GPU AI software (CUDA) works only on Nvidia GPUs. This means AI is *exclusive* to Nvidia GPUs. CUDA became a strong moat for Nvidia's commercial traction. Basically there's no competition for hardware for AI.
 This monopoly of AI GPU hardware is quite apparent in the server market<span id="tps" class="margin-toggle sidenote-number"></span>.<span class="sidenote">
 Google has developed [TPUs](https://en.wikipedia.org/wiki/Tensor_processing_unit) as an alternative to GPUs. They're [available](https://cloud.google.com/tpu) on Google cloud but they're quite expensive. You can't really get *hands* on them.
 <br/>
