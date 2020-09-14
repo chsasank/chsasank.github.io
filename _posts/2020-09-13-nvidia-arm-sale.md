@@ -8,7 +8,7 @@ category: books
 Nvidia has [announced](https://www.theverge.com/2020/9/13/21435507/nvidia-acquiring-arm-40-billion-chips-ai-deal) that it is buying ARM for more than $40 billion. [Rumors and news](https://news.ycombinator.com/item?id=24009177) about the acquisition have been going around since at least August but is confirmed by Nvidia in September.
 [Everybody](https://www.ft.com/content/4970848d-7821-45dc-b8cb-211036be5d30) is [concerned](https://tech.newstatesman.com/business/hermann-hauser-nvidia-destroy-arm) [about](https://ownsnap.com/us-government-should-block-nvidia-from-acquiring-arm-open-source-is-in-danger-zone/) the [acquisition](https://ownsnap.com/us-government-should-block-nvidia-from-acquiring-arm-open-source-is-in-danger-zone/) [including](https://www.telegraph.co.uk/technology/2020/08/10/arm-sale-softbank-tragedy-tech-sector-says-former-city-minister/) [ARM's](https://www.bbc.com/news/technology-53678506) [co-founders](https://hothardware.com/news/arm-co-founders-question-nvidias-motives-softbank-deal) [themselves]((https://phonemantra.com/arm-co-founders-fear-nvidia-takeover/)).
 If so much has already been said about this, what's the point of this post? This post aims to add artificial intelligence (AI) to the conversation.
-To understand this point, we have to step back a bit and examine the history and business models of key players. I aim to keep the conversation accessible to someone unacquainted with technology and hence the length.
+To understand this point, we have to step back a bit and examine the history and business models of key players and technologies. I aim to keep the conversation accessible to someone unacquainted with technology and hence the length.
 
 ## Background: History and Business of AI and Computers
 
@@ -22,10 +22,10 @@ There's no denying the pervasiveness of AI in the modern world. AI is everywhere
 
 * In your pocket. Ever used Uber? [Uber uses AI](https://eng.uber.com/uber-ai-blog-2019/) to match you to drivers. Google assistant and Siri are obviously AI.
 * In your living room. It was only in [science fiction](https://www.youtube.com/watch?v=1ZXugicgn6U), until recently, [where you can say aloud](https://www.amazon.in/gp/help/customer/display.html?nodeId=GNQ59GMNBGBU3U8L) *Alexa, play Pink Floyd* and *Comfortably Numb* plays in the background.
-* In your office. When you wrote a mail in Gmail, have you received suggestions for your next sentence or phrase - as if [Google knows](https://www.techspot.com/news/74533-new-ai-powered-gmail-feature-can-write-emails.html) what you're about to type.
+* In your office. When you wrote a mail in Gmail, have you received suggestions for your next sentence or phrase - as if [Google knows](https://www.techspot.com/news/74533-new-ai-powered-gmail-feature-can-write-emails.html) what you're about to type?
 * In your hospital. If you end up having a stroke, your brain [might be saved](https://info.vrad.com/hubfs/CaseStudy_AI_GreaterRegional_1119%20(002).pdf?__hstc=&__hssc=&hsCtaTracking=e9be34c0-46d3-45e1-90d8-b8153c20804e%7C7abcaae7-6366-4ff0-ad77-834471104fe7) by AI's brain (!) without you ever knowing. AI is enabling faster treatment for strokes and better management of [diseases](https://arxiv.org/abs/2006.05509) and [even pandemics](https://www.technologyreview.com/2020/04/23/1000410/ai-triage-covid-19-patients-health-care/).
 
-These advances are a result of hard work of some of the brightest minds of the world. Alan Turing, the patron saint for computers, wrote a [seminal paper](https://en.wikipedia.org/wiki/Computing_Machinery_and_Intelligence) on AI in 1950 even before transistor based computers were a thing. Many preeminent computer scientists worked on AI as evidenced by [Turing Awards](https://en.wikipedia.org/wiki/Turing_Award) for them. More recently, two Canadian and a French researchers led the deep learning revolution which enabled all the above innovations.
+These advances are a result of hard work of some of the brightest minds of the world. Alan Turing, the patron saint for computers, wrote a [seminal paper](https://en.wikipedia.org/wiki/Computing_Machinery_and_Intelligence) on AI in 1950 even before transistor based computers were a thing. Many preeminent computer scientists worked on AI as evidenced by [Turing Awards](https://en.wikipedia.org/wiki/Turing_Award) for them. More recently, three researchers, two Canadian and a French, led the deep learning revolution which enabled all the above innovations.
 
 These advances in computer science were not gradual - [science doesn't work that way]((https://www.lri.fr/~mbl/Stanford/CS477/papers/Kuhn-SSR-2ndEd.pdf)). Science instead works in cycles of revolutions and setbacks<span id="hype" class="margin-toggle sidenote-number"></span>.
 <span class="sidenote">
@@ -37,7 +37,7 @@ These advances in computer science were not gradual - [science doesn't work that
 </span>
 <img src="/assets/images/nvidia-arm/ai-history.png">
 
-Latest deep learning revolution in AI was caused by the availability of
+Latest deep learning revolution of AI was caused by the availability of
 
 1. Huge amount of data
 2. Huge amount of compute to deal with that data
@@ -70,13 +70,13 @@ Nvidia, therefore, was a key contributor to the latest AI revolution. Soon after
 
 GPU hardware is not exclusive to Nvidia though - gaming existed long before there was any AI. AMD, who acquired [ATI](https://en.wikipedia.org/wiki/Radeon) and a key leader in CPU market, is also a key competitor in GPU hardware. Latest and greatest gaming consoles - both Microsoft's Xbox and Sony's PlayStation - use AMD's GPUs.
 
-However, GPU AI software (CUDA) works only on Nvidia GPUs. This meant AI is *exclusive* to Nvidia GPUs. CUDA became a strong moot for Nvidia's commercial traction. Basically there's no competition for hardware for AI.
+However, GPU AI software (CUDA) works only on Nvidia GPUs. This means AI is *exclusive* to Nvidia GPUs. CUDA became a strong moot for Nvidia's commercial traction. Basically there's no competition for hardware for AI.
 This monopoly of AI GPU hardware is quite apparent in the server market<span id="tps" class="margin-toggle sidenote-number"></span>.<span class="sidenote">
 Google has developed [TPUs](https://en.wikipedia.org/wiki/Tensor_processing_unit) as an alternative to GPUs. They're [available](https://cloud.google.com/tpu) on Google cloud but they're quite expensive. You can't really get *hands* on them.
 <br/>
 Most AI researchers, like myself, use consumer grade Nvidia GPUs for research. These are cheaper thanks to the competition from AMD in Gaming market.
 </span>
-Cloud providers like AWS, who power most of our web, offer no alternative to Nvidia for GPUs. Nvidia is able to charge significant markup for server-grade GPUs because of lack of competition. All of this is a great news for shareholders for Nvidia but is not so great for AI researchers and engineers.
+Cloud providers like AWS, who power most of our web, offer no alternative to Nvidia for GPUs. Nvidia is able to charge significant markup for server-grade GPUs because of lack of competition. All of this is a great news for shareholders for Nvidia but not so great for AI researchers and engineers.
 
 Nvidia's commercial interests mean that CUDA will never work on Nvidia's competition GPUs. This makes Nvidia fiercely anti-market, like any monopoly. This is also the reason why Nvidia resisted integration of GPUs to Open Source Linux operating system.  In 2012, [Linus Torvalds](https://en.wikipedia.org/wiki/Linus_Torvalds), the maintainer of Linux<span id="linus" class="margin-toggle sidenote-number"></span><span class="sidenote">
 and the patron saint of open source movement
@@ -111,7 +111,7 @@ x86 was not the only computer architecture available. Many of Intel's competitor
 
 Stage is set to understand what ARM does! Let's get a perspective on another key technology - mobiles aka smart phones.
 
-Starting 90s, cellphones started appearing on the market allowing calls to be done from the pockets (2G). In 2000s, these phones started getting data / internet access (3G). Blackberry smartphones, now extinct breed were some of the first smartphones. In 2007, Apple released landmark smartphone [iPhone](https://en.wikipedia.org/wiki/IPhone_(1st_generation)) and in 2008, Google collaborated with phone manufacturers to release [Android](https://en.wikipedia.org/wiki/Android_(operating_system)) breed of smartphones.
+<!-- Starting 90s, cellphones started appearing on the market allowing calls to be done from the pockets (2G). In 2000s, these phones started getting data / internet access (3G). Blackberry smartphones, now extinct breed were some of the first smartphones. In 2007, Apple released landmark smartphone [iPhone](https://en.wikipedia.org/wiki/IPhone_(1st_generation)) and in 2008, Google collaborated with phone manufacturers to release [Android](https://en.wikipedia.org/wiki/Android_(operating_system)) breed of smartphones. -->
 
 Smartphones are essentially pocket sized computers and their compute power steadily grew over the years. Both iPhones and Androids used this curious new chips called ARM chips. ARM Holdings, the company behind the ARM, designed the chips and their architectures but does *not* actually manufacture them! ARM licenses its designs to manufacturers so that they can modify the designs and fabricate the chips<span class="margin-toggle sidenote-number"></span><span class="sidenote">This is a completely different business model! Also note how allowing people to edit designs is similar to open source!</span>. Curiously, ARM chips keep their instructions simple as opposed to x86's complex instructions - which academics always said was a better design. Key customers of ARM are Samsung, Qualcomm and Apple.
 
@@ -135,7 +135,7 @@ Previous acquisitions of open companies by not-so-open companies did not go well
 
 Nvidia has a lot of reasons to kill off ARM after the acquisition. Most of the customers of ARM's designs are competitors of Nvidia. Given the Nvidia's interests and anti-market nature, Oracle-Sun disaster is likely to repeat itself with Nvidia-ARM acquisition. Computing world will suffer from the absence of a reliable architecture. ARM's cofounders, Tudor Brown and Hermann Hauser, voiced [these](https://www.bbc.com/news/technology-53678506) [concerns](https://www.bbc.com/news/technology-53637463) publicly to BBC.
 
-In a [letter to Financial Times](https://www.ft.com/content/4970848d-7821-45dc-b8cb-211036be5d30), Hermann Hauser put forwards the idea that acquisition will hit technological sovereignty of UK and Europe. ARM is a British company employing about 2,500 employees in Cambridge, UK. ARM's acquisition by an American company will inevitably lead to job losses in UK. ARM is one of the last great European technology  companies. Its owning by a US company will be a disaster for UK's sovergnity. With the looming tech war with China, this is going to be doubly important.
+In a [letter to Financial Times](https://www.ft.com/content/4970848d-7821-45dc-b8cb-211036be5d30), Hermann Hauser puts forward the idea that acquisition will hit technological sovereignty of UK and Europe. ARM is a British company employing about 2,500 employees in Cambridge, UK. ARM's acquisition by an American company will inevitably lead to job losses in UK. ARM is one of the last great European technology  companies. Its owning by a US company will be a disaster for UK's sovergnity. With the looming tech war with China, this is going to be doubly important.
 
 <blockquote>
 
@@ -163,7 +163,7 @@ If there's no innovation and growth in the computing market, AI will suffer. Onc
 
 ## What Can be Done About This?
 
-ARM is up for sale, no question in that. Ideally, no chip manufacturer should buy ARM. If regulators think that Nvidia and ARM are not competitors and the deal will go fine, they will be up for a sucker punch. Regulators should ideally block this deal, but we all know how they powerful they are against commercial interests. ARM should probably be acquired by a software first company like Google, Microsoft or IBM. Microsoft and IBM/RedHat are a great fit because of their focus on open source<span class="margin-toggle sidenote-number"></span><span class="sidenote">Can't believe how things have changed for open source and MSFT/IBM. Topic for another day.</span> and compute on cloud.
+ARM is up for sale, no question in that. Ideally, no chip manufacturer should buy ARM. If regulators think that Nvidia and ARM are not competitors and the deal will go fine, they will be up for a sucker punch. Regulators should ideally block this deal, but we all know how powerful they are against commercial interests. ARM should probably be acquired by a software first company like Google, Microsoft or IBM. Microsoft and IBM/RedHat are a great fit because of their focus on open source<span class="margin-toggle sidenote-number"></span><span class="sidenote">Can't believe how things have changed for open source and MSFT/IBM. Topic for another day.</span> and compute on cloud.
 
 If Nvidia-ARM deal does go through, rest of the technology community<span class="margin-toggle sidenote-number"></span><span class="sidenote">Starting with smart phone ecosystem (Google, Apple, Samsung) and academic institutions.</span> should invest hard into [RISC-V](https://en.wikipedia.org/wiki/RISC-V), a truly open source alternative to ARM. Industry is likely to be set back by a few years because RISC-V doesn't have parity with ARM. As ARM becomes closed over the years, we can be pretty sure that people will find ways to make RISC-V better.
 
