@@ -37,7 +37,7 @@ These advances in computer science were not gradual - [science doesn't work that
 </span>
 <img src="/assets/images/nvidia-arm/ai-history.png">
 
-Latest deep learning revolution was caused by the availability of
+Latest deep learning revolution in AI was caused by the availability of
 
 1. Huge amount of data
 2. Huge amount of compute to deal with that data
@@ -135,7 +135,7 @@ Previous acquisitions of open companies by not-so-open companies did not go well
 
 Nvidia has a lot of reasons to kill off ARM after the acquisition. Most of the customers of ARM's designs are competitors of Nvidia. Given the Nvidia's interests and anti-market nature, Oracle-Sun disaster is likely to repeat itself with Nvidia-ARM acquisition. Computing world will suffer from the absence of a reliable architecture. ARM's cofounders, Tudor Brown and Hermann Hauser, voiced [these](https://www.bbc.com/news/technology-53678506) [concerns](https://www.bbc.com/news/technology-53637463) publicly to BBC.
 
-In a [letter to Financial Times](https://www.ft.com/content/4970848d-7821-45dc-b8cb-211036be5d30), Hermann Hauser put forwards the idea that acquisition will hit technological sovereignty of UK and Europe. ARM is a British company employing about 2,500 employees in Cambridge, UK. ARM's acquisition by an American company will inevitably lead to job losses in UK. ARM is one of the last great European technology  companies. Its owning by a US company will be a disaster for UK's sovergnity. With the coming tech war with China, this is going to be doubly important.
+In a [letter to Financial Times](https://www.ft.com/content/4970848d-7821-45dc-b8cb-211036be5d30), Hermann Hauser put forwards the idea that acquisition will hit technological sovereignty of UK and Europe. ARM is a British company employing about 2,500 employees in Cambridge, UK. ARM's acquisition by an American company will inevitably lead to job losses in UK. ARM is one of the last great European technology  companies. Its owning by a US company will be a disaster for UK's sovergnity. With the looming tech war with China, this is going to be doubly important.
 
 <blockquote>
 
@@ -160,3 +160,19 @@ Computing power was and will remain important to the progress of AI.
 <img src="/assets/images/nvidia-arm/gpt-compute.png">
 
 If there's no innovation and growth in the computing market, AI will suffer. Once compute power becomes saturating (yet again), training new AIs like GPT-3 will be ruled out or only available to select few. In the latter case, open and collaborative nature of AI research will die off. As of 2020, AI has the *potential* to solve some of the world's toughest problems including health and education. As compute saturates, AI will fail to achieve these '[grandiose objectives](https://en.wikipedia.org/wiki/AI_winter#The_Lighthill_report)' it set out for. This will lead to pessimism and another AI winter.
+
+## What Can be Done About This?
+
+ARM is up for sale, no question in that. Ideally, no chip manufacturer should buy ARM. If regulators think that Nvidia and ARM are not competitors and the deal will go fine, they will be up for a sucker punch. Regulators should ideally block this deal, but we all know how they powerful they are against commercial interests. ARM should probably be acquired by a software first company like Google, Microsoft or IBM. Microsoft and IBM/RedHat are a great fit because of their focus on open source<span class="margin-toggle sidenote-number"></span><span class="sidenote">Can't believe how things have changed for open source and MSFT/IBM. Topic for another day.</span> and compute on cloud.
+
+If Nvidia-ARM deal does go through, rest of the technology community<span class="margin-toggle sidenote-number"></span><span class="sidenote">Starting with smart phone ecosystem (Google, Apple, Samsung) and academic institutions.</span> should invest hard into [RISC-V](https://en.wikipedia.org/wiki/RISC-V), a truly open source alternative to ARM. Industry is likely to be set back by a few years because RISC-V doesn't have parity with ARM. As ARM becomes closed over the years, we can be pretty sure that people will find ways to make RISC-V better.
+
+Another way AI community can protect itself from another AI winter is to directly attack Nvidia's moot, CUDA. Community should come together and create an open source CUDA alternative. With an open source CUDA alternative, AI will not be exclusive to Nvidia and it will not be able to control AI ecosystem. AI community should ensure that compute software doesn't depend on a hardware manufacturer.
+
+## Conclusion
+
+In this post, we have discussed the history of AI and how compute power is important to the progress of AI. Nvidia played a key role in the current deep learning revolution in terms of both hardware and software. In the process, Nvidia has become a monopoly for AI compute.
+
+We have discussed the history of computers themselves and their architecture. We have inspected how Intel and AMD's x86 chips are getting irrelevant. Rise of smartphones lead to proliferation of ARM processors. We observed the business model of ARM and how it doesn't actually manufacture the chips. We also showed why ARM is the future of computers.
+
+We have also discussed why Nvidia's ARM acquisition is likely to be a disaster. This acquisition will cement Nvidia's position as a monopoly not only for AI, but also for computing in general. Since compute is important for AI's progress and monopolies don't perform, AI's progress may be hindered and cause another wave of pessimism of AI that is called AI winter. We have ended the discussion with what we could do about the whole situation.
