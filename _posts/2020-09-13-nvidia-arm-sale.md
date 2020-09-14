@@ -1,28 +1,28 @@
 ---
 layout: post
-title: Nvidia's ARM acquisition will start AI winter
+title: Nvidia's ARM acquisition may start AI winter
 author: Sasank Chilamkurthy
 category: books
 ---
 
-It [looks like](https://www.theverge.com/2020/9/12/21434110/softbank-may-sell-arm-to-nvidia) Nvidia is closing in on deal with SoftBank to buy ARM for more than $40 billion. [Rumors and news](https://news.ycombinator.com/item?id=24009177) about the acquisition have been going around since at least August.
+Nvidia has [announced](https://www.theverge.com/2020/9/13/21435507/nvidia-acquiring-arm-40-billion-chips-ai-deal) that it is buying ARM for more than $40 billion. [Rumors and news](https://news.ycombinator.com/item?id=24009177) about the acquisition have been going around since at least August but is confirmed by Nvidia in September.
 [Everybody](https://www.ft.com/content/4970848d-7821-45dc-b8cb-211036be5d30) is [concerned](https://tech.newstatesman.com/business/hermann-hauser-nvidia-destroy-arm) [about](https://ownsnap.com/us-government-should-block-nvidia-from-acquiring-arm-open-source-is-in-danger-zone/) the [acquisition](https://ownsnap.com/us-government-should-block-nvidia-from-acquiring-arm-open-source-is-in-danger-zone/) [including](https://www.telegraph.co.uk/technology/2020/08/10/arm-sale-softbank-tragedy-tech-sector-says-former-city-minister/) [ARM's](https://www.bbc.com/news/technology-53678506) [co-founders](https://hothardware.com/news/arm-co-founders-question-nvidias-motives-softbank-deal) [themselves]((https://phonemantra.com/arm-co-founders-fear-nvidia-takeover/)).
 If so much has already been said about this, what's the point of this post? This post aims to add artificial intelligence (AI) to the conversation.
 To understand this point, we have to step back a bit and examine the history and business models of key players. I aim to keep the conversation accessible to someone unacquainted with technology and hence the length.
 
 ## Background: History and Business of AI and Computers
 
-It's important to understand the history of AI research in detail before we appreciate the reasons for rise of Nvidia.
+It's important to understand the history of AI research in detail before we appreciate the reasons for the rise of Nvidia.
 We also have to digress deep into the history of computers themselves.
-We'll then continue with ARM and the reason for current sale.
+We'll then continue with ARM and the reason why ARM is up for sale.
 
 ### Artificial Intelligence (AI)
 
 There's no denying the pervasiveness of AI in the modern world. AI is everywhere:
 
 * In your pocket. Ever used Uber? [Uber uses AI](https://eng.uber.com/uber-ai-blog-2019/) to match you to drivers. Google assistant and Siri are obviously AI.
-* In your living room. It was only in [science fiction](https://www.youtube.com/watch?v=1ZXugicgn6U), until recently, [where you can say aloud](https://www.amazon.in/gp/help/customer/display.html?nodeId=GNQ59GMNBGBU3U8L) *Alexa, play Pink Floyd* and *Comfortably Numb* plays in background.
-* In your office. When you write a mail, have you received suggestions from gmail about your next sentence or phrase - as if [Google knows](https://www.techspot.com/news/74533-new-ai-powered-gmail-feature-can-write-emails.html) what you're about to type.
+* In your living room. It was only in [science fiction](https://www.youtube.com/watch?v=1ZXugicgn6U), until recently, [where you can say aloud](https://www.amazon.in/gp/help/customer/display.html?nodeId=GNQ59GMNBGBU3U8L) *Alexa, play Pink Floyd* and *Comfortably Numb* plays in the background.
+* In your office. When you wrote a mail in Gmail, have you received suggestions for your next sentence or phrase - as if [Google knows](https://www.techspot.com/news/74533-new-ai-powered-gmail-feature-can-write-emails.html) what you're about to type.
 * In your hospital. If you end up having a stroke, your brain [might be saved](https://info.vrad.com/hubfs/CaseStudy_AI_GreaterRegional_1119%20(002).pdf?__hstc=&__hssc=&hsCtaTracking=e9be34c0-46d3-45e1-90d8-b8153c20804e%7C7abcaae7-6366-4ff0-ad77-834471104fe7) by AI's brain (!) without you ever knowing. AI is enabling faster treatment for strokes and better management of [diseases](https://arxiv.org/abs/2006.05509) and [even pandemics](https://www.technologyreview.com/2020/04/23/1000410/ai-triage-covid-19-patients-health-care/).
 
 These advances are a result of hard work of some of the brightest minds of the world. Alan Turing, the patron saint for computers, wrote a [seminal paper](https://en.wikipedia.org/wiki/Computing_Machinery_and_Intelligence) on AI in 1950 even before transistor based computers were a thing. Many preeminent computer scientists worked on AI as evidenced by [Turing Awards](https://en.wikipedia.org/wiki/Turing_Award) for them. More recently, two Canadian and a French researchers led the deep learning revolution which enabled all the above innovations.
@@ -43,11 +43,12 @@ Latest deep learning revolution was caused by the availability of
 2. Huge amount of compute to deal with that data
 3. Highly open research and open source code
 
-As computers pervaded our world starting 90s, huge amounts of data were collected. All of us have heard the maxim [*Data is the new oil*](https://www.wired.com/insights/2014/07/data-new-oil-digital-economy/). [ImageNet](https://en.wikipedia.org/wiki/ImageNet), a database of 14 million images each with a description of what's in the image, was very important for AI being where it is now. There were lot more open datasets like ImageNet that led AI revolution. These datasets were available to the most researchers and [competitions](https://en.wikipedia.org/wiki/ImageNet#History_of_the_ImageNet_challenge) were held between them to test out their methods.
+As computers pervaded our world starting 90s, huge amounts of data were collected. All of us have heard the maxim [*Data is the new oil*](https://www.wired.com/insights/2014/07/data-new-oil-digital-economy/). 
+In 2009, researchers from Stanford released [ImageNet](https://en.wikipedia.org/wiki/ImageNet), a database of 14 million images each with a description of what's in the image. This large dataset allowed AI to learn *how to see* by example. Concurrently large datasets were created for translation, speech recognition and other cognitive areas. Imagenet and other datasets were available to the most researchers around the world and [competitions](https://en.wikipedia.org/wiki/ImageNet#History_of_the_ImageNet_challenge) were held between them to test out their methods.
 
-GPUs were critical to handle this data as CPUs failed to provide amount of compute required. [Moore's law](https://en.wikipedia.org/wiki/Moore%27s_law), which propounds exponential increase in compute power, stopped working for CPUs in about 2010s. GPUs, originally designed for gaming, provided an alternative to continue the Moore's law. They fit amount of computing power what was possible only with a ultra-expensive super computer. GPUs essentially democratized the super computers which were previously accessible to a select few.
+GPUs were critical to handle this data as CPUs failed to provide the amount of compute required. [Moore's law](https://en.wikipedia.org/wiki/Moore%27s_law), which propounds exponential increase in compute power, stopped working for CPUs in 2010s. GPUs, originally designed for gaming, provided an alternative to continue Moore's law. They fit an amount of computing power that was possible only with an ultra-expensive supercomputer. GPUs essentially democratized the super computers which were previously accessible only to a select few.
 
-Finally, openness of the latest AI revolution has allowed researchers around the world to work together and generate explosive amount of research. AI researchers have [rejected](https://arxiv.org/help/stats/2018_by_area) traditional journals which guard the research behind paywalls <span id="opensciene" class="margin-toggle sidenote-number"></span>.<span class="sidenote">This is a topic for long form discussion in itself. Highly recommend [this paper from 2005](https://journals.uic.edu/ojs/index.php/fm/article/view/1265). Lot more cool stuff happened since publication of this paper</span>
+Finally, the openness of the latest AI revolution has allowed researchers around the world to work together and generate an explosive amount of research. AI researchers have [rejected](https://arxiv.org/help/stats/2018_by_area) traditional journals which guard the research behind paywalls <span id="opensciene" class="margin-toggle sidenote-number"></span>.<span class="sidenote">This is a topic for long form discussion in itself. Highly recommend [this paper from 2005](https://journals.uic.edu/ojs/index.php/fm/article/view/1265). Lot more cool stuff happened since publication of this paper</span>
 They also open source the code (i.e. methods) reproducing their research so that others can build upon them. This is a dream come true for any researcher - computer science or not.
 
 ### GPUs and Nvidia
@@ -58,7 +59,7 @@ Although GPUs store a lot of computing power, they were especially hard to progr
 
 In 2012, a grad student from University of Toronto, Alex Krizhevsky (of [AlexNet Fame](https://papers.nips.cc/paper/4824-imagenet-classification-with-deep-convolutional-neural-networks.pdf)) used CUDA to create the first real Deep Learning model on the ImageNet dataset. Although deep learning ideas weren’t exactly new then, they never really caught on because of the lack of computation power required for them to work. CUDA allowed Alex to tap into the computation prowess which was originally designed for gaming. This paper turned out to be a game changer for AI and started the current revolution.
 
-Nvidia, therefore, was a key contributor to the latest AI revolution. It became apparent soon after that there's a lot of money in AI. This, of course, did not go unnoticed by the market. Nvidia's stock price skyrocketed starting 2015.
+Nvidia, therefore, was a key contributor to the latest AI revolution. Soon after, it became apparent there's a lot of money in AI. This, of course, did not go unnoticed by the market. Nvidia's stock price skyrocketed starting 2015.
 
 <figure class="fullwidth">
 <amp-img width="3342" height="1652" layout="responsive" src="/assets/images/nvidia-arm/nvidia-stock.png"></amp-img>
@@ -121,7 +122,7 @@ Initially ARM chips tended to be underpowered compared to their x86 brethren. Ap
 
 Overall, ARM computers are going to be the future. If there's such a positive outlook for ARM, why is it up for sale. Curse the market and pandemic! ARM is wholly owned by a Japanese holding company called SoftBank. In 2019, Softbank [lost hell lot of money](https://www.cnbc.com/2020/05/18/softbank-ceo-calls-wework-investment-foolish-valuation-falls-to-2point9-billion.html) on IPO of another of its holding called WeWork. 2020 didn't help either with a pandemic. So, SoftBank is selling off ARM to cover its losses. What an unfortunate situation!
 
-## Why Nvidia's ARM Acquisition Will be A Disaster
+## Why Nvidia's ARM Acquisition Will Be A Disaster
 
 Summarizing the above discussion, a few things are quite clear:
 
@@ -144,12 +145,18 @@ Whether we are allowed to use our own British-designed microprocessors in the UK
 </blockquote>
 
 
-## Why will this acquisition cause AI Winter
+## Why Will This Acquisition May Cause AI Winter
 
-*TODO*
+x86 is a dying breed and ARM is the future. If Nvidia acquires ARM, there'll be a complete consolidation of computing market and no appreciable competition. GPU market is already suffering due to the monopoly of Nvidia. Eventually monopolies stop performing and start seeking rent on the market. This happened with Microsoft in 2000s as it consolidated PC market. Microsoft resisted and actively contributed to the detriment of innovations in web browsers, operating systems and lot more. It required a big punch in the face with Linux and cloud servers for it to start innovating again<span class="margin-toggle sidenote-number"></span><span class="sidenote">2020 Microsoft has completely embraced open source movement. It even [openly admitted](https://www.theverge.com/2020/5/18/21262103/microsoft-open-source-linux-history-wrong-statement) that it was wrong about open source. Gotta love Satya Nadella for what he did with the Micro-gaint.</span>.
 
-If Nvidia acquires ARM, there'll be a complete consolidation of computing market and no appreciable competition. GPU market is already suffering due to the monopoly of Nvidia. Nvidia's propietarary software is at odds with rest of the open source ecosystem of AI.
+Nvidia is already showing signs of becoming 2000s Microsoft. Its propietarary software is at odds with rest of the open source ecosystem of AI. As of 2020, deployment of AI is hard is because of the fact that Nvidia won't play well with open source and Linux kernel. Nvidia will never let another GPU manufacturer eat its market share. Soon, Nvidia will start actively contributing to the detriment of AI - just like Microsoft did for operating systems<span class="margin-toggle sidenote-number"></span><span class="sidenote">Microsoft's former CEO famously caled [*Linux a cancer for intellectual property*](https://www.theverge.com/2020/5/18/21262103/microsoft-open-source-linux-history-wrong-statement). When Nvidia starts clamoring about IP, we will know that the transformation is complete. </span>.
 
-Eventually monopolies stop performing and start seeking rent on the market. This happened with Microsoft in 2000s as it consolidated PC market. It resisted and active contributed to the detriment of innovations in web browsers, operating systems and lot more. It required a big punch in the face with Linux and cloud servers for it to start innovating again.
+AI models are particularly compute hungry. Let's take [GPT-3](https://en.wikipedia.org/wiki/GPT-3) for example. GPT's generated text is so coherent that it is hard to tell if it's written by a machine. Computing power was an [essential ingredient](https://www.zdnet.com/article/what-is-gpt-3-everything-business-needs-to-know-about-openais-breakthrough-ai-language-program/) for this AI's training. It has been [estimated](https://lambdalabs.com/blog/demystifying-gpt-3/) that it costs USD 4.6 million just for the compute. There were articles [discussing](https://news.mit.edu/2020/shrinking-deep-learning-carbon-footprint-0807) carbon footprint of AI and deep learning!
+Computing power was and will remain important to the progress of AI. 
 
-Putting both of these in Nvidia's hands will essentially kill off the whole ecosystem.
+<span class="marginnote">
+    Compute of GPT-3 compared. [Source](https://www.zdnet.com/article/what-is-gpt-3-everything-business-needs-to-know-about-openais-breakthrough-ai-language-program/).
+</span>
+<img src="/assets/images/nvidia-arm/gpt-compute.png">
+
+If there's no innovation and growth in the computing market, AI will suffer. Once compute power becomes saturating (yet again), training new AIs like GPT-3 will be ruled out or only available to select few. In the latter case, open and collaborative nature of AI research will die off. As of 2020, AI has the *potential* to solve some of the world's toughest problems including health and education. As compute saturates, AI will fail to achieve these '[grandiose objectives](https://en.wikipedia.org/wiki/AI_winter#The_Lighthill_report)' it set out for. This will lead to pessimism and another AI winter.
