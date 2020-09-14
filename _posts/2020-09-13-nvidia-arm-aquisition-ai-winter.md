@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Why Nvidia's ARM Acquisition May Start AI Winter 
+title: Why Nvidia's ARM Acquisition May Start Another AI Winter 
 author: Sasank Chilamkurthy
 ---
 
