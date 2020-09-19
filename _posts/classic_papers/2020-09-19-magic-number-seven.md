@@ -3,10 +3,11 @@ layout: post
 title: "The Magical Number Seven, Plus or Minus Two: Some Limits on Our Capacity for Processing Information"
 author: "George A. Miller"
 category: classic_papers
+description: My problem is that I have been persecuted by an integer. For seven years this number has followed me around, has intruded in my most private data, and has assaulted me from the pages of our most public journals. This number assumes a variety of disguises, being sometimes a little larger and sometimes a little smaller than usual
 published: 1956-03-01
 ---
 
-**NOTE**: This is *not* my article. This is a classic paper originally published by **George A. Miller** in The Psychological Review, 1956 and a mirror of [Stephen Malinowski](http://www.musanim.com/miller1956/)'s mirror. 
+> **NOTE**: This is *not* my article. This is a classic paper originally published by George A. Miller in The Psychological Review, 1956 and a mirror of [Stephen Malinowski](http://www.musanim.com/miller1956/)'s mirror. Blue highlights/annotations are my own.
 
 My problem is that I have been persecuted by an integer. For seven years this number has followed me around, has intruded in my most private data, and has assaulted me from the pages of our most public journals. This number assumes a variety of disguises, being sometimes a little larger and sometimes a little smaller than usual, but never changing so much as to be unrecognizable. The persistence with which this number plagues me is far more than a random accident. There is, to quote a famous senator, a design behind it, some pattern governing its appearances. Either there really is something unusual about the number or else I am suffering from delusions of persecution.
 
@@ -22,11 +23,15 @@ The similarity of variance and amount of information might be explained this way
 
 If you will now imagine a communication system, you will realize that there is a great deal of variability about what goes into the system and also a great deal of variability about what comes out. The input and the output can therefore be described in terms of their variance (or their information). If it is a good communication system, however, there must be some systematic relation between what goes in and what comes out. That is to say, the output will depend upon the input, or will be correlated with the input. If we measure this correlation, then we can say how much of the output variance is attributable to the input and how much is due to random fluctuations or "noise" introduced by the system during transmission. So we see that the measure of transmitted information is simply a measure of input-output correlation.
 
+> If it is a good communication system, however, there must be some systematic relation between what goes in and what comes out.
+
 There are two simple rules to follow. Whenever I refer to "amount of information," you will understand "variance." And whenever I refer to "amount of transmitted information," you will understand "covariance" or "correlation."
 
 The situation can be described graphically by two partially overlapping circles. Then the left circle can be taken to represent the variance of the input, the right circle the variance of the output, and the overlap the covariance of input and output. I shall speak of the left circle as the amount of input information, the right circle as the amount of output information, and the overlap as the amount of transmitted information.
 
 In the experiments on absolute judgment, the observer is considered to be a communication channel. Then the left circle would represent the amount of information in the stimuli, the right circle the amount of information in his responses, and the overlap the stimulus-response correlation as measured by the amount of transmitted information. The experimental problem is to increase the amount of input information and to measure the amount of transmitted information. If the observer's absolute judgments are quite accurate, then nearly all of the input information will be transmitted and will be recoverable from his responses. If he makes errors, the transmitted information may be considerably less than the input. We expect that, as we increase the amount of input information, the observer will begin to make more and more errors; we can test the limits of accuracy of his absolute judgments. If the human observer is a reasonable kind of communication system, then when we increase the amount of input information the transmitted information will increase at first and will eventually level off at some asymptotic value. This asymptotic value we take to be the channel capacity of the observer: it represents the greatest amount of information that he can give us about the stimulus on the basis of an absolute judgment. The channel capacity is the upper limit on the extent to which the observer can match his responses to the stimuli we give him.
+
+> The channel capacity is the upper limit on the extent to which the observer can match his responses to the stimuli we give him.
 
 Now just a brief word about the bit and we can begin to look at some data. One bit of information is the amount of information that we need to make a decision between two equally likely alternatives. If we must decide whether a man is less than six feet tall or more than six feet tall and if we know that the chances are 50-50, then we need one bit of information. Notice that this unit of information does not refer in any way to the unit of length that we use -- feet, inches, centimeters, etc. However you measure the man's height, we still need just one bit of information.
 
@@ -50,6 +55,8 @@ When only two or three tones were used, the listeners never confused them. With 
 These data are plotted in Fig. 1. Along the bottom is the amount of input information in bits per stimulus. As the number of alternative tones was increased from 2 to 14, the input information increased from 1 to 3.8 bits. On the ordinate is plotted the amount of transmitted information. The amount of transmitted information behaves in much the way we would expect a communication channel to behave; the transmitted information increases linearly up to about 2 bits and then bends off toward an asymptote at about 2.5 bits. This value, 2.5 bits, therefore, is what we are calling the channel capacity of the listener for absolute judgments of pitch.
 
 So now we have the number 2.5 bits. What does it mean? First, note that 2.5 bits corresponds to about six equally likely alternatives. The result means that we cannot pick more than six different pitches that the listener will never confuse. Or, stated slightly differently, no matter how many alternative tones we ask him to judge, the best we can expect him to do is to assign them to about six different classes without error. Or, again, if we know that there were N alternative stimuli, then his judgment enables us to narrow down the particular stimulus to one out of N/6.
+
+> We cannot pick more than six different pitches that the listener will never confuse ... if we know that there were N alternative stimuli, then his judgment enables us to narrow down the particular stimulus to one out of N/6.
 
 Most people are surprised that the number is as small as six. Of course, there is evidence that a musically sophisticated person with absolute pitch can identify accurately any one of 50 or 60 different pitches. Fortunately, I do not have time to discuss these remarkable exceptions. I say it is fortunate because I do not know how to explain their superior performance. So I shall stick to the more pedestrian fact that most of us can identify about one out of only five or six pitches before we begin to get confused.
 
@@ -91,11 +98,19 @@ One of the most active groups in this area has been the Air Force Operational Ap
 
 Now let us see where we are. First, the channel capacity does seem to be a valid notion for describing human observers. Second, the channel capacities measured for these unidimensional variables range from 1.6 bits for curvature to 3.9 bits for positions in an interval. Although there is no question that the differences among the variables are real and meaningful, the more impressive fact to me is their considerable similarity. If I take the best estimates I can get of the channel capacities for all the stimulus variables I have mentioned, the mean is 2.6 bits and the standard deviation is only 0.6 bit. In terms of distinguishable alternatives, this mean corresponds to about 6.5 categories, one standard deviation includes from 4 to 10 categories, and the total range is from 3 to 15 categories. Considering the wide variety of different variables that have been studied, I find this to be a remarkably narrow range.
 
+> If I take the best estimates I can get of the channel capacities for all the stimulus variables I have mentioned, the mean is 2.6 bits and the standard deviation is only 0.6 bit.
+> 
+> Considering the wide variety of different variables that have been studied, I find this to be a remarkably narrow range.
+
 There seems to be some limitation built into us either by learning or by the design of our nervous systems, a limit that keeps our channel capacities in this general range. On the basis of the present evidence it seems safe to say that we possess a finite and rather small capacity for making such unidimensional judgments and that this capacity does not vary a great deal from one simple sensory attribute to another.
 
 ## Absolute judgments of multidimensional stimuli
 
 You may have noticed that I have been careful to say that this magical number seven applies to one-dimensional judgments. Everyday experience teaches us that we can identify accurately any one of several hundred faces, any one of several thousand words, any one of several thousand objects, etc. The story certainly would not be complete if we stopped at this point. We must have some understanding of why the one-dimensional variables we judge in the laboratory give results so far out of line with what we do constantly in our behavior outside the laboratory. A possible explanation lies in the number of independently variable attributes of the stimuli that are being judged. Objects, faces, words, and the like differ from one another in many ways, whereas the simple stimuli we have considered thus far differ from one another in only one respect.
+
+> Everyday experience teaches us that we can identify accurately any one of several hundred faces, any one of several thousand words, any one of several thousand objects, etc.
+> 
+> A possible explanation lies in the number of independently variable attributes of the stimuli that are being judged. 
 
 Fortunately, there are a few data on what happens when we make absolute judgments of stimuli that differ from one another in several ways. Let us look first at the results Klemmer and Frick [13] have reported for the absolute judgment of the position of a dot in a square. In Fig. 5 we see their results. Now the channel capacity seems to have increased to 4.6 bits, which means that people can identify accurately any one of 24 positions in the square.
 
@@ -127,6 +142,8 @@ Clearly, the addition of independently variable attributes to the stimulus incre
 
 The point seems to be that, as we add more variables to the display, we increase the total capacity, but we decrease the accuracy for any particular variable. In other words, we can make relatively crude judgments of several things simultaneously.
 
+> As we add more variables to the display, we increase the total capacity, but we decrease the accuracy for any particular variable. In other words, we can make relatively crude judgments of several things simultaneously.
+
 We might argue that in the course of evolution those organisms were most successful that were responsive to the widest range of stimulus energies in their environment. In order to survive in a constantly fluctuating world, it was better to have a little information about a lot of things than to have a lot of information about a small segment of the environment. If a compromise was necessary, the one we seem to have made is clearly the more adaptive.
 
 Pollack and Ficks's results are very strongly suggestive of an argument that linguists and phoneticians have been making for some time [19]. According to the linguistic analysis of the sounds of human speech, there are about eight or ten dimensions -- the linguists call them distinctive features -- that distinguish one phoneme from another. These distinctive features are usually binary, or at most ternary, in nature. For example, a binary distinction is made between vowels and consonants, a binary decision is made between oral and nasal consonants, a ternary decision is made among front, middle, and back phonemes, etc. This approach gives us quite a different picture of speech perception than we might otherwise obtain from our studies of the speech spectrum and of the ear's ability to discriminate relative differences among pure tones. I am personally much interested in this new approach [15], and I regret that there is not time to discuss it here.
@@ -135,6 +152,8 @@ It was probably with this linguistic theory in mind that Pollack and Ficks condu
 
 In human speech there is clearly a limit to the number of dimensions that we use. In this instance, however, it is not known whether the limit is imposed by the nature of the perceptual machinery that must recognize the sounds or by the nature of the speech machinery that must produce them. Somebody will have to do the experiment to find out. There is a limit, however, at about eight or nine distinctive features in every language that has been studied, and so when we talk we must resort to still another trick for increasing our channel capacity. Language uses sequences of phonemes, so we make several judgments successively when we listen to words and sentences. That is to say, we use both simultaneous and successive discriminations in order to expand the rather rigid limits imposed by the inaccuracy of our absolute judgments of simple magnitudes.
 
+> We use both simultaneous and successive discriminations in order to expand the rather rigid limits imposed by the inaccuracy of our absolute judgments of simple magnitude
+
 These multidimensional judgments are strongly reminiscent of the abstraction experiment of Külpe [14]. As you may remember, Külpe showed that observers report more accurately on an attribute for which they are set than on attributes for which they are not set. For example, Chapman [4] used three different attributes and compared the results obtained when the observers were instructed before the tachistoscopic presentation with the results obtained when they were not told until after the presentation which one of the three attributes was to be reported. When the instruction was given in advance, the judgments were more accurate. When the instruction was given afterwards, the subjects presumably had to judge all three attributes in order to report on any one of them and the accuracy was correspondingly lower. This is in complete accord with the results we have just been considering, where the accuracy of judgment on each attribute decreased as more dimensions were added. The point is probably obvious, but I shall make it anyhow, that the abstraction experiments did not demonstrate that people can judge only one attribute at a time. They merely showed what seems quite reasonable, that people are less accurate if they must judge more than one attribute simultaneously.
 
 ## Subitizing
@@ -142,6 +161,8 @@ These multidimensional judgments are strongly reminiscent of the abstraction exp
 I cannot leave this general area without mentioning, however briefly, the experiments conducted at Mount Holyoke College on discrimination of number [12]. In experiments by Kaufman, Lord, Reese, and Volkmann random patterns of dots were flashed on a screen for 1/5 of a second. Anywhere from 1 to more than 200 dots could appear in the pattern. The subject's task was to report how many dots there were.
 
 The first point to note is that on patterns containing up to five or six dots the subjects simply did not make errors. The performance on these small numbers of dots was so different from the performance with more dots that it was given a special name. Below seven the subjects were said to subitize; above seven they were said to estimate. This is, as you will recognize, what we once optimistically called "the span of attention."
+
+> Below seven the subjects were said to subitize; above seven they were said to estimate. This is, as you will recognize, what we once optimistically called "the span of attention."
 
 This discontinuity at seven is, of course, suggestive. Is this the same basic process that limits our unidimensional judgments to about seven categories? The generalization is tempting, but not sound in my opinion. The data on number estimates have not been analyzed in informational terms; but on the basis of the published data I would guess that the subjects transmitted something more than four bits of information about the number of dots. Using the same arguments as before, we would conclude that there are about 20 or 30 distinguishable categories of numerousness. This is considerably more information than we would expect to get from a unidimensional display. It is, as a matter of fact, very much like a two-dimensional display. Although the dimensionality of the random dot patterns is not entirely clear, these results are in the same range as Klemmer and Frick's for their two-dimensional display of dots in a square. Perhaps the two dimensions of numerousness are area and density. When the subject can subitize, area and density may not be the significant variables, but when the subject must estimate perhaps they are significant. In any event, the comparison is not so simple as it might seem at first thought.
 
@@ -159,6 +180,8 @@ Suppose that we start by simply extending slightly the experimental procedure th
 
 Before we look at any data on this topic, I feel I must give you a word of warning to help you avoid some obvious associations that can be confusing. Everybody knows that there is a finite span of immediate memory and that for a lot of different kinds of test materials this span is about seven items in length. I have just shown you that there is a span of absolute judgment that can distinguish about seven categories and that there is a span of attention that will encompass about six objects at a glance. What is more natural than to think that all three of these spans are different aspects of a single underlying process? And that is a fundamental mistake, as I shall be at some pains to demonstrate. This mistake is one of the malicious persecutions that the magical number seven has subjected me to.
 
+> There is a finite span of immediate memory and that for a lot of different kinds of test materials this span is about seven items in length. I have just shown you that there is a span of absolute judgment that can distinguish about seven categories and that there is a span of attention that will encompass about six objects at a glance. What is more natural than to think that all three of these spans are different aspects of a single underlying process? And that is a fundamental mistake.
+
 My mistake went something like this. We have seen that the invariant feature in the span of absolute judgment is the amount of information that the observer can transmit. There is a real operational similarity between the absolute judgment experiment and the immediate memory experiment. If immediate memory is like absolute judgment, then it should follow that the invariant feature in the span of immediate memory is also the amount of information that an observer can retain. If the amount of information in The span of immediate memory is a constant, then the span should be short when the individual items contain a lot of information and the span should be long when the items contain little information. For example, decimal digits are worth 3.3 bits apiece. We can recall about seven of them, for a total of 23 bits of information. Isolated English words are worth about 10 bits apiece. If the total amount of information is to remain constant at 23 bits, then we should be able to remember only two or three words chosen at random. In this way I generated a theory about how the span of immediate memory should vary as a function of the amount of information per item in the test materials.
 
 The measurements of memory span in the literature are suggestive on this question, but not definitive. And so it was necessary to do the experiment to see. Hayes [10] tried it out with five different kinds of test materials: binary digits, decimal digits, letters of the alphabet, letters plus decimal digits, and with 1,000 monosyllabic words. The lists were read aloud at the rate of one item per second and the subjects had as much time as they needed to give their responses. A procedure described by Woodworth [20] was used to score the responses.
@@ -170,21 +193,25 @@ The results are shown by the filled circles in Fig. 7. Here the dotted line indi
 </span>
 <img src='/assets/images/classic_papers/magic_number_seven/fig7.gif'>
 
+
+There is nothing wrong with Hayes's experiment, because Pollack [16] repeated it much more elaborately and got essentially the same result. Pollack took pains to measure the amount of information transmitted and did not rely on the traditional procedure for scoring the responses. His results are plotted in Fig. 8. Here it is clear that the amount of information transmitted is not a constant, but increases almost linearly as the amount of information per item in the input is increased.
+
 <span class="marginnote">
     Figure 8. Data from Pollack [16] on the amount of information retained after one presentation plotted as a function of the amount of information per item in the test materials.
 </span>
 <img src='/assets/images/classic_papers/magic_number_seven/fig8.gif'>
 
-
-There is nothing wrong with Hayes's experiment, because Pollack [16] repeated it much more elaborately and got essentially the same result. Pollack took pains to measure the amount of information transmitted and did not rely on the traditional procedure for scoring the responses. His results are plotted in Fig. 8. Here it is clear that the amount of information transmitted is not a constant, but increases almost linearly as the amount of information per item in the input is increased.
-
 And so the outcome is perfectly clear. In spite of the coincidence that the magical number seven appears in both places, the span of absolute judgment and the span of immediate memory are quite different kinds of limitations that are imposed on our ability to process information. Absolute judgment is limited by the amount of information. Immediate memory is limited by the number of items. In order to capture this distinction in somewhat picturesque terms, I have fallen into the custom of distinguishing between bits of information and chunks of information. Then I can say that the number of bits of information is constant for absolute judgment and the number of chunks of information is constant for immediate memory. The span of immediate memory seems to be almost independent of the number of bits per chunk, at least over the range that has been examined to date.
+
+> In spite of the coincidence that the magical number seven appears in both places, the span of absolute judgment and the span of immediate memory are quite different kinds of limitations that are imposed on our ability to process information. Absolute judgment is limited by the amount of information. Immediate memory is limited by the number of items.
 
 The contrast of the terms bit and chunk also serves to highlight the fact that we are not very definite about what constitutes a chunk of information. For example, the memory span of five words that Hayes obtained when each word was drawn at random from a set of 1,000 English monosyllables might just as appropriately have been called a memory span of 15 phonemes, since each word had about three phonemes in it. Intuitively, it is clear that the subjects were recalling five words, not 15 phonemes, but the logical distinction is not immediately apparent. We are dealing here with a process of organizing or grouping the input into familiar units or chunks, and a great deal of learning has gone into the formation of these familiar units.
 
 ## Recoding
 
 In order to speak more precisely, therefore, we must recognize the importance of grouping or organizing the input sequence into units or chunks. Since the memory span is a fixed number of chunks, we can increase the number of bits of information that it contains simply by building larger and larger chunks, each chunk containing more information than before.
+
+> We must recognize the importance of grouping or organizing the input sequence into units or chunks. Since the memory span is a fixed number of chunks, we can increase the number of bits of information that it contains simply by building larger and larger chunks, each chunk containing more information than before.
 
 A man just beginning to learn radio-telegraphic code hears each dit and dah as a separate chunk. Soon he is able to organize these sounds into letters and then he can deal with the letters as chunks. Then the letters organize themselves as words, which are still larger chunks, and he begins to hear whole phrases. I do not mean that each step is a discrete process, or that plateaus must appear in his learning curve, for surely the levels of organization are achieved at different rates and overlap each other during the learning process. I am simply pointing to the obvious fact that the dits and dahs are organized by learning into patterns and that as these larger chunks emerge the amount of message that the operator can remember increases correspondingly. In the terms I am proposing to use, the operator learns to increase the bits per chunk.
 
@@ -197,7 +224,7 @@ Begin with the observed fact that people can repeat back eight decimal digits, b
 <span class="marginnote">
     Table I. Ways of Recoding Sequences of Binary Digits
 </span>
-<img src='/assets/images/classic_papers/magic_number_seven/table.gif'>
+<img src='/assets/images/classic_papers/magic_number_seven/table1.gif'>
 
 
 
@@ -209,6 +236,8 @@ Since the 4:1 and 5:1 ratios require considerable study, Smith decided to imitat
 
 It is a little dramatic to watch a person get 40 binary digits in a row and then repeat them back without error. However, if you think of this merely as a mnemonic trick for extending the memory span, you will miss the more important point that is implicit in nearly all such mnemonic devices. The point is that recoding is an extremely powerful weapon for increasing the amount of information that we can deal with. In one form or another we use recoding constantly in our daily behavior.
 
+> The point is that recoding is an extremely powerful weapon for increasing the amount of information that we can deal with. In one form or another we use recoding constantly in our daily behavior.
+
 <span class="marginnote">
     Figure 9. The span of immediate memory for binary digits is plotted as a function of the recoding procedure used. The predicted function is obtained by multiplying the span for octals by 2, 3, and 3.3 for recoding into base 4, base 8, and base 10, respectively.
 </span>
@@ -219,6 +248,8 @@ It is a little dramatic to watch a person get 40 binary digits in a row and then
 In my opinion the most customary kind of recoding that we do all the time is to translate into a verbal code. When there is a story or an argument or an idea that we want to remember, we usually try to rephrase it "in our own words." When we witness some event we want to remember, we make a verbal description of the event and then remember our verbalization. Upon recall we recreate by secondary elaboration the details that seem consistent with the particular verbal recoding we happen to have made. The well-known experiment by Carmichael, Hogan, and Walter [3] on the influence that names have on the recall of visual figures is one demonstration of the process.
 
 The inaccuracy of the testimony of eyewitnesses is well known in legal psychology, but the distortions of testimony are not random -- they follow naturally from the particular recoding that the witness used, and the particular recoding he used depends upon his whole life history. Our language is tremendously useful for repackaging material into a few chunks rich in information. I suspect that imagery is a form of recoding, too, but images seem much harder to get at operationally and to study experimentally than the more symbolic kinds of recoding.
+
+> Our language is tremendously useful for repackaging material into a few chunks rich in information. 
 
 It seems probable that even memorization can be studied in these terms. The process of memorizing may be simply the formation of chunks, or groups of items that go together, until there are few enough chunks so that we can recall all the items. The work by Bousfield and Cohen [2] on the occurrence of clustering in the recall of words is especially interesting in this respect.
 
