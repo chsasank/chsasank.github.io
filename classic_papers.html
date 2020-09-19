@@ -1,0 +1,21 @@
+---
+layout: page
+title: Classic Papers
+order: 2
+permalink: /classic_papers/
+---
+
+<p>I maintain a mirror of some classic papers because the originals
+    tend to be not well formatted for the modern web.</p>
+
+<ul>
+    {% for post in site.posts %}
+    {% if post.category == 'classic_papers' %}
+    <li>
+        <span class="post-date"> {{post.published | date: "%Y"}}, </span>
+        <span class="post-author"> {{post.author | trim}}, </span>
+        <a class="post-link" href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
+    </li>
+    {% endif %}
+    {% endfor %}
+</ul>

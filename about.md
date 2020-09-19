@@ -1,6 +1,6 @@
 ---
 layout: page
-title: About
+title: About Me
 order: 3
 permalink: /about/
 ---
@@ -22,3 +22,8 @@ I am getting into Carnatic music these days. I really like Annammaya's songs.
 
 I read a lot of books, mostly classics.
 I should maintain a list somewhere, hopefully along with a short review.
+
+* Github: [github.com/chsasank](https://github.com/chsasank)
+* Linkedin: [linkedin.com/in/sasank-chilamkurthy-85a35897](https://linkedin.com/in/sasank-chilamkurthy-85a35897)
+* Twitter: [@sasank51](https://twitter.com/sasank51)
+* Email: [sasankchilamkurthy@gmail.com](mailto:sasankchilamkurthy@gmail.com)

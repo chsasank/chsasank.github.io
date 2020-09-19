@@ -1,13 +1,13 @@
 ---
 layout: page
 title: Book Log
-order: 2
+order: 3
 permalink: /book_log/
 ---
 
 <ul>
     {% for post in site.posts %}
-    {% if post.category| downcase contains 'book' %}
+    {% if post.category == 'books' %}
     <li>
         <span class="post-date"> {{post.date | date: "%b %-d, %Y"}} </span>
         <a class="post-link" href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>

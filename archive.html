@@ -1,13 +1,13 @@
 ---
 layout: page
-title: Archive
+title: My Writing
 order: 1
 permalink: /archive/
 ---
 
 <ul>
     {% for post in site.posts %}
-    {% unless post.category| downcase contains 'book' %}
+    {% unless post.category %}
     <li>
         <span class="post-date"> {{post.date | date: "%b %-d, %Y"}} </span>
         <a class="post-link" href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
