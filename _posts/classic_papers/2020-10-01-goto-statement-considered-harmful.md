@@ -3,7 +3,7 @@ layout: post
 title: "Go To Statement Considered Harmful"
 author: "Edsger W. Dijkstra"
 category: classic_papers
-description: My problem is that I have been persecuted by an integer. For seven years this number has followed me around, has intruded in my most private data, and has assaulted me from the pages of our most public journals. This number assumes a variety of disguises, being sometimes a little larger and sometimes a little smaller than usual
+description: For a number of years I have been familiar with the observation that the quality of programmers is a decreasing function of the density of `go to` statements in the programs they produce. More recently I discovered why the use of the `go to` statement has such disastrous effects, and I became convinced that the `go to` statement should be abolished from all "higher level" programming languages (i.e. everything except, perhaps, plain machine code). At that time I did not attach too much importance to this discovery; I now submit my considerations for publication because in very recent discussions in which the subject turned up, I have been urged to do so.
 published: 1968-03-01
 ---
 
