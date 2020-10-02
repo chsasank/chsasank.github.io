@@ -6,6 +6,8 @@ paginate:	5 # The number of posts to show per page on your homepage
 name: "Sasank Chilamkurthy"
 email: 'sasankchilamkurthy@gmail.com'
 markdown: kramdown
+twitter_username: sasank51
+twitter_image: assets/favicon/sasank51.jpg
 permalink: none
 kramdown:
   parse_block_html: true
@@ -15,3 +17,5 @@ gems:
   - jekyll-compose
   - jekyll-sass-converter
   - jekyll-textile-converter
+long_description: >
+  I write about artificial intelligence (AI), technology, books, languages and some time random stuff.

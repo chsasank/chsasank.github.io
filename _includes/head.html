@@ -4,17 +4,43 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width,minimum-scale=1">
 
-  <title>{% if page.title %}{{ page.title | escape }}{% else %}{{ site.title | escape }}{% endif %}</title>
-  <meta name="description" content="{% if page.description %}{{ page.description | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
-  <meta name="title" content="{% if page.title %}{{ page.title | escape }}{% else %}{{ site.title | escape }}{% endif %}">
-  <meta name="author" content="{% if page.author %}{{ page.author | escape }}{% else %}{{ "Sasank Chilamkurthy" }}{% endif %}">
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@{{ site.twitter_username }}" />
+
+  {% if page.twitter_image %}
+    <meta name="twitter:image" content="{{ site.url }}/{{ page.twitter_image }}"/>  
+  {% else %}
+    <meta name="twitter:image" content="{{ site.url }}/{{ site.twitter_image }}"/> 
+  {% endif %}
+  
+  {% if page.layout == 'default' %}
+    <meta name="twitter:title" content="{{site.title}} - {{site.description}}"/>
+    <meta name="title" content="{{site.title}} - {{site.description}}"/>
+    <title>{{site.title}} - {{site.description}}</title>
+
+    <meta name="twitter:description" content="{{site.long_description}}">
+    <meta name="description" content="{{site.long_description}}">
+    <meta name="author" content="{{site.name}}">
+  {% else %}
+    <meta name="twitter:title" content="{{ page.title }} - {{site.title}}"/>
+    <meta name="title" content="{{ page.title }} - {{site.title}}"/>
+    <title>{{ page.title }} - {{site.title}}</title>
+    <meta name="twitter:description" content="{% if page.description %}{{ page.description | strip_html | strip_newlines | truncate: 200 }}{% else %}{{ page.content | strip_html | strip_newlines | truncate: 200 }}{% endif %}">
+    <meta name="description" content="{% if page.description %}{{ page.description | strip_html | strip_newlines | truncate: 200 }}{% else %}{{ page.content | strip_html | strip_newlines | truncate: 200 }}{% endif %}">
+    <meta name="author" content="{% if page.author %}{{ page.author | escape }}{% else %}{{ site.name }}{% endif %}">
+  {% endif %}
+
 
   <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
   <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}">
-  <link rel="icon" href="/assets/favicon.png" sizes="32x32" type="image/png">
   <script type="application/ld+json">
-  {% include metadata.json %}
+    {% include metadata.json %}
   </script>
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png">
+  <link rel="manifest" href="/assets/favicon/site.webmanifest">
 
   <style amp-custom>
   {% capture include_to_scssify %}
