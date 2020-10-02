@@ -8,11 +8,11 @@
   <meta name="twitter:site" content="@{{ site.twitter_username }}" />
 
   {% if page.twitter_image %}
-    <meta name="twitter:image" content="{{ site.real_url }}/{{ page.twitter_image }}"/>  
+    <meta name="twitter:image" content="{{ site.real_url }}/{{ page.twitter_image }}"/>
   {% else %}
-    <meta name="twitter:image" content="{{ site.real_url }}/{{ site.twitter_image }}"/> 
+    <meta name="twitter:image" content="{{ site.real_url }}/{{ site.twitter_image }}"/>
   {% endif %}
-  
+
   {% if page.layout == 'default' %}
     <meta name="twitter:title" content="{{site.title}} - {{site.description}}"/>
     <meta name="title" content="{{site.title}} - {{site.description}}"/>
@@ -25,6 +25,7 @@
     <meta name="twitter:title" content="{{ page.title }} - {{site.title}}"/>
     <meta name="title" content="{{ page.title }} - {{site.title}}"/>
     <title>{{ page.title }} - {{site.title}}</title>
+
     <meta name="twitter:description" content="{% if page.description %}{{ page.description | strip_html | strip_newlines | truncate: 200 }}{% else %}{{ page.content | strip_html | strip_newlines | truncate: 200 }}{% endif %}">
     <meta name="description" content="{% if page.description %}{{ page.description | strip_html | strip_newlines | truncate: 200 }}{% else %}{{ page.content | strip_html | strip_newlines | truncate: 200 }}{% endif %}">
     <meta name="author" content="{% if page.author %}{{ page.author | escape }}{% else %}{{ site.name }}{% endif %}">
