@@ -9,8 +9,8 @@
   <meta name="twitter:site" content="@{{ site.twitter_username }}" />
 
   {% if page.twitter_image %}
-    <meta name="twitter:image" content="{{ site.real_url }}/{{ page.twitter_image }}"/>
-    <meta property="og:image" content="{{ site.real_url }}/{{ page.twitter_image }}"/>
+    <meta name="twitter:image" content="{{ page.twitter_image }}"/>
+    <meta property="og:image" content="{{ page.twitter_image }}"/>
   {% else %}
     <meta name="twitter:image" content="{{ site.real_url }}/{{ site.twitter_image }}"/>
     <meta property="og:image" content="{{ site.real_url }}/{{ site.twitter_image }}"/>

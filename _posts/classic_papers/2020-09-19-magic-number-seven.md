@@ -5,6 +5,7 @@ author: "George A. Miller"
 category: classic_papers
 description: My problem is that I have been persecuted by an integer. For seven years this number has followed me around, has intruded in my most private data, and has assaulted me from the pages of our most public journals. This number assumes a variety of disguises, being sometimes a little larger and sometimes a little smaller than usual
 published: 1956-03-01
+twitter_image: https://upload.wikimedia.org/wikipedia/en/thumb/7/7e/George_Armitage_Miller_speaking_at_the_first_APS_convention_in_1989.jpg/220px-George_Armitage_Miller_speaking_at_the_first_APS_convention_in_1989.jpg
 ---
 
 > **NOTE**: This is *not* my article. This is a classic paper originally published by George A. Miller in The Psychological Review, 1956 and a mirror of [Stephen Malinowski](http://www.musanim.com/miller1956/)'s mirror. Blue highlights/annotations are my own.
