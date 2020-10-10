@@ -9,7 +9,7 @@ The covid-19 situation has given all of us a hard time - both for our physical a
 <span class="marginnote">
    My friend, Vikash, at the summit.
 </span>
-<img src='/assets/images/seo/vikash.jpg'>
+<img src='/assets/images/writing/vikash.jpg'>
 
 I am forced to lose my hiker identity this season. I'm also forced off my gym identity. Now I have to find a new identity to fill the void. I think I've subconsciously decided that writing will be that identity. I started writing long mails, tutorials in our [internal wiki](http://172.24.195.84:4000/outline-self-hosted-wiki.html) and in general more text. I think blogging is one place where I can put my thoughts down and create an identity.
 
