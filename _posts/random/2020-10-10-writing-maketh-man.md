@@ -2,6 +2,7 @@
 layout: post
 title: "Writing Maketh a Man"
 author: Sasank Chilamkurthy
+twitter_image: https://chsasank.github.io/assets/images/writing/vikash.jpg
 ---
 
 The covid-19 situation has given all of us a hard time - both for our physical and mental health. We have been forced to lose a part of our identities. I used to be an avid hiker - especially in the monsoon. This season, I could go only for one trek<span class="margin-toggle sidenote-number"></span><span class="sidenote">Here in India, we call hiking *trekking*</span>. It was a short and beautiful hike near Mumbai.
