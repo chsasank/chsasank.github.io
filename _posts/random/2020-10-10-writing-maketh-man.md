@@ -56,6 +56,11 @@ I am starting to see patterns in the tech industry I work in and the technologie
 
 My interests in life are not just science and technology! I love travelling and hiking. Thanks to Bhargava, I'm now a pretty decent alpine snowboarder! Recently I am beginning to appreciate photography. Inspired by Dijkstra, I want to maintain 'trip reports' of all the cool trips I make. Of course, the current covid situation has limited by travelling. May be I can write about my travels retrospectively and relive those moments in my mind!
 
+<span class="marginnote">
+   My friend Ranadeep. Photo taken in our snowboarding mecca, Gulmarg.
+</span>
+<img src='/assets/images/writing/ranadeep.jpg'>
+
 
 I was hanging out with my friend [Ankit](https://ankitmodi.github.io/) the other day and he was telling me how he writes for entertainment. He is right: writing and creation is more fun than just reading or discussion i.e. consumption. It's certainly not easy but that's what makes it so awesome - just like hiking. I will end this note with a quote from English Philosopher [Francis Bacon](https://en.wikipedia.org/wiki/Francis_Bacon), who developed [scientific method](https://en.wikipedia.org/wiki/Scientific_method):
 
