@@ -8,34 +8,51 @@
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:site" content="@{{ site.twitter_username }}" />
 
-  {% if page.twitter_image %}
-    <meta name="twitter:image" content="{{ page.twitter_image }}"/>
-    <meta property="og:image" content="{{ page.twitter_image }}"/>
-  {% else %}
-    <meta name="twitter:image" content="{{ site.real_url }}/{{ site.twitter_image }}"/>
-    <meta property="og:image" content="{{ site.real_url }}/{{ site.twitter_image }}"/>
-  {% endif %}
+  {% capture twitter_image %}
+    {% if page.twitter_image %}
+      {{ page.twitter_image }}
+    {% else %}
+      {{ site.real_url }}/{{ site.twitter_image }}
+    {% endif %}
+  {% endcapture %}
+
+  <meta name="twitter:image" content="{{ twitter_image | strip }}"/>
+  <meta property="og:image" content="{{ twitter_image | strip }}"/>
+
+  {% capture page_title %}
+    {% if page.layout == 'default' %}
+      {{site.title}} - {{site.description}}
+    {% else %}
+      {{ page.title }} - {{site.title}}
+    {% endif %}
+  {% endcapture %}
+
+  <meta name="twitter:title" content="{{ page_title | strip }}"/>
+  <meta property="og:title" content="{{ page_title | strip }}"/>
+  <meta name="title" content="{{ page_title | strip }}"/>
+  <title>{{page_title | strip}}</title>
+
+  {% capture page_description %}
+    {% if page.layout == 'default' %}
+      {{site.long_description}}
+    {% else %}
+      {% if page.description %}
+        {{ page.description | strip_html | strip_newlines | truncate: 200 }}
+      {% else %}
+        {{ page.content | strip_html | strip_newlines | truncate: 200 }}
+      {% endif %}
+    {% endif %}
+  {% endcapture %}
+
+  <meta name="twitter:description" content="{{page_description | strip }}">
+  <meta name="description" content="{{page_description | strip }}">
+  <meta property="og:description" content="{{page_description | strip }}">
+
 
   {% if page.layout == 'default' %}
-    <meta name="twitter:title" content="{{site.title}} - {{site.description}}"/>
-    <meta property="og:title" content="{{site.title}} - {{site.description}}"/>
-    <meta name="title" content="{{site.title}} - {{site.description}}"/>
-    <title>{{site.title}} - {{site.description}}</title>
-
-    <meta name="twitter:description" content="{{site.long_description}}">
-    <meta name="description" content="{{site.long_description}}">
-    <meta property="og:description" content="{{site.long_description}}">
     <meta name="author" content="{{site.name}}">
     <meta property="og:type" content="website" />
   {% else %}
-    <meta name="twitter:title" content="{{ page.title }} - {{site.title}}"/>
-    <meta name="title" content="{{ page.title }} - {{site.title}}"/>
-    <meta property="og:title" content="{{ page.title }} - {{site.title}}">
-    <title>{{ page.title }} - {{site.title}}</title>
-
-    <meta name="twitter:description" content="{% if page.description %}{{ page.description | strip_html | strip_newlines | truncate: 200 }}{% else %}{{ page.content | strip_html | strip_newlines | truncate: 200 }}{% endif %}">
-    <meta property="og:description" content="{% if page.description %}{{ page.description | strip_html | strip_newlines | truncate: 200 }}{% else %}{{ page.content | strip_html | strip_newlines | truncate: 200 }}{% endif %}">
-    <meta name="description" content="{% if page.description %}{{ page.description | strip_html | strip_newlines | truncate: 200 }}{% else %}{{ page.content | strip_html | strip_newlines | truncate: 200 }}{% endif %}">
     <meta name="author" content="{% if page.author %}{{ page.author | escape }}{% else %}{{ site.name }}{% endif %}">
     <meta property="og:type" content="article" />
   {% endif %}

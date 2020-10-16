@@ -6,7 +6,7 @@ permalink: /archive/
 description: This is the list of all my writing
 ---
 
-This is the list of all my writing.
+<p>This is the list of all my writing.</p>
 
 <ul>
     {% for post in site.posts %}
@@ -16,5 +16,19 @@ This is the list of all my writing.
         <a class="post-link" href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
     </li>
     {% endunless %}
+    {% endfor %}
+</ul>
+
+
+<p>This is the list of reviews/notes I write of books I care about.</p>
+
+<ul>
+    {% for post in site.posts %}
+    {% if post.category == 'books' %}
+    <li>
+        <span class="post-date"> {{post.date | date: "%b %-d, %Y"}} </span>
+        <a class="post-link" href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
+    </li>
+    {% endif %}
     {% endfor %}
 </ul>
