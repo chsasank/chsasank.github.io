@@ -5,7 +5,7 @@ author: "Linus Torvalds"
 category: classic_papers
 description: "The intellectual property debate is so hot these days that I can’t wander into a restroom without running across graffiti supporting one side or the other. Some people think that patents and other forms of intellectual property law are the bane of the free universe, and that these laws are not just misguided but actually evil and should be struck down as soon as possible. Others are convinced that pretty much the whole world economy is driven by intellectual property. And those people want to do anything to strengthen the legal status of IP rights."
 published: 2001-05-15
-twitter_image: https://upload.wikimedia.org/wikipedia/commons/thumb/8/8f/Ken_Thompson_%28sitting%29_and_Dennis_Ritchie_at_PDP-11_%282876612463%29.jpg/1280px-Ken_Thompson_%28sitting%29_and_Dennis_Ritchie_at_PDP-11_%282876612463%29.jpg
+twitter_image: https://en.wikipedia.org/wiki/File:LinuxCon_Europe_Linus_Torvalds_03_(cropped).jpg
 ---
 
 > **NOTE**: This is *not* my article. Linus Torvalds wrote this essay as an appendix to his book - [Just for fun](https://www.goodreads.com/book/show/160171.Just_for_Fun) in 2001. I thought this essay deserves wider readership. I also made some edits to it to make it more readable as a paper. I hope Torvalds doesn't kill me for this! Blue highlights/annotations are my own.
