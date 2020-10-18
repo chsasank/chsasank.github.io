@@ -8,7 +8,7 @@ published: 1974-07-01
 twitter_image: https://upload.wikimedia.org/wikipedia/commons/thumb/8/8f/Ken_Thompson_%28sitting%29_and_Dennis_Ritchie_at_PDP-11_%282876612463%29.jpg/1280px-Ken_Thompson_%28sitting%29_and_Dennis_Ritchie_at_PDP-11_%282876612463%29.jpg
 ---
 
-> **NOTE**: This is *not* my article. This is a classic paper originally published in *Communications of the ACM*, 1974 by Dennis M. Ritchie and Ken Thompson. Blue highlights/annotations are my own.
+> **NOTE**: This is *not* my article. This is a classic paper originally published in *Communications of the ACM*, 1974 by Dennis M. Ritchie and Ken Thompson. Yellow highlights/annotations are my own. <a onclick="disableHighlight()" href='#'>Disable them</a>
 
 ## Abstract
 
@@ -20,10 +20,7 @@ There have been three versions of UNIX. The earliest version (circa 1969–70) r
 
 Since PDP-11 UNIX became operational in February 1971, about 40 installations have been put into service; they are generally smaller than the system described here. Most of them are engaged in applications such as the preparation and formatting of patent applications and other textual material, the collection and processing of trouble data from various switching machines within the Bell System, and recording and checking telephone service orders. Our own installation is used mainly for research in operating systems, languages, computer networks, and other topics in computer science, and also for document preparation.
 
-Perhaps the most important achievement of UNIX is to demonstrate that a powerful operating system for interactive use need not be expensive either in equipment or in human effort: UNIX can run on hardware costing as little as $40,000, and less than two man years were spent on the main system software. Yet UNIX contains a number of features seldom offered even in much larger systems. It is hoped, however, the users of UNIX will find that the most important characteristics of the system are its simplicity, elegance, and ease of use.
-
-> The most important achievement of UNIX is to demonstrate that a powerful operating system need not be expensive either in equipment or in human effort.
-> However, the users of UNIX will find that the most important characteristics of the system are its simplicity, elegance, and ease of use.
+Perhaps <mark>the most important achievement of UNIX is to demonstrate that a powerful operating system for interactive use need not be expensive either in equipment or in human effort</mark>: UNIX can run on hardware costing as little as $40,000, and less than two man years were spent on the main system software. Yet UNIX contains a number of features seldom offered even in much larger systems. <mark>It is hoped, however, the users of UNIX will find that the most important characteristics of the system are its simplicity, elegance, and ease of use.</mark>
 
 Besides the system proper, the major programs available under UNIX are: assembler, text editor based on QED[2], linking loader, symbolic debugger, compiler for a language resembling BCPL[3] with types and structures (C), interpreter for a dialect of BASIC, text formatting program, Fortran compiler, Snobol interpreter, top-down compiler-compiler (TMG) [4], bottom-up compiler-compiler (YACC), form letter generator, macro processor (M6) [5], and permuted index program.
 
@@ -47,15 +44,11 @@ The most important job of UNIX is to provide a file system. From the point of vi
 
 ### 3.1 Ordinary Files
 
-A file contains whatever information the user places on it, for example symbolic or binary (object) programs. No particular structuring is expected by the system. Files of text consist simply of a string of characters, with lines demarcated by the new-line character. Binary programs are sequences of words as they will appear in core memory when the program starts executing. A few user programs manipulate files with more structure: the assembler generates and the loader expects an object file in a particular format. However, the structure of files is controlled by the programs which use them, not by the system.
-
-> A file contains whatever information the user places on it, for example symbolic or binary (object) programs. No particular structuring is expected by the system.
+<mark>A file contains whatever information the user places on it, for example symbolic or binary (object) programs. No particular structuring is expected by the system.</mark> Files of text consist simply of a string of characters, with lines demarcated by the new-line character. Binary programs are sequences of words as they will appear in core memory when the program starts executing. A few user programs manipulate files with more structure: the assembler generates and the loader expects an object file in a particular format. However, the structure of files is controlled by the programs which use them, not by the system.
 
 ### 3.2 Directories
 
-Directories provide the mapping between the names of files and the files themselves, and thus induce a structure on the file system as a whole. Each user has a directory of his own files; he may also create subdirectories to contain groups of files conveniently treated together. A directory behaves exactly like an ordinary file except that it cannot be written on by unprivileged programs, so that the system controls the contents of directories. However, anyone with appropriate permission may read a directory just like any other file.
-
-> Directories provide the mapping between the names of files and the files themselves, and thus induce a structure on the file system as a whole.
+<mark>Directories provide the mapping between the names of files and the files themselves, and thus induce a structure on the file system as a whole.</mark> Each user has a directory of his own files; he may also create subdirectories to contain groups of files conveniently treated together. A directory behaves exactly like an ordinary file except that it cannot be written on by unprivileged programs, so that the system controls the contents of directories. However, anyone with appropriate permission may read a directory just like any other file.
 
 The system maintains several directories for its own use. One of these is the *root* directory. All files in the system can be found by tracing a path through a chain of directories until the desired file is reached. The starting point for such searches is often the root. Another system directory contains all the programs provided for general use; that is, all the *commands*. As will be seen however, it is by no means necessary that a program reside in this directory for it to be executed.
 
@@ -67,29 +60,21 @@ Files are named by sequences of 14 or fewer characters. When the name of a file 
 
 A path name not starting with `/` causes the system to begin the search in the user’s current directory. Thus, the name `alpha/beta` specifies the file named `beta` in subdirectory `alpha` of the current directory. The simplest kind of name, for example `alpha`, refers to a file which itself is found in the current directory. As another limiting case, the null file name refers to the current directory.
 
-The same nondirectory file may appear in several directories under possibly different names. This feature is called *linking*; a directory entry for a file is sometimes called a link. UNIX differs from other systems in which linking is permitted in that all links to a file have equal status. That is, a file does not exist within a particular directory; the directory entry for a file consists merely of its name and a pointer to the information actually describing the file. Thus a file exists independently of any directory entry, although in practice a file is made to disappear along with the last link to it.
-
-> UNIX differs from other systems in which linking is permitted in that all links to a file have equal status.
+The same nondirectory file may appear in several directories under possibly different names. This feature is called *linking*; a directory entry for a file is sometimes called a link. <mark>UNIX differs from other systems in which linking is permitted in that all links to a file have equal status.</mark> That is, a file does not exist within a particular directory; the directory entry for a file consists merely of its name and a pointer to the information actually describing the file. Thus a file exists independently of any directory entry, although in practice a file is made to disappear along with the last link to it.
 
 Each directory always has at least two entries. The name in each directory refers to the directory itself. Thus a program may read the current directory under the name `.` without knowing its complete path name. The name `..` by convention refers to the parent of the directory in which it appears, that is, to the directory in which it was created.
 
-The directory structure is constrained to have the form of a rooted tree. Except for the special entries `.` and `..`, each directory must appear as an entry in exactly one other,which is its parent. Te reason for this is to simplify the writing of programs which visit subtrees of the directory structure, and more important, to avoid the separation of portions of the hierarchy. If arbitrary links to directories were permitted, it would be quite difficult to detect when the last connection from the root to a directory was severed.
-
-> The directory structure is constrained to have the form of a rooted tree.
+<mark>The directory structure is constrained to have the form of a rooted tree.</mark> Except for the special entries `.` and `..`, each directory must appear as an entry in exactly one other,which is its parent. Te reason for this is to simplify the writing of programs which visit subtrees of the directory structure, and more important, to avoid the separation of portions of the hierarchy. If arbitrary links to directories were permitted, it would be quite difficult to detect when the last connection from the root to a directory was severed.
 
 ### 3.3 Special Files
 
-Special files constitute the most unusual feature of the UNIX file system. Each I/O device supported by UNIX is associated with at least one such file. Special files are read and written just like ordinary disk files, but requests to read or write result in activation of the associated device. An entry for each special file resides in directory `/dev`, although a link may be made to one of these files just like an ordinary file. Thus, for example, to punch paper tape, one may write on the file `/dev/ppt`. Special files exist for each communication line, each disk, each tape drive, and for physical core memory. Of course, the active disks and the core special file are protected from indiscriminate access.
-
-> Special files constitute the most unusual feature of the UNIX file system. Each I/O device supported by UNIX is associated with at least one such file.
+<mark>Special files constitute the most unusual feature of the UNIX file system. Each I/O device supported by UNIX is associated with at least one such file.</mark> Special files are read and written just like ordinary disk files, but requests to read or write result in activation of the associated device. An entry for each special file resides in directory `/dev`, although a link may be made to one of these files just like an ordinary file. Thus, for example, to punch paper tape, one may write on the file `/dev/ppt`. Special files exist for each communication line, each disk, each tape drive, and for physical core memory. Of course, the active disks and the core special file are protected from indiscriminate access.
 
 There is a threefold advantage in treating I/O devices this way: file and device I/O are as similar as possible; file and device names have the same syntax and meaning, so that a program expecting a file name as a parameter can be passed a device name; finally, special files are subject to the same protection mechanism as regular files.
 
 ### 3.4 Removable File Systems
 
-Although the root of the file system is always stored on the same device, it is not necessary that the entire file system hierarchy reside on this device. There is a `mount` system request which has two arguments: the name of an existing ordinary file, and the name of a direct-access special file whose associated storage volume (e.g. disk pack) should have the structure of an independent file system containing its own directory hierarchy. The effect of `mount` is to cause references to the heretofore ordinary file to refer instead to the root directory of the file system on the removable volume. In effect, mount replaces a leaf of the hierarchy tree (the ordinary file) by a whole new subtree (the hierarchy stored on the removable volume). After the `mount`, there is virtually no distinction between files on the removable volume and those in the permanent file system. In our installation, for example, the root directory resides on the fixed-head disk, and the large disk drive, which contains user's files, is mounted by the system initialization program, the four smaller disk drives are available to users for mounting their own disk packs. A mountable file system is generated by writing on its corresponding special file. A utility program is available to create an empty file system, or one may simply copy an existing file system.
-
-> The effect of `mount` is to cause references to the heretofore ordinary file to refer instead to the root directory of the file system on the removable volume.
+Although the root of the file system is always stored on the same device, it is not necessary that the entire file system hierarchy reside on this device. There is a `mount` system request which has two arguments: the name of an existing ordinary file, and the name of a direct-access special file whose associated storage volume (e.g. disk pack) should have the structure of an independent file system containing its own directory hierarchy. <mark>The effect of `mount` is to cause references to the heretofore ordinary file to refer instead to the root directory of the file system on the removable volume.</mark> In effect, mount replaces a leaf of the hierarchy tree (the ordinary file) by a whole new subtree (the hierarchy stored on the removable volume). After the `mount`, there is virtually no distinction between files on the removable volume and those in the permanent file system. In our installation, for example, the root directory resides on the fixed-head disk, and the large disk drive, which contains user's files, is mounted by the system initialization program, the four smaller disk drives are available to users for mounting their own disk packs. A mountable file system is generated by writing on its corresponding special file. A utility program is available to create an empty file system, or one may simply copy an existing file system.
 
 There is only one exception to the rule of identical treatment of files on different devices: no link may exist between one file system hierarchy and another. This restriction is enforced so as to avoid the elaborate bookkeeping which would otherwise be required to assure removal of the links when the removable volume is finally dismounted. In particular, in the root directories of all file systems, removable or not, the name `..` refers to the directory itself instead of to its parent.
 
@@ -105,9 +90,7 @@ The system recognizes one particular user ID (that of the “super-user”) as e
 
 ### 3.6 I/O Calls
 
-The system calls to do I/O are designed to eliminate the differences between the various devices and styles of access. There is no distinction between "random" and sequential I/O, nor is any logical record size imposed by the system. The size of an ordinary file is determined by the highest byte written on it; no predetermination of the size of a file is necessary or possible.
-
-> There is no distinction between "random" and sequential I/O, nor is any logical record size imposed by the system.
+The system calls to do I/O are designed to eliminate the differences between the various devices and styles of access. <mark>There is no distinction between "random" and sequential I/O, nor is any logical record size imposed by the system.</mark> The size of an ordinary file is determined by the highest byte written on it; no predetermination of the size of a file is necessary or possible.
 
 To illustrate the essentials of I/O in UNIX, Some of the basic calls are summarized below in an anonymous language which will indicate the required parameters without getting into the complexities of machine language programming. Each call to the system may potentially result in an error return, which for simplicity is not represented in the calling sequence.
 
@@ -167,9 +150,8 @@ As mentioned in §3.2 above, a directory entry contains only a name for the asso
 8. A bit indicating whether the file is a special file.
 9. A bit indicating whether the file is "large" or "small."
 
-The purpose of an `open` or `create` system call is to turn the path name given by the user into an `i-number` by searching the explicitly or implicitly named directories. Once a file is open, its device, `i-number`, and read/write pointer are stored in a system table indexed by the file descriptor returned by the open or create. Thus the file descriptor supplied during a subsequent call to read or write the file may be easily related to the information necessary to access the file.
+<mark>The purpose of an `open` or `create` system call is to turn the path name given by the user into an `i-number` by searching the explicitly or implicitly named directories.</mark> Once a file is open, its device, `i-number`, and read/write pointer are stored in a system table indexed by the file descriptor returned by the open or create. Thus the file descriptor supplied during a subsequent call to read or write the file may be easily related to the information necessary to access the file.
 
-> The purpose of an `open` or `create` system call is to turn the path name given by the user into an `i-number` by searching the explicitly or implicitly named directories
 
 When a new file is created, an `i-node` is allocated for it and a directory entry is made which contains the name of the file and the `i-node` number. Making a link to an existing file involves creating a directory entry with the new name, copying the `i-number` from the original file entry, and incrementing the link-count field of the `i-node`. Removing (deleting) a file is done by decrementing the link-count of the `i-node` specified by its directory entry and erasing the directory entry. If the link-count drops to 0, any disk blocks in the file are freed and the `i-node` is deallocated.
 
@@ -179,9 +161,7 @@ The foregoing discussion applies to ordinary files. When an I/O request is made 
 
 In this environment, the implementation of the `mount` system call (§3.4) is quite straightforward. `mount` maintains a system table whose argument is the `i-number` and device name of the ordinary file specified during the mount, and whose corresponding value is the device name of the indicated special file. This table is searched for each (`i-number`, device)-pair which turns up while a path name is being scanned during an open or create; if a match is found, the `i-number` is replaced by 1 (which is the `i-number` of the root directory on all file systems), and the device name is replaced by the table value.
 
-To the user, both reading and writing of files appear to be synchronous and unbuffered. That is immediately after return from a `read` call the data are available, and conversely after a `write` the user's workspace may be reused. In fact the system maintains a rather complicated buffering mechanism which reduces greatly the number of I/O operations required to access a file. Suppose a `write` call is made specifying transmission of a single byte.
-
-> To the user, both reading and writing of files appear to be synchronous and unbuffered.
+<mark>To the user, both reading and writing of files appear to be synchronous and unbuffered.</mark> That is immediately after return from a `read` call the data are available, and conversely after a `write` the user's workspace may be reused. In fact the system maintains a rather complicated buffering mechanism which reduces greatly the number of I/O operations required to access a file. Suppose a `write` call is made specifying transmission of a single byte.
 
 
 UNIX will search its buffers to see whether the affected disk block currently resides in core memory; if not, it will be read in from the device. Then the affected byte is replaced in the buffer, and an entry is made in a list of blocks to be written. The return from the `write` call may then take place, although the actual I/O may not be completed until a later time. Conversely, if a single byte is read, the system determines whether the secondary storage block in which the byte is located is already in one of the system's buffers; if so, the byte can be returned immediately. If not, the block is read into a buffer and the byte picked out.
@@ -192,19 +172,13 @@ The notion of the `i-list` is an unusual feature of UNIX. In practice, this meth
 
 ### 4.1 Efficiency of the File System
 
-To provide an indication of the overall efficiency of UNIX and of the file system in particular, timings were made of the assembly of a 7621-line program. The assembly was run alone on the machine; the total clock time was 35.9 sec, for a rate of 212 lines per sec. The time was divided as follows: 63.5 percent assembler execution time, 16.5 percent system overhead, 20.0 percent disk wait time. We will not attempt any interpretation of these figures nor any comparison with other systems, but merely note that we are generally satisfied with the overall performance of the system.
-
-> We will not attempt any interpretation of these figures nor any comparison with other systems, but merely note that we are generally satisfied with the overall performance of the system.
+To provide an indication of the overall efficiency of UNIX and of the file system in particular, timings were made of the assembly of a 7621-line program. The assembly was run alone on the machine; the total clock time was 35.9 sec, for a rate of 212 lines per sec. The time was divided as follows: 63.5 percent assembler execution time, 16.5 percent system overhead, 20.0 percent disk wait time. <mark>We will not attempt any interpretation of these figures nor any comparison with other systems, but merely note that we are generally satisfied with the overall performance of the system.</mark>
 
 ## 5. Processes and Images
 
-An *image* is a computer execution environment. It includes a core image, general register values, status of open files, current directory, and the like. An image is the current state of a pseudo computer.
+<mark>An *image* is a computer execution environment.</mark> It includes a core image, general register values, status of open files, current directory, and the like. An image is the current state of a pseudo computer.
 
-A *process* is the execution of an image. While the processor is executing on behalf of a process, the image must reside in core; during the execution of other processes it remains in core unless the appearance of an active, higher-priority process forces it to be swapped out to the fixed-head disk.
-
-> An *image* is a computer execution environment
-> ...
-> A *process* is the execution of an image.
+<mark>A *process* is the execution of an image.</mark> While the processor is executing on behalf of a process, the image must reside in core; during the execution of other processes it remains in core unless the appearance of an active, higher-priority process forces it to be swapped out to the fixed-head disk.
 
 The user-core part of an image is divided into three logical segments. The program text segment begins at location 0 in the virtual address space. During execution, this segment is write-protected and a single copy of it is shared among all processes executing the same program. At the first 8K byte boundary above the program text segment in the virtual address space begins a non-shared, writable data segment, the size of which may be extended by a system call. Starting at the highest address in the virtual address space is a stack segment, which automatically grows downward as the hardware's stack pointer fluctuates.
 
@@ -216,9 +190,8 @@ Except while UNIX is bootstrapping itself into operation, a new process can come
 processid = fork(label)
 ```
 
-When `fork` is executed by a process, it splits into two independently executing processes. The two processes have independent copies of the original core image, and share any open files. The new processes differ only in that one is considered the parent process: in the parent, control returns directly from the `fork`, while in the child, control is passed to location `label`. The `processid` returned by the `fork` call is the identification of the other process.
+<mark>When `fork` is executed by a process, it splits into two independently executing processes. The two processes have independent copies of the original core image, and share any open files.</mark> The new processes differ only in that one is considered the parent process: in the parent, control returns directly from the `fork`, while in the child, control is passed to location `label`. The `processid` returned by the `fork` call is the identification of the other process.
 
-> When `fork` is executed by a process, it splits into two independently executing processes. The two processes have independent copies of the original core image, and share any open files.
 
 Because the return points in the parent and child process are not the same, each image existing after a `fork` may determine whether it is the parent or child process.
 
@@ -266,13 +239,11 @@ terminates a process, destroys its image, closes its open files, and generally o
 
 ## 6. The Shell
 
-For most users, communication with UNIX is carried on with the aid of a program called the Shell. The Shell is a command line interpreter: it reads lines typed by the user and interprets them as requests to execute other programs. In simplest form, a command line consists of the command name followed by arguments to the command, all separated by spaces:
+For most users, communication with UNIX is carried on with the aid of a program called the Shell. <mark>The Shell is a command line interpreter: it reads lines typed by the user and interprets them as requests to execute other programs.</mark> In simplest form, a command line consists of the command name followed by arguments to the command, all separated by spaces:
 
 ```
 command arg1 arg2 ... argn
 ```
-
-> The Shell is a command line interpreter: it reads lines typed by the user and interprets them as requests to execute other programs.
 
 The Shell splits up the command name and the arguments into separate strings. Then a file with name `command` is sought; `command` may be a path name including the `/` character to specify any file in the system. If `command` is found, it is brought into core and executed. The arguments collected by the Shell are accessible to the command. When the command is finished, the Shell resumes its own execution, and indicates its readiness to accept another command by typing a prompt character.
 
@@ -284,9 +255,7 @@ If file `command` cannot be found, the Shell prefixes the string `/bin/` to comm
  S: Discussion of stdout, stdin and stderr follows. 
 </span>
 
-The discussion of I/O in §3 above seems to imply that every file used by a program must be opened or created by the program in order to get a file descriptor for the file. Programs executed by the Shell, however, start off with two open files which have file descriptors 0 and 1. As such a program begins execution, file 1 is open for writing, and is best understood as the standard output file. Except under circumstances indicated below, this file is the user's typewriter. Thus programs which wish to write informative or diagnostic information ordinarily use file descriptor 1. Conversely, file 0 starts off open for reading, and programs which wish to read messages typed by the user usually read this file.
-
-> Programs executed by the Shell, however, start off with two open files which have file descriptors 0 and 1.
+The discussion of I/O in §3 above seems to imply that every file used by a program must be opened or created by the program in order to get a file descriptor for the file. <mark>Programs executed by the Shell, however, start off with two open files which have file descriptors 0 and 1.</mark> As such a program begins execution, file 1 is open for writing, and is best understood as the standard output file. Except under circumstances indicated below, this file is the user's typewriter. Thus programs which wish to write informative or diagnostic information ordinarily use file descriptor 1. Conversely, file 0 starts off open for reading, and programs which wish to read messages typed by the user usually read this file.
 
 <span class="marginnote">
  S: Redirection and filering are some of the best features on the Unix. These are easily implemented thanks to UNIX's choice to consider every I/O as file. 
@@ -461,18 +430,14 @@ The hardware-generated faults and the interrupt and quit signals can, by request
  S: A succinct discussion and retrospective of the development process.
 </span>
 
-Perhaps paradoxically, the success of UNIX is largely due to the fact that it was not designed to meet any predefined objectives. The first version was written when one of us (Thompson), dissatisfied with the available computer facilities, discovered a little-used system PDP-7 and set out to create a more hospitable environment. This essentially personal effort was sufficiently successful to gain the interest of the remaining author and others, and later to justify the acquisition of the PDP-11/20, specifically to support a text editing and formatting system. Then in turn the 11/20 was outgrown, UNIX had proved useful enough to persuade management to invest in the PDP-11/45. Our goals throughout the effort, when articulated at all, have always concerned themselves with building a comfortable relationship with the machine and with exploring ideas and inventions in operating systems. We have not been faced with the need to satisfy someone else's requirements, and for this freedom we are grateful.
-
-> Perhaps paradoxically, the success of UNIX is largely due to the fact that it was not designed to meet any predefined objectives. ...
-> We have not been faced with the need to satisfy someone else's requirements, and for this freedom we are grateful.
+<mark>Perhaps paradoxically, the success of UNIX is largely due to the fact that it was not designed to meet any predefined objectives.</mark> The first version was written when one of us (Thompson), dissatisfied with the available computer facilities, discovered a little-used system PDP-7 and set out to create a more hospitable environment. This essentially personal effort was sufficiently successful to gain the interest of the remaining author and others, and later to justify the acquisition of the PDP-11/20, specifically to support a text editing and formatting system. Then in turn the 11/20 was outgrown, UNIX had proved useful enough to persuade management to invest in the PDP-11/45. <mark>Our goals throughout the effort, when articulated at all, have always concerned themselves with building a comfortable relationship with the machine and with exploring ideas and inventions in operating systems. We have not been faced with the need to satisfy someone else's requirements, and for this freedom we are grateful.</mark>
 
 Three considerations which influenced the design of UNIX are visible in retrospect.
 
 First, since we are programmers, we naturally designed the system to make it easy to write, test, and run programs.The most important expression of our desire for programming convenience was that the system was arranged for interactive use, even though the original version only supported one user. We believe that a properly designed interactive system is much more productive and satisfying to use than a "batch" system. Moreover such a system is rather easily adaptable to non-interactive use, while the converse is not true.
 
-Second there have always been fairly severe size constraints on the system and its software. Given the partiality antagonistic desires for reasonable efficiency and expressive power, the size constraint has encouraged not only economy but a certain elegance of design. This may be a thinly disguised version of the "salvation through suffering" philosophy, but in our case it worked.
+Second there have always been fairly severe size constraints on the system and its software. Given the partiality antagonistic desires for reasonable efficiency and expressive power, <mark>the size constraint has encouraged not only economy but a certain elegance of design. This may be a thinly disguised version of the "salvation through suffering" philosophy, but in our case it worked.</mark>
 
-> The size constraint has encouraged not only economy but a certain elegance of design. This may be a thinly disguised version of the "salvation through suffering" philosophy, but in our case it worked.
 
 Third, nearly from the start, the system was able to, and did, maintain itself. This fact is more important than it might seem. If designers of a system are forced to use that system, they quickly become aware of its functional and superficial deficiencies and are strongly motivated to correct them before it is too late. Since all source programs were always available and easily modified online, we were willing to revise and rewrite the system and its software when new ideas were invented, discovered, or suggested by others.
 
@@ -486,9 +451,7 @@ Likewise, the process control scheme and command interface have proved both conv
 
 ### 8.1 Influences
 
-The success of UNIX lies not so much in new inventions but rather in the full exploitation of a carefully selected set of fertile ideas, and especially in showing that they can be keys to the implementation of a small yet powerful operating system. 
-
-> The success of UNIX lies not so much in new inventions but rather in the full exploitation of a carefully selected set of fertile ideas.
+<mark>The success of UNIX lies not so much in new inventions but rather in the full exploitation of a carefully selected set of fertile ideas</mark>, and especially in showing that they can be keys to the implementation of a small yet powerful operating system. 
 
 The `fork` operation, essentially as we implemented it, was present in the Berkeley time-sharing system [8]. On a number of points we were influenced by Multics, which suggested the particular form of the I/O system calls [9] and both the name of the Shell and its general functions, The notion that the Shell should create a process for each command was also suggested to us by the early design of Multics, although in that system it was later dropped for efficiency reasons. A similar scheme is used by TENEX [10].
 
