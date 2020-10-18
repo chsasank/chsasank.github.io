@@ -61,9 +61,9 @@ mark {
     background: rgba(255, 255, 0, 0.2);
 }
 
-// Moved from old css
-// 5d445c5e0f118b23ed71549343f02315112fe6ab
-// 041f940eab653b6b07e0048ac265fb1ec3cc3257
+/* Moved from old css
+5d445c5e0f118b23ed71549343f02315112fe6ab
+041f940eab653b6b07e0048ac265fb1ec3cc3257 */
 td, th {
     padding: 7px 3px 6px;
     border-collapse: collapse;
@@ -77,12 +77,12 @@ th {
     border-bottom-width: 3px;
 }
 
-// f632824babc8be44ace5ba5a5bb0565a77ba2ff3
+/* f632824babc8be44ace5ba5a5bb0565a77ba2ff3 */
 .MathJax_Display {
     font-size: 1.4rem;
 }
   
-// 020867804592d3932efa20c4536650be18e50e06
+/* 020867804592d3932efa20c4536650be18e50e06 */
 hr{
     width: 55%;
     margin-left:0;  
@@ -91,18 +91,18 @@ hr{
 
 ol, ul { width: 50%;}
 
-// 991599424a97c80aefe959949e67dada242d4f94
+/* 991599424a97c80aefe959949e67dada242d4f94 */
 .sidenote, .marginnote {
     margin-bottom: 20px;
 }
 
-// 61e435824e32c27c94ec93c9b29cfb2f693002a1
+/* 61e435824e32c27c94ec93c9b29cfb2f693002a1 */
 @media screen and (max-width: 760px) {
     p, h1, h2, h3, footer { width: 95%; }
     figure { max-width: 95%; }
     body {width: 95%; padding-left: 5%}
 }
 
-// b8d8874aac4d6a5bfb81a66c45c35943f9888934
-// 8d4eb9206a1885e05da04cdb26fa6a8716aa1c4a
+/* b8d8874aac4d6a5bfb81a66c45c35943f9888934
+8d4eb9206a1885e05da04cdb26fa6a8716aa1c4a */
 h2, h1 { width: 55%; }

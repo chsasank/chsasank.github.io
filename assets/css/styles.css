@@ -1,17 +1,5 @@
-
-$baseurl: '{{ site.baseurl }}';
-$grey-color: #828282;
-
-@import 'tufte';
-@import 'syntax-highlighting';
-@import 'custom';
-
 main {
   margin-top: 20px;
-}
-
-amp-img {
-  background-color: grey;
 }
 
 article {
@@ -58,7 +46,7 @@ td {
   vertical-align:middle;
 }
 
-// side-by-side images
+/* side-by-side images */
 .side-by-side-container {
     height: auto;
     width: 150px;
