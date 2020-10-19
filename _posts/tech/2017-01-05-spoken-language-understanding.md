@@ -19,7 +19,7 @@ An example utterance is *I want to go from Boston to Atlanta on Monday*.
 Understanding this is then reduced to identifying arguments like *Destination* and *Departure Day*. This task is called slot-filling.
 
 Here is an example sentence and its labels
-<span id="labels" class="margin-toggle sidenote-number"></span>
+<label for="sn-1" class="margin-toggle sidenote-number"></label><input type="checkbox" id="sn-1" class="margin-toggle"/>
 <span class="sidenote">You will observe that labels are encoded in <a href="https://en.wikipedia.org/wiki/Inside_Outside_Beginning">Inside Outside Beginning (IOB)</a> representation.</span>
 from the dataset:
 
@@ -69,10 +69,13 @@ This allows us to use RNNs to solve complicated word tagging problems like part 
 
 Following diagram illustrates the internals of RNN:
 
+<figure>
+<label for="mn-1" class="margin-toggle">⊕</label><input type="checkbox" id="mn-1" class="margin-toggle"/>
 <span class="marginnote" >
     Source: Nature
 </span>
 ![RNN](/assets/images/slu/rnn.gif)
+</figure>
 
 Let's briefly go through the diagram:
 
@@ -174,6 +177,7 @@ model.compile('rmsprop', 'categorical_crossentropy')
 ### Training
 
 Now, let's start training our model. We will pass each sentence as a batch to the model. We cannot use `model.fit()` as it expects all the sentences to be of same size. We will therefore use `model.train_on_batch()`.
+<label for="mn-2" class="margin-toggle">⊕</label><input type="checkbox" id="mn-2" class="margin-toggle"/>
 <span class="marginnote" >
     Training is very fast as the dataset is relatively small. Each epoch takes 20 seconds on my Macbook Air.
 </span>
@@ -199,8 +203,7 @@ for i in range(n_epochs):
 
 ### Evaluation
 
-To measure the accuracy of the model, we use `model.predict_on_batch()` and 
-`metrics.accuracy.conlleval()`.
+To measure the accuracy of the model, we use `model.predict_on_batch()` and `metrics.accuracy.conlleval()`.
 
 ```python
 from metrics.accuracy import conlleval

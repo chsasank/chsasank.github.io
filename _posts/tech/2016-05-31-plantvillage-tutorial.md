@@ -7,21 +7,22 @@ There is this interesting challenge called [PlantVillage challenge](https://www.
 
 Dataset include both 38 classes of healthy and diseased leaves. Training dataset has 21917 images.
 
-<span class="marginnote" margin-bottom='100px' >
-    38 classes of crop-disease pairs in the dataset
-</span>
 <figure>
-<amp-img width="600" height="500" layout="responsive" src="/assets/images/plantvillage/classes.jpg"></amp-img>
+<label for="mn-fig-1" class="margin-toggle">⊕</label><input type="checkbox" id="mn-fig-1" class="margin-toggle">
+<span class="marginnote">
+38 classes of crop-disease pairs in the dataset
+</span>
+<img src="/assets/images/plantvillage/classes.jpg">
 </figure>
 
 We'll use popular deep learning platform [torch](http://torch.ch) to solve this problem. This will be a hands-on tutorial covering training of Alexnet
-<span id="alexnet" class="margin-toggle sidenote-number"></span>
+<label for="sn-1" class="margin-toggle sidenote-number"></label><input type="checkbox" id="sn-1" class="margin-toggle"/>
 <span class="sidenote"><a href="https://papers.nips.cc/paper/4824-imagenet-classification-with-deep-convolutional-neural-networks.pdf">ImageNet Classification with Deep Convolutional Neural Networks</a></span>
 .
 
 Tutorial will be accompanied by a [repo containing complete working code](https://github.com/chsasank/plantvillage-challenge).
 It will include ResNet
-<span id="resnet" class="margin-toggle sidenote-number"></span>
+<label for="sn-2" class="margin-toggle sidenote-number"></label><input type="checkbox" id="sn-2" class="margin-toggle"/>
 <span class="sidenote"><a href="https://arxiv.org/abs/1512.03385">Deep Residual Learning for Image Recognition</a></span>
 along with Alexnet. 
 
@@ -163,7 +164,7 @@ Code to do these transformations is in `datasets/transforms.lua`. Most of it is 
 
 We will load the images in batches and do all this processing/augmentation on the fly. This is done by writing a class named `DataGen` . 
 Essentially, code
-<span id="iterators" class="margin-toggle sidenote-number"></span>
+<label for="sn-3" class="margin-toggle sidenote-number"></label><input type="checkbox" id="sn-3" class="margin-toggle"/>
 <span class="sidenote">Understanding how iterators work in lua can be a little tricky. Read the following <a href="https://www.lua.org/pil/7.1.html">documentation</a> for details.</span> 
 can be summarized as :
 
@@ -397,8 +398,11 @@ end
 ```
 
 ## Results
-I have trained the alexnet model with the above augmentation technique for 120 epochs. On a machine with Nvidia Titan X, each epoch took about 3/4 minutes. It took about 7 hrs<span id="code-bugs" class="margin-toggle sidenote-number"></span> to train the network. 
-<span class="sidenote">On my Macbook Air, each *epoch* takes this much time.</span> 
+I have trained the alexnet model with the above augmentation technique for 120 epochs. On a machine with Nvidia Titan X, each epoch took about 3/4 minutes. It took about 7 hrs <label for="sn-4" class="margin-toggle sidenote-number"></label><input type="checkbox" id="sn-4" class="margin-toggle"/>
+<span class="sidenote">On my Macbook Air, each *epoch* takes this much 
+time.</span>
+to train the network. 
+
 
 I get a F-Score of 0.99 with this network :). 
 

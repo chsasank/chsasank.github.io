@@ -43,11 +43,13 @@ Now let us consider what happens when we make absolute judgments of tones. Polla
 
 When only two or three tones were used, the listeners never confused them. With four different tones confusions were quite rare, but with five or more tones confusions were frequent. With fourteen different tones the listeners made many mistakes.
 
+<figure>
+<label for="mn-fig-1" class="margin-toggle">⊕</label><input type="checkbox" id="mn-fig-1" class="margin-toggle">
 <span class="marginnote">
-    Figure 1. Data from Pollack [17, 18] on the amount of information that is transmitted by listeners who make absolute judgments of auditory pitch. As the amount of input information is increased by increasing from 2 to 14 the number of different pitches to be judged, the amount of transmitted information approaches as its upper limit a channel capacity of about 2.5 bits per judgment.
+Figure 1. Data from Pollack [17, 18] on the amount of information that is transmitted by listeners who make absolute judgments of auditory pitch. As the amount of input information is increased by increasing from 2 to 14 the number of different pitches to be judged, the amount of transmitted information approaches as its upper limit a channel capacity of about 2.5 bits per judgment.
 </span>
 <img src='/assets/images/classic_papers/magic_number_seven/fig1.gif'>
-
+</figure>
 
 
 These data are plotted in Fig. 1. Along the bottom is the amount of input information in bits per stimulus. As the number of alternative tones was increased from 2 to 14, the input information increased from 1 to 3.8 bits. On the ordinate is plotted the amount of transmitted information. The amount of transmitted information behaves in much the way we would expect a communication channel to behave; the transmitted information increases linearly up to about 2 bits and then bends off toward an asymptote at about 2.5 bits. This value, 2.5 bits, therefore, is what we are calling the channel capacity of the listener for absolute judgments of pitch.
@@ -62,27 +64,33 @@ Next you can ask how reproducible this result is. Does it depend on the spacing 
 
 While we are on tones, let us look next at Garner's [7] work on loudness. Garner's data for loudness are summarized in Fig. 2. Garner went to some trouble to get the best possible spacing of his tones over the intensity range from 15 to 110 dB. He used 4, 5, 6, 7, 10, and 20 different stimulus intensities. The results shown in Fig. 2 take into account the differences among subjects and the sequential influence of the immediately preceding judgment. Again we find that there seems to be a limit. The channel capacity for absolute judgments of loudness is 2.3 bits, or about five perfectly discriminable alternatives.
 
+<figure>
+<label for="mn-fig-2" class="margin-toggle">⊕</label><input type="checkbox" id="mn-fig-2" class="margin-toggle">
 <span class="marginnote">
-    Figure 2. Data from Garner [7] on the channel capacity for absolute judgments of auditory loudness.
+Figure 2. Data from Garner [7] on the channel capacity for absolute judgments of auditory loudness.
 </span>
 <img src='/assets/images/classic_papers/magic_number_seven/fig2.gif'>
-
+</figure>
 
 Since these two studies were done in different laboratories with slightly different techniques and methods of analysis, we are not in a good position to argue whether five loudnesses is significantly different from six pitches. Probably the difference is in the right direction, and absolute judgments of pitch are slightly more accurate than absolute judgments of loudness. The important point, however, is that the two answers are of the same order of magnitude.
 
 The experiment has also been done for taste intensities. In Fig. 3 are the results obtained by Beebe-Center, Rogers, and O'Connell [1] for absolute judgments of the concentration of salt solutions. The concentrations ranged from 0.3 to 34.7 gm. NaCl per 100 cc. tap water in equal subjective steps. They used 3, 5, 9, and 17 different concentrations. The channel capacity is 1.9 bits, which is about four distinct concentrations. Thus taste intensities seem a little less distinctive than auditory stimuli, but again the order of magnitude is not far off.
 
+<figure>
+<label for="mn-fig-3" class="margin-toggle">⊕</label><input type="checkbox" id="mn-fig-3" class="margin-toggle">
 <span class="marginnote">
     Figure 3. Data from Beebe-Center, Rogers, and O'Connell [1] on the channel capacity for absolute judgments of saltiness.
 </span>
 <img src='/assets/images/classic_papers/magic_number_seven/fig3.gif'>
+</figure>
 
-
+<figure>
+<label for="mn-fig-4" class="margin-toggle">⊕</label><input type="checkbox" id="mn-fig-4" class="margin-toggle">
 <span class="marginnote">
     Figure 4. Data from Hake and Garner [8] on the channel capacity for absolute judgments of the position of a pointer in a linear interval.
 </span>
 <img src='/assets/images/classic_papers/magic_number_seven/fig4.gif'>
-
+</figure>
 
 On the other hand, the channel capacity for judgments of visual position seems to be significantly larger. Hake and Garner [8] asked observers to interpolate visually between two scale markers. Their results are shown in Fig. 4. They did the experiment in two ways. In one version they let the observer use any number between zero and 100 to describe the position, although they presented stimuli at only 5, 10, 20, or 50 different positions. The results with this unlimited response technique are shown by the filled circles on the graph. In the other version the observers were limited in their responses to reporting just those stimulus values that were possible. That is to say, in the second version the number of different responses that the observer could make was exactly the same as the number of different stimuli that the experimenter might present. The results with this limited response technique are shown by the open circles on the graph. The two functions are so similar that it seems fair to conclude that the number of responses available to the observer had nothing to do with the channel capacity of 3.25 bits.
 
@@ -102,12 +110,13 @@ You may have noticed that I have been careful to say that this magical number se
 
 Fortunately, there are a few data on what happens when we make absolute judgments of stimuli that differ from one another in several ways. Let us look first at the results Klemmer and Frick [13] have reported for the absolute judgment of the position of a dot in a square. In Fig. 5 we see their results. Now the channel capacity seems to have increased to 4.6 bits, which means that people can identify accurately any one of 24 positions in the square.
 
-
+<figure>
+<label for="mn-fig-5" class="margin-toggle">⊕</label><input type="checkbox" id="mn-fig-5" class="margin-toggle">
 <span class="marginnote">
     Figure 5. Data from Klemmer and Frick [13] on the channel capacity for absolute judgments of the position of a dot in a square.
 </span>
 <img src='/assets/images/classic_papers/magic_number_seven/fig5.gif'>
-
+</figure>
 
 The position of a dot in a square is clearly a two-dimensional proposition. Both its horizontal and its vertical position must be identified. Thus it seems natural to compare the 4.6-bit capacity for a square with the 3.25-bit capacity for the position of a point in an interval. The point in the square requires two judgments of the interval type. If we have a capacity of 3.25 bits for estimating intervals and we do this twice, we should get 6.5 bits as our capacity for locating points in a square. Adding the second independent dimension gives us an increase from 3.25 to 4.6, but it falls short of the perfect addition that would give 6.5 bits.
 
@@ -121,10 +130,13 @@ It is still a long way, however, from these two-dimensional examples to the mult
 
 Suppose that we plot these data, fragmentary as they are, and make a guess about how the channel capacity changes with the dimensionality of the stimuli. The result is given in Fig. 6. In a moment of considerable daring I sketched the dotted line to indicate roughly the trend that the data seemed to be taking.
 
+<figure>
+<label for="mn-fig-6" class="margin-toggle">⊕</label><input type="checkbox" id="mn-fig-6" class="margin-toggle">
 <span class="marginnote">
     Figure 6. The general form of the relation between channel capacity and the number of independently variable attributes of the stimuli.
 </span>
 <img src='/assets/images/classic_papers/magic_number_seven/fig6.gif'>
+</figure>
 
 Clearly, the addition of independently variable attributes to the stimulus increases the channel capacity, but at a decreasing rate. It is interesting to note that the channel capacity is increased even when the several variables are not independent. Eriksen [5] reports that, when size, brightness, and hue all vary together in perfect correlation, the transmitted information is 4.1 bits as compared with an average of about 2.7 bits when these attributes are varied one at a time. By confounding three attributes, Eriksen increased the dimensionality of the input without increasing the amount of input information; the result was an increase in channel capacity of about the amount that the dotted function in Fig. 6 would lead us to expect.
 
@@ -170,18 +182,23 @@ The measurements of memory span in the literature are suggestive on this questio
 
 The results are shown by the filled circles in Fig. 7. Here the dotted line indicates what the span should have been if the amount of information in the span were constant. The solid curves represent the data. Hayes repeated the experiment using test vocabularies of different sizes but all containing only English monosyllables (open circles in Fig. 7). This more homogeneous test material did not change the picture significantly. With binary items the span is about nine and, although it drops to about five with monosyllabic English words, the difference is far less than the hypothesis of constant information would require.
 
+<figure>
+<label for="mn-fig-7" class="margin-toggle">⊕</label><input type="checkbox" id="mn-fig-7" class="margin-toggle">
 <span class="marginnote">
     Figure 7. Data from Hayes [10] on the span of immediate memory plotted as a function of the amount of information per item in the test materials.
 </span>
 <img src='/assets/images/classic_papers/magic_number_seven/fig7.gif'>
-
+</figure>
 
 There is nothing wrong with Hayes's experiment, because Pollack [16] repeated it much more elaborately and got essentially the same result. Pollack took pains to measure the amount of information transmitted and did not rely on the traditional procedure for scoring the responses. His results are plotted in Fig. 8. Here it is clear that the amount of information transmitted is not a constant, but increases almost linearly as the amount of information per item in the input is increased.
 
+<figure>
+<label for="mn-fig-8" class="margin-toggle">⊕</label><input type="checkbox" id="mn-fig-8" class="margin-toggle">
 <span class="marginnote">
     Figure 8. Data from Pollack [16] on the amount of information retained after one presentation plotted as a function of the amount of information per item in the test materials.
 </span>
 <img src='/assets/images/classic_papers/magic_number_seven/fig8.gif'>
+</figure>
 
 And so the outcome is perfectly clear. <mark>In spite of the coincidence that the magical number seven appears in both places, the span of absolute judgment and the span of immediate memory are quite different kinds of limitations that are imposed on our ability to process information. Absolute judgment is limited by the amount of information. Immediate memory is limited by the number of items.</mark> In order to capture this distinction in somewhat picturesque terms, I have fallen into the custom of distinguishing between bits of information and chunks of information. Then I can say that the number of bits of information is constant for absolute judgment and the number of chunks of information is constant for immediate memory. The span of immediate memory seems to be almost independent of the number of bits per chunk, at least over the range that has been examined to date.
 
@@ -199,11 +216,13 @@ Since I am convinced that this process is a very general and important one for p
 
 Begin with the observed fact that people can repeat back eight decimal digits, but only nine binary digits. Since there is a large discrepancy in the amount of information recalled in these two cases, we suspect at once that a recoding procedure could be used to increase the span of immediate memory for binary digits. In Table 1 a method for grouping and renaming is illustrated. Along the top is a sequence of 18 binary digits, far more than any subject was able to recall after a single presentation. In the next line these same binary digits are grouped by pairs. Four possible pairs can occur: 00 is renamed 0, 01 is renamed 1, 10 is renamed 2, and 11 is renamed 3. That is to say, we recode from a base-two arithmetic to a base-four arithmetic. In the recoded sequence there are now just nine digits to remember, and this is almost within the span of immediate memory. In the next line the same sequence of binary digits is regrouped into chunks of three. There are eight possible sequences of three, so we give each sequence a new name between 0 and 7. Now we have recoded from a sequence of 18 binary digits into a sequence of 6 octal digits, and this is well within the span of immediate memory. In the last two lines the binary digits are grouped by fours and by fives and are given decimal-digit names from 0 to 15 and from 0 to 31.
 
+<figure>
+<label for="mn-tab-1" class="margin-toggle">⊕</label><input type="checkbox" id="mn-tab-1" class="margin-toggle">
 <span class="marginnote">
     Table I. Ways of Recoding Sequences of Binary Digits
 </span>
 <img src='/assets/images/classic_papers/magic_number_seven/table1.gif'>
-
+</figure>
 
 
 It is reasonably obvious that this kind of recoding increases the bits per chunk, and packages the binary sequence into a form that can be retained within the span of immediate memory. So Smith assembled 20 subjects and measured their spans for binary and octal digits. The spans were 9 for binaries and 7 for octals. Then he gave each recoding scheme to five of the subjects. They studied the recoding until they said they understood it -- for about 5 or 10 minutes. Then he tested their span for binary digits again while they tried to use the recoding schemes they had studied.
@@ -214,11 +233,13 @@ Since the 4:1 and 5:1 ratios require considerable study, Smith decided to imitat
 
 It is a little dramatic to watch a person get 40 binary digits in a row and then repeat them back without error. However, if you think of this merely as a mnemonic trick for extending the memory span, you will miss the more important point that is implicit in nearly all such mnemonic devices. <mark>The point is that recoding is an extremely powerful weapon for increasing the amount of information that we can deal with. In one form or another we use recoding constantly in our daily behavior.</mark>
 
+<figure>
+<label for="mn-fig-9" class="margin-toggle">⊕</label><input type="checkbox" id="mn-fig-9" class="margin-toggle">
 <span class="marginnote">
     Figure 9. The span of immediate memory for binary digits is plotted as a function of the recoding procedure used. The predicted function is obtained by multiplying the span for octals by 2, 3, and 3.3 for recoding into base 4, base 8, and base 10, respectively.
 </span>
 <img src='/assets/images/classic_papers/magic_number_seven/fig9.gif'>
-
+</figure>
 
 
 In my opinion the most customary kind of recoding that we do all the time is to translate into a verbal code. When there is a story or an argument or an idea that we want to remember, we usually try to rephrase it "in our own words." When we witness some event we want to remember, we make a verbal description of the event and then remember our verbalization. Upon recall we recreate by secondary elaboration the details that seem consistent with the particular verbal recoding we happen to have made. The well-known experiment by Carmichael, Hogan, and Walter [3] on the influence that names have on the recall of visual figures is one demonstration of the process.

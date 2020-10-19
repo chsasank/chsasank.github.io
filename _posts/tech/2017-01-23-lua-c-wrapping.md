@@ -164,6 +164,7 @@ To do this, you'll have to register your functions by creating a array of `luaL_
 
 Let's do this right away by editing `main.c`. We will also add additional `mysin` function.
 
+<label for="mn-1" class="margin-toggle">⊕</label><input type="checkbox" id="mn-1" class="margin-toggle"/>
 <span class="marginnote" margin-bottom='100px' >
     This code works only for lua 5.2. For lua 5.1, please use
     `luaL_register(L, "mylib", mylib);`
@@ -223,10 +224,11 @@ int luaopen_mylib (lua_State *L){
 ```
 
 Create a loadable `.so` file with 
+
+<label for="mn-2" class="margin-toggle">⊕</label><input type="checkbox" id="mn-2" class="margin-toggle"/>
 <span class="marginnote" margin-bottom='100px' >
     If you have installed lua with apt-get, build using `gcc main.c -shared -o mylib.so -fPIC  -llua5.2 -I/usr/include/lua5.2/`
 </span>
-
 ```
 $ gcc main.c -shared -o mylib.so -fPIC  -llua
 ```
