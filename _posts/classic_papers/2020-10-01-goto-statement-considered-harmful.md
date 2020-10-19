@@ -8,7 +8,7 @@ published: 1968-03-01
 twitter_image: https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Edsger_Wybe_Dijkstra.jpg/220px-Edsger_Wybe_Dijkstra.jpg
 ---
 
-> **NOTE**: This is *not* my article. This is a classic paper originally published in *Communications of the ACM*, 1968 by Edsger W. Dijkstra  and a mirror of [another mirror](https://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.92.4846&rep=rep1&type=pdf). Yellow highlights/annotations are my own. <a onclick="disableHighlight()" href='#'>Disable them</a>
+> **NOTE**: This is *not* my article. This is a classic paper originally published in *Communications of the ACM*, 1968 by Edsger W. Dijkstra  and a mirror of [another mirror](https://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.92.4846&rep=rep1&type=pdf). Yellow highlights/annotations are my own. <a onclick="disableHighlight()" href='#'>Disable them.</a>
 
 Editor,
 
