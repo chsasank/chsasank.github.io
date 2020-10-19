@@ -8,7 +8,7 @@ description: This is the list of all my writing
 
 <p>This is the list of all my writing.</p>
 
-<ul>
+<ul class='archive'>
     {% for post in site.posts %}
     {% unless post.category %}
     <li>
@@ -22,7 +22,7 @@ description: This is the list of all my writing
 
 <p>This is the list of reviews/notes I write of books I care about.</p>
 
-<ul>
+<ul class='archive'>
     {% for post in site.posts %}
     {% if post.category == 'books' %}
     <li>
