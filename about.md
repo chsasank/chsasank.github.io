@@ -17,35 +17,47 @@ healthcare and open source technologies. As a founding member of Qure.ai, I
 led and contributed to developing AI for healthcare. I am instrumental in
 development of qER, a intracranial hemorrhage detection tool.
 
-Outside my work, I am an avid hiker, alpine snowboarder and open source
-contributor. I am getting into photography these days.
+I am an avid hiker and alpine snowboarder. Mumbai is nicely nestled in Western
+Ghats and there are some very good hikes nearby in Lonavala and Bhandaradara. I
+should have hiked some 30 summits around Mumbai. As a kid, I was not into
+sports. So, I have decided to do something drastic and learn snowboarding in
+Himalayas! I have snowboarded from some of the highest slopes in the world
+(4000m). These days, I am getting into photography.
 
 <span class="marginnote">
    Me Snowboarding
 </span>
 <img src='/assets/images/me/sasank_snowboarding.jpg'>
 
-I contributed significantly to PyTorch, a deep learning framework used by
-many organizations around the world. I also made numerous contributions to
-open source and maintains an active profile on Github. Some of my
-contributions include Keras, SimpleITK, Scikit-Learn libaries. My own
-projects on image rectification and feature extraction are popular.
+
+I contributed significantly to PyTorch, a deep learning framework used by many
+organizations around the world. I also made numerous contributions to open
+source and maintains an active profile on Github. Some of my contributions
+include Keras, SimpleITK, Scikit-Learn libaries. My own projects on image
+rectification and feature extraction are also popular.
 
 
-I have been living in Mumbai since joining IIT Bombay in 2015. I majored in
-Electrical Engineering, minored in Mathematics and was mainly interested in
-Computer Vision.
 
-Since my childhood, Sasank was always interested in math.
-In IITB, MA 105 - Intro to Calculus, caught his imagination with the amount of rigor and formalism possible in math. 
+Since my childhood, I was always interested in math. So, I picked up Electrical
+Engineering as my major in IIT Bombay in 2015.  At IITB, MA 105 - Intro to
+Calculus, caught my imagination with the amount of rigor and formalism possible
+in math. So, I ended doing a minor in Mathematics. During my senior year, I
+discovered computer vision and ended up doing lot of courses in computer science
+department. Some of my favorite courses from the time:
 
+* Computer Vision
+* Information Theory
+* Abstract Algebra
+* Processor Design
+* Signal Processing
 
-I have strong music tastes. I love rock and classical music.
-I am getting into Carnatic music these days. I really like Annammaya's songs.
-[Here's](https://chsasank.github.io/music-2016q4.html) some recommendations of music.
+I have strong music tastes. I love rock and classical music. I am getting into
+Carnatic music these days. I really like Annammaya's songs.
+[Here's](https://chsasank.github.io/music-2016q4.html) some recommendations of
+music. Besides, I read a lot of classic books. I should maintain a list
+somewhere, hopefully along with a short review.
 
-I read a lot of books, mostly classics.
-I should maintain a list somewhere, hopefully along with a short review.
+You can find me at other places around the web.
 
 * Github: [github.com/chsasank](https://github.com/chsasank)
 * Linkedin: [linkedin.com/in/sasank-chilamkurthy-85a35897](https://linkedin.com/in/sasank-chilamkurthy-85a35897)
