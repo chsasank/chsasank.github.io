@@ -14,8 +14,18 @@ Actually, Einstein did work for the patent office when he did his work on specia
 ## Marginnote
 
 ```
-<label for="mn-1" class="margin-toggle">&#8853;</label><input type="checkbox" id="mn-1" class="margin-toggle"/>
+<label for="mn-1" class="margin-toggle">⊕</label><input type="checkbox" id="mn-1" class="margin-toggle"/>
 <span class="marginnote">
 Blue text, while also a widely recognizable clickable-text indicator, is crass and distracting. Luckily, it is also rendered unnecessary by the use of underlining.
 </span>
+```
+
+## Figures
+
+```
+<figure>
+    <label for="mn-fig-1" class="margin-toggle">⊕</label><input type="checkbox" id="mn-fig-1" class="margin-toggle">
+    <span class="marginnote">From Edward Tufte, page 92.</span>
+    <img src="img/exports-imports.png" alt="Exports and Imports to and from Denmark &amp; Norway from 1700 to 1780">
+</figure>
 ```

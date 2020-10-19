@@ -3,19 +3,20 @@ layout: post
 title: Keras Tutorial - Traffic Sign Recognition
 ---
 
-In this tutorial
-<span id="reqs" class="margin-toggle sidenote-number"></span>
+In this tutorial <label for="sn-1" class="margin-toggle sidenote-number"></label><input type="checkbox" id="sn-1" class="margin-toggle"/>
 <span class="sidenote">Tutorial assumes you have some basic working knowledge of machine learning and numpy.</span>
 , we will get our hands dirty with deep learning by solving a real world problem.
 The problem we are gonna tackle is [The German Traffic Sign Recognition Benchmark](http://benchmark.ini.rub.de/?section=gtsrb&subsection=news)(GTSRB).
 The problem is to to recognize the traffic sign from the images.
 Solving this problem is essential for self-driving cars to operate on roads.
 
+
+<figure>
+<label for="mn-fig-1" class="margin-toggle">⊕</label><input type="checkbox" id="mn-fig-1" class="margin-toggle"/>
 <span class="marginnote" margin-bottom='100px' >
     Representative images for each of the traffic sign classes in the GTSRB dataset
 </span>
-<figure>
-<amp-img width="867" height="495" layout="responsive" src="/assets/images/traffic/classes.jpg"></amp-img>
+<img src="/assets/images/traffic/classes.jpg"/>
 </figure>
 
 The dataset features 43 different signs under various sizes, lighting conditions, occlusions and is very similar to real-life data. 
@@ -37,7 +38,7 @@ A notebook with slightly improved code is available [here](https://github.com/ch
 We will implement our CNNs in [Keras](http://keras.io). 
 Keras is a deep learning library written in python and allows us to do quick experimentation.
 Let's start by installing Keras and other libraries:
-<span id="tip" class="margin-toggle sidenote-number"></span>
+<label for="sn-2" class="margin-toggle sidenote-number"></label><input type="checkbox" id="sn-2" class="margin-toggle"/>
 <span class="sidenote">Protip: Use <a href="https://www.continuum.io/downloads">anaconda python</a> distribution.</span>
 
 ```bash
@@ -67,13 +68,13 @@ As you can see from the representative images above, images vary a lot in illumi
 They also vary in size. So, let's write a function to do 
 [histogram equalization](https://en.wikipedia.org/wiki/Histogram_equalization)
 in HSV color space and resize the images to a standard size:
+
+<label for="mn-1" class="margin-toggle">⊕</label><input type="checkbox" id="mn-1" class="margin-toggle"/>
 <span class="marginnote" margin-bottom='100px' >
-    <amp-img width='156' height='152' src='/assets/images/traffic/input.png' alt="input to preprocess_img"></amp-img>
+    <img width='156' height='152' src='/assets/images/traffic/input.png' alt="input to preprocess_img">
     <br>Input image to `preprocess_img` (scaled 4x)
-</span>
-<span class="marginnote">
     <br>
-    <amp-img src='/assets/images/traffic/output.png'  width='192' height='192'  alt="output from preprocess_img"></amp-img>
+    <img src='/assets/images/traffic/output.png'  width='192' height='192'  alt="output from preprocess_img"/>
     <br> Processed image (scaled 4x) 
 </span>
 
@@ -307,7 +308,7 @@ print("Test accuracy = {}".format(acc))
 ```
 
 Which outputs on my system
-<span id="results" class="margin-toggle sidenote-number"></span>
+<label for="sn-res" class="margin-toggle sidenote-number"></label><input type="checkbox" id="sn-res" class="margin-toggle"/>
 <span class="sidenote">Results may change a bit because the weights of the neural network are randomly initialized.</span>:
 
 ```

@@ -36,12 +36,12 @@ The greater part of UNIX software is written in the above-mentioned C language [
 
 ## 3. The File System
 
+The most important job of UNIX is to provide a file system.
 <label for="mn-1" class="margin-toggle">&#8853;</label><input type="checkbox" id="mn-1" class="margin-toggle"/>
 <span class="marginnote">
  S: Note how the paper considers files important. Unix exposes all the functionality through files.
 </span>
-
-The most important job of UNIX is to provide a file system. From the point of view of the user, there are three kinds of files: ordinary disk files, directories, and special files
+From the point of view of the user, there are three kinds of files: ordinary disk files, directories, and special files
 
 ### 3.1 Ordinary Files
 
@@ -57,7 +57,6 @@ The system maintains several directories for its own use. One of these is the *r
 <span class="marginnote">
  S: This is a succinct description of path system of unix and Linux
 </span>
-
 Files are named by sequences of 14 or fewer characters. When the name of a file is specified to the system, it may be in the form of a *path name*, which is a sequence of directory names separated by slashes `/` and ending in a file name. If the sequence begins with a slash, the search begins in the root directory. The name `/alpha/beta/gamma` causes the system to search the root for directory `alpha`, then to search `alpha` for `beta`, finally to find `gamma` in `beta`. `gamma` may be an ordinary file, a directory, or a special file. As a limiting case, the name `/` refers to the root itself.
 
 A path name not starting with `/` causes the system to begin the search in the user’s current directory. Thus, the name `alpha/beta` specifies the file named `beta` in subdirectory `alpha` of the current directory. The simplest kind of name, for example `alpha`, refers to a file which itself is found in the current directory. As another limiting case, the null file name refers to the current directory.
@@ -137,6 +136,7 @@ The pointer associated with `filep` is moved to a position `offset` bytes from t
 
 ## 4. Implementation of the File System
 
+<label for="mn-3" class="margin-toggle">&#8853;</label><input type="checkbox" id="mn-3" class="margin-toggle"/>
 <span class="marginnote">
  S: Implementation of a toy file system (in rust?) makes for an illustrative exercise. Nice blog idea!
 </span>
@@ -253,12 +253,13 @@ If file `command` cannot be found, the Shell prefixes the string `/bin/` to comm
 
 ### 6.1 Standard I/O
 
+<label for="mn-4" class="margin-toggle">&#8853;</label><input type="checkbox" id="mn-4" class="margin-toggle"/>
 <span class="marginnote">
  S: Discussion of stdout, stdin and stderr follows. 
 </span>
-
 The discussion of I/O in §3 above seems to imply that every file used by a program must be opened or created by the program in order to get a file descriptor for the file. <mark>Programs executed by the Shell, however, start off with two open files which have file descriptors 0 and 1.</mark> As such a program begins execution, file 1 is open for writing, and is best understood as the standard output file. Except under circumstances indicated below, this file is the user's typewriter. Thus programs which wish to write informative or diagnostic information ordinarily use file descriptor 1. Conversely, file 0 starts off open for reading, and programs which wish to read messages typed by the user usually read this file.
 
+<label for="mn-5" class="margin-toggle">&#8853;</label><input type="checkbox" id="mn-5" class="margin-toggle"/>
 <span class="marginnote">
  S: Redirection and filering are some of the best features on the Unix. These are easily implemented thanks to UNIX's choice to consider every I/O as file. 
 </span>
@@ -346,10 +347,10 @@ prints the current date and time followed by a list of the current directory ont
 
 ### 6.4 The Shell as a Command: Command files
 
+<label for="mn-6" class="margin-toggle">&#8853;</label><input type="checkbox" id="mn-6" class="margin-toggle"/>
 <span class="marginnote">
  S: Description of awesome shell scripts follows.
 </span>
-
 The Shell is itself a command, and may be called recursively. Suppose file `tryout` contains the lines
 
 ```
@@ -370,11 +371,10 @@ The Shell has further capabilities, including the ability to substitute paramete
 
 ### 6.5 Implementation of the Shell
 
+<label for="mn-7" class="margin-toggle">&#8853;</label><input type="checkbox" id="mn-7" class="margin-toggle"/>
 <span class="marginnote">
  S: Shell's implementation is remarkably simple thanks to the design choices described earlier in the paper.
 </span>
-
-
 The outline of the operation of the Shell can now be understood. Most of the time, the Shell is waiting for the user to type a command. When the new-line character ending the line is typed, the Shell’s `read` call returns. The Shell analyzes the command line, putting the arguments in a form appropriate for `execute`. Then `fork` is called. The child process, whose code of course is still that of the Shell, attempts to perform an `execute` with the appropriate arguments. If successful, this will bring in and start execution of the program whose name was given. Meanwhile, the other process resulting from the `fork`, which is the parent process, `wait`s for the child process to die. When this happens, the Shell knows the command is finished, so it types its prompt and reads the typewriter to obtain another command.
 
 Given this framework, the implementation of background processes is trivial; whenever a command line contains `&`, the Shell merely refrains from waiting for the process which it created to execute the command.
@@ -393,10 +393,10 @@ the commands in `comfile` will be executed until the end of `comfile` is reached
 
 ### 6.6 Initialization
 
+<label for="mn-8" class="margin-toggle">&#8853;</label><input type="checkbox" id="mn-8" class="margin-toggle"/>
 <span class="marginnote">
  S: Booting and logging-in are described.
 </span>
-
 The instances of the Shell to which users type commands are themselves children of another process. The last step in the initialization of UNIX is the creation of a single process and the invocation (via `execute`) of a program called `init`. The role of `init` is to create one process for each typewriter channel which may be dialed up by a user. The various subinstances of `init` open the appropriate typewriters for input and output. Since when `init` was invoked there were no files open, in each process the typewriter keyboard will receive file descriptor 0 and the printer file descriptor 1. Each process types out a message requesting that the user log in and waits, reading the typewriter, for a reply. At the outset, no one is logged in, so each process simply hangs. Finally someone types his name or other identification. The appropriate instance of `init` wakes up, receives the log-in line, and reads a password file. If the user name is found, and if he is able to supply the correct password, init changes to the user's default current directory, sets the process’s user ID to that of the person logging in, and performs an execute of the Shell. At this point the Shell is ready to receive commands and the logging-in protocol is complete
 
 
@@ -416,10 +416,10 @@ Several of the games (e.g. chess, blackjack, 3D tic-tac-toe) available on UNIX i
 
 The PDP-11 hardware detects a number of program faults, such as references to nonexistent memory, unimplemented instructions, and odd addresses used where an even address is required. Such faults cause the processor to trap to a system routine. When an illegal action is caught, unless other arrangements have been made, the system terminates the process and writes the user’s image on file core in the current directory. A debugger can be used to determine the state of the program at the time of the fault.
 
+<label for="mn-9" class="margin-toggle">&#8853;</label><input type="checkbox" id="mn-9" class="margin-toggle"/>
 <span class="marginnote">
  S: How ctrl-c, our all-killer, works is described.
 </span>
-
 Programs which are looping, which produce unwanted output, or about which the user has second thoughts may be halted by the use of the `interrupt` signal, which is generated by typing the "delete" character. Unless special action has been taken, this signal simply causes the program to cease execution without producing a core image file.
 
 There is also a `quit` signal which is used to force a core image to be produced. Thus programs which loop unexpectedly may be halted and the core image examined without prearrangement.
@@ -428,10 +428,10 @@ The hardware-generated faults and the interrupt and quit signals can, by request
 
 ## 8. Perspective
 
+<label for="mn-10" class="margin-toggle">&#8853;</label><input type="checkbox" id="mn-10" class="margin-toggle"/>
 <span class="marginnote">
  S: A succinct discussion and retrospective of the development process.
 </span>
-
 <mark>Perhaps paradoxically, the success of UNIX is largely due to the fact that it was not designed to meet any predefined objectives.</mark> The first version was written when one of us (Thompson), dissatisfied with the available computer facilities, discovered a little-used system PDP-7 and set out to create a more hospitable environment. This essentially personal effort was sufficiently successful to gain the interest of the remaining author and others, and later to justify the acquisition of the PDP-11/20, specifically to support a text editing and formatting system. Then in turn the 11/20 was outgrown, UNIX had proved useful enough to persuade management to invest in the PDP-11/45. <mark>Our goals throughout the effort, when articulated at all, have always concerned themselves with building a comfortable relationship with the machine and with exploring ideas and inventions in operating systems. We have not been faced with the need to satisfy someone else's requirements, and for this freedom we are grateful.</mark>
 
 Three considerations which influenced the design of UNIX are visible in retrospect.
