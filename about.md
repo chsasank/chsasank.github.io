@@ -18,7 +18,7 @@ led and contributed to developing AI for healthcare. I am instrumental in
 development of qER, a intracranial hemorrhage detection tool.
 
 I am an avid hiker and alpine snowboarder. Mumbai is nicely nestled in Western
-Ghats and there are some very good hikes nearby in Lonavala and Bhandaradara. I
+Ghats and there are some very good hikes nearby in Lonavla and Bhandardara. I
 should have hiked some 30 summits around Mumbai. As a kid, I was not into
 sports. So, I have decided to do something drastic and learn snowboarding in
 Himalayas! I have snowboarded from some of the highest slopes in the world
@@ -33,9 +33,8 @@ Himalayas! I have snowboarded from some of the highest slopes in the world
 I contributed significantly to PyTorch, a deep learning framework used by many
 organizations around the world. I also made numerous contributions to open
 source and maintains an active profile on Github. Some of my contributions
-include Keras, SimpleITK, Scikit-Learn libaries. My own projects on image
+include Keras, SimpleITK, Scikit-Learn libraries. My own projects on image
 rectification and feature extraction are also popular.
-
 
 
 Since my childhood, I was always interested in math. So, I picked up Electrical
