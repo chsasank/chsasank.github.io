@@ -15,20 +15,35 @@ header {
   font-size: 1.5rem;
 }
 
-pre {
-  width: 52.5%;
-  padding-left: 2.5%;
-  padding-top: 1.25rem;
-  padding-bottom: 1.25rem;
-  overflow-x: auto;
-  background-color: #efefe9 ; 
+h2,
+h1,
+.post-meta,
+p.description {
+  width: 55%;
 }
 
-@media (max-width: 760px) {
-  pre {
-    width: 90%;
-    padding: 0;
-  }
+.sidenote,
+.marginnote {
+  margin-bottom: 20px;
+}
+
+.pagination a,
+.pagination em,
+table {
+  font-size: 1.4rem;
+}
+/* Code Stuff */
+pre {
+  width: 55%;
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
+  background-color: #f8f8f8;
+  overflow: hidden;
+}
+
+pre > code {
+  width: 100%;
+  font-size: 1.125rem;
 }
 
 code {
@@ -37,25 +52,149 @@ code {
   line-height: 1.6;
 }
 
-.marginnote code{ font-size: 1rem; }
+.marginnote code,
+.sidenote code {
+  font-size: 1rem;
+}
 
-.sidenote code { font-size: 1rem; }
+p code {
+  color: #d9534f;
+}
 
+@media screen and (max-width: 760px) {
+  p,
+  p.description,
+  h1,
+  h2,
+  h3,
+  .post-meta,
+  footer {
+    width: 100%;
+  }
+  figure {
+    max-width: 100%;
+  }
+
+  pre {
+    width: 100% !important;
+  }
+  body {
+    width: 90%;
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+}
+
+
+article.post-container {
+  padding: 0;
+}
+
+p.description {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+p.description a {
+  background: none;
+}
+
+h1.title {
+  margin-top: 1rem;
+}
+
+/* table stuff */
 td {
   text-align: center;
-  vertical-align:middle;
+  vertical-align: middle;
+}
+
+td,
+th {
+  padding: 7px 3px 6px;
+  border-collapse: collapse;
+  border-bottom: 2px solid #eee;
+}
+
+th {
+  font-weight: bold;
+  padding-bottom: 4px;
+  letter-spacing: 1px;
+  border-bottom-width: 3px;
+}
+
+.table-caption {
+  float: right;
+  clear: right;
+  margin-right: -60%;
+  width: 50%;
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 1rem;
+  line-height: 1.6;
 }
 
 /* side-by-side images */
 .side-by-side-container {
-    height: auto;
-    width: 150px;
-    float: left;
-    padding-left: 20px;
-    padding-top: 20px;
-    padding-right: 20px;
+  height: auto;
+  width: 150px;
+  float: left;
+  padding-left: 20px;
+  padding-top: 20px;
+  padding-right: 20px;
 }
 
-.side-by-side-img{
-    display:inline-block;
+.side-by-side-img {
+  display: inline-block;
+}
+
+blockquote p {
+  font-size: 1.7rem;
+  line-height: 2rem;
+  color: #2373be;
+}
+
+.small p,
+.small li {
+  font-size: 1rem;
+  line-height: 1rem;
+}
+
+/* Youtube iframe */
+/* https://www.w3schools.com/howto/howto_css_responsive_iframes.asp */
+
+.iframe-container {
+  position: relative;
+  overflow: hidden;
+  width: 55%;
+  padding-top: 29%; /* 16:9 Aspect Ratio (divide 9 by 16 = 0.5625) */
+}
+
+/* Then style the iframe to fit in the container div with full height and width */
+.responsive-iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* Misc */
+
+mark {
+  background: rgba(255, 255, 0, 0.2);
+}
+
+.MathJax_Display {
+  font-size: 1.4rem;
+}
+
+ul.archive {
+  line-height: 2em;
+  font-size: 1.5em;
 }
