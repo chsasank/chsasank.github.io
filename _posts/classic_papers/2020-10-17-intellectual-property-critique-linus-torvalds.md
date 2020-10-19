@@ -14,7 +14,11 @@ twitter_image: https://en.wikipedia.org/wiki/File:LinuxCon_Europe_Linus_Torvalds
 
 The intellectual property debate is so hot these days that I can’t wander into a restroom without running across graffiti supporting one side or the other. Some people think that patents and other forms of intellectual property law are the bane of the free universe, and that these laws are not just misguided but actually evil and should be struck down as soon as possible. Others are convinced that pretty much the whole world economy is driven by intellectual property. And those people want to do anything to strengthen the legal status of IP rights. <mark>As a result, the graffiti on the issue gets quite graphic at times.</mark>
 
-Of course, most of it is on the virtual restrooms on the Internet, not so much the restrooms in the hotspots of San Jose’s nightlife<span class="margin-toggle sidenote-number"></span><span class="sidenote">This, as anybody who lives in San Jose can tell you, is called IRONY. San Jose doesn’t have nightlife. People living here drive to San Mateo if they actually want to have fun</span>. There’ll be huge flamefests over some specific issue associated with intellectual property law, with people arguing everything from First Amendment rights to whether IP law might make open source development impossible sometime in the future. I find myself certifiably schizophrenic on the issue.
+Of course, most of it is on the virtual restrooms on the Internet, not so much the restrooms in the hotspots of San Jose’s nightlife<label for="sn-1" class="margin-toggle sidenote-number"></label><input type="checkbox" id="sn-1" class="margin-toggle"/>
+<span class="sidenote">
+This, as anybody who lives in San Jose can tell you, is called IRONY. San Jose doesn’t have nightlife. People living here drive to San Mateo if they actually want to have fun
+</span>.
+There’ll be huge flamefests over some specific issue associated with intellectual property law, with people arguing everything from First Amendment rights to whether IP law might make open source development impossible sometime in the future. I find myself certifiably schizophrenic on the issue.
 
 It’s not that I don’t have an opinion: I have very strong opinions on the worth of intellectual property, but they end up being on both sides of the argument. I can tell you, this can be very confusing. It means that I end up arguing both sides. And I think this is because there really are two sides to intellectual property, and they share nothing but the name.
 
@@ -64,7 +68,7 @@ The same cannot be said for patents, trademarks, and trade secrets; the heavy dr
 One of the most awkward issues with patents is that, unlike with copyrights, you don’t get a patent just for inventing something new. No, <mark>you get a patent after you’ve gone through the painful and prolonged process of filing for it with the patent office.</mark> Waiting for the patent office, by the way, is a bit like standing in line at the DMV, but you have to realize that you stand in line with about twelve patent lawyers, and the line is TWO YEARS LONG. In short, it’s not something you do for fun on a Friday evening if the kids fell asleep early.
 
 
-As if to add insult to injury, the patent office doesn’t necessarily have the resources to check whether the patent for a new invention of yours is really all that groundbreaking. It’s not as if they have Einsteins<span class="margin-toggle sidenote-number"></span><span class="sidenote">
+As if to add insult to injury, the patent office doesn’t necessarily have the resources to check whether the patent for a new invention of yours is really all that groundbreaking. It’s not as if they have Einsteins<label for="sn-2" class="margin-toggle sidenote-number"></label><input type="checkbox" id="sn-2" class="margin-toggle"/><span class="sidenote">
 Actually, Einstein did work for the patent office when he did his work on special relativity. But he was special. Even most patent clerks admit that.
 </span>
 working for them, so it’s fairly hard to give new inventions their proper checking. Which means that, in many cases, obviously bogus patents have been accepted. Think of it as the post office with Ph.D.’s—minus the guns.

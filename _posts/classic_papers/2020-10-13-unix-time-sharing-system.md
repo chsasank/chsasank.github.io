@@ -36,6 +36,7 @@ The greater part of UNIX software is written in the above-mentioned C language [
 
 ## 3. The File System
 
+<label for="mn-1" class="margin-toggle">&#8853;</label><input type="checkbox" id="mn-1" class="margin-toggle"/>
 <span class="marginnote">
  S: Note how the paper considers files important. Unix exposes all the functionality through files.
 </span>
@@ -52,6 +53,7 @@ The most important job of UNIX is to provide a file system. From the point of vi
 
 The system maintains several directories for its own use. One of these is the *root* directory. All files in the system can be found by tracing a path through a chain of directories until the desired file is reached. The starting point for such searches is often the root. Another system directory contains all the programs provided for general use; that is, all the *commands*. As will be seen however, it is by no means necessary that a program reside in this directory for it to be executed.
 
+<label for="mn-2" class="margin-toggle">&#8853;</label><input type="checkbox" id="mn-2" class="margin-toggle"/>
 <span class="marginnote">
  S: This is a succinct description of path system of unix and Linux
 </span>
