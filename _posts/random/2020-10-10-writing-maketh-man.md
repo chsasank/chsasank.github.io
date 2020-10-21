@@ -5,12 +5,15 @@ author: Sasank Chilamkurthy
 twitter_image: https://chsasank.github.io/assets/images/writing/vikash.jpg
 ---
 
-The covid-19 situation has given all of us a hard time - both for our physical and mental health. We have been forced to lose a part of our identities. I used to be an avid hiker - especially in the monsoon. This season, I could go only for one trek<span class="margin-toggle sidenote-number"></span><span class="sidenote">Here in India, we call hiking *trekking*</span>. It was a short and beautiful hike near Mumbai.
+The covid-19 situation has given all of us a hard time - both for our physical and mental health. We have been forced to lose a part of our identities. I used to be an avid hiker - especially in the monsoon. This season, I could go only for one trek<label for="sn-1" class="margin-toggle sidenote-number"></label><input type="checkbox" id="sn-1" class="margin-toggle"/><span class="margin-toggle sidenote-number"></span><span class="sidenote">Here in India, we call hiking *trekking*</span>. It was a short and beautiful hike near Mumbai.
 
+<figure>
+<label for="mn-fig-1" class="margin-toggle">⊕</label><input type="checkbox" id="mn-fig-1" class="margin-toggle">
 <span class="marginnote">
    My friend, Vikash, at the summit.
 </span>
 <img src='/assets/images/writing/vikash.jpg'>
+</figure>
 
 I am forced to lose my hiker identity this season. I'm also forced off my gym identity. Now I have to find a new identity to fill the void. I think I've subconsciously decided that writing will be that identity. I started writing long mails, tutorials in our [internal wiki](http://172.24.195.84:4000/outline-self-hosted-wiki.html) and in general more text. I think blogging is one place where I can put my thoughts down and create an identity.
 
@@ -57,10 +60,14 @@ I am starting to see patterns in the tech industry I work in and the technologie
 
 My interests in life are not just science and technology! I love travelling and hiking. Thanks to Bhargava, I'm now a pretty decent alpine snowboarder! Recently I am beginning to appreciate photography. Inspired by Dijkstra, I want to maintain 'trip reports' of all the cool trips I make. Of course, the current covid situation has limited by travelling. May be I can write about my travels retrospectively and relive those moments in my mind!
 
+
+<figure>
+<label for="mn-fig-2" class="margin-toggle">⊕</label><input type="checkbox" id="mn-fig-2" class="margin-toggle">
 <span class="marginnote">
    My friend Ranadeep. Photo taken in our snowboarding mecca, Gulmarg.
 </span>
 <img src='/assets/images/writing/ranadeep.jpg'>
+</figure>
 
 
 I was hanging out with my friend [Ankit](https://ankitmodi.github.io/) the other day and he was telling me how he writes for entertainment. He is right: writing and creation is more fun than just reading or discussion i.e. consumption. It's certainly not easy but that's what makes it so awesome - just like hiking. I will end this note with a quote from English Philosopher [Francis Bacon](https://en.wikipedia.org/wiki/Francis_Bacon), who developed [scientific method](https://en.wikipedia.org/wiki/Scientific_method):
