@@ -24,8 +24,8 @@ event of AI as a field. Ideas from this proposal remain highly relevant to the
 day.
 > 
 > Yellow highlights/annotations are my own. You can <a onclick="disableHighlight()"
-href='#'>disable them.</a> I also added side notes with my thoughts and
-connections I could trace to where the AI as a field is going right now.
+href='#'>disable them.</a> I also added side notes with my thoughts and the
+connections I could trace to the more modern AI ideas.
 
 We propose that a 2 month, 10 man study of artificial intelligence be carried
 out during the summer of 1956 at Dartmouth College in Hanover, New Hampshire.
@@ -50,21 +50,23 @@ programs taking full advantage of what we have.</mark>
 
 ### 2. How Can a Computer be Programmed to Use a Language
 
+It may be speculated that a large part of human thought consists of manipulating
+words according to rules of reasoning and 
+rules of conjecture.
+<label for="mn-1" class="margin-toggle">⊕</label><input type="checkbox" id="mn-1" class="margin-toggle"/>
 <span class="marginnote">
 S: An interesting conjecture. Sounds very similar to this line from
 [magic number seven paper](https://chsasank.github.io/classic_papers/magic-number-seven.html): 
 "Our language is tremendously useful for repackaging material into a few chunks rich
 in information."
 </span>
-
-It may be speculated that a large part of human thought consists of manipulating
-words according to rules of reasoning and rules of conjecture. From this point
-of view, forming a generalization consists of admitting a new word and some
+From this point of view, forming a generalization consists of admitting a new word and some
 rules whereby sentences containing it imply and are implied by others. This idea
 has never been very precisely formulated nor have examples been worked out.
 
 ### 3. Neuron Nets
 
+<label for="mn-2" class="margin-toggle">⊕</label><input type="checkbox" id="mn-2" class="margin-toggle"/>
 <span class="marginnote">
 S: Interesting how neural nets were considered important even during the
 foundation of AI. Thanks to deep learning, this research direction is quite
@@ -79,37 +81,38 @@ problem needs more theoretical work.
 
 ### 4. Theory of the Size of a Calculation
 
+If we are given a well-defined problem (one for which it is possible to test
+mechanically whether or not a proposed answer is a valid answer) one way of
+solving it is to try all possible answers in order.
+<label for="mn-3" class="margin-toggle">⊕</label><input type="checkbox" id="mn-3" class="margin-toggle"/>
 <span class="marginnote">
 S: Is this the P/NP Problem? I wonder if the partial results obtained by
 Shannon and McCarthy are basically "The Theory of Automata" they're editing together.
 </span>
-
-If we are given a well-defined problem (one for which it is possible to test
-mechanically whether or not a proposed answer is a valid answer) one way of
-solving it is to try all possible answers in order. This method is inefficient,
-and to exclude it one must have some criterion for efficiency of calculation.
-Some consideration will show that to get a measure of the efficiency of a
-calculation it is necessary to have on hand a method of measuring the complexity
-of calculating devices which in turn can be done if one has a theory of the
-complexity of functions. Some partial results on this problem have been obtained
-by Shannon, and also by McCarthy.
+This method is inefficient, and to exclude it one must have some criterion for
+efficiency of calculation. Some consideration will show that to get a measure of
+the efficiency of a calculation it is necessary to have on hand a method of
+measuring the complexity of calculating devices which in turn can be done if one
+has a theory of the complexity of functions. Some partial results on this
+problem have been obtained by Shannon, and also by McCarthy.
 
 ### 5. Self-Improvement
 
+Probably a truly intelligent machine will carry out activities which may best be
+described as self-improvement.
+<label for="mn-4" class="margin-toggle">⊕</label><input type="checkbox" id="mn-4" class="margin-toggle"/>
 <span class="marginnote">
 S: Is this the Back Propagation? What were the proposed schemes?
 </span>
-
-Probably a truly intelligent machine will carry out activities which may best be
-described as self-improvement. Some schemes for doing this have been proposed
-and are worth further study. It seems likely that this question can be studied
-abstractly as well.
+Some schemes for doing this have been proposed and are worth further study. It
+seems likely that this question can be studied abstractly as well.
 
 ### 6. Abstractions
 
+<label for="mn-5" class="margin-toggle">⊕</label><input type="checkbox" id="mn-5" class="margin-toggle"/>
 <span class="marginnote">
 S: The concept of layers and deepness of deep learning essentially implements
-this! Again, this idea of abstraction is called as 'recoding' in 
+the abstraction! Again, this idea of abstraction is called as 'recoding' in 
 [magic number seven paper](https://chsasank.github.io/classic_papers/magic-number-seven.html).
 It is interesting that the convolutions implement this recoding/abstraction in a
 sparse way hypothesized by this paper.
@@ -122,16 +125,17 @@ worthwhile.
 
 ### 7. Randomness and Creativity
 
+A fairly attractive and yet clearly incomplete conjecture is that the difference
+between creative thinking and unimaginative competent thinking lies in the
+injection of a some randomness.
+<label for="mn-6" class="margin-toggle">⊕</label><input type="checkbox" id="mn-6" class="margin-toggle"/>
 <span class="marginnote">
 S: Is this the idea implemented by GANs? The intuition is the trained CNN while
 randomness is the underlying embedding. As for human cognition, what exactly is intuition?
 </span>
-
-A fairly attractive and yet clearly incomplete conjecture is that the difference
-between creative thinking and unimaginative competent thinking lies in the
-injection of a some randomness. The randomness must be guided by intuition to be
-efficient. In other words, the educated guess or the hunch include controlled
-randomness in otherwise orderly thinking.
+The randomness must be guided by intuition to be efficient. In other words, the
+educated guess or the hunch include controlled randomness in otherwise orderly
+thinking.
 
 In addition to the above collectively formulated problems for study, we have
 asked the individuals taking part to describe what they will work on. Statements
@@ -151,7 +155,7 @@ During the meeting there will be regular research seminars and opportunity for
 the members to work individually and in informal small groups.
 
 The originators of this proposal are:
-
+<label for="mn-7" class="margin-toggle">⊕</label><input type="checkbox" id="mn-7" class="margin-toggle"/>
 <span class="marginnote">
 S: From the top of paper: "We think that a significant advance can be made in one or more of these
 problems if a carefully selected group of scientists work on it together for a summer.".
@@ -219,6 +223,7 @@ project on the following basis:
 
 ## Proposal for Research by C. E. Shannon
 
+<label for="mn-8" class="margin-toggle">⊕</label><input type="checkbox" id="mn-8" class="margin-toggle"/>
 <span class="marginnote">
 S: Shannon has always been the theory guy: Information theory, computation theory etc.
 Ideas mentioned here are beyond my puny mind.
@@ -262,9 +267,6 @@ be there for whatever time is possible,
 
 ## Proposal for Research by M. L. Minsky
 
-<span class="marginnote">
-S: Ideas mentioned here are backprop and layers!
-</span>
 
 It is not difficult to design a machine which exhibits the following type of
 learning. The machine is provided with input and output channels and an internal
@@ -276,11 +278,9 @@ trained to exhibit “goal-seeking” behavior. Unless the machine is provided w
 or is able to develop, a way of abstracting sensory material, it can progress
 through a complicated environment only through painfully slow steps, and in
 general will not reach a high level of behavior.</mark>
-
+<label for="mn-9" class="margin-toggle">⊕</label><input type="checkbox" id="mn-9" class="margin-toggle"/>
 <span class="marginnote">
-S: May be I should read a Minsky's paper or two to understand what he means
-by motor and sensory abstractions. I now see the value of references thanks
-to the lack of references here!
+S: Ideas mentioned here are backprop and layers!
 </span>
 
 Now let the criterion of success be not merely the appearance of a desired
@@ -289,15 +289,18 @@ performance of a given manipulation in a given environment. Then in certain ways
 the motor situation appears to be a dual of the sensory situation, and progress
 can be reasonably fast only if the machine is equally capable of assembling an
 ensemble of “motor abstractions” relating its output activity to changes in the
-environment. Such “motor abstractions” can be valuable only if they relate to
-changes in the environment which can be detected by the machine as changes in
-the sensory situation, i.e., if they are related, through the structure of the
-environrnent, to the sensory abstractions that the machine is using.
-
+environment.
+<label for="mn-10" class="margin-toggle">⊕</label><input type="checkbox" id="mn-10" class="margin-toggle"/>
 <span class="marginnote">
-S: It kinda sounds like sensory and motor abstractions are forward and
-backward passes of backprop respectively. Very interesting.
+S: May be I should read a Minsky's paper or two to understand what he means
+by motor and sensory abstractions. I now see the value of references thanks
+to the lack of references here!
 </span>
+Such “motor abstractions” can be valuable only if they relate to changes in the
+environment which can be detected by the machine as changes in the sensory
+situation, i.e., if they are related, through the structure of the environrnent,
+to the sensory abstractions that the machine is using.
+
 I have been studying such systems for some time and feel that if a machine can
 be designed in which the sensory and motor abstractions, as they are formed, can
 be made to satisfy certain relations, a high order of behavior may result. These
@@ -305,6 +308,11 @@ relations involve pairing, motor abstractions with sensory abstractions in such
 a way as to produce new sensory situations representing the changes in the
 environment that might be expected if the corresponding motor act actually took
 place.
+<label for="mn-11" class="margin-toggle">⊕</label><input type="checkbox" id="mn-11" class="margin-toggle"/>
+<span class="marginnote">
+S: It kinda sounds like sensory and motor abstractions are forward and
+backward passes of backprop respectively. Very interesting.
+</span>
 
 The important result that would be looked for would be that the machine would
 tend to build up within itself an abstract model of the environment in which it
@@ -347,7 +355,7 @@ suggests that mental action consists basically of constructing little engines
 inside the brain which can simulate and thus predict abstractions relating to
 environment. </mark>Thus the solution of a problem which one already understands is
 done as follows:
-
+<label for="mn-12" class="margin-toggle">⊕</label><input type="checkbox" id="mn-12" class="margin-toggle"/>
 <span class="marginnote">
 S: Another description of backprop. I feel that the step 2 is the gradient computation.
 </span>
@@ -382,14 +390,17 @@ scientific problem. The individual might try to solve it and find that every
 reasonable action led to failure. In other words the stored program contains
 rules for the solution of this problem but the rules are slightly wrong.
 
+
+<mark>In order to solve this problem the individual will have to do something which is
+unreasonable or unexpected as judged by the heritage of wisdom accumulated by
+the culture.
+</mark><label for="mn-13" class="margin-toggle">⊕</label><input type="checkbox" id="mn-13" class="margin-toggle"/>
 <span class="marginnote">
 S: Is this paragraph hinting at gradient descent?
 Something radical but not completely random sounds like gradient.
 It also sounds like GAN!
 </span>
-<mark>In order to solve this problem the individual will have to do something which is
-unreasonable or unexpected as judged by the heritage of wisdom accumulated by
-the culture.</mark> He could get such behavior by trying different things at random but
+He could get such behavior by trying different things at random but
 such an approach would usually be too inefficient. There are usually too many
 possible courses of action of which only a tiny fraction are acceptable. The
 individual needs a hunch, something unexpected but not altogether reasonable.
@@ -419,6 +430,7 @@ The extension of the Monte Carlo Method is to use these results as a guide to
 determine what to neglect in order to simplify the problem enough to obtain an
 approximate analytical solution.
 
+<label for="mn-14" class="margin-toggle">⊕</label><input type="checkbox" id="mn-14" class="margin-toggle"/>
 <span class="marginnote">
 S: Interesting view of randomness during training/learning/discovery. It feels
 like this para is alluding to effectiveness of stochastic gradient descent
@@ -448,6 +460,7 @@ chaos. Then after a certain amount of chaos the machine would probably try
 something forbidden or execute a stop instruction and the experiment would be
 over.
 
+<label for="mn-15" class="margin-toggle">⊕</label><input type="checkbox" id="mn-15" class="margin-toggle"/>
 <span class="marginnote">
 S: Rochester is the 'engineer' guy who seemed to have cared about implementation.
 May be that's why he was part of the Dartmouth group in the first place?
@@ -464,10 +477,6 @@ relevant scientific knowledge in order to work on such a hard problem, and I
 already was quite aware of the current state of calculators and the art of
 programming them.
 
-<span class="marginnote">
-S: 'Imaginative Process' sounds awful lot like GANs. Random 'errors' in GANs create
-reasonable hallucinations.
-</span>
 The control mechanism of the brain is clearly very different from the control
 mechanism in today’s calculators. One symptom of the difference is the manner of
 failure. A failure of a calculator characteristically produces something quite
@@ -477,9 +486,15 @@ anything. It might execute the wrong instruction or operate a wrong input-output
 unit. <mark>On the other hand human errors in speech are apt to result in statements
 which almost make sense (consider someone who is almost asleep, slightly drunk,
 or slightly feverish). Perhaps the mechanism of the brain is such that a slight
-error in reasoning introduces randomness in just the right way.</mark> Perhaps the
-mechanism that controls serial order in behavior[2] guides the random factor so as
-to improve the efficiency of imaginative processes over pure randomness.
+error in reasoning introduces randomness in just the right way.</mark>
+<label for="mn-16" class="margin-toggle">⊕</label><input type="checkbox" id="mn-16" class="margin-toggle"/>
+<span class="marginnote">
+S: 'Imaginative Process' sounds awful lot like GANs. Random 'errors' in GANs create
+reasonable hallucinations.
+</span>
+Perhaps the mechanism that controls serial order in behavior[2] guides the
+random factor so as to improve the efficiency of imaginative processes over pure
+randomness.
 
 Some work has been done on simulating neuron nets on our automatic calculator.
 One purpose was to see if it would be thereby possible to introduce randomness
@@ -516,8 +531,9 @@ solution of problems?</mark>
 
 ## Proposal for Research by John McCarthy
 
+<label for="mn-17" class="margin-toggle">⊕</label><input type="checkbox" id="mn-17" class="margin-toggle"/>
 <span class="marginnote">
-S: McCarthy is more of a grammar and linguist guy then. Cognitive scientists and linguists
+S: McCarthy is more of a grammar and linguist guy. Cognitive scientists and linguists
 have always been close friends. No wonder he developed Lisp in the pursuit of AI.
 </span>
 During next year and during the Summer Research Project on Artificial
@@ -548,25 +564,30 @@ of parts of mathematics. The latter have been constructed so as:
    language,
 3. to make is easy to argue about whether proofs of (???)
 
-<span class="marginnote">
-S: So McCarthy wants to create a high level programming language. Eventually so high
-you can describe a feeling of 'self'. Is that way Lisp a recursive and
-'functional' programming language? It now seems obvious that, of course,
-['self'](https://en.wikipedia.org/wiki/Self) is a recursive concept.
-</span>
+
 No attempt has been made to make proofs in the artificial languages as short as
 informal proofs. <mark>It therefore seems to be desirable to attempt to construct an
 artificial language which a computer can be programmed to use on problems
-requiring conjecture and self-reference.</mark> It should correspond to English in the
+requiring conjecture and self-reference.</mark>
+<label for="mn-18" class="margin-toggle">⊕</label><input type="checkbox" id="mn-18" class="margin-toggle"/>
+<span class="marginnote">
+S: McCarthy seems to want to create a high level programming language. Eventually so high
+you can describe a feeling of 'self' in it. May be that's the reason why Lisp a recursive and
+'functional' programming language? It now seems obvious now: Of course,
+'[self](https://en.wikipedia.org/wiki/Self)' is a recursive concept.
+</span>
+It should correspond to English in the
 sense that short English statements about the given subject matter should have
 short correspondents in the language and so should short arguments or
 conjectural arguments.
+<mark>I hope to try to formulate a language having these
+properties and in addition to contain the notions of physical object, event,
+etc.,</mark>
+<label for="mn-19" class="margin-toggle">⊕</label><input type="checkbox" id="mn-19" class="margin-toggle"/>
 <span class="marginnote">
 S: This sounds like object oriented programming.
 </span>
-<mark>I hope to try to formulate a language having these
-properties and in addition to contain the notions of physical object, event,
-etc.,</mark> with the hope that using this language it will be possible to program a
+with the hope that using this language it will be possible to program a
 machine to learn to play games well and do other tasks .
 
 ## People Interested in the Artificial Intelligence Problem
@@ -592,10 +613,12 @@ Department of Mathematics
 Dartmouth College
 Hanover, NH
 ```
+
+The list consists of:
+<label for="mn-20" class="margin-toggle">⊕</label><input type="checkbox" id="mn-20" class="margin-toggle"/>
 <span class="marginnote">
 S: Not your random list of people. Some of the most influential thinkers are listed here.
 </span>
-The list consists of:
 
 * Adelson, Marvin, Hughes Aircraft Company, Airport Station, Los Angeles, CA
 * Backus, John, IBM Corporation, 590 Madison Avenue, New York, NY
