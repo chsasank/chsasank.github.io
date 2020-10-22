@@ -10,7 +10,8 @@ description: I maintain a mirror of some classic papers because the originals te
     tend to be not well formatted for the modern web.</p>
 
 <ul class='archive'>
-    {% for post in site.posts %}
+    {% assign sorted_posts = site.posts | sort:'published' %}
+    {% for post in sorted_posts %}
     {% if post.category == 'classic_papers' %}
     <li>
         <span class="post-date"> {{post.published | date: "%Y"}}, </span>
