@@ -17,6 +17,16 @@ published: 1955-08-31
 twitter_image: https://en.wikipedia.org/wiki/File:Marvin_Minsky_at_OLPCb.jpg
 ---
 
+> In 1955, four computer scientists wrote the following proposal for a
+[workshop](https://en.wikipedia.org/wiki/Dartmouth_workshop) to lay groundwork
+for Artificial Intelligence. This workshop is considered to be the founding
+event of AI as a field. Ideas from this proposal remain highly relevant to the
+day.
+> 
+> Yellow highlights/annotations are my own. You can <a onclick="disableHighlight()"
+href='#'>disable them.</a> I also added side notes with my thoughts and
+connections I could trace to where the AI as a field is going right now.
+
 We propose that a 2 month, 10 man study of artificial intelligence be carried
 out during the summer of 1956 at Dartmouth College in Hanover, New Hampshire.
 <mark>The study is to proceed on the basis of the conjecture that every aspect
