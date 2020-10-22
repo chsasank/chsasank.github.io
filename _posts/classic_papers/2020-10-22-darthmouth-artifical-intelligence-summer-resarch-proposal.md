@@ -14,7 +14,7 @@ themselves. We think that a significant advance can be made in one or more of
 these problems if a carefully selected group of scientists work on it together
 for a summer."
 published: 1955-08-31
-twitter_image: https://en.wikipedia.org/wiki/File:Marvin_Minsky_at_OLPCb.jpg
+twitter_image: https://miro.medium.com/max/930/0*3jGv1es40NHPcTE3.jpg
 ---
 
 > In 1955, four computer scientists wrote the following proposal for a
