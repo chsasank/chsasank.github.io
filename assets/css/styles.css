@@ -57,7 +57,7 @@ code {
   font-size: 1rem;
 }
 
-p code {
+p code, li code {
   color: #d9534f;
 }
 
