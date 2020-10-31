@@ -3,7 +3,14 @@ layout: post
 title: "The Best Way To Design An Automatic Calculating Machine"
 author: "M. V. Wilkes"
 category: classic_papers
-description: ""
+description: "I would like to begin by adding my congratulations to the many others which
+have been received by Professor Williams, Manchester University and Ferranti
+Ltd., on the construction of the machine which has just been inaugurated. In
+the face of this beautifully engineered machine, the title I have chosen for
+my opening remarks in this discussion may sound a little impertinent. But,
+as Dr. Kilburn remarked yesterday, the designer of an electronic calculating
+machine must continually take decisions, and he does net know when he takes
+them whether they are right or wrong. "
 published: 1955-08-31
 twitter_image: https://miro.medium.com/max/930/0*3jGv1es40NHPcTE3.jpg
 ---
@@ -84,12 +91,17 @@ another critical moment, and its edges must be sharp. In a parallel
 asynchronous machine all that is needed is a single pulse whose time of
 occurrence, length, and shape are all non-critical (see Fig. 9).
 
-<!-- figure here -->
+<figure>
+  <img src="/assets/images/classic_papers/designing_computing_machine/fig9.png">
+</figure>
 
 The arithmetical unit of a parallel machine is often shown diagrammatically
 as in Fig. 10.
 
-<!-- figure here -->
+<figure>
+  <img src="/assets/images/classic_papers/designing_computing_machine/fig10.png">
+</figure>
+
 
 At the beginning of a multiplication the multiplier is placed in the
 right-hand half of the accumulator register. The right-hand half of the
@@ -99,13 +111,16 @@ then have the diagram of Fig. 11.
 
 
 We are thus led to think of an arithmetical unit composed of a number of
-standard units each containing four flip-fiops (one belonging to each of
+standard units each containing four flip-flops (one belonging to each of
 four registers) together with an adder. Gates would be provided to make
 possible the transfer of numbers from one register to another, through the
 adder when necessary. These transfers would be effected by pulsing one or
 more of a set of wires emerging from the arithmetical unit.
 
-<!-- figure here -->
+<figure>
+  <img src="/assets/images/classic_papers/designing_computing_machine/fig11.png">
+</figure>
+
 
 It is also necessary to have registers in the control of a machine. These,
 with the names given to them respectively in the Manchester machine and in
@@ -176,7 +191,9 @@ the first micro-order in the appropriate sequence. This is done by causing
 the function digits of the order to be set up on the first four or five
 flip-flops of the register R, zero being set on the others.
 
-<!-- figure -->
+<figure>
+  <img src="/assets/images/classic_papers/designing_computing_machine/fig12.png">
+</figure>
 
 A control system designed in this way is certainly very logical in structure
 but two comments, slightly contradictory in their implications, might be
