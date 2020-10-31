@@ -23,8 +23,7 @@ programming, the requirement for a strong minor in something other that
 mathematics, and more practical coding and less abstract theory, as well as
 more seriousness and less game playing.
 
-<!-- TODO: paper -->
-
+## What is Computer Science?
 
 Let me begin with a few personal words. When one is notified that he has
 been elected the ACM Turing lecturer for the year, he is at first surprised
@@ -62,8 +61,9 @@ define mathematics, rather he simply wrote mathematics. While you will now
 and then find some aspect of mathematics defined rather sharply, the only
 generally agreed upon definition of mathematics is "Mathematics is what
 mathematicians do", which is followed by "Mathematicians are people who do
-mathematics." What is true about defining mathematics is also true about
-many other fields: there is often no clear, sharp definition of the field.
+mathematics." <mark>What is true about defining mathematics is also true
+about many other fields: there is often no clear, sharp definition of the
+field.</mark>
 
 In the face of this difficulty many people, including myself at times, feel that
 we should ignore the discussion and get on with *doing* it. But as George Forsythe
@@ -71,7 +71,7 @@ points out so well<label for="sn-2" class="margin-toggle sidenote-number"></labe
 <span class="sidenote">
 Forsythe, G. E. What to do till the computer scientist comes. Am. Math. Monthly 75, 5 (May 1968), 454-461.
 </span>
-in a recent article, it *does* matter what people in Washington, D. C. think
+in a recent article, it *does* matter what people in Washington, D.C. think
 computer science is. According to him, they tend to feel that it is a part
 of applied mathematics and therefore turn to the mathematicians for advice
 in the granting of funds. And it is not greatly different elsewhere; in both
@@ -101,10 +101,10 @@ every 15 to 17 years. I strongly suspect that the rate is now much higher in
 computer science; certainly it was higher during the past 15 years. In all
 of our plans we must take this growth of information into account and
 recognize that in a very real sense we face a "semi-infinite" amount of
-knowledge. In many respects the classical concept of a scholar who knows at
+knowledge. In many respects the <mark>classical concept of a scholar who knows at
 least 90 percent of the relevant knowledge in his field is a dying concept.
-Narrower and narrower specialization is *not* the answer, since in part the
-difficulty is in the rapid growth of the interrelationships between fields.
+Narrower and narrower specialization is <em>not</em> the answer, since in part the
+difficulty is in the rapid growth of the interrelationships between fields.</mark>
 It is my private opinion that we need to put relatively more stress on
 quality and less on quantity and that the careful, critical, considered
 survey articles will often be more significant in advancing the field than
@@ -124,10 +124,10 @@ one that meets a number of often poorly stated economic and practical
 objectives. We call the field "computer science" but I believe that it would
 be more accurately labeled "computer engineering" were not this too likely
 to be misunderstood. So much of what we do is not a question of can it be
-done as it is a question of finding a practical way. It is not usually a
+done as it is a question of finding a practical way. <mark>It is not usually a
 question of can there exist a monitor system, algorithm, scheduler, or
 compiler, rather it is a question of finding a practical working one with a
-reasonable expenditure of time and effort. While I would not change the name
+reasonable expenditure of time and effort.</mark> While I would not change the name
 from "computer science" to "computer engineering," I would like to see far
 more of a practical, engineering flavor in what we teach than I usually find
 in course outlines.
@@ -164,21 +164,23 @@ mathematicians so often engage in. Whether or not the pure mathematician is
 right in claiming that what is utterly useless today will be useful tomorrow
 (and I doubt very much that he is, in the current situation), it is simply
 poor propaganda for raising the large amounts of money we need to support
-the continuing growth of the field. We need to avoid making computer science
-look like pure mathematics: our primary standard for acceptance should be
-experience in the real world, not aesthetics.
+the continuing growth of the field. <mark>We need to avoid making computer
+science look like pure mathematics: our primary standard for acceptance
+should be experience in the real world, not aesthetics.</mark>
+
+## Computer Science Curriculum
 
 Were I setting up a computer science program, I would give relatively more
-emphasis to laboratory work than does Curriculum 68, and in particular I
-would require every computer science major, undergraduate or graduate, to
-take a laboratory course in which he designs, builds, debugs, and documents
-a reasonably sized program, perhaps a simulator or a simplified compiler for
-a particular machine. The results would be judged on style of programming,
-practical efficiency, freedom from bugs, and documentation. If any of these
-were too poor, I would not let the candidate pass. In judging his work we
-need to distinguish clearly between superficial cleverness and genuine
-understanding. Cleverness was essential in the past; it is no longer
-sufficient.
+emphasis to laboratory work than does Curriculum 68, and in particular
+<mark>I would require every computer science major, undergraduate or
+graduate, to take a laboratory course in which he designs, builds, debugs,
+and documents a reasonably sized program, perhaps a simulator or a
+simplified compiler for a particular machine.</mark> The results would be
+judged on style of programming, practical efficiency, freedom from bugs, and
+documentation. If any of these were too poor, I would not let the candidate
+pass. In judging his work we need to distinguish clearly between superficial
+cleverness and genuine understanding. Cleverness was essential in the past;
+it is no longer sufficient.
 
 I would also require a strong minor in some field other than computer
 science and mathematics. Without real experience in using the computer to
@@ -196,6 +198,8 @@ projects courses, or some other appropriate means." I am suggesting that the
 appropriate means is a stiff laboratory course under your own control, and
 that the above suggestions of the Committee are rarely going to be effective
 or satisfactory.
+
+### Mathematics
 
 Perhaps the most vexing question in planning a computer science curriculum
 is determining the mathematics courses to require of those who major in the
@@ -219,9 +223,9 @@ this field. If we do not give such training, then the computer science major
 will find that he is a technician who is merely programming what others tell
 him to do. Furthermore, the kinds of programming that were regarded in the
 past as being great often depended on cleverness and trickery and required
-little or no formal mathematics. This phase seems to be passing, and I am
-forced to believe that in the future a good mathematical background will be
-needed if our graduates are to do significant work.
+little or no formal mathematics. This phase seems to be passing, and <mark>I
+am forced to believe that in the future a good mathematical background will
+be needed if our graduates are to do significant work.</mark>
 
 History shows that relatively few people can learn much new mathematics in
 their thirties, let alone later in life; so that if mathematics is going to
@@ -237,7 +241,7 @@ Once we grant the need for a lot of mathematics, then we face the even more
 difficult task of saying specifically which courses. In spite of the
 numerical analysts' claims for the fundamental importance of their field, a
 surprising amount of computer science activity requires comparatively little
-of it, But I believe we can defend the requirement that every computer
+of it. But I believe we can defend the requirement that every computer
 science major take at least one course in the field. Our difficulty lies,
 perhaps, in the fact that the present arrangement of formal mathematics
 courses is not suited to our needs as we presently see them. We seem to need
@@ -257,6 +261,8 @@ than too little. I realize all too well that this will exclude many people
 who in the past have made contributions, and I am not happy about my
 conclusion, but there it is. In the future, success in the field of computer
 science is apt to require a command of mathematics.
+
+### No "Game-Playing"
 
 One of the complaints regularly made of computer science curriculums is that
 they seem to almost totally ignore business applications and Cobol. I think
@@ -287,24 +293,24 @@ therefore, to be ignored rather than to be rejected; it is either not taught
 or else it is an elective, and this is probably the best we can expect at
 present when the center of interest is the general purpose digital computer.
 
-At present there is a flavor of "game-playing" about many courses in
+<mark>At present there is a flavor of "game-playing" about many courses in
 computer science. I hear repeatedly from friends who want to hire good
 software people that they have found the specialist in computer science is
-someone they do not want, Their experience is that graduates of our programs
-seem to be mainly interested in playing games, making fancy programs that
-really do not work, writing trick programs, etc. and are unable to
-discipline their own efforts so that what they say they will do gets done on
-time and in practical form. If I had heard this complaint merely once from a
-friend who fancied that he was a hard-boiled engineer, then I would dismiss
-it; unfortunately I have heard it from a number of capable, intelligent,
-understanding people. As I earlier said, since we have such a need for
-financial support for the current and future expansion of our facilities, we
-had better consider how we can avoid such remarks being made about our
-graduates in the coming years. Are we going to continue to turn out a
-product that is not wanted in many places? Or are we going to turn out
-responsible, effective people who meet the real needs of our society? I hope
-that the latter will be increasingly true; hence my emphasis on the
-practical aspects of computer science.
+someone they do not want.</mark> Their experience is that graduates of our
+programs seem to be mainly interested in playing games, making fancy
+programs that really do not work, writing trick programs, etc. and are
+unable to discipline their own efforts so that what they say they will do
+gets done on time and in practical form. If I had heard this complaint
+merely once from a friend who fancied that he was a hard-boiled engineer,
+then I would dismiss it; unfortunately I have heard it from a number of
+capable, intelligent, understanding people. As I earlier said, since we have
+such a need for financial support for the current and future expansion of
+our facilities, we had better consider how we can avoid such remarks being
+made about our graduates in the coming years. Are we going to continue to
+turn out a product that is not wanted in many places? Or are we going to
+turn out responsible, effective people who meet the real needs of our
+society? I hope that the latter will be increasingly true; hence my emphasis
+on the practical aspects of computer science.
 
 One of the reasons that the computer scientists we turn out are more
 interested in "cute" programming than in results is that many of our courses
@@ -324,12 +330,12 @@ indicated," while the pure mathematician usually shrugs his shoulders and
 says, "That is none of my responsibility." Someone must take the
 responsibility for the decision to go ahead on one path or another, and it
 seems to me that he who does assume this responsibility will get the greater
-credit, on the average, as it is doled out by society. We need, therefore,
-in our teaching of computer science, to stress the assuming of
+credit, on the average, as it is doled out by society. <mark>We need,
+therefore, in our teaching of computer science, to stress the assuming of
 responsibility for the whole problem and not just the cute mathematical
-part. This is another reason why I have emphasized the engineering aspects
-of the various subjects and tried to minimize the purely mathematical
-aspects.
+part.</mark> This is another reason why I have emphasized the engineering
+aspects of the various subjects and tried to minimize the purely
+mathematical aspects.
 
 The difficulty is, of course, that so many of our teachers in computer
 science are pure mathematicians and that pure mathematics is so much easier
@@ -356,6 +362,8 @@ detail. What is needed in the higher levels of computer science is not the
 rather the judgment and balancing of conflicting aims that characterize
 engineering.
 
+### Software
+
 I have so far skirted the field of software, or, as a friend of mine once
 said, "ad hoc-ery.” There is so much truth in his characterization of
 software as ad hoc-ery that it is embarrassing to discuss the topic of what
@@ -369,47 +377,48 @@ careful analysis! And when 50,000-word compilers are later remade with
 perhaps 5000 words, how far from reasonable must have been the early ones!
 
 I am no longer a software expert, so it is hard for me to make serious
-suggestions about what to do in the software field, yet I feel that all too
-often we have been satisfied with such a low level of quality that we have
-done ourselves harm in the process. We seem not to be able to use the
-machine, which we all believe is a very powerful tool for manipulating and
-transforming information, to do our own tasks in this very field. We have
-compilers, assemblers, monitors, etc. for others, and yet when I examine
-what the typical software person does, I am often appalled at how little he
-uses the machine in his own work. I have had enough minor successes in
-arguments with software people to believe that I am basically right in my
-insistence that we should learn to use the machine at almost every stage of
-what we are doing. Too few software people even try to use the machine on
-their own work. There are dozens of situations where a little machine
-computation would greatly aid the programmer. I recall one very simple one
-where a nonexpert with a very long Fortran program from the outside wanted
-to convert it to our local use, so he wrote a simple Fortran program to
-locate all the input-output statements and all the library references. In my
-experience, most programmers would have personally scanned long listings of
-the program to find them and with the usual human fallibility missed a
-couple the first time. I believe we need to convince the computer expert
-that the machine is his most powerful tool and that he should learn to use
-it as much as he can rather than personally scan the long listings of
-symbols as I see being done everywhere I go around the country. If what I am
-reporting is at all true, we have failed to teach this in the past. Of
-course some of the best people do in fact use the computer as I am
-recommending; my observation is that the run-of-the-mill programmers do not
-do so.
+suggestions about what to do in the software field, yet <mark>I feel that
+all too often we have been satisfied with such a low level of quality that
+we have done ourselves harm in the process.</mark> We seem not to be able to
+use the machine, which we all believe is a very powerful tool for
+manipulating and transforming information, to do our own tasks in this very
+field. We have compilers, assemblers, monitors, etc. for others, and yet
+when I examine what the typical software person does, I am often appalled at
+how little he uses the machine in his own work. I have had enough minor
+successes in arguments with software people to believe that I am basically
+right in my insistence that we should learn to use the machine at almost
+every stage of what we are doing. Too few software people even try to use
+the machine on their own work. There are dozens of situations where a little
+machine computation would greatly aid the programmer. I recall one very
+simple one where a nonexpert with a very long Fortran program from the
+outside wanted to convert it to our local use, so he wrote a simple Fortran
+program to locate all the input-output statements and all the library
+references. In my experience, most programmers would have personally scanned
+long listings of the program to find them and with the usual human
+fallibility missed a couple the first time. I believe we need to convince
+the computer expert that the machine is his most powerful tool and that he
+should learn to use it as much as he can rather than personally scan the
+long listings of symbols as I see being done everywhere I go around the
+country. If what I am reporting is at all true, we have failed to teach this
+in the past. Of course some of the best people do in fact use the computer
+as I am recommending; my observation is that the run-of-the-mill programmers
+do not do so.
 
-To parody our current methods of teaching programming, we give beginners a
-grammar and a dictionary and tell them that they are now great writers. We
-seldom, if ever, give them any serious training in *style*. Indeed I have
-watched for years for the appearance of a *Manual of Style* and/or an
-*Anthology of Good Programming* and have as yet found none. Like writing,
-programming is a difficult and complex art. In both writing and programming,
-compactness is desirable but in both you can easily be too compact. When you
-consider how we teach good writing – the exercises, the compositions, and
-the talks that the student gives and is graded on by the teacher during his
-training in English – it seems we have been very remiss in this matter of
-teaching style in programming. Unfortunately only few programmers who admit
-that there is something in what I have called "style" are willing to
-formulate their feelings and to give specific examples. As a result, few
-programmers write in flowing poetry; most write in halting prose.
+To parody our current methods of teaching programming, <mark>we give
+beginners a grammar and a dictionary and tell them that they are now great
+writers. We seldom, if ever, give them any serious training in
+<em>style</em>.</mark> Indeed I have watched for years for the appearance of
+a *Manual of Style* and/or an *Anthology of Good Programming* and have as
+yet found none. Like writing, programming is a difficult and complex art. In
+both writing and programming, compactness is desirable but in both you can
+easily be too compact. When you consider how we teach good writing – the
+exercises, the compositions, and the talks that the student gives and is
+graded on by the teacher during his training in English – it seems we have
+been very remiss in this matter of teaching style in programming.
+Unfortunately only few programmers who admit that there is something in what
+I have called "style" are willing to formulate their feelings and to give
+specific examples. As a result, few programmers write in flowing poetry;
+most write in halting prose.
 
 I doubt that style in programming is tied very closely to any particular
 machine or language, any more than good writing in one natural language is
@@ -427,14 +436,16 @@ training in software be given a more practical, engineering flavor, I also
 loudly proclaim that we have too little understanding of what we are doing
 and that we desperately need to develop relevant theories.
 
+### Research
+
 Indeed, one of my major complaints about the computer field is that whereas
 Newton could say, "If I have seen a little farther than others it is because
 I have stood on the shoulders of giants," I am forced to say, "Today we
-stand on each other’s feet." Perhaps the central problem we face in all of
-computer science is how we are to get to the situation where we build on top
-of the work of others rather than redoing so much of it in a trivially
-different way. Science is supposed to be cumulative, not almost endless
-duplication of the same kind of things.
+stand on each other’s feet." <mark>Perhaps the central problem we face in
+all of computer science is how we are to get to the situation where we build
+on top of the work of others rather than redoing so much of it in a
+trivially different way.</mark> Science is supposed to be cumulative, not
+almost endless duplication of the same kind of things.
 
 This brings me to another distinction, that between undirected research and
 basic research, Everyone likes to do undirected research and most people
@@ -446,18 +457,19 @@ believe experience shows that relatively few people are capable of doing
 basic research. While one cannot be certain that a particular piece of work
 will or will not turn out to be basic, one can often give fairly accurate
 probabilities on the outcome. Upon examining the question of the nature of
-basic research, I have come to the conclusion that what determines whether
-or not a piece of work has much chance to become basic is not so much the
-question asked as it is the way the problem is attacked.
+basic research, <mark>I have come to the conclusion that what determines
+whether or not a piece of work has much chance to become basic is not so
+much the question asked as it is the way the problem is attacked.</mark>
 
 Numerical analysis is the one venerable part of our curriculum that is
 widely accepted as having some content. Yet all too often there is some
 justice in the remark that many of the textbooks are written for
 mathematicians and are in fact much more mathematics than they are practical
 computing. The reason is, of course, that many of the people in the field
-are converted, or rather only partially converted , mathematicians who still
+are converted, or rather only partially converted, mathematicians who still
 have the unconscious standards of mathematics in the back of their minds, I
-am sure many of you are familiar with my objections <label for="sn-3" class="margin-toggle sidenote-number"></label><input type="checkbox" id="sn-3" class="margin-toggle"/>
+am sure many of you are familiar with my objections<label for="sn-3" class="margin-toggle sidenote-number"></label>
+<input type="checkbox" id="sn-3" class="margin-toggle"/>
 <span class="sidenote">
 Hamming, R.W. Numerical analysis vs. mathematics. Science 148 (Apr. 1965), 473-475.
 </span> along these lines and I need not repeat them here.
@@ -471,33 +483,36 @@ that are both effective and illustrate basic concepts in numerical analysis.
 And what I have just said about numerical analysis goes even more for
 software courses. There do not seem to me (and to some others) to be enough
 fundamental ideas in all that we know of software to justify the large
-amount of time that is devoted to the topic. We should confine the material
-we teach to that which is important in ideas and technique – the plodding
-through a mass of minutiae should be avoided.
+amount of time that is devoted to the topic. <mark>We should confine the
+material we teach to that which is important in ideas and technique – the
+plodding through a mass of minutiae should be avoided.</mark>
+
+### Ethics
 
 Let me now turn to the delicate matter of ethics. It has been observed on a
 number of occasions that the ethical behavior of the programmers in
 accounting installations leaves a lot to be desired when compared to that of
-the trained accounting personnel<label for="sn-4" class="margin-toggle sidenote-number"></label><input type="checkbox" id="sn-4" class="margin-toggle"/>
+the trained accounting personnel<label for="sn-4" class="margin-toggle sidenote-number"></label>
+<input type="checkbox" id="sn-4" class="margin-toggle"/>
 <span class="sidenote">
 Carey J. L. and Doherty W. A. Ethical Standards of the Accounting Profession. Am. : Inst. CPAs., 1966.
- </span>.
-We seem not to teach the "sacredness" of information about people and
-private company material. My limited observation of computer experts is that
-they have only the slightest regard for these matters. For example, most
-programmers believe they have the right to take with them any program they
-wish when they change employers. We should look at, and copy, how ethical
-standards are incorporated into the traditional accounting courses (and
-elsewhere), because they turn out a more ethical product than we do, We talk
-a lot in public of the dangers of large data banks of personnel records, but
-we do not do our share at the level of indoctrination of our own computer
-science majors.
+</span>.
+<mark>We seem not to teach the "sacredness" of information about people and
+private company material.</mark> My limited observation of computer experts
+is that they have only the slightest regard for these matters. For example,
+most programmers believe they have the right to take with them any program
+they wish when they change employers. We should look at, and copy, how
+ethical standards are incorporated into the traditional accounting courses
+(and elsewhere), because they turn out a more ethical product than we do. We
+talk a lot in public of the dangers of large data banks of personnel
+records, but we do not do our share at the level of indoctrination of our
+own computer science majors.
 
 Along these lines, let me briefly comment on the matter of professional
-standards. We have recently had a standard published
-<label for="sn-5" class="margin-toggle sidenote-number"></label><input type="checkbox" id="sn-5" class="margin-toggle"/>
+standards. We have recently had a standard published<label for="sn-5" class="margin-toggle sidenote-number"></label>
+<input type="checkbox" id="sn-5" class="margin-toggle"/>
 <span class="sidenote">
-Cornm. ACM 11, 3 (Mar. 1968), 198-220.
+Comm. ACM 11, 3 (Mar. 1968), 198-220.
 </span> and it seems to me to be a good one,
 but again I feel that I am justified in asking how this is being
 incorporated into the training of our students, how they are to learn to
@@ -509,26 +524,30 @@ followed by every member, are certainly a lot better instilled than those we
 are presently providing for our students. Again, we need to examine how they
 do this kind of training and try to adapt their methods to our needs.
 
-Lastly, let me mention briefly the often discussed topic of social responsibility.
-We have sessions at meetings on this topic, we discuss it in the halls and over coffee
-and beer, but again I ask, "How is it being incorporated into our training program?"
-The fact that we do not have exact rules to follow is not sufficient reason for omitting all training in this important matter.
+Lastly, let me mention briefly the often discussed topic of social
+responsibility. We have sessions at meetings on this topic, we discuss it in
+the halls and over coffee and beer, but again I ask, "How is it being
+incorporated into our training program?" The fact that we do not have exact
+rules to follow is not sufficient reason for omitting all training in this
+important matter.
 
-I believe these three topics – ethics, professional behavior, and social
-responsibility – must be incorporated into the computer science curriculum.
-Personally I do not believe that a separate course on these topics will be
-effective. From what little I understand of the matter of teaching these
-kinds of things, they can best be taught by example, by the behavior of the
-professor. They are taught in the odd moments, by the way the professor
-phrases his remarks and handles himself. Thus it is the professor who must
-first be made conscious that a significant part of his teaching role is in
-communicating these delicate, elusive matters and that he is not justified
-in saying, "They are none of my business." These are things that must be
-taught *constantly, all the time, by everyone,* or they will not be taught
-at all. And if they are not somehow taught to the majority of our students,
-then the field will justly keep its present reputation (which may well
-surprise you if you ask your colleagues in other departments for their frank
-opinions).
+<mark>I believe these three topics – ethics, professional behavior, and
+social responsibility – must be incorporated into the computer science
+curriculum.</mark> Personally I do not believe that a separate course on
+these topics will be effective. From what little I understand of the matter
+of teaching these kinds of things, they can best be taught by example, by
+the behavior of the professor. They are taught in the odd moments, by the
+way the professor phrases his remarks and handles himself. Thus it is the
+professor who must first be made conscious that a significant part of his
+teaching role is in communicating these delicate, elusive matters and that
+he is not justified in saying, "They are none of my business." These are
+things that must be taught *constantly, all the time, by everyone,* or they
+will not be taught at all. And if they are not somehow taught to the
+majority of our students, then the field will justly keep its present
+reputation (which may well surprise you if you ask your colleagues in other
+departments for their frank opinions).
+
+## Conclusion
 
 In closing, let me revert to a reasonable perspective of the computer
 science field. The field is very new, it has had to run constantly just to
