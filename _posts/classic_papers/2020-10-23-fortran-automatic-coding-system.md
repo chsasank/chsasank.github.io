@@ -312,6 +312,7 @@ is complete, or 4) a tape containing the output program in symbolic form
 suitable for alteration and later assembly. (Some of these outputs may be
 unavailable at the time of publication.)
 
+<<<<<<< HEAD
 ## The FORTRAN Translator
 
 ### General Organization of the System
@@ -502,3 +503,5 @@ between $u_3$ and $u_0$ are omitted.
 ### Section 2 (Nelson and Ziller)
 
 Throughout the object program will appear instructions which refer to subscripted variables. Each of these instructions will (until section 5) be tagged with a symbolic index register corresponding to the particu- l b subscript combination of the subscripts of the varia- ble [e.g., (I, K , J) and (K, I , J) are two different sub- script combinations]. If the object program is to work correctly, every symbolic index register must be so governed that it will have the appropriate contents at every instant that it is being used. It is the source pro- gram, of course, which determines what these appro- priate contents must be, primarily through its DO statements, but also through arithmetic formulas (e.g. I =N+1) which may define the values of variables ap- pearing in subscripts, or input formulas which may read such values in at object time. Moreover, in the case of DO statements, which are designed to produce loops in the object program, it is necessary to provide tests for loop exit. It is these two tasks, the governing of symbolic index registers and the testing of their contents, which section 2 must carry out.
+=======
+>>>>>>> fortran
