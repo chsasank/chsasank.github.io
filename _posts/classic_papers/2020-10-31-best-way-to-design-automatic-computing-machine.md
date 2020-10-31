@@ -9,7 +9,7 @@ Ltd., on the construction of the machine which has just been inaugurated. In
 the face of this beautifully engineered machine, the title I have chosen for
 my opening remarks in this discussion may sound a little impertinent. But,
 as Dr. Kilburn remarked yesterday, the designer of an electronic calculating
-machine must continually take decisions, and he does net know when he takes
+machine must continually take decisions, and he does not know when he takes
 them whether they are right or wrong. "
 published: 1955-08-31
 twitter_image: https://miro.medium.com/max/930/0*3jGv1es40NHPcTE3.jpg
@@ -21,14 +21,14 @@ Ltd., on the construction of the machine which has just been inaugurated. In
 the face of this beautifully engineered machine, the title I have chosen for
 my opening remarks in this discussion may sound a little impertinent. But,
 as Dr. Kilburn remarked yesterday, the designer of an electronic calculating
-machine must continually take decisions, and he does net know when he takes
-them whether they are right or wrong. I might put it by saying that in a
-mathematical sense the solution to the problem of designing an electronic
+machine must continually take decisions, and he does not know when he takes
+them whether they are right or wrong. <mark>I might put it by saying that in
+a mathematical sense the solution to the problem of designing an electronic
 calculating machine is unstable. Two similar groups of engineers with
 similar backgrounds and assisted by similar groups of mathematicians will,
-if working independently, produce quite different machines. Moreover, the
-machines finally built will depend on the scale on which the projects are
-conducted, the experience and background of the teams, and the state of
+if working independently, produce quite different machines.</mark> Moreover,
+the machines finally built will depend on the scale on which the projects
+are conducted, the experience and background of the teams, and the state of
 technical developments at the time. The last item is important since new
 developments in electron tubes, or in non-linear devices of the germanium
 type, might well affect even so fundamental a decision as the choice between
