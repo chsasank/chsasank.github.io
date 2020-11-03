@@ -68,6 +68,8 @@ p code {
   h2,
   h3,
   .post-meta,
+  .small,
+  .box,
   footer {
     width: 100%;
   }
@@ -197,4 +199,10 @@ mark {
 ul.archive {
   line-height: 2em;
   font-size: 1.5em;
+}
+
+.box {
+  border: 1px solid;
+  padding: 1rem;
+  width: 55%
 }
