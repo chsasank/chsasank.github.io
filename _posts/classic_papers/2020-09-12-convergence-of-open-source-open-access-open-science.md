@@ -8,7 +8,9 @@ published: 2005-08-01
 twitter_image: https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/John_Willinsky.jpg/220px-John_Willinsky.jpg
 ---
 
-> **NOTE**: This is *not* my article. This is just a reformat and mirror of a [2005 paper by John Willinsky](https://firstmonday.org/article/view/1265/1185) because the original link renders slow.
+<div class="small">
+Note: This is *not* my article. This is just a reformat and mirror of a [2005 paper by John Willinsky](https://firstmonday.org/article/view/1265/1185) because the original link renders slow.
+</div>
 
 ## Abstract
 

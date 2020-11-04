@@ -8,7 +8,9 @@ published: 2001-05-15
 twitter_image: https://en.wikipedia.org/wiki/File:LinuxCon_Europe_Linus_Torvalds_03_(cropped).jpg
 ---
 
-> **NOTE**: This is *not* my article. In 2001, Linus Torvalds wrote this essay as an appendix to his book - [Just for fun](https://www.goodreads.com/book/show/160171.Just_for_Fun). I thought this essay deserves wider readership. I made some edits to it to make it more readable as a paper. I hope Torvalds doesn't kill me for this! Yellow highlights/annotations are my own. <a onclick="disableHighlight()" href='#'>Disable them.</a>
+<div class="small">
+Note: This is *not* my article. In 2001, Linus Torvalds wrote this essay as an appendix to his book - [Just for fun](https://www.goodreads.com/book/show/160171.Just_for_Fun). I thought this essay deserves wider readership. I made some edits to it to make it more readable as a paper. I hope Torvalds doesn't kill me for this! Yellow highlights/annotations are my own. <a onclick="disableHighlight()" href='#'>Disable them.</a>
+</div>
 
 ## Introduction
 
