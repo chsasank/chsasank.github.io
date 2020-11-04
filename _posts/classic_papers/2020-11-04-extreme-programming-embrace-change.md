@@ -3,7 +3,7 @@ layout: post
 title: "Embracing Change with Extreme Programming"
 author: "Kent Beck"
 category: classic_papers
-description: 
+description:  "Extreme Programming turns the conventional software process sideways. Rather than planning, analyzing, and designing for the far-flung future, XP programmers do all of these activities -- a little at a time -- throughout development."
 published: 1999-10-01
 twitter_image: https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Kent_Beck_no_Workshop_Mapping_XP.jpg/220px-Kent_Beck_no_Workshop_Mapping_XP.jpg
 ---
