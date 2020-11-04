@@ -310,7 +310,7 @@ Another practice we employed from the beginning was collecting requirements from
 
 In our efforts to refactor test cases and fixtures, we discovered that creating little languages for our major domain objects dramatically improved the readability and brevity of our test code. It also practically eliminated the time we spent thinking about how to create object instances when writing tests. We defined grammars for about ten of our domain classes. Here’s a simple example used to construct a Service Offering:
 
-newFromString: ‘from Oakland to Tokyo shipping toys: 20ft containers $500; 40ft containers $1000’. 
+`newFromString: 'from Oakland to Tokyo shipping toys: 20ft containers $500; 40ft containers $1000'`. 
 
 The constructor uses a parser, automatically generated from a grammar, to produce the domain object. The code to instantiate this object using standard constructors would have taken many lines, would have been difficult to read, and would have distracted from the test case itself. 
 
