@@ -61,6 +61,17 @@ p code {
   color: #d9534f;
 }
 
+
+.box {
+  border: 1px solid;
+  padding: 1rem;
+  width: 55%
+}
+
+.small {
+  width: 55%;
+}
+
 @media screen and (max-width: 760px) {
   p,
   p.description,
@@ -69,7 +80,6 @@ p code {
   h3,
   .post-meta,
   .small,
-  .box,
   footer {
     width: 100%;
   }
@@ -80,7 +90,7 @@ p code {
   pre {
     width: 100% !important;
   }
-  body {
+  body, .box, .small{
     width: 90%;
     padding-left: 5%;
     padding-right: 5%;
@@ -199,10 +209,4 @@ mark {
 ul.archive {
   line-height: 2em;
   font-size: 1.5em;
-}
-
-.box {
-  border: 1px solid;
-  padding: 1rem;
-  width: 55%
 }

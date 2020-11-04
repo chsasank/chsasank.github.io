@@ -8,8 +8,9 @@ published: 1956-03-01
 twitter_image: https://upload.wikimedia.org/wikipedia/en/thumb/7/7e/George_Armitage_Miller_speaking_at_the_first_APS_convention_in_1989.jpg/220px-George_Armitage_Miller_speaking_at_the_first_APS_convention_in_1989.jpg
 ---
 
-> **NOTE**: This is *not* my article. This is a classic paper originally published by George A. Miller in The Psychological Review, 1956 and a mirror of [Stephen Malinowski](http://www.musanim.com/miller1956/)'s mirror. Yellow highlights/annotations are my own. <a onclick="disableHighlight()" href='#'>Disable them.</a>
-
+<div class="small">
+Note: This is *not* my article. This is a classic paper originally published by George A. Miller in The Psychological Review, 1956 and a mirror of [Stephen Malinowski](http://www.musanim.com/miller1956/)'s mirror. Yellow highlights/annotations are my own. <a onclick="disableHighlight()" href='#'>You can disable them.</a>
+</div>
 
 My problem is that I have been persecuted by an integer. For seven years this number has followed me around, has intruded in my most private data, and has assaulted me from the pages of our most public journals. This number assumes a variety of disguises, being sometimes a little larger and sometimes a little smaller than usual, but never changing so much as to be unrecognizable. The persistence with which this number plagues me is far more than a random accident. There is, to quote a famous senator, a design behind it, some pattern governing its appearances. Either there really is something unusual about the number or else I am suffering from delusions of persecution.
 

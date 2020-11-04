@@ -8,7 +8,9 @@ published: 1974-07-01
 twitter_image: https://upload.wikimedia.org/wikipedia/commons/thumb/8/8f/Ken_Thompson_%28sitting%29_and_Dennis_Ritchie_at_PDP-11_%282876612463%29.jpg/1280px-Ken_Thompson_%28sitting%29_and_Dennis_Ritchie_at_PDP-11_%282876612463%29.jpg
 ---
 
-> **NOTE**: This is *not* my article. This is a classic paper originally published in *Communications of the ACM*, 1974 by Dennis M. Ritchie and Ken Thompson. Yellow highlights/annotations are my own. <a onclick="disableHighlight()" href='#'>Disable them.</a>
+<div class="small">
+Note: This is *not* my article. This is a classic paper originally published in *Communications of the ACM*, 1974 by Dennis M. Ritchie and Ken Thompson. Yellow highlights/annotations are my own. <a onclick="disableHighlight()" href='#'>Disable them.</a>
+</div>
 
 ## Abstract
 
