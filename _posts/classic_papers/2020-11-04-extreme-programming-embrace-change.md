@@ -9,7 +9,7 @@ twitter_image: https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Kent_Be
 ---
 
 <div class="small">
-Note: This is not my article. In the late 90s, right before dotcom bubble, people started finding software engineering hard. Many methodologies were published but Kent Beck's Extreme Programming was one of the most influential. The current paper was originally published in IEEE computer in 1999. Beck followed up this paper with a highly cited book *Extreme Programming: Embrace Change*. Yellow highlights/annotations are my own. You can <a onclick="disableHighlight()" href='#'>disable them.</a>
+Note: This is not my article. In the late 90s, right before dotcom bubble, people started finding software engineering hard. Many methodologies to do software engineering were published but Kent Beck's Extreme Programming was one of the most influential. The current paper was originally published in IEEE computer in 1999. Beck followed up this paper with a highly cited book *Extreme Programming: Embrace Change*. Yellow highlights/annotations are my own. You can <a onclick="disableHighlight()" href='#'>disable them.</a>
 </div>
 
 > Extreme Programming turns the conventional software process sideways. Rather than planning, analyzing, and designing for the far-flung future, XP programmers do all of these activities -- a little at a time -- throughout development.
