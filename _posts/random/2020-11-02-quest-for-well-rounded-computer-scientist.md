@@ -15,7 +15,7 @@ keenly aware of this lack of knowledge in these areas of computer science.
 I'll explore my life in college, my work after college and what future holds
 for me.
 
-## Prelude
+## Past
 
 I have to start with *how* I chose electrical engineering in the first place and
 narrate the story from high school. I worked hard in the school and ended up
@@ -87,21 +87,20 @@ What a fine time it was! We were reading deep learning papers and implementing t
 
 Once we picked up focused problems, our original research went up. Prashant, with his prior experience of a data scientist, knew the importance of data. He worked a lot of acquiring data and we ended up getting about 100 TB of data to train our models on. Soon enough, not only were we adopting AI published before but were actively modifying them for our use cases. Medical images are quite different from natural images. So, the published research on ImageNet and other datasets was not directly applicable to our medical imaging datasets.
 
-Not only were we doing AI research and development, we ended up doing lot of engineering and clinical research alongside. We had to work with DICOM and PACS, key technologies in the radiology. These technologies are very different from the internet technologies like HTTP and stuff. We built a database 
+Not only were we doing AI research and development, we ended up doing lot of engineering and clinical research alongside. We had to work with DICOM and PACS, key technologies in the radiology. These technologies are very different from the internet technologies like HTTP and stuff. We built a dicom database which could handle TBs of data without sweat. Preetham and I also worked a lot on setting up the compute infrastructure (hardware, GPUs, large scale storage systems etc.) basically building a private cloud. 
 
-Preetham and I also worked a lot on setting up the compute infrastructure (hardware, GPUs, large scale storage systems etc.) basically building a private cloud. 
+Because our AI needs to be in clinical workflow, we work on clinical research too. We did research quantifying the accuracy of AI versus radiologists. We did studies to quantify the amount of time we saved as doctors used our algorithms. We end up publishing this research on top clinical journals. My favorite work was the Lancet paper where we described development and validation of qER.
 
-Because our AI needs to be in clinical workflow, we had to work on core clinical research too. 
-
-My proudest personal moments are the Lancet paper on qER and my work on PyTorch.
+The AI field itself was new when we started up. There were lot of gaps in tools we use like PyTorch, Keras and SimpleITK. So, we also ended up contributing a lot to open source technologies. I was quite fortunate to have involved in early PyTorch's development. It didn't seem so obvious then but in retrospect, it's awesome that a noob like me could contribute to the behemoth that is PyTorch. It shows you the openness and effectiveness of open source technologies.
 
 ## Future
 
-I continue to do cool stuff at Qure.ai. However, I have recently decided to do something other than core AI research for sometime. Why is that you may ask? Many reasons.
+I continue to do cool stuff at Qure.ai. I have gained a lot of experience doing AI at qure. However, I have recently decided to do something other than core AI research for sometime and concentrate on software systems. Why is that, you may ask? Two reasons.
 
-Firstly from a research point of view, aim for most of the people in AI is human level intelligence AKA artificial general intelligence (AGI).
+Firstly from a research point of view, aim for most of the people in AI is human level intelligence AKA artificial general intelligence (AGI). I'm convinced that AGI is possible only when AI is completely integrated with the systems research. There are two distinct parts of human cognition -- perception and logic. Deep learning has ended up solving perception problems like computer vision and speech recognition quite well. However the same deep learning is not able to do much logical thinking.
 
-I'm convinced that artificial general intelligence is possible only when AI is completely integrated into the prior systems research. 
+This 'logical thinking' is the domain of much of the computer science sans AI -- databases, programming languages, OS, theory etc. If we need AGI, AI has to be integrated into these systems. May be with the power of AI, we will be able to create compiler which can create instructions to computer from ambiguous natural language rather than terse programming languages. May be, databases will know what we *want* and convert our natural language queries to SQL accurately. To do something cool like this, I need to understand how exactly databases and compilers work.
 
-Renaissance man.
+Secondly, from a technology point of view, computers are the next big thing that happened to technology after printing. Computers  transformed our lives within such a short span of time. First real computers were made during World War II and they were not even based on Silicon. Silicon based computers -- microprocessors -- started only in late 60s and 70s. Internet showed up in 90s. Computer science is a young science and is less than 70 years old. Yet it has achieved so much.
 
+What such a young science gives me is an opportunity to be a *renaissance man*. The idea of renaissance man is that a person could be an expert in *everything* that is known. Since the knowledge was being actively discovered or created during renaissance period, this was not impractical. Computer science, being so young and with so much unknown, offers me such an opportunity where I can know *almost everything* about it.
