@@ -29,3 +29,9 @@ Blue text, while also a widely recognizable clickable-text indicator, is crass a
     <img src="img/exports-imports.png" alt="Exports and Imports to and from Denmark &amp; Norway from 1700 to 1780">
 </figure>
 ```
+
+## Convert pdf to text
+
+```
+pdftoppm -png ~/Downloads/hamming.pdf /tmp/hamming/page
+for f in /tmp/hamming/page*; do tesseract $f $f; done
