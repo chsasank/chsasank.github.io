@@ -61,6 +61,17 @@ p code, li code {
   color: #d9534f;
 }
 
+
+.box {
+  border: 1px solid;
+  padding: 1rem;
+  width: 55%
+}
+
+.small {
+  width: 55%;
+}
+
 @media screen and (max-width: 760px) {
   p,
   p.description,
@@ -68,6 +79,7 @@ p code, li code {
   h2,
   h3,
   .post-meta,
+  .small,
   footer {
     width: 100%;
   }
@@ -78,7 +90,7 @@ p code, li code {
   pre {
     width: 100% !important;
   }
-  body {
+  body, .box, .small{
     width: 90%;
     padding-left: 5%;
     padding-right: 5%;
