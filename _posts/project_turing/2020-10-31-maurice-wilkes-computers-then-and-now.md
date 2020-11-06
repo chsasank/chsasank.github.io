@@ -8,6 +8,10 @@ published: 1968-01-01
 twitter_image: https://upload.wikimedia.org/wikipedia/commons/3/36/Maurice_Vincent_Wilkes_1980_%283%2C_cropped%29.jpg
 ---
 
+<div class="small">
+From [Wikipedia](https://en.wikipedia.org/wiki/Turing_Award): Wilkes is best known as the builder and designer of the EDSAC, the first computer with an internally stored program. Built in 1949, the EDSAC used a mercury delay line memory. He is also known as the author, with Wheeler and Gill, of a volume on "Preparation of Programs for Electronic Digital Computers" in 1951, in which program libraries were effectively introduced.
+</div>
+
 ## Abstract
 
 Reminiscences on the early developments leading to large scale electronic
@@ -69,10 +73,10 @@ principles taught by Eckert and Mauchly in 1946 to those of us who were
 fortunate enough to be in the course. There was, however, a difficult period
 in the early 1950s. The first operating stored-program computers were,
 naturally enough, laboratory models; they were not fully engineered and they
-by no means exploited the full capability of the technology of the time. It
+by no means exploited the full capability of the technology of the time. <mark>It
 took much longer than people had expected for the first of the more
 ambitious and fully engineered computers to be completed and prove
-themselves in practical operation. In retrospect, the period seems a short
+themselves in practical operation.</mark> In retrospect, the period seems a short
 one; at the time, it was a period of much heart searching and even
 recrimination.
 
@@ -122,10 +126,14 @@ available today, one cannot feel that all the lessons were learned, there is
 no doubt that this diversity of research in the early days has paid good
 dividends. It is, I think, important that we should have similar diversity
 today when we are learning how to construct large, multiple-access,
-multi-programmed, multi-processor computer systems. Instead of putting
+multi-programmed, multi-processor computer systems. <mark>Instead of putting
 together components and vacuum tubes to make a computer, we have now to
 learn how to put together memory modules, processors, and peripheral devices
-to make a system. I hope that money will be available to finance the
+to make a system</mark>.<label for="sn-1" class="margin-toggle sidenote-number"></label><input type="checkbox" id="sn-1" class="margin-toggle"/>
+<span class="sidenote">
+S: What we now call as *computer architecture*.
+</span>
+I hope that money will be available to finance the
 construction of large systems intended for research only.
 
 Much of the early engineering development of digital computers was done in
@@ -141,11 +149,11 @@ considerations, including freedom from the need to follow the fashion.
 
 ## Good Language and Bad
 
-Gradually, controversies about the design of computers themselves died down
+<mark>Gradually, controversies about the design of computers themselves died down
 and we all began to argue about the merits or demerits of sophisticated
 programming techniques; the battle for automatic programming or, as we
 should now say, for the use of higher level programming languages, had
-begun. I well remember taking part at one of the early ACM meetings – it
+begun.</mark> I well remember taking part at one of the early ACM meetings – it
 must have been about 1953 – in a debate on this subject. John Carr was also
 a speaker and he distinguished two groups of programmers; the first
 comprised the "primitives," who believed that, all instructions should be
@@ -159,21 +167,24 @@ was then in general use, although it had in fact been introduced by Grace
 Hopper.)
 
 The serious arguments advanced against automatic programming had to do with
-efficiency. Not only was the running time of a compiled program longer than
+efficiency. <mark>Not only was the running time of a compiled program longer than
 that of a hand-coded program, but, what was then more serious, it needed
-more memory. In other words, one needed a bigger computer to do the same
+more memory.</mark> In other words, one needed a bigger computer to do the same
 work. We all know that these arguments, although valid, have not proved
 decisive, and that people have found that it has paid them to make use of
 automatic programming. In fact, the spectacular expansion of the computing
-field during the last few years would otherwise have been impossible. We
+field during the last few years would otherwise have been impossible. <mark>We
 have now a very similar debate raging about time sharing, and the arguments
 being raised against it are very similar to those raised earlier against
-automatic programming. Here again, I am on the side of the space cadets, and
+automatic programming.</mark><label for="sn-2" class="margin-toggle sidenote-number"></label><input type="checkbox" id="sn-2" class="margin-toggle"/>
+<span class="sidenote">
+Time sharing is basically operating system. Original [Unix paper](http://localhost:4000/classic_papers/unix-time-sharing-system.html) calls itself time-sharing system.</span>
+Here again, I am on the side of the space cadets, and
 I expect the debate to have a similar outcome.
 
 
-Incidentally, I fear that in that automatic programming debate Turing would
-have been definitely on the side of the primitives. The programming system
+<mark>Incidentally, I fear that in that automatic programming debate Turing would
+have been definitely on the side of the primitives.</mark> The programming system
 that he devised for the pioneering computer at Manchester University was
 bizarre in the extreme. He had a very nimble brain himself and saw no need
 to make concessions to those less well-endowed. I remember that he had
@@ -205,9 +216,13 @@ field, not adequately recognized at the time, was the Compiler-Compiler of
 Brooker and Morris.
 
 
-People have now begun to realize that not all problems are linguistic in
+<mark>People have now begun to realize that not all problems are linguistic in
 character, and that it is high time that we paid more attention to the way
-in which data are stored in the computer, that is, to data structures. In
+in which data are stored in the computer, that is, to data 
+structures.</mark><label for="sn-3" class="margin-toggle sidenote-number"></label><input type="checkbox" id="sn-3" class="margin-toggle"/>
+<span class="sidenote">
+S: Basically object oriented programming.
+</span> In
 his Turing lecture given last year, Alan Perlis drew attention to this
 subject. At the present time, choosing a programming language is equivalent
 to choosing a data structure, and if that data structure does not fit the
@@ -230,10 +245,13 @@ statements, and with the machinery of conditional statements. All this is
 entirely independent of what the statements that really operate on the data
 do or what the data structure is like. We have, in fact, two languages, one
 inside the other; an outer language that is concerned with the flow of
-control, and an inner language which operates on the data. There might be a
+control, and an inner language which operates on the data. <mark>There might be a
 case for having a standard outer language – or a small number to choose from
-– and a number of inner languages which could be, as it were, plugged in. If
-necessary, in order to meet special circumstances, a new inner language
+– and a number of inner languages which could be, as it were, 
+plugged in.</mark><label for="sn-4" class="margin-toggle sidenote-number"></label><input type="checkbox" id="sn-4" class="margin-toggle"/>
+<span class="sidenote">
+S: This is so futuristic! For deep learning, we use python (outer language) for flow control but CUDA (inner language) for GPU compute.
+</span>If necessary, in order to meet special circumstances, a new inner language
 could be constructed; when plugged in, it would benefit from the power
 provided by the outer language in the matter of organizing the flow of
 control. When I think of the number of special languages that we are
@@ -248,9 +266,9 @@ considering the problem of designing a single language that would be the
 preferred language either for a purely arithmetic job or for a job in symbol
 manipulation. Attempts to produce such a language have been disappointing.
 The difficulty is that the data structures required for efficient
-implementation in the two cases are entirely different. Perhaps we should
+implementation in the two cases are entirely different. <mark>Perhaps we should
 recognize this difficulty as a fundamental one, and abandon the quest for an
-omnibus language which will be all things to all men.
+omnibus language which will be all things to all men.</mark>
 
 There is one development in the software area which is, perhaps, not
 receiving the notice that it deserves. This is the increasing mobility of
