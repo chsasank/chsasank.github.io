@@ -12,13 +12,13 @@ twitter_image: https://upload.wikimedia.org/wikipedia/en/5/59/Alan_Perlis.jpg
 
 Both knowledge and wisdom extend man's reach. Knowledge led to computers, wisdom to chopsticks. Unfortunately our association is over involved with the former. The latter will have to wait for a more sublime day.
 
-On what does and will the fame of Turing rest? That he proved a theorem showing that for a general computing device – later dubbed a "Turing machine" – there existed functions which it could not compute? I doubt it. More likely it rests on the model he invented and employed: his formal mechanism.
+<mark>On what does and will the fame of Turing rest? That he proved a theorem showing that for a general computing device – later dubbed a "Turing machine" – there existed functions which it could not compute? I doubt it. More likely it rests on the model he invented and employed: his formal mechanism.</mark>
 
 This model has captured the imagination and mobilized the thoughts of a generation of scientists. It has provided a basis for arguments leading to theories. His model has proved so useful that its generated activity has been distributed not only in mathematics, but through several technologies as well. The arguments that have been employed are not always formal and the consequent creations not all abstract. Indeed a most fruitful consequence of the Turing machine has been with the creation, study and computation of functions which are computable, i.e., in computer programming. This is not surprising since computers can compute so much more than we yet know how to specify.
 
 I am sure that all will agree that this model has been enormously valuable. History will forgive me for not devoting any attention in this lecture to the effect which Turing had on the development of the general-purpose digital computer, which has further accelerated our involvement with the theory and practice of computation.
 
-Since the appearance of Turing's model there have, of course, been others which have concerned and benefited us in computing. I think, however, that only one has had an effect as great as Turing's: the formal mechanism called **ALGOL**. Many will immediately disagree, pointing out that too few of us have understood it or used it. While such has, unhappily, been the case, it is not the point. The impulse given by ALGOL to the development of research in computer science is relevant while the number of adherents is not. ALGOL, too, has mobilized our thoughts and has provided us with a basis for our arguments.
+Since the appearance of Turing's model there have, of course, been others which have concerned and benefited us in computing. <mark>I think, however, that only one has had an effect as great as Turing's: the formal mechanism called ALGOL.</mark> Many will immediately disagree, pointing out that too few of us have understood it or used it. While such has, unhappily, been the case, it is not the point. The impulse given by ALGOL to the development of research in computer science is relevant while the number of adherents is not. ALGOL, too, has mobilized our thoughts and has provided us with a basis for our arguments.
 
 I have long puzzled over why ALGOL has been such a useful model in our field. Perhaps some of the reasons are:
 
@@ -28,7 +28,10 @@ I have long puzzled over why ALGOL has been such a useful model in our field. Pe
 4. the fact that the language is naturally decomposable so that one may suggest and define rather extensive modifications to parts of the language without destroying its impressive harmony of structure and notation. There is an appreciated substance to the phrase "ALGOL-like" which is often used in arguments about programming, languages and computation. ALGOL appears to be a durable model, and even flourishes under surgery – be it explorative, plastic or amputative;
 5. the fact that it is tantalizingly inappropriate for many tasks we wish to program.
 
-Of one thing I am sure: ALGOL does not owe its magic to its process of birth: by committee, Thus, we should not be disappointed when eggs, similarly fertilized, hatch duller models. These latter, while illuminating impressive improvements over ALGOL, bring on only a yawn from our collective imaginations. These may be improvements over ALGOL, but they are not successors as models.
+<mark>Of one thing I am sure: ALGOL does not owe its magic to its process of birth: by committee.</mark><label for="sn-1" class="margin-toggle sidenote-number"></label><input type="checkbox" id="sn-1" class="margin-toggle"/>
+<span class="sidenote">
+S: Perlis rightly predicted this. Some of the best programming languages like C, C++ and Java came from the industry where engineers tried to solve their problems rather than that of a committee. </span>
+Thus, we should not be disappointed when eggs, similarly fertilized, hatch duller models. These latter, while illuminating impressive improvements over ALGOL, bring on only a yawn from our collective imaginations. These may be improvements over ALGOL, but they are not successors as models.
 
 Naturally we should and do put to good use the improvements they offer to rectify the weakness of ALGOL. And we should also ponder why they fail to stimulate our creative energies. Why, we should ask, will computer science research, even computer practice, work, but not leap, forward under their influence? I do not pretend to know the whole answer, but I am sure that an important part of their dullness comes from focusing attention on the wrong weaknesses of ALGOL.
 
@@ -47,9 +50,13 @@ Successor languages come into being from a variety of causes:
 
 With the above in mind, where might one commence in synthesizing a successor model which will not only improve the commerce with machines but will focus our attention on important problems within computation itself?
 
-I believe the natural starting point must be the organization and classifying of data. It is, to say the least, difficult to create an algorithm without knowing the nature of its data. When we attempt to represent an algorithm in a programming language, we must know the representation of the algorithm's data in that language before we can hope to do a useful computation.
+I believe the natural starting point must be the organization and classifying of data. It is, to say the least, difficult to create an algorithm without knowing the nature of its data. <mark>When we attempt to represent an algorithm in a programming language, we must know the representation of the algorithm's data in that language before we can hope to do a useful computation.</mark>
 
-Since our successor is to be a general programming language, it should possess general data structures. Depending on how you look at it, this is neither as hard nor as easy as you might think. How should this possession be arranged? Let us see what has been done in the languages we already have. There the approach has been as follows:
+Since our successor is to be a general programming language, it should possess general data structures.<label for="sn-2" class="margin-toggle sidenote-number"></label><input type="checkbox" id="sn-2" class="margin-toggle"/>
+<span class="sidenote">
+S: Perlis is predicting the future progress of object oriented programming (OOP). Following points basically describe OOP.
+</span>
+Depending on how you look at it, this is neither as hard nor as easy as you might think. How should this possession be arranged? Let us see what has been done in the languages we already have. There the approach has been as follows:
 
 1. A few "primitive" data structures, e.g., integers, reals, arrays homogeneous in type, lists, strings and files, are defined into the language.
 2. On these structures a "sufficient" set of operations, e.g., arithmetic, logical, extractive, assignment and combinational, is provided.
@@ -63,7 +70,9 @@ I think that all of us are aware that our languages have not had enough data typ
 
 Our experience with the definition of functions should have told us what to do: not to concentrate on a complete set of defined functions at the level of general use, but to provide within the language the structures and control from which the efficient definition and use of functions within programs would follow.
 
-Consequently, we should focus our attention in our successor model on providing the means for defining data structures. But this is not of itself enough. The "sufficient" set of accompanying operations, the contexts in which they occur and their evaluation rules must also then be given within the program for which the data structures are specified.
+Consequently, we should focus our attention in our successor model on providing the means for defining data structures. But this is not of itself enough. The "sufficient" set of accompanying operations, the contexts in which they occur and their evaluation rules must also then be given within the program for which the data structures are specified.<label for="sn-3" class="margin-toggle sidenote-number"></label><input type="checkbox" id="sn-3" class="margin-toggle"/>
+<span class="sidenote">
+S: Is this strongly typed languages</span>
 
 A list of some of the capabilities that must be provided for data structures would include:
 
