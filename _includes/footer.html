@@ -17,7 +17,7 @@
 		function disableHighlight() {
 		const style = document.createElement('style');
 		style.textContent = `
-			mark {
+			mark, span.mark {
 				background: none;
 			}`;
 		document.head.append(style);
