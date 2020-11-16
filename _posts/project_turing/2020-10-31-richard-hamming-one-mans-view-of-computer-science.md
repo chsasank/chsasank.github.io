@@ -9,7 +9,7 @@ twitter_image: https://en.wikipedia.org/wiki/File:Richard_Hamming.jpg
 ---
 
 <div class="small">
-This is a 1968 Turing award lecture by Richard Hamming. His citation reads "For his work on numerical methods, automatic coding systems, and error-detecting and error-correcting codes." Yellow highlights/annotations are my own. <a onclick="disableHighlight()" href='#'>You can disable them.</a>
+This is the 1968 Turing award lecture by Richard Hamming. His citation reads "For his work on numerical methods, automatic coding systems, and error-detecting and error-correcting codes." Yellow highlights/annotations are my own. <a onclick="disableHighlight()" href='#'>You can disable them.</a>
 </div>
 
 ## Abstract

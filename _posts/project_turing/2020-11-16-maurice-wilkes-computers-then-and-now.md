@@ -9,7 +9,7 @@ twitter_image: https://upload.wikimedia.org/wikipedia/commons/3/36/Maurice_Vince
 ---
 
 <div class="small">
-From [Wikipedia](https://en.wikipedia.org/wiki/Turing_Award): Wilkes is best known as the builder and designer of the EDSAC, the first computer with an internally stored program. Built in 1949, the EDSAC used a mercury delay line memory. He is also known as the author, with Wheeler and Gill, of a volume on "Preparation of Programs for Electronic Digital Computers" in 1951, in which program libraries were effectively introduced.
+This is the 1967 Turing award lecture by Maurice V. Wilkes. From [Wikipedia](https://en.wikipedia.org/wiki/Turing_Award), Wilkes is best known as the builder and designer of the EDSAC, the first computer with an internally stored program. This lecture does a wide survey of computer as they were in 1968 and makes many accurate predictions. Yellow highlights/annotations are my own. <a onclick="disableHighlight()" href='#'>You can disable them.
 </div>
 
 ## Abstract
@@ -178,7 +178,7 @@ have now a very similar debate raging about time sharing, and the arguments
 being raised against it are very similar to those raised earlier against
 automatic programming.</mark><label for="sn-2" class="margin-toggle sidenote-number"></label><input type="checkbox" id="sn-2" class="margin-toggle"/>
 <span class="sidenote">
-Time sharing is basically operating system. Original [Unix paper](http://localhost:4000/classic_papers/unix-time-sharing-system.html) calls itself time-sharing system.</span>
+S: Time sharing is basically operating system. Original [Unix paper](http://localhost:4000/classic_papers/unix-time-sharing-system.html) calls itself time-sharing system.</span>
 Here again, I am on the side of the space cadets, and
 I expect the debate to have a similar outcome.
 
@@ -288,9 +288,9 @@ doing some work on a computer on which the system is already running. Harry
 Huskey did much early pioneer work in this subject with the Neliac system.
 
 There is reason to hope that the new-found mobility will extend itself to
-operating systems, or at least to substantial parts of them. Altogether, I
+operating systems, or at least to substantial parts of them. <mark>Altogether, I
 feel that we are entering a new period in which the inconveniences of basic
-machine-code incompatibility will be less felt. The increasing use of
+machine-code incompatibility will be less felt.</mark> The increasing use of
 internal filing systems in which information can be held within the system
 in alphanumeric, and hence in essentially machine-independent, form, will
 accentuate the trend. Information so held can be transformed by algorithm to
@@ -304,10 +304,13 @@ of the same stable.
 ## Design and Assembly
 
 A feature of the last few years has been an intensive interest in computer
-graphics. I believe that we in the computer field have long been aware of
+graphics. <mark>I believe that we in the computer field have long been aware of
 the utility in appropriate circumstances of graphical means of communication
 with a computer, but I think that many of us were surprised by the appeal
-that the subject had to mechanical engineers. Engineers are used to
+that the subject had to mechanical engineers.</mark><label for="sn-gui" class="margin-toggle sidenote-number"></label><input type="checkbox" id="sn-gui" class="margin-toggle"/>
+<span class="sidenote">
+S: GUI is a big deal. GUIs became mainstream some 10 years later thanks to Xerox, Apple and eventually Microsoft </span>
+Engineers are used to
 communicating with each other by diagrams and sketches and, as soon as they
 saw diagrams being drawn on the face of a cathode-ray tube, many of them
 jumped to the conclusion that the whole problem of using a computer in
@@ -346,12 +349,14 @@ machines are constructed from entirely different materials and on quite
 different principles. When engineers have tried to draw inspiration from a
 study of the way animals work they have usually been misled; the history of
 early attempts to construct flying machines with flapping wings illustrates
-this very clearly. My own view is that we shall see, before very long,
+this very clearly. <mark>My own view is that we shall see, before very long,
 computer-controlled assembly belts with rows of automatic handling machines
 arranged alongside them, and controlled by the same computer system. I
 believe that these handling machines will resemble machine tools rather than
 fingers and thumbs, although they will be lighter in construction and will
-rely heavily on feedback from sensing elements of various kinds.
+rely heavily on feedback from sensing elements of various kinds.</mark><label for="sn-robots" class="margin-toggle sidenote-number"></label><input type="checkbox" id="sn-robots" class="margin-toggle"/>
+<span class="sidenote">
+S: This is spot on! Even in 2020, real robots resemble machine tools.</span>
 
 ## The Next Breakthrough
 
@@ -373,9 +378,9 @@ and yet, on the average problem, only a fraction of this hardware was in use
 at any given time.
 
 
-Revolutionary advances, if they come, must come by the exploitation of the
+<mark>Revolutionary advances, if they come, must come by the exploitation of the
 high degree of parallelism that the use of integrated circuits will make
-possible. The problem is to secure a satisfactorily high factor of hardware
+possible.</mark> The problem is to secure a satisfactorily high factor of hardware
 utilization, since, without this, parallelism will not give us greater
 power. Highly parallel systems tend to be efficient only on the problems
 that the designer had in his mind; on other problems, the hardware
@@ -387,8 +392,11 @@ to now. The absolute cost of integrated circuits is, of course, an important
 consideration, but it should be noted that a marked fall in cost would also
 benefit processors of conventional design.
 
-One area in which I feel that we must pin our hopes on a high degree of
-parallelism is that of pattern recognition in two dimensions. Present-day
+<mark>One area in which I feel that we must pin our hopes on a high degree of
+parallelism is that of pattern recognition in two dimensions.</mark><label for="sn-parallel" class="margin-toggle sidenote-number"></label><input type="checkbox" id="sn-parallel" class="margin-toggle"/>
+<span class="sidenote">
+S: And indeed parallelism and GPUs became a big deal for CNNs and image recognition!
+</span> Present-day
 computers are woefully inefficient in this area. I am not thinking only of
 such tasks as the recognition of written characters. Many problems in symbol
 manipulation have a large element of pattern recognition in them, a good
@@ -407,8 +415,8 @@ computer scientists and the ever-expanding family of those who depend on
 computers in their work, one cannot help being struck by the power of the
 computer to bind together, in a genuine community of interest, people whose
 motivations differ widely. It is to this that we owe the vitality and vigor
-of our Association. If ever a change of name is thought necessary, I hope
+of our Association. <mark>If ever a change of name is thought necessary, I hope
 that the words "computing machinery" or some universally recognized synonym
 will remain. For what keeps us together is not some abstraction, such as
 Turing machine, or information, but the actual hardware that we work with
-every day.
+every day.</mark>
