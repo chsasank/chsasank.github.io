@@ -30,16 +30,16 @@ computers and terminals. To make the data meaningful, computers and
 terminals share a common protocol (i.e., a set of agreed upon conventions).
 Several protocols have already been developed for this purpose
 [8]-[12],[16]. However, these protocols have addressed only the problem of
-communication on the same network. In this paper we present a protocol
-design and philosophy that supports the sharing of resources that exist in
-different packet switching networks.
+communication on the same network. <span class="mark">In this paper we
+present a protocol design and philosophy that supports the sharing of
+resources that exist in different packet switching networks.</span>
 
 
 After a brief introduction to internetwork protocol issues, we describe the
 function of a *gateway* as an interface between networks and discuss its
 role in the protocol. We then consider the various details of the protocol,
 including addressing, formatting, buffering, sequencing, flow control, error
-control, and so forth. Wc close with a description of an interprocess
+control, and so forth. We close with a description of an interprocess
 communication mechanism and show how it can be supported by the internetwork
 protocol.
 
@@ -49,17 +49,17 @@ compounded when dissimilar networks are interconnected. Issues arise which
 may have no direct counterpart in an individual network and which strongly
 influence the way in which internetwork communication can take place.
 
-A typical packet switching network is composed of a set of computer
-resources called *hosts*, a set of one or more *packet switches*, and a
-collection of communication media that interconnect the packet switches.
-Within each host, we assume that there exist *processes* which must
-communicate with processes in their own or other hosts. Any current
-definition of a process will be adequate for our purposes [13]. These
-processes are generally the ultimate source and destination of data in the
-network. Typically, within an individual network, there exists a protocol
-for communication between any source and destination process. Only the
-source and destination processes require knowledge of this convention for
-communication to take place. Processes in two distinct networks would
+<span class="mark">A typical packet switching network is composed of a set
+of computer resources called  hosts*, a set of one or more *packet
+switches*, and a collection of communication media that interconnect the
+packet switches. Within each host, we assume that there exist *processes*
+which must communicate with processes in their own or other hosts.</span>
+Any current definition of a process will be adequate for our purposes [13].
+These processes are generally the ultimate source and destination of data in
+the network. Typically, within an individual network, there exists a
+protocol for communication between any source and destination process. Only
+the source and destination processes require knowledge of this convention
+for communication to take place. Processes in two distinct networks would
 ordinarily use different protocols for this purpose. The ensemble of packet
 switches and communication media is called the *packet switching subnet*.
 Fig. 1 illustrates these ideas. 
@@ -104,9 +104,9 @@ Individual packet switching networks may differ in their implementations as foll
    conditions, such as an inaccessible or dead destination, various kinds of
    coordination must be invoked between the communicating networks. 
 
-It would be extremely convenient if all the differences between networks
+<mark>It would be extremely convenient if all the differences between networks
 could be economically  resolved by suitable interfacing at the network
-boundaries. For many of the differences, this objective can be achieved.
+boundaries.</mark> For many of the differences, this objective can be achieved.
 However, both economic and technical considerations lead us to prefer that
 the interface be as simple and reliable as possible and deal primarily with
 passing data between networks that use different packet switching
@@ -117,14 +117,14 @@ differences in host or process level protocols by transforming the source
 conventions into the corresponding destination conventions. We obviously
 want to allow  conversion between packet switching strategies at  the
 interface, to permit interconnection of existing and planned networks.
-However, the complexity and dissimilarity of the host or process level
+However, <span class="mark">the complexity and dissimilarity of the host or process level
 protocols makes it desirable to avoid having to transform between them at
-the interface, even if this transformation were always possible. Rather,
+the interface, even if this transformation were always possible.</span> Rather,
 compatible host and process level protocols must be developed to achieve
 effective internetwork resource sharing. The unacceptable alternative is for
 every host or process to implement every protocol (a potentially unbounded
 number) that may be needed to communicate with other networks. We therefore
-assume that a common protocol is to be used between host's or processes in
+assume that a common protocol is to be used between hosts or processes in
 different networks and that the interface between networks should take as
 small a role as possible in this protocol.
 
@@ -139,7 +139,7 @@ the other network, but without utilizing or indeed incorporating any
 elaborate host protocol transformations.
 
 
-It is thus apparent that the interface between networks: must play a central
+It is thus apparent that the interface between networks must play a central
 role in the development of any network interconnection strategy. We give a
 special name to this interface that performs these functions and call it a
 *Gateway*.
@@ -152,24 +152,31 @@ are joined by gateways M and N gateway interfaces network A with network B,
 and gateway N interfaces network B to network C. We assume that an
 individual network may have more than one gateway (e.g., network B) and that
 there may be more than one gateway path to use in going between a pair of
-networks. The responsibility for properly routine data resides in the
+networks. The responsibility for properly routing data resides in the
 gateway.
+
+<figure>
+<label for="mn-fig-2" class="margin-toggle">⊕</label><input type="checkbox" id="mn-fig-2" class="margin-toggle">
+<span class="marginnote">
+ Fig. 1. Three networks interconnected by two gateways
+</span>
+<img src='/assets/images/classic_papers/tcp_ip/fig2.png'>
+</figure>
 
 In practice, a gateway between two networks may be composed of two halves,
 each associated with its own network. It is possible to implement each half
 of a gateway so it need only embed internetwork packets in local packet
 format or extract them. We propose that the gateways handle internetwork
-packets in a standard format, but we are not proposing any particular trans
-mission procedure between gateway halves.
+packets in a standard format, but we are not proposing any particular transmission procedure between gateway halves.
 
 Let us now trace the flow of data through the inter connected networks. We
 assume a packet of data from process X enters network A destined for process
 Y in network C. The address of Y is initially specified by process X and the
 address of gateway M is derived from the address of process Y. We make no
-attempt to specify whether the choice of gateway is made by process X its
-host, or one of the packet switches in network A. Th packet traverses
+attempt to specify whether the choice of gateway is made by process X, its
+host, or one of the packet switches in network A. The packet traverses
 network A until it reaches gateway M. At the gateway, the packet is reformatted
-to meet the requirements of network B, account is taken of this uni of flow
+to meet the requirements of network B, account is taken of this unit of flow
 between A and B, and the gateway delivers the packet to network B. Again the
 derivation of the next gateway address is accomplished based on the address of
 the destination Y. In this case, gateway N is the next one. The packet
@@ -181,9 +188,9 @@ its ultimate destination.
 
 Since the gateway must understand the address of the source and destination
 hosts, this information must be available in a standard format in every
-packet which arrives at the gateway. This information is container in an,
-internetwork header prefixed to the packet by the source host. The packet
-format, including the internet work header, is illustrated in Fig. 3. The
+packet which arrives at the gateway. This information is contained in an
+*internetwork header* prefixed to the packet by the source host. The packet
+format, including the internetwork header, is illustrated in Fig. 3. The
 source and destination entries uniformly and uniquely identify the address
 of every host in the composite network. Addressing is a subject of
 considerable complexity which is discussed in greater detail in the next
@@ -196,6 +203,15 @@ duplicate detection later. The remainder of the packet consists of text for
 delivery to the destination and a trailing check sum used for end-to-end
 software verification. The gateway does *not* modify the text and merely
 forwards the check sum along without computing or recomputing it.
+
+<figure>
+<label for="mn-fig-3" class="margin-toggle">⊕</label><input type="checkbox" id="mn-fig-3" class="margin-toggle">
+<span class="marginnote">
+ Fig. 3. Internetwork packet format (fields not shown to scale).
+</span>
+<img src='/assets/images/classic_papers/tcp_ip/fig3.png'>
+</figure>
+
 
 Each network may need to augment the packet format before it can pass
 through the individual network. We have indicated a *local header* in the
@@ -232,7 +248,7 @@ than the minimum a packet size can be, for the following reasons.
 
 Provision for fragmentation (regardless of where it is performed) permits
 packet size variations to be handled on an individual network basis without
-global administration and also permits Hosts and processes to be insulated
+global administration and also permits hosts and processes to be insulated
 from changes in the packet sizes permitted in any networks through which
 their data must pass.
 
@@ -333,6 +349,9 @@ succeeding segment could be delivered to its waiting process. Finding the
 beginning of a segment when there are gaps in the byte stream may also be
 hard.
 
+Case 2): Alternatively, we might take the position that the destination TCP should be able to determine, upon its arrival and without additional information, for which process or processes a received packet is intended, and if so, whether it should be delivered then.
+
+If the TCP is to determine for which process an arriving packet is intended, every packet must contain a *process header* (distinct from the internetwork header) that completely identifies the destination process. For simplicity, we assume that each packet contains text from a single process which is destined for a single process. Thus each packet need contain only one process header. To decide whether the arriving data is deliverable to the destination process, the TCP must be able to determine whether the data is in the proper sequence (we can make provision for the destination process to instruct its TCP to ignore sequencing, but this is considered a special case). With the assumption that each arriving packet contains a process header, the necessary sequencing and destination process identification is immediately available to the destination TCP.
 
 Both Cases 1) and 2) provide for the demultiplexing and delivery of segments
 to destination processes, but only Case 2) does so without the introduction
@@ -342,4 +361,57 @@ must also be some provision for process level control, and this machinery is
 little used since the probability is small that within a given Host, two
 processes will be coincidentally scheduled to send messages to the same
 destination Host. For this reason, we select the method of Case 2) as a part
-of the internetwork transmission protocol.
+of the *internetwork transmission protocol*.
+
+## Address Formats
+
+The selection of address formats is a problem between networks because the local network addresses of TCP’s may vary substantially in format and size. A uniform internetwork TCP address space, understood by each gateway and TCP, is essential to routing and delivery of internetwork packets.
+
+Similar troubles are encountered when we deal with process addressing and, more generally, port addressing. We introduce the notion of *ports* in order to permit a process to distinguish between multiple message streams. The port is simply a designator of one such message stream associated with a process. The means for identifying a port are generally different in different operating systems, and therefore, to obtain uniform addressing, a standard port address format is also required. A port address designates a full duplex message stream.
+
+## TCP Addressing
+
+TCP addressing is intimately bound up in routing issues, since a host or gateway must choose a suitable destination host or gateway for an outgoing internetwork packet. Let us postulate the following address format for the TCP address (Fig. 4). The choice for network identification (8 bits) allows up to 256 distinct networks. This size seems sufficient for the foreseeable future. Similarly, the TCP identifier field permits up to 65 536 distinct TCP’s to be addressed, which seems more than sufficient for any given network.
+
+As each packet passes through a gateway, the gateway observes the destination network ID to determine how to route the packet. If the destination network is connected to the gateway, the lower 16 bits of the TCP address are used to produce a local TCP address in the destination network. If the destination network is not connected to the gateway, the upper 8 bits are used to select a subsequent gateway. We make no effort to specify how each individual network shall associate the internetwork TCP identifier with its local TCP address. We also do not rule out the possibility that the local network understands the internetwork addressing scheme and thus alleviates the gateway of the routing responsibility.
+
+## Port Addressing
+
+A receiving TCP is faced with the task of demultiplexing the stream of internetwork packets it receives and reconstructing the original messages for each destination process. Each operating system has its own internal means of identifying processes and ports. We assume that 16 bits are sufficient to serve as internetwork port identifiers. A sending process need not know how the destination port identification will be used. The destination TCP will be able to parse this number appropriately to find the proper buffer into which it will place arriving packets. We permit a large port number field to support processes which want to distinguish between many different message streams concurrently. In reality, we do not care how the 16 bits are sliced up by the TCP’s involved.
+
+Even though the transmitted port name field is large, it is still a compact external name for the internal representation of the port. The use of short names for port identifiers is often desirable to reduce transmission overhead and possibly reduce packet processing time at the destination TCP. Assigning short names to each port, however, requires an initial negotiation between source and destination to agree on a suitable short name assignment, the subsequent maintenance of conversion tables at both the source and the destination, and a final transaction to release the short name. For dynamic assignment of port names, this negotiation is generally necessary in any case.
+
+## Segment and Packet Formats
+
+As shown in Fig. 5, messages are broken by the TCP into segments whose format is shown in more detail in Fig. 6. The field lengths illustrated are merely suggestive. The first two fields (source port and destination port in the figure) have already been discussed in the preceding section on addressing. The uses of the third and fourth fields (window and acknowledgement in the figure) will be discussed later in the section on retransmission and duplicate detection.
+
+We recall from Fig. 3 that an internetwork header contains both a sequence number and a byte count, as well as a flag field and a check sum. The uses of these fields are explained in the following section.
+
+## Reassembly and Sequencing
+
+The reconstruction of a message at the receiving TCP clearly requires1 that each internetwork packet carry a sequence number which is unique to its particular destination port message stream. The sequence numbers must be monotonic increasing (or decreasing) since they are used to reorder and reassemble arriving packets into a message. If the space of sequence numbers were infinite, we could simply assign the next one to each new packet. Clearly, this space cannot be infinite, and we will consider what problems a finite sequence number space will cause when we discuss retransmission and duplicate detection in the next section. We propose the following scheme for performing the sequencing of packets and hence the reconstruction of messages by the destination TCP.
+
+A pair of ports will exchange one or more messages over a period of time. We could view the sequence of messages produced by one port as if it were embedded in an infinitely long stream of bytes. Each byte of the message has a unique sequence number which we take to be its byte location relative to the beginning of the stream. When a segment is extracted from the message by the source TCP and formatted for internetwork transmission, the relative location of the first byte of segment text is used as the sequence number for the packet. The byte count field in the internetwork header accounts for all the text in the segment (but does not include the check-sum bytes or the bytes in either internetwork or process header). We emphasise that he sequence number associated with a given packet is unique only to the pair of ports that are communicating (see Fig. 7). Arriving packets are examined to determine for which port they are intended. The sequence numbers on each arriving packet are then used to determine the relative location of the packet text in the messages under reconstruction. We note that this allows the exact position of the data in the reconstructed message to be determined even when pieces are still missing.
+
+Every segment produced by a source TCP is packaged in a single internetwork packet and a check sum is computed over the text and process header associated with the segment.
+
+The splitting of messages into segments by the TCP and the potential splitting of segments into smaller pieces by gateway creates the necessity for indicating to the destination TCP when the end of a segment (ES) has arrived and when the end of a message (EM) has arrived. The flag field of the internetwork header is used for this purpose (see Fig. 8).
+
+The ES flag is set by the source TCP each time it prepares a segment for transmission. If it should happen that the message is completely contained in the segment, then the EM flag would also be set. The EM flag is also set on the last segment of a message, if the message could not be contained in one segment. These two flags are used by the destination TCP, respectively, to discover the presence of a check sum for a given segment and to discover that a complete message has arrived.
+
+The ES and EM flags in the internetwork header are known to the gateway and are of special importance when packets must be split apart from propagation through the next local network. We illustrate their use with an example in Fig. 9.
+
+The original message A in Fig. 9 is shown split into two segments A1 and A2 and formatted by the TCP into a pair of internetwork packets. Packets A1 and A2 have their ES bits set, and A2 has its EM bit set as well. When packet A1 passes through the GATEWAY, it is split into two pieces: packet A11 for which neither EM nor ES bits are set, and packet A12 whose ES bit is set. Similarly, packet A2 is split such that the first piece, packet A21, has neither bit set, but packet A22 has both bits set. The sequence number field (SEQ) and the byte count field (CT) of each packet is modified by the GATEWAY to properly identify the text bytes of each packet. The GATEWAY need only examine the internetwork header to do fragmentation.
+
+The destination TCP, upon reassembling segment A1, will detect the ES flag and will verify the check sum it knows is contained in packet A12. Upon receipt of packet A22, assuming all other packets have arrived, the destination TCP detects that it has reassembled a complete message and can now advise the destination process of its receipt.
+
+## Retransmission and Duplicate Detection
+
+No transmission can be 100 percent reliable. We propose a timeout and positive acknowledgement mechanism which will allow TCP’s to recover from packet losses from one host to another. A TCP transmits packets and waits for replies (acknowledgements) that are carried in the reverse packet stream. If no acknowledgement for a particular packet is received, the TCP will retransmit. It is our expectation that the host level retransmission mechanism, which is described in the following paragraphs, will not be called upon very often in practice. Evidence already exists2 that individual networks can be effectively constructed without this feature. However, the inclusion of a host retransmission capability makes it possible to recover from occasional network problems and allows a wide range of host protocol strategies to be incorporated. We envision it will occasionally be invoked to allow host accommodation to infrequent overdemands for limited buffer resources, and otherwise not used much.
+
+Any retransmission policy requires some means by which the receiver can detect duplicate arrivals. Even if an infinite number of distinct packet sequence numbers were available, the receiver would still have the problem of knowing how long to remember previously received packets in order to detect duplicates. Matters are complicated by the fact that only a finite number of distinct sequence numbers are in fact available, and if they are reused, the receiver must be able to distinguish between new transmissions and retransmissions.
+
+A *window* strategy, similar to that used by the French CYCLADES system (voie virtuelle transmission mode [8]) and the ARPANET very distant HOST connection [18]), is proposed here (see Fig. 10).
+
+Suppose that the sequence number field in the internetwork header permits sequence numbers to range from 0 to n - 1. We assume that the sender will not transmit more than w bytes without receiving an acknowledgment. The w bytes serve as the window (see Fig. 11). Clearly, w must be less than n. The rules for sender and receiver are as follows.
+
