@@ -439,7 +439,7 @@ A pair of ports will exchange one or more messages over a period of time. We cou
 
 Every segment produced by a source TCP is packaged in a single internetwork packet and a check sum is computed over the text and process header associated with the segment.
 
-The splitting of messages into segments by the TCP and the potential splitting of segments into smaller pieces by gateway creates the necessity for indicating to the destination TCP when the end of a segment (ES) has arrived and when the end of a message (EM) has arrived. The flag field of the internetwork header is used for this purpose (see Fig. 8).
+<mark>The splitting of messages into segments by the TCP and the potential splitting of segments into smaller pieces by gateway creates the necessity for indicating to the destination TCP when the end of a segment (ES) has arrived and when the end of a message (EM) has arrived.</mark> The flag field of the internetwork header is used for this purpose (see Fig. 8).
 
 <figure>
 <label for="mn-fig-8" class="margin-toggle">⊕</label><input type="checkbox" id="mn-fig-8" class="margin-toggle">
@@ -469,11 +469,181 @@ The destination TCP, upon reassembling segment $A_1$, will detect the ES flag an
 
 ## Retransmission and Duplicate Detection
 
-No transmission can be 100 percent reliable. We propose a timeout and positive acknowledgement mechanism which will allow TCP’s to recover from packet losses from one host to another. A TCP transmits packets and waits for replies (acknowledgements) that are carried in the reverse packet stream. If no acknowledgement for a particular packet is received, the TCP will retransmit. It is our expectation that the host level retransmission mechanism, which is described in the following paragraphs, will not be called upon very often in practice. Evidence already exists2 that individual networks can be effectively constructed without this feature. However, the inclusion of a host retransmission capability makes it possible to recover from occasional network problems and allows a wide range of host protocol strategies to be incorporated. We envision it will occasionally be invoked to allow host accommodation to infrequent overdemands for limited buffer resources, and otherwise not used much.
+No transmission can be 100 percent reliable. <mark>We propose a timeout and positive acknowledgement mechanism which will allow TCP’s to recover from packet losses from one host to another.</mark> A TCP transmits packets and waits for replies (acknowledgements) that are carried in the reverse packet stream. If no acknowledgement for a particular packet is received, the TCP will retransmit. It is our expectation that the host level retransmission mechanism, which is described in the following paragraphs, will not be called upon very often in practice. Evidence already exists<label for="sn-2" class="margin-toggle sidenote-number"></label><input type="checkbox" id="sn-2" class="margin-toggle"/>
+<span class="sidenote">
+The ARPANET is one such example.
+</span> that individual networks can be effectively constructed without this feature. However, the inclusion of a host retransmission capability makes it possible to recover from occasional network problems and allows a wide range of host protocol strategies to be incorporated. We envision it will occasionally be invoked to allow host accommodation to infrequent overdemands for limited buffer resources, and otherwise not used much.
 
-Any retransmission policy requires some means by which the receiver can detect duplicate arrivals. Even if an infinite number of distinct packet sequence numbers were available, the receiver would still have the problem of knowing how long to remember previously received packets in order to detect duplicates. Matters are complicated by the fact that only a finite number of distinct sequence numbers are in fact available, and if they are reused, the receiver must be able to distinguish between new transmissions and retransmissions.
+<mark>Any retransmission policy requires some means by which the receiver can detect duplicate arrivals.</mark> Even if an infinite number of distinct packet sequence numbers were available, the receiver would still have the problem of knowing how long to remember previously received packets in order to detect duplicates. Matters are complicated by the fact that only a finite number of distinct sequence numbers are in fact available, and if they are reused, the receiver must be able to distinguish between new transmissions and retransmissions.
 
 A *window* strategy, similar to that used by the French CYCLADES system (voie virtuelle transmission mode [8]) and the ARPANET very distant HOST connection [18]), is proposed here (see Fig. 10).
 
-Suppose that the sequence number field in the internetwork header permits sequence numbers to range from 0 to n - 1. We assume that the sender will not transmit more than w bytes without receiving an acknowledgment. The w bytes serve as the window (see Fig. 11). Clearly, w must be less than n. The rules for sender and receiver are as follows.
+<figure>
+<label for="mn-fig-10" class="margin-toggle">⊕</label><input type="checkbox" id="mn-fig-10" class="margin-toggle">
+<span class="marginnote">
+ Fig. 10. The window concept.
+</span>
+<img src='/assets/images/classic_papers/tcp_ip/fig10.png'>
+</figure>
 
+
+Suppose that the sequence number field in the internetwork header permits sequence numbers to range from $0$ to $n - 1$. We assume that the sender will not transmit more than $w$ bytes without receiving an acknowledgment. The $w$ bytes serve as the window (see Fig. 11). Clearly, $w$ must be less than $n$. The rules for sender and receiver are as follows.
+
+
+*Sender*: Let $L$ be the sequence number associated with the left window edge.
+
+1. The sender transmits bytes from segments whose text lies between $L$ and up to $L + w − 1$.
+2. On timeout (duration unspecified), the sender retransmits unacknowledged bytes.
+3. On receipt of acknowledgment consisting of the receiver’s current left window edge, the sender’s
+left window edge is advanced over the acknowledged bytes (advancing the right window edge implicity).
+
+*Receiver*: 
+
+1. Arriving packets whose sequence numbers coincide with the receiver’s current left window edge are acknowledged by sending to the source the next sequence number expected. This effectively acknowledges bytes in between. The left window edge is advanced to the next sequence number expected.
+2. Packets arriving with a sequence number to the left of the window edge (or, in fact, outside of the window) are discarded, and the current left window edge is returned as acknowledgement.
+3. Packets whose sequence numbers lie within the receiver’s window but do not coincide with the receiver’s left window edge are optionally kept or discarded, but are now acknowledged. This is the case when packets arrive out of order.
+
+We make some observations on this strategy. First, all computations with sequence numbers and window edges must be made modulo $n$ (e.g., byte $0$ follows byte $n−1$). Second, $w$ must be less than $n/2$;<label for="sn-3" class="margin-toggle sidenote-number"></label><input type="checkbox" id="sn-3" class="margin-toggle"/>
+<span class="sidenote">
+Actually $n/2$ is merely a convenient number to use; it is only required that a retransmission not appear to be a new transmission.</span> otherwise a retransmission may appear to the receiver to be a new transmission in the case that the receiver can either save or discard arriving packets whose sequence numbers do not coincide with the receiver’s left window. Thus, in the simplest implementation, the receiver need not buffer more than one packet per message stream if space is critical. Fourth, multiple packets can be acknowledged simultaneously. Fifth, the receiver is able to deliver messages to processes in their proper order as a natural result of the reassembly mechanism. Sixth, when duplicates are detected, the acknowledgment method used naturally works to resynchronize sender and receiver. Furthermore, if the receiver accepts packets whose sequence numbers lie within the current window but which are not coincident with the left window edge, an acknowledgment consisting of the current left window edge would act as a stimulus to cause retransmission of the unacknowledged bytes. Finally, we mention an overlap problem which results from retransmission, packet splitting, and alternate routing of packets through different gateways.
+
+A 600-byte packet might pass through one gateway and be broken into two 300-byte packets. On retransmission, the same packet might be broken into three 200-byte packets going through a different host. Since each byte has a sequence number, there is no confusion at the receiving TCP. We leave for later the issue of initially synchronizing the sender and receiver left window edges and the window size.
+
+
+## Flow Control
+
+Every segment that arrives at the destination TCP is ultimately acknowleged by returning the sequence number of the next segment which must be passed to the process (it may not yet have arrived).
+
+Earlier we described the use of a sequence number space and window to aid in duplicate detection. Acknowledgments are carried in the process header (see Fig. 6) and along with them there is provision for a “suggested window” which the receiver can use to control the flow of data from the sender. This is intended to be the main component of the process flow control mechanism. <mark>The receiver is free to vary the window size according to any algorithm it desires so long as the window size never exceeds half the sequence number space.</mark>
+
+This flow control mechanism is exceedingly powerful and flexible and does not suffer from synchronization troubles that may be encountered by incremental buffer allocation schemes [9], [10]. However, it relies heavily on an effective retransmission strategy. The receiver can reduce the window even while packets are en route from the sender whose window is presently larger. The net effect of this reduction will be that the receiver may discard incoming packets (they may be outside the window) and reiterate the current window size along with a current window edge as acknowledgment. By the same token, the sender can, upon occasion, choose to send more than a window’s worth of data on the possibility that the receiver will expand the window to accept it (of course, the sender must not send more than half the sequence number space at any time). Normally, we would expect the sender to abide by the window limitation. Expansion of the window by the receiver merely allows more data to be accepted. For the receiving host with a small amount of buffer space, a strategy of discarding all packets whose sequence numbers do not coincide with the current left edge of the window is probably necessary, but it will incur the expense of extra delay and overhead for retransmission.
+
+## TCP Input/Output Handling
+
+The TCP has a component which handles input/output (I/O) to and from the network.<label for="sn-4" class="margin-toggle sidenote-number"></label><input type="checkbox" id="sn-4" class="margin-toggle"/>
+<span class="sidenote">
+This component can serve to handle other protocols whose associated control programs are designated by internetwork destination address.</span> When a packet has arrived, it validates the addresses and places the packet on a queue. A pool of buffers can be set up to handle arrivals, and if all available buffers are used up, succeeding arrivals can be discarded since unacknowledged packets will be retransmitted.
+
+On output, a smaller amount of buffering is needed, since process buffers can hold the data to be transmitted. Perhaps double buffering will be adequate. We make no attempt to specify how the buffering should be done, except to require that it be able to service the network with as little overhead as possible. Packet sized buffers, one or more ring buffers, or any other combination are possible candidates.
+
+When a packet arrives at the destination TCP, it is placed on a queue which the TCP services frequently. For example, the TCP could be interrupted when a queue placement occurs. The TCP then attempts to place the packet text into the proper place in the appropriate process receive buffer. If the packet terminates a segment, then it can be checksummed and acknowledged. Placement may fail for several reasons.
+
+1. The destination process may not be prepared to receive from the stated source, or the destination port ID may not exist.
+2. There may be insufficient buffer space for the text.
+3. The beginning sequence number of the text may not coincide with the next sequence number to be delivered to the process (e.g., the packet has arrived out of order).
+
+In the first case, the TCP should simply discard the packet (thus far, no provision has been made for error acknowledgments). In the second and third cases, the packet sequence number can be inspected to determine whether the packet text lies within the legitimate window for reception. If it does, the TCP may optionally keep the packet queued for later processing. If not, the TCP can discard the packet. In either case the TCP can optionally acknowledge with the current left window edge.
+
+It may happen that the process receive buffer is not present in the active memory of the host, but is stored on secondary storage. If this is the case, the TCP can prompt the scheduler to bring in the appropriate buffer and the packet can be queued for later processing.
+
+If there are no more input buffers available to the TCP for temporary queuing of incoming packets, and if the TCP cannot quickly use the arriving data (e.g., a TCP to TCP message), then the packet is discarded. Assuming a sensibly functioning system, no other processes than the one for which the packet was intended should be affected by this discarding. If the delayed processing queue grows excessively long, any packets in it can be safely discarded since none of them have yet been acknowledged. Congestion at the TCP level is flexibly handled owing to the robust retransmission and duplicate detection strategy.
+
+## TCP/Process Communication
+
+In order to send a message, a process sets up its text in a buffer region in its own address space, inserts the requisite control information (described in the following list) in a transmit control block (TCB) and passes control to the TCP. The exact form of a TCB is not specified here, but it might take the form of a passed pointer, a pseudointerrupt, or various other forms. To receive a message in its address space, a process sets up a receive buffer, inserts the requisite control information in a receive control block (RCB) and again passes control to the TCP.
+
+In some simple systems, the buffer space may in fact be provided by the TCP. For simplicity we assume that a ring buffer is used by each process, but other structures (e.g., buffer chaining) are not ruled out.
+
+A possible format for the TCB is shown in Fig. 11. The TCB contains information necessary to allow the TCP to extract and send the process data. Some of the information might be implicitly known, but we are not concerned with that level of detail. The various fields in the TCB are described as follows.
+
+1. *Source Address:* This is the full net/host/TCP/port address of the transmitter.
+2. *Destination Address:* This is the full net/host/TCP/port of the receiver.
+3. Next Packet Sequence Number: This is the sequence number to be used for the next packet the TCP will transmit from this port.
+4. *Current Buffer Size:* This is the present size of the process transmit buffer.
+5. *Next Write Position:* This is the address of the next position in the buffer at which the process can place new data for transmission.
+6. *Next Read Position:* This is the address at which the TCP should begin reading to build the next segment for output.
+7. *End Read Position:* This is the address at which the TCP should halt transmission. Initially  6. and 7. bound the message which the process wishes to transmit.
+8. *Number of Retransmissions/Maximum Retransmissions:* These fields enable the TCP to keep track of the number of times it has retransmitted the data and could be omitted if the TCP is not to give up.
+9. *Timeout/Flags:* The timeout field specifies the delay after which unacknowledged data should be retransmitted. The flag field is used for semaphores and other TCP/process synchronization status reporting, etc.
+10. *Current Acknowledgment/Window:* The current acknowledgment field identifies the first byte of data still unacknowledged by the destination TCP.
+
+The read and write positions move circularly around the transmit buffer, with the write position always to the left (module the buffer size) of the read position.
+
+he next packet sequence number should be constrained to be less than or equal to the sum of the current acknowledgment and the window fields. In any event, the next sequence number should not exceed the sum of the current acknowledgment and half of the maximum possible sequence number (to avoid confusing the receiver’s duplicate detection algorithm). A possible buffer layout is shown in Fig. 12.
+
+The RCB is substantially the same, except that the end read field is replaced by a partial segment check-sum register which permits the receiving TCP to compute and remember partial check sums in the event that a segment arrives in several packets. When the final packet of the segment arrives, the TCP can verify the check sum and if successful, acknowledge the segment.
+
+## Connections and Associations
+
+Much of the thinking about process-to-process communication in paket switched networks has been influenced by the ubiquitous telephone system. The host-host protocol for the ARPANET deals explicitly with the opening and closing of simplex connections between processes [9],[10]. Evidence has been presented that message-based "connection-free" protocols can be constructed [12], and this leads us to carefully examine the notion of a connection.
+
+The term *connection* has a wide variety of meanings. It can refer to a physical or logical path between two entities, it can refer to the flow over the path, it can inferentially refer to an action associated with the setting up of a path, or it can refer to an association between two or more entities, with or without regard to any path between them. In this paper, we do not explicitly reject the term connection, since it is in such widespread use, and does connote a meaningful relation, but consider it exclusively in the sense of an association between two or more entities without regard to a path. To be more precise about our intent, we shall define the relationship between two or more ports that are in communication, or are prepared to communicate to be an *association*. Ports that are associated with each other are called *associates*.
+
+It is clear that for any communication to take place between two processes, one must be able to address the other. The two important cases here are that the destination port may have a global and unchanging address or that it may be globally unique but dynamically reassigned. While in either case the sender may have to learn the destination address, given the destination name, only in the second instance is there a requirement for learning the address from the destination (or its representative) each time an association is desired.
+
+Only after the source has learned how to address the destination can an association be said to have occurred. But this is not yet sufficient. If ordering of delivered messages is also desired, both TCP’s must maintain sufficient information to allow proper sequencing. When this information is also present at both ends, then an association is said to have occurred.
+
+Note that we have not said anything about a path, nor anything which implies that either end be aware of the condition of the other. Only when both partners are prepared to communicate with each other has an association occurred, and it is possible that neither partner may be able to verify that an association exists until some data flows between them.
+
+## Connection-Free Protocols With Associations
+
+In the ARPANET, the interface message processors (IMP’s) do not have to open and close connections from source to destination. The reason for this is that connections are, in effect, always open, since the address of every source and destination is never5 reassigned. When the name and the place are static and unchanging, it is only necessary to label a packet with source and destination to transmit it through the network. In our parlance, every source and destination forms an association.
+
+In the case of processes, however, we find that port addresses are continually being used and reused. Some ever present processes could be assigned fixed addresses which do not change (e.g., the logger process). If we supposed, however, that every TCP had an infinite supply of port addresses so that no old address would ever be reused, then any dynamically created port would be assigned the next unused address. In such an environment, there could never be any confusion by source and destination TCP as to the intended recipient or implied source of each message, and all ports would be associates.
+
+Unfortunately, TCP’s (or more properly, operating systems) tend not to have an infinite supply of internal port addresses. These internal addresses are reassigned after the demise of each port. Walden [12] suggests that a set of unique uniform external port addresses could be supplied by a central registry. A newly created port could apply to the central registry for an address which the central registry would guarantee to be unused by any HOST system in the network. Each TCP could maintain tables matching external names with internal ones, and use the external ones for communication with other processes. This idea violates the premise that interprocess communication should not require centralized control. One would have to extend the central registry service to include all HOST’S in all the interconnected networks to apply this idea to our situation, and we therefore do not attempt to adopt it.
+
+Let us consider the situation from the standpoint of the TCP. In order to send or receive data for a given port, the TCP needs to set up a TCB and RCB and initialize the window size and left window edge for both. On the receive side, this task might even be delayed until the first packet destined for a given port arrives. By convention, the first packet should be marked so that the receiver will synchronize to the received sequence number.
+
+On the send side, the first request to transmit could cause a TCB to be set up with some initial sequence number (say, zero) and an assumed window size. The receiving TCP can reject the packet if it wishes and notify the sending TCP of the correct window size via the acknowledgment mechanism, but only if either
+
+1. we insist that the first packet be a complete segment;
+2. an acknowledgment can be sent for the first packet (even if not a segment, as long as the acknowledgment specifies the next sequence number such that the source also understands that no bytes have been accepted).
+
+It is apparent, therefore, that the synchronizing of window size and left window edge can be accomplished without what would ordinarily be called a connection setup.
+
+The first packet referencing a newly created RCB sent from one associate to another can be marked with a bit which requests that the receiver synchronize his left window edge with the sequence number of the arriving packet (see SYN bit in Fig. 8). The TCP can examine the source and destination port addresses in the packet and in the RCB to decide whether to accept or ignore the request.
+
+Provision should be made for a destination process to specify that it is willing to LISTEN to a specific port or “any” port. This last idea permits processes such as the logger process to accept data arriving from unspecified sources. This is purely a host matter, however.
+
+
+The initial packet may contain data which can be stored or discarded by the destination, depending on the availability of destination buffer space at the time. In the other direction, acknowledgment is returned for receipt of data which also specifies the receiver’s window size.
+
+If the receiving TCP should want to reject the synchronization request, it merely transmits an acknowledgment carrying a release (REL) bit (see Fig. 8) indicating that the destination port address is unknown or inaccessible. The sending HOST waits for the acknowledgment (after accepting or rejecting the synchronization request) before sending the next message or segment. This rejection is quite different from a negative data acknowledgment. We do not have explicit negative acknowledgments. If no acknowledgment is returned, the sending HOST may retransmit without introducing confusion if, for example, the left window edge is not changed on the retransmission.
+
+Because messages may be broken up into many packets for transmission or during transmission, it will be necessary to ignore the REL flag except in the case that the EM flag is also set. This could be accomplished either by the TCP or by the GATEWAY which could reset the flag on all but the packet containing the set EM flag (see Fig. 9).
+
+At the end of an association, the TCP sends a packet with ES, EM, and REL flags set. The packet sequence number scheme will alert the receiving TCP if there are still outstanding packets in transit which have not yet arrived, so a premature dissociation cannot occur.
+
+To assure that both TCP’s are aware that the association has ended, we insist that the receiving TCP respond to the REL by sending a REL acknowledgment of its own.
+
+Suppose now that a process sends a single message to an associate including a REL along with the data. Assuming an RCB has been prepared for the receiving TCP to accept the data, the TCP will accumulate the incoming packets until the one marked ES, EM, REL arrives, at which point a REL is returned to the sender. The association is thereby terminated and the appropriate TCB and RCB are destroyed. If the first packet of a message contains a SYN request bit and the last packet contains ES, EM and REL bits, then data will flow “one message at a time.” This mode is very similar to the scheme described by Walden [12], since each succeeding message can only be accepted at the receiver after a new LISTEN (like Walden’s RECEIVE) command is issued by the receiving process to its serving TCP. Note that only if the acknowledgment is received by the sender can the association be terminated properly. It has been pointed out6 that the receiver may erroneously accept duplicate transmissions if the sender does not receive the acknowledgment. This may happen if the sender transmits a duplicate message with the SYN and REL bits set and the destination has already destroyed any record of the previous transmission. One way of preventing this problem is to destroy the record of the association at the destination only after some known and suitably chosen timeout. However, this implies that a new association with the same source and destination port identifiers could not be established until this timeout had expired. This problem can occur even with sequences of messages whose SYN and REL bits are separated into different internetwork packets. We recognize that this problem must be solved, but do not go into further detail here.
+
+Alternatively, both processes can send one message, causing the respective TCP’s to allocate RCB/TCB pairs at both ends which rendezvous with the exchanged data and then disappear. If the overhead of creating and destroying RCB’s and TCB’s is small, such a protocol might be adequate for most low-bandwidth uses. This idea might also form the basis for a relatively secure transmission system. If the communicating processes agree to change their external port addresses in some way known only to each other (i.e., pseudorandom), then each message will appear to the outside world as if it is part of a different association message stream. Even if the data is intercepted by a third party, he will have no way of knowing that the data should in fact be considered part of a sequence of messages.
+
+We have described the way in which processes develop associations with each other, thereby becoming associates for possible exchange of data. These associations need not involve the transmission of data prior to their formation and indeed two associates need not be able to determine that they are associates until they attempt to communicate.
+
+## Conclusions
+
+We have discussed some fundamental issues related to the interconnection of packet switching networks. In particular, we have described a simple but very powerful and flexible protocol which provides for variation in individual network packet sizes, transmission failures, sequencing, flow control, and the creation and destruction of process- to-process associations. We have considered some of the implementation issues that arise and found that the proposed protocol is implementable by HOST’S of widely varying capacity.
+
+The next important step is to produce a detailed specification of the protocol so that some initial experiments with it can be performed. These experiments are needed to determine some of the operational parameters (e.g., how often and how far out of order do packets actually arrive; what sort of delay is there between segment acknowledgments; what should retransmission timeouts be?) of the proposed protocol.
+
+## Acknowledgment
+
+The authors wish to thank a number of colleagues for helpful comments during early discussions of international network protocols, especially R. Metcalfe, R. Scantlebury, D. Walden, and H. Zimmerman; D. Davies and L. Pouzin who constructively commented on the fragmentation and accounting issues; and S. Crocker who commented on the creation and destruction of associations.
+
+## References
+
+<div class="small">
+
+1. L. Roberts and B. Wessler, “Computer network development to achieve resource sharing,” in 1970 Spring Joint Computer Conf., AFIPS Conf. Proc., vol. 36. Montvale, N. J.: AFIPS Press, 1970, pp. 543— 549.
+2. L. Pouzin, “Presentation and major design aspects of the CYCLADES computer network,” in Proc. 3rd Data Communications Symp., 1973.
+3. F. R. E. Dell, “Features of a proposed synchronous data network,” in Proc. 2nd Symp. Problems in the Optimization of Data Communications Systems, 1971, pp. 50—57.
+4. R. A. Scantlebury and P. T. Wilkinson, “The design of a switching system to allow remote access to computer services by other computers and terminal devices,” in Proc. 2nd Symp. Problems in the Optimization of Data Communications Systems, 1971, pp. 160-167.
+5. D. L. A. Barber, “The European computer network project,” in Computer Communications: Impacts and Implications, S. Winkler, Ed. Washington , D.C., 1972, pp. 192-200.
+6. R. Despres, “A packet switching network with graceful saturated operation,” in Computer Communications: Impacts and Implications, S. Winkler, Ed. Washington, D.C., 1972, pp. 345-351.
+7. R. E. Kahn and W. R. Crowther, “Flow control in a resource-shaping computer network,” IEEE Trans. Commun., vol. COM-20, pp. 539-546, June 1972.
+8. J. F. Chambon, M. Elie, J. Le Bihan, G. LeLann, and H. Zimmerman, “Functional specification of transmission station in the CYCLADES network. ST- ST protocol” (in French), I.R.I.A. Tech. Rep. SCH502.3, May 1973.
+9. S. Carr, S. Crocker, and V. Cerf, “Host-host Communication Protocol In the ARPA Network,” in Spring Joint Computer Conf., AFIPS Conf. Proc., vol. 36. Montvale, N.J.: AFIPS Press, 1970, pp. 589-597.
+10. A. McKenzie, “Host/host protocol for the ARPA network,” in Current Network Protocols, Network Information Cen., Menlo Park, Calif., NIC 8246, Jan. 1972.
+11. L. Pouzin, “Address format in Mitranet,” NIC 14497, INWG 20, Jan. 1973.
+12. D. Walden, “A system for interprocess communication in a resource sharing computer network,” Commun. Ass. Comput. Mach., vol. 15, pp. 221-230, Apr. 1972.
+13. B. Lampson, “A scheduling philosophy for multiprocessing system,” Commun. Ass. Comput. Mach., vol. 11, pp. 347-360, May 1968.
+14. F. E. Heart, R. E. Kahn, S. Ornstein, W. Crowther, and D. Walden, “The interface message processor for the ARPA computer network,” in Proc. Spring Joint Computer Conf., AFIPS Conf. Proc., vol. 36. Montvale, N.J.: AFIPS Press, 1970, pp. 551-567.
+15. N. G. Anslow and J. Hanscoff, “Implementation of international data exchange networks,” in Computer Communications: Impacts and Implications, S. Winkler, Ed. Washington, D. C., 1972, pp. 181-184.
+16. A. McKenzie, “HOST/HOST protocol design considerations,” INWG Note 16, NIC 13879, Jan. 1973.
+17. R. E. Kahn, “Resource-sharing computer communication networks”, Proc. IEEE, vol. 60, pp. 1397-1407, Nov. 1972.
+18. Bolt, Beranek, and Newman, “Specification for the interconnection of a host and an IMP,” Bolt Beranek and Newman, Inc., Cambridge, Mass., BBN Rep. 1822 (revised), Apr. 1973.
+
+</div>
