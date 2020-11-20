@@ -410,3 +410,108 @@ The remarkable fact is that both molecules are perfectly stable, both behave as 
 </figure>
 
 Now we can give our 'second amendment', which is that transitions of this 'isomeric' kind are the only ones in which we shall be interested in our biological application. It was these we had in mind when explaining 'stability' on pp. 49-51. The 'quantum jump' which we mean is the transition from one relatively stable molecular configuration to another. The energy supply required for the transition (the quantity denoted by W) is not the actual level difference, but the step from the initial level up to the threshold (see the arrows in Fig. 12). Transitions with no threshold interposed between the initial and the final state are entirely uninteresting, and that not only in our biological application. They have actually nothing to contribute to the chemical stability of the molecule. Why? They have no lasting effect, they remain unnoticed. For, when they occur, they are almost immediately followed by a relapse so into the initial state, since nothing prevents their return.
+
+## Chapter 5: Delbruck's Model Discussed and Tested
+
+### The General Picture of the Hereditary Substance
+
+From these facts emerges a very simple answer to our question, namely: Are these structures, composed of comparatively few atoms, capable of withstanding for long periods the disturbing influence of heat motion to which the hereditary substance is continually exposed? We shall assume the structure of a gene to be that of a huge molecule, capable only of discontinuous change, which consists in a rearrangement of the atoms and leads to an isomeric molecule. The rearrangement may affect only a small region of the gene, and a vast number of different rearrangements may be possible. The energy thresholds, separating the actual configuration from any possible isomeric ones, have to be high enough (compared with the average heat energy of an atom) to make the change-over a rare event. These rare events we shall identify with spontaneous mutations.
+
+The later parts of this chapter will be devoted to putting this general picture of a gene and of mutation (due mainly to the German physicist M. Delbruck) to the test, by comparing it in detail with genetical facts. Before doing so, we may fittingly make some comment on the foundation and general nature of the theory.
+
+### The Uniqueness of the Picture
+
+Was it absolutely essential for the biological question to dig up the deepest roots and found the picture on quantum mechanics? The conjecture that a gene is a molecule is today, I dare say, a commonplace. Few biologists, whether familiar with quantum theory or not, would disagree with it. On p. 47 we ventured to put it into the mouth of a pre-quantum physicist, as the only reasonable explanation of the observed permanence. The subsequent considerations about isomerism, threshold energy, the paramount role of the ratio W:kT in determining the probability of an isomeric transition -- all that could very well be introduced on a purely empirical basis, at any rate without drawing on quantum theory. Why did I so strongly insist on the quantum-mechanical point of view, though I could not really make it clear in this little book and may well have bored many a reader?
+
+Quantum mechanics is the first theoretical aspect which accounts from first principles for all kinds of aggregates of atoms actually encountered in Nature. The Heitler-London bondage is a unique, singular feature of the theory, not invented for the purpose of explaining the chemical bond. It comes in quite by itself, in a highly interesting and puzzling manner, being forced upon us by entirely different considerations. It proves to correspond exactly with the observed chemical facts, and, as I said, it is a unique feature, well enough understood to tell with reasonable certainty that 'such a thing could not happen again' in the further development of quantum theory.
+
+Consequently, we may safely assert that there is no alternative to the molecular explanation of the hereditary substance. The physical aspect leaves no other possibility to account for itself and of its permanence. If the Delbruck picture should fail, we would have to give up further attempts. That is the first point I wish to make.
+
+### Some Traditional Misconceptions
+
+But it may be asked: Are there really no other endurable structures composed of atoms except molecules? Does not a gold coin, for example, buried in a tomb for a couple of thousand years, preserve the traits of the portrait stamped on it? It is true that the coin consists of an enormous number of atoms, but surely we are in this case not inclined to attribute the mere preservation of shape to the statistics of large numbers. The same remark applies to a neatly developed batch of crystals we find embedded in a rock, where it must have been for geological periods without changing.
+
+That leads us to the second point I want to elucidate. The cases of a molecule, a solid, a crystal are not really different. In the light of present knowledge they are virtually the same. Unfortunately, school teaching keeps up certain traditional views, which have been out of date for many years and which obscure the understanding of the actual state of affairs.
+
+Indeed, what we have learnt at school about molecules does not give the idea that they are more closely akin to the solid state than to the liquid or gaseous state. On the contrary, we have been taught to distinguish carefully between a physical change, such as melting or evaporation in which the molecules are preserved (so that, for example, alcohol, whether solid, liquid or a gas, always consists of the same molecules, $C_2H_6O$), and a chemical change, as, for example, the burning of alcohol, $C_2H_6O + 30_2 = 2C0_2 + 3H_2O$, where an alcohol molecule and three oxygen molecules undergo a rearrangement to form two molecules of carbon dioxide and three molecules of water.
+
+About crystals, we have been taught that they form three-fold periodic lattices, in which the structure of the single molecule is sometimes recognizable, as in the case of alcohol, and most organic compounds, while in other crystals, e.g. rock-salt (NaCl), NaCl molecules cannot be unequivocally delimited, because every Na atom is symmetrically surrounded by six Cl atoms, and vice versa, so that it is largely arbitrary what pairs, if any, are regarded as molecular partners.
+
+Finally, we have been told that a solid can be crystalline or not, and in the latter case we call it amorphous.
+
+### Different 'States' of Matter
+
+Now I would not go so far as to say that all these statements and distinctions are quite wrong. For practical purposes they are sometimes useful. But in the true aspect of the structure of matter the limits must be drawn in an entirely different way. The fundamental distinction is between the two lines of the following scheme of 'equations':
+
+* molecule = solid = crystal.
+* gas = liquid = amorphous.
+
+We must explain these statements briefly. The so-called amorphous solids are either not really amorphous or not really solid. In 'amorphous' charcoal fibre the rudimentary structure of the graphite crystal has been disclosed by X-rays. So charcoal is a solid, but also crystalline. Where we find no crystalline structure we have to regard the thing as a liquid with very high 'viscosity' (internal friction). Such a substance discloses by the absence of a well-defined melting temperature and of a latent heat of melting that it is not a true solid. When heated it softens gradually and eventually liquefies without discontinuity. (I remember that at the end of the first Great War we were given in Vienna an asphalt-like substance as a substitute for coffee. It was so hard that one had to use a chisel or a hatchet to break the little brick into pieces, when it would show a smooth, shell-like cleavage. Yet, given time, it would behave as a liquid, closely packing the lower part of a vessel in which you were unwise enough to leave it for a couple of days.).
+
+The continuity of the gaseous and liquid state is a well-known story. You can liquefy any gas without discontinuity by taking your way 'around' the so-called critical point. But we shall not enter on this here.
+
+### The Distinction That Really Matters
+
+We have thus justified everything in the above scheme, except the main point, namely, that we wish a molecule to be regarded as a solid = crystal.
+
+The reason for this is that the atoms forming a molecule, whether there be few or many of them, are united by forces of exactly the same nature as the numerous atoms which build up a true solid, a crystal. The molecule presents the same solidity of structure as a crystal. Remember that it is precisely this solidity on which we draw to account for the permanence of the gene! 
+
+The distinction that is really important in the structure of small matter is whether atoms are bound together by those 'solidifying' Heitler-London forces or whether they are not. In a solid and in a molecule they all are. In a gas of single atoms (as e.g. think mercury vapour) they are not. In a gas composed of molecules, only the atoms within every molecule are linked in this way.
+
+### The Aperiodic Solid
+
+A small molecule might be called 'the germ of a solid'. Starting from such a small solid germ, there seem to be two different ways of building up larger and larger associations. One is the comparatively dull way of repeating the same structure in three directions again and again. That is the way followed in a growing crystal. Once the periodicity is established, there is no definite limit to the size of the aggregate. The other way is that of building up a more and more extended aggregate without the dull device of repetition. That is the case of the more and more complicated organic molecule in which every atom, and every group of atoms, plays an individual role, not entirely equivalent to that of many others (as is the case in a periodic structure). We might quite properly call that an aperiodic crystal or solid and express our hypothesis by saying: We believe a gene -- or perhaps the whole chromosome fibre -- to be an aperiodic solid.
+
+### The Variety of Contents Compressed in the Miniature Code
+
+It has often been asked how this tiny speck of material, nucleus of the fertilized egg, could contain an elaborate code-script involving all the future development of the organism. A well-ordered association of atoms, endowed with sufficient resistivity to keep its order permanently, appears to be the only conceivable material structure that offers a variety of possible ('isomeric') arrangements, sufficiently large to embody a complicated system of 'determinations' within a small spatial boundary. Indeed, the number of atoms in such a structure need not be very large to produce an almost unlimited number of possible arrangements. For illustration, think of the Morse code. The two different signs of dot and dash in well-ordered groups of not more than four allow thirty different specifications. Now, if you allowed yourself the use of a third sign, in addition to dot and dash, and used groups of not more than ten, you could form 88,572 different 'letters'; with five signs and groups up to 25, the number is 372,529,029,846,191,405.
+
+It may be objected that the simile is deficient, because our two Morse signs may have different composition (e.g. `.--`and `..-`) and thus they are a bad analogue for isomerism. To remedy this defect, let us pick, from the third example, only the combinations of exactly 25 symbols and only those containing exactly 5 out of each of the supposed 5 types (5 dots, 5 dashes, etc.). A rough count gives you the number of combinations as more 62,330,000,000,000, where zeros on the right stand for figures which I have not taken the trouble to compute.
+
+Of course, in the actual case, by no means 'every' arrangement of the group of atoms will represent a possible molecule; moreover, it is not a question of a code to be adopted arbitrarily, for the code-script must itself be the operative factor bringing about the development. But, on the other hand, the number chosen in the example (25) is still very small, and we have envisaged only the simple arrangements in one line. What we wish to illustrate is simply that with the molecular picture of the gene it is no longer inconceivable that the miniature code should precisely correspond with a highly complicated and specified plan of development and should somehow contain the means to put it into operation.
+
+### Comparison With Facts: Degree of Stability; Discontinuity of Mutations
+
+Now let us at last proceed to compare the theoretical picture with the biological facts. The first question obviously is, whether it can really account for the high degree of permanence we observe. Are threshold values of the required amount -- high multiples of the average heat energy $kT$ -- reasonable, are they within the range known from ordinary chemistry? That question is trivial; it can be answered in the affirmative without inspecting tables. The molecules of any substance which the chemist is able to isolate at a given temperature must at that temperature have a lifetime of at least minutes. (That is putting it mildly; as a rule they have much more.) Thus the threshold values the chemist encounters are of necessity precisely of the order of magnitude required to account for practically any degree of permanence the biologist may encounter; for we recall from p. 51 that thresholds varying within a range of about 1:2 will account for lifetimes ranging from a fraction of a second to tens of thousands of years.
+
+But let me mention figures, for future reference. The ratios $W/kT$ mentioned by way of example on p. 51, viz. $W/kT = 30,50,60,$ producing lifetimes of 1/10 s, 16 months, 30,000 years, respectively, correspond at room temperature with threshold values of 0.9, 1.5, 1.8
+electron-volts.
+
+We must explain the unit 'electron-volt', which is rather convenient for the physicist, because it can be visualized. For example, the third number (1.8) means that an electron, accelerated by a voltage of about 2 volts, would have acquired just sufficient energy to effect the transition by impact. (For comparison, the battery of an ordinary pocket flash-light has 3 volts.).
+
+These considerations make it conceivable that an isomeric change of configuration in some part of our molecule is, produced by a chance fluctuation of the vibrational energy, can actually be a sufficiently rare event to be interpreted as a spontaneous mutation. Thus we account, by the very principles of quantum mechanics, for the most amazing fact about mutations, the fact by which they first attracted de Vrie's attention, namely, that they are 'jumping' variations, no intermediate forms occurring.
+
+### Stability of Naturally Selected Genes
+
+Having discovered the increase of the natural mutation rate by any kind of ionizing rays, one might think of attributing the natural rate to the radio-activity of the soil and air and to cosmic radiation. But a quantitative comparison with the X-ray results shows that the 'natural radiation' is much too weak and could account only for a small fraction of the natural rate. Granted that we have to account for the rare natural mutations by chance fluctuations of the heat motion, we must not be very much astonished that Nature has succeeded in making such a subtle choice of threshold values as is necessary to make mutation rare. For we have, earlier in these lectures, arrived at the conclusion that frequent mutations are detrimental to evolution. Individuals which, by mutation, acquire a gene configuration of insufficient stability, will have little chance of seeing their 'ultra-radical', rapidly mutating descendancy survive long. The species will be freed of them and will thus collect stable genes by natural selection.
+
+### The Sometimes Lower Stability of Mutants
+
+But, of course, as regards the mutants which occur in our breeding experiments and which we select, *qua* mutants, for studying their offspring, there is no reason to expect that they should all show that very high stability. For they have not yet been 'tried out' -- or, if they have, they have been 'rejected' in the wild breeds -- possibly for too high mutability. At any rate, we are not at all astonished to learn that actually some of these mutants do show a much higher mutability than the normal 'wild' genes.
+
+### Temperature Influences Unstable Genes Less Than Stable Ones
+
+This enables us to test our mutability formula, which was
+
+$$t=\tau e^{W/kT}$$
+
+(It will be remembered that t is the time of expectation for a mutation with threshold energy W.) We ask: How does $t$ change with the temperature? We easily find from the preceding formula in good approximation the ratio of the value of $t$ at temperature $T + 10$ to that at temperature $T$.
+
+$$ \frac{t_{T+10}}{t_{T}}= e^{-10W/kT^2} $$
+
+The exponent being now negative, the ratio is, naturally, there smaller than 1. The time of expectation is diminished by raising the temperature, the mutability is increased. Now that can be tested and has been tested with the fly *Drosophila* in the range of temperature which the insects will stand. The result was, at first sight, surprising. The *low* mutability of wild genes was distinctly increased, but the comparatively *high* mutability occurring with some of the already mutated genes was not, or at any rate was much less, increased. That is just what we expect on comparing our two formulae. A large value of $W/kT$, which according to the first formula is required to make $t$ large (stable gene), will, according to the second one, make for a small value of the ratio computed there, that is to say for a considerable increase of mutability with temperature. (The actual values of the ratio seem to lie between about 1/2 and 1/5. The reciprocal, 2.5, is what in an ordinary chemical reaction we call the van't Hoff factor.)
+
+### How X-Rays Produce Mutation
+
+Turning now to the X-ray-induced mutation rate, we have already inferred from the breeding experiments, first (from the proportionality of mutation rate, and dosage), that some single event produces the mutation; secondly (from quantitative results and from the fact that the mutation rate is determined by the integrated ionization density and independent of the wave-length), that this single event must be an ionization, or similar process, which has to take place inside a certain volume of only about 10 atomic-distances-cubed, in order to produce a specified mutation. According to our picture, the energy for overcoming the threshold must obviously be furnished by that explosion-like process, ionization or excitation. I call it explosion-like, because the energy spent in one ionization (spent, incidentally, not by the X-ray itself, but by a secondary electron it produces) is well known and has the comparatively enormous amount of 30 electron-volts. It is bound to be turned into enormously increased heat motion around the point where it is discharged and to spread from there in the form of a 'heat wave', a wave of intense oscillations of the atoms. That this heat wave should still be able to furnish the required threshold energy of 1 or 2 electron-volts at an average 'range of action' of about ten atomic distances, is not inconceivable, though it may well be that an unprejudiced physicist might have anticipated a slightly lower range of action. That in many cases the effect of the explosion will not be an orderly isomeric transition but a lesion of the chromosome, a lesion that becomes lethal when, by ingenious crossings, the uninjured partner (the corresponding chromosome of the second set) is removed and replaced by a partner whose corresponding gene is known to be itself morbid -- all that is absolutely to be expected and it is exactly what is observed.
+
+### Their Efficiency Does Not Depend on Spontaneous Mutability
+
+Quite a few other features are, if not predictable from the picture, easily understood from it. For example, an unstable mutant does not on the average show a much higher X-ray mutation rate than a stable one. Now, with an explosion furnishing an energy of 30 electron-volts you would certainly not expect that it makes a lot of difference whether the required threshold energy is a little larger or a little smaller, say 1 or 1.3 volts.
+
+
+### Reversible Mutations
+
+In some cases a transition was studied in both directions, say from a certain 'wild' gene to a specified mutant and back from that mutant to the wild gene. In such cases the natural mutation rate is sometimes nearly the same, sometimes very different. At first sight one is puzzled, because the threshold to be overcome seems to be the same in both cases. But, of course, it need not be, because it has to be measured from the energy level of the starting configuration, and that may be different for the wild and the mutated gene. (See Fig. 12 on p. 54, where '1' might refer to the wild allele, '2' to the mutant, whose lower stability would be indicated by the shorter arrow.)
+
+On the whole, I think, Delbruck's 'model' stands the tests fairly well and we are justified in using it in further considerations.
