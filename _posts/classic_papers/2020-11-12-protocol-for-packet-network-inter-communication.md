@@ -1,13 +1,16 @@
 ---
 layout: post
 title: "A Protocol For Packet Network Intercommunication"
-author: "Vinton G. Cerf And Robert E. Icahn"
+author: "Vinton G. Cerf And Robert E. Kahn"
 category: classic_papers
 description: 
 published: 1974-05-01
 twitter_image: https://images.livemint.com/rf/Image-621x414/LiveMint/Period1/2014/01/02/Photos/Vinton-Cerf_Robert-Kahn2--621x414.jpg
 ---
 
+<div class="small">
+This paper published originally in *IEEE Transactions on Communications* in 1974 setup the stage for internet. The protocol described here, TCP/IP, is basically how internet works to the day. Work around this paper earned the authors a Turing award. The papers remains highly relevant and readable to the day. Yellow highlights/annotations are my own. You can <a onclick="disableHighlight()" href='#'>disable them.</a>
+</div>
 
 ## Abstract
 
@@ -50,7 +53,7 @@ may have no direct counterpart in an individual network and which strongly
 influence the way in which internetwork communication can take place.
 
 <span class="mark">A typical packet switching network is composed of a set
-of computer resources called  hosts*, a set of one or more *packet
+of computer resources called  *hosts*, a set of one or more *packet
 switches*, and a collection of communication media that interconnect the
 packet switches. Within each host, we assume that there exist *processes*
 which must communicate with processes in their own or other hosts.</span>
@@ -324,20 +327,20 @@ should the source TCP format segments destined for the same destination TCP?
 We consider two cases.
 
 
-<mark>Case 1): If we take the position that segment boundaries are immaterial and
+Case 1): If we take the position that segment boundaries are immaterial and
 that a byte stream can be formed of segments destined for the same TCP, then
 we may gain improved transmission efficiency and resource sharing by
-arbitrarily parceling the stream into packets</mark>, permitting many segments to
+arbitrarily parceling the stream into packets, permitting many segments to
 share a single internetwork packet header. However, this position results in
 the need to reconstruct exactly, and in order, the stream of text bytes
 produced by the source TCP. At the destination, this stream must first be
 parsed into segments and these in turn must be used to reconstruct messages
 for delivery to the appropriate processes.
 
-<mark>There are fundamental problems associated with this strategy due to the
+There are fundamental problems associated with this strategy due to the
 possible arrival of packets out of order at the destination. The most
 critical problem appears to be the amount of interference that processes
-sharing the same TCP-TCP byte stream may cause among themselves.</mark> This is
+sharing the same TCP-TCP byte stream may cause among themselves. This is
 especially so at the receiving end. First, the TCP may be put to some
 trouble to parse the stream back into segments and then distribute them to
 buffers where messages are reassembled. If it is not readily apparent that
@@ -362,8 +365,8 @@ extra machinery to handle flow control on a host-to-host basis, since there
 must also be some provision for process level control, and this machinery is
 little used since the probability is small that within a given Host, two
 processes will be coincidentally scheduled to send messages to the same
-destination Host. For this reason, <span class="mark">we select the method of Case 2) as a part
-of the *internetwork transmission protocol*.</span>
+destination Host. For this reason, we select the method of Case 2) as a part
+of the *internetwork transmission protocol*.
 
 ## Address Formats
 
@@ -540,11 +543,21 @@ If there are no more input buffers available to the TCP for temporary queuing of
 
 ## TCP/Process Communication
 
-In order to send a message, a process sets up its text in a buffer region in its own address space, inserts the requisite control information (described in the following list) in a transmit control block (TCB) and passes control to the TCP. The exact form of a TCB is not specified here, but it might take the form of a passed pointer, a pseudointerrupt, or various other forms. To receive a message in its address space, a process sets up a receive buffer, inserts the requisite control information in a receive control block (RCB) and again passes control to the TCP.
+<mark>In order to send a message, a process sets up its text in a buffer region in its own address space, inserts the requisite control information (described in the following list) in a transmit control block (TCB) and passes control to the TCP.</mark> The exact form of a TCB is not specified here, but it might take the form of a passed pointer, a pseudointerrupt, or various other forms. To receive a message in its address space, a process sets up a receive buffer, inserts the requisite control information in a receive control block (RCB) and again passes control to the TCP.
 
 In some simple systems, the buffer space may in fact be provided by the TCP. For simplicity we assume that a ring buffer is used by each process, but other structures (e.g., buffer chaining) are not ruled out.
 
 A possible format for the TCB is shown in Fig. 11. The TCB contains information necessary to allow the TCP to extract and send the process data. Some of the information might be implicitly known, but we are not concerned with that level of detail. The various fields in the TCB are described as follows.
+
+
+<figure>
+<label for="mn-fig-11" class="margin-toggle">⊕</label><input type="checkbox" id="mn-fig-11" class="margin-toggle">
+<span class="marginnote">
+ Fig. 11. Conceptual TCB format.
+</span>
+<img src='/assets/images/classic_papers/tcp_ip/fig11.png'>
+</figure>
+
 
 1. *Source Address:* This is the full net/host/TCP/port address of the transmitter.
 2. *Destination Address:* This is the full net/host/TCP/port of the receiver.
@@ -561,13 +574,22 @@ The read and write positions move circularly around the transmit buffer, with th
 
 he next packet sequence number should be constrained to be less than or equal to the sum of the current acknowledgment and the window fields. In any event, the next sequence number should not exceed the sum of the current acknowledgment and half of the maximum possible sequence number (to avoid confusing the receiver’s duplicate detection algorithm). A possible buffer layout is shown in Fig. 12.
 
+<figure>
+<label for="mn-fig-12" class="margin-toggle">⊕</label><input type="checkbox" id="mn-fig-12" class="margin-toggle">
+<span class="marginnote">
+ Fig. 12. Transmit buffer layout.
+</span>
+<img src='/assets/images/classic_papers/tcp_ip/fig12.png'>
+</figure>
+
+
 The RCB is substantially the same, except that the end read field is replaced by a partial segment check-sum register which permits the receiving TCP to compute and remember partial check sums in the event that a segment arrives in several packets. When the final packet of the segment arrives, the TCP can verify the check sum and if successful, acknowledge the segment.
 
 ## Connections and Associations
 
 Much of the thinking about process-to-process communication in paket switched networks has been influenced by the ubiquitous telephone system. The host-host protocol for the ARPANET deals explicitly with the opening and closing of simplex connections between processes [9],[10]. Evidence has been presented that message-based "connection-free" protocols can be constructed [12], and this leads us to carefully examine the notion of a connection.
 
-The term *connection* has a wide variety of meanings. It can refer to a physical or logical path between two entities, it can refer to the flow over the path, it can inferentially refer to an action associated with the setting up of a path, or it can refer to an association between two or more entities, with or without regard to any path between them. In this paper, we do not explicitly reject the term connection, since it is in such widespread use, and does connote a meaningful relation, but consider it exclusively in the sense of an association between two or more entities without regard to a path. To be more precise about our intent, we shall define the relationship between two or more ports that are in communication, or are prepared to communicate to be an *association*. Ports that are associated with each other are called *associates*.
+The term *connection* has a wide variety of meanings. It can refer to a physical or logical path between two entities, it can refer to the flow over the path, it can inferentially refer to an action associated with the setting up of a path, or it can refer to an association between two or more entities, with or without regard to any path between them. In this paper, we do not explicitly reject the term connection, since it is in such widespread use, and does connote a meaningful relation, but consider it exclusively in the sense of an association between two or more entities without regard to a path. To be more precise about our intent, <span class="mark">we shall define the relationship between two or more ports that are in communication, or are prepared to communicate to be an *association*. Ports that are associated with each other are called *associates*.</span>
 
 It is clear that for any communication to take place between two processes, one must be able to address the other. The two important cases here are that the destination port may have a global and unchanging address or that it may be globally unique but dynamically reassigned. While in either case the sender may have to learn the destination address, given the destination name, only in the second instance is there a requirement for learning the address from the destination (or its representative) each time an association is desired.
 
@@ -575,13 +597,15 @@ Only after the source has learned how to address the destination can an associat
 
 Note that we have not said anything about a path, nor anything which implies that either end be aware of the condition of the other. Only when both partners are prepared to communicate with each other has an association occurred, and it is possible that neither partner may be able to verify that an association exists until some data flows between them.
 
-## Connection-Free Protocols With Associations
+## Connection-Free Protocols with Associations
 
-In the ARPANET, the interface message processors (IMP’s) do not have to open and close connections from source to destination. The reason for this is that connections are, in effect, always open, since the address of every source and destination is never5 reassigned. When the name and the place are static and unchanging, it is only necessary to label a packet with source and destination to transmit it through the network. In our parlance, every source and destination forms an association.
+In the ARPANET, the interface message processors (IMP’s) do not have to open and close connections from source to destination. The reason for this is that connections are, in effect, always open, since the address of every source and destination is never<label for="sn-5" class="margin-toggle sidenote-number"></label><input type="checkbox" id="sn-5" class="margin-toggle"/>
+<span class="sidenote">
+Unless the IMP is physically moved to another site, or the HOST is connected to a different IMP.</span> reassigned. When the name and the place are static and unchanging, it is only necessary to label a packet with source and destination to transmit it through the network. In our parlance, every source and destination forms an association.
 
 In the case of processes, however, we find that port addresses are continually being used and reused. Some ever present processes could be assigned fixed addresses which do not change (e.g., the logger process). If we supposed, however, that every TCP had an infinite supply of port addresses so that no old address would ever be reused, then any dynamically created port would be assigned the next unused address. In such an environment, there could never be any confusion by source and destination TCP as to the intended recipient or implied source of each message, and all ports would be associates.
 
-Unfortunately, TCP’s (or more properly, operating systems) tend not to have an infinite supply of internal port addresses. These internal addresses are reassigned after the demise of each port. Walden [12] suggests that a set of unique uniform external port addresses could be supplied by a central registry. A newly created port could apply to the central registry for an address which the central registry would guarantee to be unused by any HOST system in the network. Each TCP could maintain tables matching external names with internal ones, and use the external ones for communication with other processes. This idea violates the premise that interprocess communication should not require centralized control. One would have to extend the central registry service to include all HOST’S in all the interconnected networks to apply this idea to our situation, and we therefore do not attempt to adopt it.
+Unfortunately, TCP’s (or more properly, operating systems) tend not to have an infinite supply of internal port addresses. These internal addresses are reassigned after the demise of each port. Walden [12] suggests that a set of unique uniform external port addresses could be supplied by a central registry. A newly created port could apply to the central registry for an address which the central registry would guarantee to be unused by any HOST system in the network. Each TCP could maintain tables matching external names with internal ones, and use the external ones for communication with other processes. This idea violates the premise that interprocess communication should not require centralized control. One would have to extend the central registry service to include all hosts in all the interconnected networks to apply this idea to our situation, and we therefore do not attempt to adopt it.
 
 Let us consider the situation from the standpoint of the TCP. In order to send or receive data for a given port, the TCP needs to set up a TCB and RCB and initialize the window size and left window edge for both. On the receive side, this task might even be delayed until the first packet destined for a given port arrives. By convention, the first packet should be marked so that the receiver will synchronize to the received sequence number.
 
@@ -590,32 +614,33 @@ On the send side, the first request to transmit could cause a TCB to be set up w
 1. we insist that the first packet be a complete segment;
 2. an acknowledgment can be sent for the first packet (even if not a segment, as long as the acknowledgment specifies the next sequence number such that the source also understands that no bytes have been accepted).
 
-It is apparent, therefore, that the synchronizing of window size and left window edge can be accomplished without what would ordinarily be called a connection setup.
+<mark>It is apparent, therefore, that the synchronizing of window size and left window edge can be accomplished without what would ordinarily be called a connection setup.</mark>
 
 The first packet referencing a newly created RCB sent from one associate to another can be marked with a bit which requests that the receiver synchronize his left window edge with the sequence number of the arriving packet (see SYN bit in Fig. 8). The TCP can examine the source and destination port addresses in the packet and in the RCB to decide whether to accept or ignore the request.
 
-Provision should be made for a destination process to specify that it is willing to LISTEN to a specific port or “any” port. This last idea permits processes such as the logger process to accept data arriving from unspecified sources. This is purely a host matter, however.
+<mark>Provision should be made for a destination process to specify that it is willing to listen to a specific port or “any” port.</mark> This last idea permits processes such as the logger process to accept data arriving from unspecified sources. This is purely a host matter, however.
 
 
 The initial packet may contain data which can be stored or discarded by the destination, depending on the availability of destination buffer space at the time. In the other direction, acknowledgment is returned for receipt of data which also specifies the receiver’s window size.
 
-If the receiving TCP should want to reject the synchronization request, it merely transmits an acknowledgment carrying a release (REL) bit (see Fig. 8) indicating that the destination port address is unknown or inaccessible. The sending HOST waits for the acknowledgment (after accepting or rejecting the synchronization request) before sending the next message or segment. This rejection is quite different from a negative data acknowledgment. We do not have explicit negative acknowledgments. If no acknowledgment is returned, the sending HOST may retransmit without introducing confusion if, for example, the left window edge is not changed on the retransmission.
+If the receiving TCP should want to reject the synchronization request, it merely transmits an acknowledgment carrying a release (REL) bit (see Fig. 8) indicating that the destination port address is unknown or inaccessible. The sending host waits for the acknowledgment (after accepting or rejecting the synchronization request) before sending the next message or segment. This rejection is quite different from a negative data acknowledgment. We do not have explicit negative acknowledgments. If no acknowledgment is returned, the sending host may retransmit without introducing confusion if, for example, the left window edge is not changed on the retransmission.
 
-Because messages may be broken up into many packets for transmission or during transmission, it will be necessary to ignore the REL flag except in the case that the EM flag is also set. This could be accomplished either by the TCP or by the GATEWAY which could reset the flag on all but the packet containing the set EM flag (see Fig. 9).
+Because messages may be broken up into many packets for transmission or during transmission, it will be necessary to ignore the REL flag except in the case that the EM flag is also set. This could be accomplished either by the TCP or by the gateway which could reset the flag on all but the packet containing the set EM flag (see Fig. 9).
 
 At the end of an association, the TCP sends a packet with ES, EM, and REL flags set. The packet sequence number scheme will alert the receiving TCP if there are still outstanding packets in transit which have not yet arrived, so a premature dissociation cannot occur.
 
-To assure that both TCP’s are aware that the association has ended, we insist that the receiving TCP respond to the REL by sending a REL acknowledgment of its own.
+<Mark>To assure that both TCP’s are aware that the association has ended, we insist that the receiving TCP respond to the REL by sending a REL acknowledgment of its own.</mark>
 
-Suppose now that a process sends a single message to an associate including a REL along with the data. Assuming an RCB has been prepared for the receiving TCP to accept the data, the TCP will accumulate the incoming packets until the one marked ES, EM, REL arrives, at which point a REL is returned to the sender. The association is thereby terminated and the appropriate TCB and RCB are destroyed. If the first packet of a message contains a SYN request bit and the last packet contains ES, EM and REL bits, then data will flow “one message at a time.” This mode is very similar to the scheme described by Walden [12], since each succeeding message can only be accepted at the receiver after a new LISTEN (like Walden’s RECEIVE) command is issued by the receiving process to its serving TCP. Note that only if the acknowledgment is received by the sender can the association be terminated properly. It has been pointed out6 that the receiver may erroneously accept duplicate transmissions if the sender does not receive the acknowledgment. This may happen if the sender transmits a duplicate message with the SYN and REL bits set and the destination has already destroyed any record of the previous transmission. One way of preventing this problem is to destroy the record of the association at the destination only after some known and suitably chosen timeout. However, this implies that a new association with the same source and destination port identifiers could not be established until this timeout had expired. This problem can occur even with sequences of messages whose SYN and REL bits are separated into different internetwork packets. We recognize that this problem must be solved, but do not go into further detail here.
+Suppose now that a process sends a single message to an associate including a REL along with the data. Assuming an RCB has been prepared for the receiving TCP to accept the data, the TCP will accumulate the incoming packets until the one marked ES, EM, REL arrives, at which point a REL is returned to the sender. The association is thereby terminated and the appropriate TCB and RCB are destroyed. If the first packet of a message contains a SYN request bit and the last packet contains ES, EM and REL bits, then data will flow “one message at a time.” This mode is very similar to the scheme described by Walden [12], since each succeeding message can only be accepted at the receiver after a new listen (like Walden’s receive) command is issued by the receiving process to its serving TCP. Note that only if the acknowledgment is received by the sender can the association be terminated properly. It has been pointed out<label for="sn-6" class="margin-toggle sidenote-number"></label><input type="checkbox" id="sn-6" class="margin-toggle"/>
+<span class="sidenote">S. Crocker of APRA/IPT.</span> that the receiver may erroneously accept duplicate transmissions if the sender does not receive the acknowledgment. This may happen if the sender transmits a duplicate message with the SYN and REL bits set and the destination has already destroyed any record of the previous transmission. One way of preventing this problem is to destroy the record of the association at the destination only after some known and suitably chosen timeout. However, this implies that a new association with the same source and destination port identifiers could not be established until this timeout had expired. This problem can occur even with sequences of messages whose SYN and REL bits are separated into different internetwork packets. We recognize that this problem must be solved, but do not go into further detail here.
 
 Alternatively, both processes can send one message, causing the respective TCP’s to allocate RCB/TCB pairs at both ends which rendezvous with the exchanged data and then disappear. If the overhead of creating and destroying RCB’s and TCB’s is small, such a protocol might be adequate for most low-bandwidth uses. This idea might also form the basis for a relatively secure transmission system. If the communicating processes agree to change their external port addresses in some way known only to each other (i.e., pseudorandom), then each message will appear to the outside world as if it is part of a different association message stream. Even if the data is intercepted by a third party, he will have no way of knowing that the data should in fact be considered part of a sequence of messages.
 
-We have described the way in which processes develop associations with each other, thereby becoming associates for possible exchange of data. These associations need not involve the transmission of data prior to their formation and indeed two associates need not be able to determine that they are associates until they attempt to communicate.
+<mark>We have described the way in which processes develop associations with each other, thereby becoming associates for possible exchange of data. These associations need not involve the transmission of data prior to their formation and indeed two associates need not be able to determine that they are associates until they attempt to communicate.</mark>
 
 ## Conclusions
 
-We have discussed some fundamental issues related to the interconnection of packet switching networks. In particular, we have described a simple but very powerful and flexible protocol which provides for variation in individual network packet sizes, transmission failures, sequencing, flow control, and the creation and destruction of process- to-process associations. We have considered some of the implementation issues that arise and found that the proposed protocol is implementable by HOST’S of widely varying capacity.
+We have discussed some fundamental issues related to the interconnection of packet switching networks. In particular, we have described a simple but very powerful and flexible protocol which provides for variation in individual network packet sizes, transmission failures, sequencing, flow control, and the creation and destruction of process- to-process associations. We have considered some of the implementation issues that arise and found that the proposed protocol is implementable by hosts of widely varying capacity.
 
 The next important step is to produce a detailed specification of the protocol so that some initial experiments with it can be performed. These experiments are needed to determine some of the operational parameters (e.g., how often and how far out of order do packets actually arrive; what sort of delay is there between segment acknowledgments; what should retransmission timeouts be?) of the proposed protocol.
 
