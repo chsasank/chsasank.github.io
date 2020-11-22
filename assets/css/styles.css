@@ -38,6 +38,7 @@ pre {
   padding-top: 1.25rem;
   padding-bottom: 1.25rem;
   background-color: #f8f8f8;
+  color: #111;
   overflow: hidden;
 }
 
@@ -200,6 +201,7 @@ blockquote p {
 
 mark, span.mark {
   background: rgba(255, 255, 0, 0.2);
+  color: inherit;
 }
 
 .MathJax_Display {
@@ -209,4 +211,17 @@ mark, span.mark {
 ul.archive {
   line-height: 2em;
   font-size: 1.5em;
+}
+
+a {
+  text-shadow: none !important;
+}
+
+img {
+  background: #fffff8;
+}
+
+.dark-mode {
+  background: #121212;
+  color: #eee;
 }

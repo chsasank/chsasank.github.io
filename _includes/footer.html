@@ -15,14 +15,18 @@
 	</script>
 	<script type="text/javascript">
 		function disableHighlight() {
-		const style = document.createElement('style');
-		style.textContent = `
-			mark, span.mark {
-				background: none;
-			}`;
-		document.head.append(style);
-		console.log('highlight disabled')
-	}
+			const style = document.createElement('style');
+			style.textContent = `
+				mark, span.mark {
+					background: none;
+				}`;
+			document.head.append(style);
+			console.log('highlight disabled')
+		}
+		function darkMode() {
+			var element = document.body;
+			element.classList.toggle("dark-mode");
+		}
 	</script>
    <section class="copyright">All content copyright <a href="mailto:{{ site.email}}">{{ site.name }}</a> &copy; {{ site.time | date: '%Y' }} &bull; All rights reserved.</section>
 </footer>
