@@ -3,7 +3,7 @@ layout: post
 title: "A Protocol For Packet Network Intercommunication"
 author: "Vinton G. Cerf And Robert E. Kahn"
 category: classic_papers
-description: 
+description: "A protocol that supports the sharing of resources that exist in different packet switching networks is presented. The protocol provides for variation in individual network packet sizes, transmission failures, sequencing, flow control, end-to-end error checking, and the creation and destruction of logical process-to-process connections. Some implementation issues are considered, and problems such as internetwork routing, accounting, and timeouts are exposed. "
 published: 1974-05-01
 twitter_image: https://images.livemint.com/rf/Image-621x414/LiveMint/Period1/2014/01/02/Photos/Vinton-Cerf_Robert-Kahn2--621x414.jpg
 ---
