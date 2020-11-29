@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "A Dynamic Theory of Organizational Knowledge Creation"
-author: "Ikujiro Nonaka"
+title: "Dynamic Capabilities and Strategic Management"
+author: "David J. Teece, Gary Pisano and Amy Shuen"
 category: classic_papers
 description: 
 published: 1997-02-01
@@ -132,4 +132,39 @@ The notion that competitive advantage requires both the exploitation of existing
 See, for example, Iansiti and Clark (1994) and Henderson (1994).</span> These issues are intimately tied to the firm's business processes, market positions, and expansion paths. Several writers have recently offered insights and evidence on how firms can develop their capability to adapt and even capitalize on rapidly changing environments.<label for="sn-21" class="margin-toggle sidenote-number"></label><input type="checkbox" id="sn-21" class="margin-toggle"/>
 <span class="sidenote">
 See Hayes et al. (1988), Prahalad and Hamel (1990), Dierickx and Cool (1989), Chandler (1990), and Teece (1993).</span> The dynamic capabilities approach seeks to provide a coherent framework which can both integrate existing conceptual and empirical knowledge, and facilitate prescription. In doing so, it builds upon the theoretical foundations provided by Schumpeter (1934), Penrose (1959), Williamson (1975, 1985), Barney (1986), Nelson and Winter (1982), Teece (1988), and Teece et al. (1994).
+
+## Toward a Capabilities Dynamic Framework
+
+### Terminology
+
+In order to facilitate theory development and intellectual dialogue, some acceptable definitions are desirable. We propose the following.
+
+*Factors of production*
+
+These are 'undifferentiated' inputs available in disaggregate form in factor markets. By undifferentiated we mean that they lack a firm-specific component. Land, unskilled labor, and capital are typical examples. Some factors may be available for the taking, such as public knowledge. In the language of Arrow, such resources must be 'non-fugitive.'<label for="sn-22" class="margin-toggle sidenote-number"></label><input type="checkbox" id="sn-22" class="margin-toggle"/>
+<span class="sidenote">
+Arrow (1996) defines fugitive resources as ones that can move cheaply amongst individuals and firms.</span> Property rights are usually well defined for factors of production.
+
+*Resources*<label for="sn-23" class="margin-toggle sidenote-number"></label><input type="checkbox" id="sn-23" class="margin-toggle"/>
+<span class="sidenote">
+We do not like the term 'resource' and believe it is misleading. We prefer to use the term firm-specific asset. We use it here to try and maintain links to the literature on the resource-based approach which we believe is important.</span>
+
+Resources are firm-specific assets that are difficult if not impossible to imitate. Trade secrets and certain specialized production facilities and engineering experience are examples. Such assets are difficult to transfer among firms because of transactions costs and transfer costs, and because the assets may contain tacit knowledge.
+
+*Organizational routines/competences*
+
+When firm-specific assets are assembled in integrated clusters spanning individuals and groups so that they enable distinctive activities to be performed, these activities constitute organizational routines and processes. Examples include quality, miniaturization, and systems integration. Such competences are typically viable across multiple product lines, and may extend outside the firm to embrace alliance partners.
+
+*Core competences*
+
+We define those competences that define a firm's fundamental business as core. Core competences must accordingly be derived by looking across the range of a firm's (and its competitors) products and services.<label for="sn-24" class="margin-toggle sidenote-number"></label><input type="checkbox" id="sn-24" class="margin-toggle"/>
+<span class="sidenote">Thus Eastman Kodak's core competence might be considered imaging, IBM's might be considered integrated data processing and service, and Motorola's untethered communications.</span> The value of core competences can be enhanced by combination with the appropriate complementary assets. The degree to which a core competence is distinctive depends on how well endowed the firm is relative to its competitors, and on how difficult it is for competitors to replicate its competences.
+
+*Dynamic capabilities*
+
+We define dynamic capabilities as the firm's ability to integrate, build, and reconfigure internal and external competences to address rapidly changing environments. Dynamic capabilities thus reflect an organization's ability to achieve new and innovative forms of competitive advantage given path dependencies and market positions (Leonard-Barton, 1992).
+
+*Products*
+
+End products are the final goods and services produced by the firm based on utilizing the competences that it possesses. The performance (price, quality, etc.) of a firm's products relative to its competitors at any point in time will depend upon its competences (which over time depend on its capabilities).
 
