@@ -27,11 +27,11 @@ Another three-chain structure has also been suggested by Fraser (in the press). 
 
 The structure is an open one, and its water content is rather high. At lower water contents we would expect the bases to tilt so that the structure could become more compact.
 
-The novel feature of the structure is the manner in the which the two chains are held together by the purine and pyrimidine bases. The planes of the bases are perpendicular to the fibre axis. They are joined together in pairs, a single base from one chain being hydrogen-bonded to a single base from the other chain, so that the two lie side by side with identical z-co-ordinates. One of the pair must be a purine and the other a pyrimidine for bonding to occur. The hydrogen bonds are made as follows: purine position 1 to pyrimidine position 1; purine position 6 to pyrimidine position 6.
+<span class="mark">The novel feature of the structure is the manner in the which the two chains are held together by the purine and pyrimidine bases. The planes of the bases are perpendicular to the fibre axis.</span> They are joined together in pairs, a single base from one chain being hydrogen-bonded to a single base from the other chain, so that the two lie side by side with identical z-co-ordinates. One of the pair must be a purine and the other a pyrimidine for bonding to occur. The hydrogen bonds are made as follows: purine position 1 to pyrimidine position 1; purine position 6 to pyrimidine position 6.
 
 If it is assumed that the bases only occur in the structure in the most plausible tautomeric forms (that is, with the keto rather than the enol configurations) it is found that only specific pairs of the bases can bond together. These pairs are adenine (purine) with thymine (pyrimidine) and guanine (purine) and cytosine (pyrimidine).
 
-In other words, if an adenine forms one member of a pair, on either chain, then on these assumptions the other member must be thymine; similarly for guanine and cytosine. The sequence of bases on a single chain does not appear to be restricted in any way. However, if only specific pairs of bases can be formed, it follows that if the sequence of bases on one chain is given, then the sequence on the other chain is automatically determined.
+<span class="mark">In other words, if an adenine forms one member of a pair, on either chain, then on these assumptions the other member must be thymine; similarly for guanine and cytosine.</span> The sequence of bases on a single chain does not appear to be restricted in any way. However, if only specific pairs of bases can be formed, it follows that if the sequence of bases on one chain is given, then the sequence on the other chain is automatically determined.
 
 It has been found experimentally [3, 4] that the ratio of the amounts of adenine to thymine, and the ratio of guanine to cytosine, are always very close to unity for deoxyribose nucleic acid.
 
@@ -39,8 +39,17 @@ It is probably impossible to build this structure with a ribose sugar in place o
 
 The previously published X-ray data [5, 6] on deoxyribose nucleic acid are insufficient for a rigorous test of our structure. So far as we can tell, it is roughly compatible with the experimental data, but it must be regarded as unproved until it has been checked against more exact results. Some of these are given in the following communications. We were not aware of the details of the results presented there when we devised our structure, which rests mainly though not entirely on published experimental data and stereochemical arguments.
 
-It has not escaped our notice that the specific pairing we have postulated immediately suggests a possible copying mechanism for the genetic material.
+<span class="mark">It has not escaped our notice that the specific pairing we have postulated immediately suggests a possible copying mechanism for the genetic material.</span>
 
 Full details of the structure, including the conditions assumed in building it, together with a set of co-ordinates for the atoms, will be published elsewhere.
 
 We are much indebted to Dr. Jerry Donohue for constant advice and criticism, especially on interatomic distances. We have also been stimulated by a knowledge of the general nature of the unpublished experimental results and ideas of Dr. M.H.F. Wilkins, Dr. R.E. Franklin and their co-workers at King's college, London. One of us (J.D.W) has been aided by a fellowship from the National Foundation for Infantile Paralysis.
+
+References:
+
+1. Pauling, L., and Corey, R. B., Nature, 171, 346 (1953); Proc. U.S. Nat. Acad. Sci., 39, 84 (1953).
+2. Furberg, S., Acta Chem. Scand., 6, 634 (1952).
+3. Chargaff, E., for references see Zamenhof, S., Brawerman, G., and Chargaff, E., Biochim. et Biophys. Acta, 9, 402 (1952).
+4. Wyatt, G. R., J. Gen. Physiol., 36, 201 (1952).
+5. Astbury, W. T., Symp. Soc. Exp. Boil. 1, Nucleic Acid, 66 (Camb. Univ. Press, 1947).
+6. Wilkins, M. H. F., and Randall, J. T., Biochim. et Biophys. Acta, 10, 192 (1953).
