@@ -5,8 +5,12 @@ author: "Duncan J. Watts and Steven H. Strogatz"
 category: classic_papers
 description: "Networks of coupled dynamical systems have been used to model biological oscillators, Josephson junction arrays, excitable media, neural networks, spatial games, genetic control networks and many other self-organizing systems. Ordinarily,the connection topology is assumed to be either completely regular or completely random. But many biological, technological and social networks lie somewhere between these two extremes."
 published: 1998-06-04
-twitter_image: 
+twitter_image: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/Small-world-network-example.png/440px-Small-world-network-example.png"
 ---
+
+<div class="small">
+Have you heard of 6-degrees of separation Or Erdos' number? Have you ever meet a stranger and realize you both actually have a mutual friend? This is the small-world phenomenon. It has been observed in wide varieties of natural and artificial networks including internet, genes and neural networks. This paper, cited >40k times, rekindled interest in the small-world phenomenon. It shows a simple construction to demonstrate the phenomenon and shows how computation happens remarkably quickly on the small-world networks. In particular, authors show how a infectious disease (like COVID-19) spreads extremely quickly on these networks. Yellow highlights/annotations are my own. You can <a onclick="disableHighlight()" href='#'>disable them.</a>
+</div>
 
 ## Abstract
 
