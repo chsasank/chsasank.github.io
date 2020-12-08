@@ -9,7 +9,8 @@ twitter_image: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/Small-
 ---
 
 <div class="small">
-Have you heard of 6-degrees of separation Or Erdos' number? Have you ever meet a stranger and realize you both actually have a mutual friend? This is the small-world phenomenon. It has been observed in wide varieties of natural and artificial networks including internet, genes and neural networks. This paper, cited >40k times, rekindled interest in the small-world phenomenon. It shows a simple construction to demonstrate the phenomenon and shows how computation happens remarkably quickly on the small-world networks. In particular, authors show how a infectious disease (like COVID-19) spreads extremely quickly on these networks. Yellow highlights/annotations are my own. You can <a onclick="disableHighlight()" href='#'>disable them.</a>
+Have you heard of 6-degrees of separation Or Erdos’ number? Have you ever meet a stranger and realize you both actually have a mutual friend? This is the small-world phenomenon. It has been observed in wide varieties of natural and artificial networks including internet, genes and neural networks. This paper, cited >40k times, rekindled the interest in small-world phenomenon. It uses a simple construction to demonstrate the phenomenon and shows how computation happens remarkably quickly on the small-world networks. In particular, authors show how a infectious disease (like COVID-19) spreads extremely fast on these networks.
+Yellow highlights/annotations are my own. You can <a onclick="disableHighlight()" href='#'>disable them.</a>
 </div>
 
 ## Abstract
