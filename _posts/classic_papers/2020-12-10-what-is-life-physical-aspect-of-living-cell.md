@@ -3,7 +3,7 @@ layout: post
 title: "What is Life? The Physical Aspect of the Living Cell"
 author: "Erwin Schrodinger"
 category: classic_papers
-description:"This little book arose from a course of public lectures, delivered by a theoretical physicist to an audience of about four hundred which did not substantially dwindle, though warned at the outset that the subject-matter was a difficult one and that the lectures could not be termed popular, even though the physicist’s most dreaded weapon, mathematical deduction, would hardly be utilized."
+description: "This little book arose from a course of public lectures, delivered by a theoretical physicist to an audience of about four hundred which did not substantially dwindle, though warned at the outset that the subject-matter was a difficult one and that the lectures could not be termed popular, even though the physicist’s most dreaded weapon, mathematical deduction, would hardly be utilized."
 published: 1943-02-05
 twitter_image: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Erwin_Schr%C3%B6dinger_%281933%29.jpg/440px-Erwin_Schr%C3%B6dinger_%281933%29.jpg"
 ---
