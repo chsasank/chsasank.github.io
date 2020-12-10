@@ -8,6 +8,10 @@ published: 1943-02-05
 twitter_image:
 ---
 
+<div class="small">
+This short book, written by Schrodinger, one of the fathers of quantum mechanics, influenced the discovery of DNA. In 1943, in this book, he predicted the presence of 'an aperiodic crystal' and how it is a 'code-script' for how organisms work. Within 10 years, in 1953, DNA was discovered and it is both aperiodic and code-script of life! He also shows how life is unintuitive according to known physical laws, how it feeds on 'negative entropy' and how we need different type of laws to explain life. Epilogue *On Determinism and Free Will* is a cherry on the top and gives a physicist view on the topic. Written for dilettantes like myself (Schrodinger himself being one), this book is highly readable and relevant. Yellow highlights/annotations are my own. You can <a onclick="disableHighlight()" href='#'>disable them.</a>
+</div>
+
 Based on lectures delivered under the auspices of the Dublin Institute for Advanced Studies at Trinity College, Dublin, in February 1943. To the memory of My Parents
 
 ## Preface
