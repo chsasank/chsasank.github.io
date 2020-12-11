@@ -6,11 +6,9 @@ category: project_turing
 description: 
 published: 1968-01-01
 twitter_image: https://upload.wikimedia.org/wikipedia/commons/3/36/Maurice_Vincent_Wilkes_1980_%283%2C_cropped%29.jpg
+tag: Project Turing
+notes: "This is the 1967 Turing award lecture by Maurice V. Wilkes. From [Wikipedia](https://en.wikipedia.org/wiki/Turing_Award), Wilkes is best known as the builder and designer of the EDSAC, the first computer with an internally stored program. This lecture does a wide survey of computer as they were in 1968 and makes many accurate predictions."
 ---
-
-<div class="small">
-This is the 1967 Turing award lecture by Maurice V. Wilkes. From [Wikipedia](https://en.wikipedia.org/wiki/Turing_Award), Wilkes is best known as the builder and designer of the EDSAC, the first computer with an internally stored program. This lecture does a wide survey of computer as they were in 1968 and makes many accurate predictions. Yellow highlights/annotations are my own. <a onclick="disableHighlight()" href='#'>You can disable them.
-</div>
 
 ## Abstract
 

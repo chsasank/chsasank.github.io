@@ -6,11 +6,9 @@ category: classic_papers
 description: "We wish to suggest a structure for the salt of deoxyribose nucleic acid (D.N.A). This structure has novel features which are of considerable biological interest. A structure for nucleic acid has already been proposed by Pauling and Corey[1]. They kind made their manuscript available to us in advance of publication. Their model consists of three intertwined chains, with the phosphates near the fibre axis, and the bases on the outside. In our opinion, this structure is unsatisfactory for two reasons:"
 published: 1953-04-25
 twitter_image: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/DNA_Structure%2BKey%2BLabelled.pn_NoBB.png/340px-DNA_Structure%2BKey%2BLabelled.pn_NoBB.png"
+tag: Biology
+notes: "This paper, originally published in Nature in in 1953, unraveled the structure of DNA. This was such a huge contribution to biology that it won the authors Nobel Prize just 9 years after the publication. It's amazing how DNA has become such a commonplace knowledge in less than 50 years. The paper is surprisingly readable, short and to the point."
 ---
-
-<div class="small">
-This paper, originally published in Nature in in 1953, unraveled the structure of DNA. This was such a huge contribution to biology that it won the authors Nobel Prize just 9 years after the publication. It's amazing how DNA has become such a commonplace knowledge in less than 50 years. The paper is surprisingly readable, short and to the point. Yellow highlights/annotations are my own. You can <a onclick="disableHighlight()" href='#'>disable them.</a>
-</div>
 
 We wish to suggest a structure for the salt of deoxyribose nucleic acid (D.N.A.). This structure has novel features which are of considerable biological interest.
 

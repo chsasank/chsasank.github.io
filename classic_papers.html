@@ -7,31 +7,22 @@ description: I maintain a mirror of some classic papers because the originals te
 ---
 
 <p>I maintain a mirror of some classic papers because the originals
-    tend to be not well formatted for the modern web.</p>
+    tend to be not well formatted for the modern web. I also add my notes and higlights.</p>
 
-{% assign sorted_posts = site.posts | sort:'published' %}
+{% assign sorted_tags = site.tags | sort %}
+{% for tag in sorted_tags %}
+<h2>{{ tag[0]}}</h2>
 <ul class='archive'>
-    {% for post in sorted_posts %}
-    {% if post.category == 'classic_papers' %}
+    {% assign sorted_posts = tag[1] | sort:'published' %}
+    {% for post in sorted_posts  %}
+    {% if post.category == 'classic_papers' or post.category == 'project_turing' %}
     <li>
         <span class="post-date"> {{post.published | date: "%Y"}}, </span>
         <span class="post-author"> {{post.author | trim}}, </span>
         <a class="post-link" href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
+        <div class="small" style="width: 100%;">{{post.notes | markdownify}}</div>
     </li>
     {% endif %}
     {% endfor %}
 </ul>
-
-<p>Turing Award Lectures which summarizes ideas of the pioneers of computing</p>
-
-<ul class='archive'>
-    {% for post in sorted_posts %}
-    {% if post.category == 'project_turing' %}
-    <li>
-        <span class="post-date"> {{post.published | date: "%Y"}}, </span>
-        <span class="post-author"> {{post.author | trim}}, </span>
-        <a class="post-link" href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
-    </li>
-    {% endif %}
-    {% endfor %}
-</ul>
+{% endfor %}

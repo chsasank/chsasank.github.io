@@ -6,11 +6,10 @@ category: classic_papers
 description: "A protocol that supports the sharing of resources that exist in different packet switching networks is presented. The protocol provides for variation in individual network packet sizes, transmission failures, sequencing, flow control, end-to-end error checking, and the creation and destruction of logical process-to-process connections. Some implementation issues are considered, and problems such as internetwork routing, accounting, and timeouts are exposed. "
 published: 1974-05-01
 twitter_image: https://images.livemint.com/rf/Image-621x414/LiveMint/Period1/2014/01/02/Photos/Vinton-Cerf_Robert-Kahn2--621x414.jpg
+tag: Systems
+notes: "This paper published originally in *IEEE Transactions on Communications* in 1974 setup the stage for internet. The protocol described here, TCP/IP, is basically how internet works to the day. Work around this paper earned the authors a Turing award. The papers remains highly relevant and readable to the day."
 ---
 
-<div class="small">
-This paper published originally in *IEEE Transactions on Communications* in 1974 setup the stage for internet. The protocol described here, TCP/IP, is basically how internet works to the day. Work around this paper earned the authors a Turing award. The papers remains highly relevant and readable to the day. Yellow highlights/annotations are my own. You can <a onclick="disableHighlight()" href='#'>disable them.</a>
-</div>
 
 ## Abstract
 
