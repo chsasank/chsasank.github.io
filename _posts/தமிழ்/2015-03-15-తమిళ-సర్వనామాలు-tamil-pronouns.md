@@ -6,10 +6,6 @@ layout: post
 title: తమిళ సర్వనామాలు
 categories:
 - தமிழ்
-tags:
-- தமிழ்
-- తెలుగు
-- వ్యాకరణం
 ---
 
 ఇప్పుడు సర్వనామాలు చూద్దాం. ఇవి [26వ పాఠం](https://www.youtube.com/watch?v=sboHcKYlc1A&index=26&list=PL8tGEXJ3tG9oB06SWyVGIXpkLKvizb7Ac)లో వున్నాయి.
