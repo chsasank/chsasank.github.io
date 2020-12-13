@@ -6,8 +6,8 @@ category: classic_papers
 description: 
 published: 1986-12-09
 twitter_image: 
-tag: Math
-notes: 
+tag: Artificial Intelligence
+notes: "This is the classic paper that rediscovered back-propagation. Conceptually, back propagation is quite simple and just is a repeated application of chain rule. However, results of applying backprop for multi layer neural networks have been spectacular. This paper reads like a very brief tutorial of deep learning."
 ---
 
 
@@ -17,7 +17,7 @@ We describe a new learning procedure, back-propagation, for networks of neurone-
 
 ## Paper
 
-There have been many attempts to design self-organizing neural networks. The aim is to find a powerful synaptic modification rule that will allow an arbitrarily connected neural network to develop an internal structure that is appropriate for a particular task domain. The task is specified by giving the desired state vector of the output units for each state vector of the input units. If the input units are directly connected to the output units it is relatively easy to find learning rules that iteratively adjust the relative strengths of the connections so as to progressively reduce the difference between the actual and desired output vectors[2], Learning becomes more interesting but more difficult when we introduce hidden units whose actual or desired states are not specified by the task. (In perceptrons, there are 'feature analysers' between the input and output that are not true hidden units because their input connections are fixed by hand, so their states are completely determined by the input vector: they do not learn representations.) The learning procedure must decide under what circumstances the hidden units should be active in order to help achieve the desired input-output behaviour. This amounts to deciding what these units should represent. We demonstrate that a general purpose and relatively simple procedure is powerful enough to construct appropriate internal representations.
+There have been many attempts to design self-organizing neural networks. <span class="mark">The aim is to find a powerful synaptic modification rule that will allow an arbitrarily connected neural network to develop an internal structure that is appropriate for a particular task domain.</span> The task is specified by giving the desired state vector of the output units for each state vector of the input units. If the input units are directly connected to the output units it is relatively easy to find learning rules that iteratively adjust the relative strengths of the connections so as to progressively reduce the difference between the actual and desired output vectors[2]. <span class="mark">Learning becomes more interesting but more difficult when we introduce hidden units whose actual or desired states are not specified by the task.</span> (In perceptrons, there are 'feature analysers' between the input and output that are not true hidden units because their input connections are fixed by hand, so their states are completely determined by the input vector: they do not learn representations.) The learning procedure must decide under what circumstances the hidden units should be active in order to help achieve the desired input-output behaviour. This amounts to deciding what these units should represent. <span class="mark">We demonstrate that a general purpose and relatively simple procedure is powerful enough to construct appropriate internal representations.</span>
 
 The simplest form of the learning procedure is for layered networks which have a layer of input units at the bottom; any number of intermediate layers; and a layer of output units at the top. Connections within a layer or from higher to lower layers are forbidden, but connections can skip intermediate layers. An input vector is presented to the network by setting the states of the input units. Then the states of the units in each layer are determined by applying equations (1) and (2) to the connections coming from lower layers. All units within a layer have their states set in parallel, but different layers have their states set sequentially, starting at the bottom and working upwards until the states of the output units are determined.
 
@@ -33,11 +33,11 @@ $$y_j = \frac{1}{1 + e^{-x_j}} \tag{2}$$
 
 It is not necessary to use exactly the functions given in equations (1) and (2). Any input-output function which has a bounded derivative will do. However, the use of a linear function for combining the inputs to a unit before applying the nonlinearity greatly simplifies the learning procedure.
 
-The aim is to find a set of weights that ensure that for each input vector the output vector produced by the network is the same as (or sufficiently close to) the desired output vector. If there is a fixed, finite set of input-output cases, the total error in the performance of the network with a particular set of weights can be computed by comparing the actual and desired output vectors for every case. The total error, $E$, is defined as
+<span class="mark">The aim is to find a set of weights that ensure that for each input vector the output vector produced by the network is the same as (or sufficiently close to) the desired output vector.</span> If there is a fixed, finite set of input-output cases, the total error in the performance of the network with a particular set of weights can be computed by comparing the actual and desired output vectors for every case. The total error, $E$, is defined as
 
 $$ E = \frac{1}{2} \sum_c \sum_j (y_{j,c} - d_{j, c}) ^ 2 \tag{3}$$
 
-where $c$ is an index over cases (input-output pairs}, $j$ is an index over output units, $y$ is the actual state of an output unit and $d$ is its desired state. To minimize $E$ by gradient descent it is necessary to compute the partial derivative of $E$ with respect to each weight in the network. This is simply the sum of the partial derivatives for each of the input-output cases. For a given case, the partial derivatives of the error with respect to each weight are computed in two passes. We have already described the forward pass in which the units in each layer have their states determined by the input they receive from units in lower layers using equations (1) and (2). The backward pass which propagates derivatives from the top layer back to the bottom one is more complicated.
+where $c$ is an index over cases (input-output pairs), $j$ is an index over output units, $y$ is the actual state of an output unit and $d$ is its desired state. <span class="mark">To minimize $E$ by gradient descent it is necessary to compute the partial derivative of $E$ with respect to each weight in the network.</span> This is simply the sum of the partial derivatives for each of the input-output cases. For a given case, the partial derivatives of the error with respect to each weight are computed in two passes. We have already described the forward pass in which the units in each layer have their states determined by the input they receive from units in lower layers using equations (1) and (2). The backward pass which propagates derivatives from the top layer back to the bottom one is more complicated.
 
 The backward pass starts by computing $\partial E/\partial y$ for each of the output units. Differentiating equation (3) for a particular case, $c$, and suppressing the index $c$ gives
 
@@ -61,15 +61,15 @@ $$\partial E / \partial x_{j} \cdot \partial x_j / \partial y_i = \partial E / \
 
 so taking into account all the connections emanating from unit $i$ we have
 
-$$\partial E / \partial y_{i} = \sum_j \partial E / \partial x_{j} w_{ji} \tag{7}$$
+$$\partial E / \partial y_{i} = \sum_j \partial E / \partial x_{j}  \cdot w_{ji} \tag{7}$$
 
-We have now seen how to compute $\partial E / \partial y$ for any unit in the penultimate layer when given $\partial E / \partial y$ for all units in the last layer. We can therefore repeat this procedure to compute this term for successively earlier layers, computing $\partial E / \partial w$ for the weights as we go.
+<span class="mark">We have now seen how to compute $\partial E / \partial y$ for any unit in the penultimate layer when given $\partial E / \partial y$ for all units in the last layer. We can therefore repeat this procedure to compute this term for successively earlier layers, computing $\partial E / \partial w$ for the weights as we go.</span>
 
-One way of using $\partial E / \partial w$ is to change the weights after every input-output case. This has the advantage that no separate memory is required for the derivatives. An alternative scheme, which we used in the research reported here, is to accumulate $\partial E / \partial w$ over all the input-output cases before changing the weights. The simplest version of gradient descent is to change each weight by an amount proportional to the accumulated $\partial E / \partial w$
+One way of using $\partial E / \partial w$ is to change the weights after every input-output case. This has the advantage that no separate memory is required for the derivatives. An alternative scheme, which we used in the research reported here, is to accumulate $\partial E / \partial w$ over all the input-output cases before changing the weights. <span class="mark">The simplest version of gradient descent is to change each weight by an amount proportional to the accumulated $\partial E / \partial w$</span>
 
 $$\nabla w = - \varepsilon \partial E / \partial w \tag{8}$$
 
-his method does not converge as rapidly as methods which make use of the second derivatives, but it is much simpler and can easily be implemented by local computations in parallel hardware. It can be significantly improved, without sacrificing the simplicity and locality, by using an acceleration method in which the current gradient is used to modify the velocity of the point in weight space instead of its position
+This method does not converge as rapidly as methods which make use of the second derivatives, but it is much simpler and can easily be implemented by local computations in parallel hardware. <span class="mark">It can be significantly improved, without sacrificing the simplicity and locality, by using an acceleration method in which the current gradient is used to modify the velocity of the point in weight space instead of its position</span>
 
 
 $$\nabla w (t) = - \varepsilon \partial E / \partial w (t) + \alpha \nabla w (t-1) \tag{9}$$
@@ -78,7 +78,7 @@ where $t$ is incremented by 1 for each sweep through the whole set of input-outp
 
 To break symmetry we start with small random weights. Variants on the learning procedure have been discovered independently by David Parker (personal communication) and by Yann Le Cun[3].
 
-One simple task that cannot be done by just connecting the input units to the output units is the detection of symmetry. To detect whether the binary activity levels of a one-dimensional array of input units are symmetrical about the centre point, it is essential to use an intermediate layer because the activity in an individual input unit, considered alone, provides no evidence about the symmetry or non-symmetry of the whole input vector, so simply adding up the evidence from the individual input units is insufficient. (A more formal proof that intermediate units are required is given in ref.2.) The learning procedure discovered an elegant solution using just two intermediate units, as shown in Fig. 1.
+<span class="mark">One simple task that cannot be done by just connecting the input units to the output units is the detection of symmetry.</span> To detect whether the binary activity levels of a one-dimensional array of input units are symmetrical about the centre point, it is essential to use an intermediate layer because the activity in an individual input unit, considered alone, provides no evidence about the symmetry or non-symmetry of the whole input vector, so simply adding up the evidence from the individual input units is insufficient. (A more formal proof that intermediate units are required is given in ref.2.) The learning procedure discovered an elegant solution using just two intermediate units, as shown in Fig. 1.
 
 <figure>
 <label for="mn-fig-1" class="margin-toggle">⊕</label><input type="checkbox" id="mn-fig-1" class="margin-toggle">
@@ -111,7 +111,7 @@ Another interesting task is to store the information in the two family trees (Fi
 
 So far, we have only dealt with layered, feed-forward networks. The equivalence between layered networks and recurrent networks that are run iteratively is shown in Fig. 5.
 
-The most obvious drawback of the learning procedure is that the error-surface may contain local minima so that gradient descent is not guaranteed to find a global minimum. However, experience with many tasks shows that the network very rarely gets stuck in poor local minima that are significantly worse than the global minimum. We have only encountered this undesirable behaviour in networks that have just enough connections to perform the task. Adding a few more connections creates extra dimensions in weight-space and these dimensions provide paths around the barriers that create poor local minima in the lower dimensional subspaces.
+The most obvious drawback of the learning procedure is that the error-surface may contain local minima so that gradient descent is not guaranteed to find a global minimum. However, experience with many tasks shows that the network very rarely gets stuck in poor local minima that are significantly worse than the global minimum. We have only encountered this undesirable behaviour in networks that have just enough connections to perform the task. <span class="mark">Adding a few more connections creates extra dimensions in weight-space and these dimensions provide paths around the barriers that create poor local minima in the lower dimensional subspaces.</span>
 
 The learning procedure, in its current form, is not a plausible model of learning in brains. However, applying the procedure to various tasks shows that interesting internal representations can be constructed by gradient descent in weight-space, and this suggests that it is worth looking for more biologically plausible ways of doing gradient descent in neural networks.
 
