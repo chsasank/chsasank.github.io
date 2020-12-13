@@ -12,7 +12,7 @@ description: I maintain a mirror of some classic papers because the originals te
 {% assign sorted_tags = site.tags | sort %}
 {% for tag in sorted_tags %}
 <h2>{{ tag[0]}}</h2>
-<ul class='archive'>
+<ul style="list-style: none;">
     {% assign sorted_posts = tag[1] | sort:'published' %}
     {% for post in sorted_posts  %}
     {% if post.category == 'classic_papers' or post.category == 'project_turing' %}
