@@ -5,7 +5,9 @@ author: "Albert-László Barabási and Réka Albert"
 category: classic_papers
 description: "Systems as diverse as genetic networks or the world wide web are best described as networks with complex topology. A common property of many large networks is that the vertex connectivities follow a scale-free power-law distribution. This feature is found to be a consequence of the two generic mechanisms that networks expand continuously by the addition of new vertices, and new vertices attach preferentially to already well connected sites. A model based on these two ingredients reproduces the observed stationary scale- free distributions, indicating that the development of large networks is governed by robust self-organizing phenomena that go beyond the particulars of the individual systems."
 published: 1999-10-21
-twitter_image: ""
+twitter_image: "https://upload.wikimedia.org/wikipedia/commons/d/d2/Internet_map_1024.jpg"
+tag: Math
+notes: "Another important paper in the network science field (cited >35k times). Just like small-world networks, authors observed an universal among a lot of natural and artificial networks: scale-free power-law distribution of vertex connectivity. What this means is that there are a few nodes which is highly connected and most of the nodes are only connected to a few. Authors show that this phenomenon happens when networks add new nodes with time and these nodes connect preferentially to already well connected nodes. May be this is how networks evolve and genetic and neural networks end up being scale-free."
 ---
 
 ## Abstract
