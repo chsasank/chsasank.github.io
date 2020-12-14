@@ -5,7 +5,7 @@ author: "David E. Rumelhart, Geoffrey E. Hinton and Ronald J. Williams"
 category: classic_papers
 description: 
 published: 1986-12-09
-twitter_image: 
+twitter_image: "https://miro.medium.com/max/1050/1*LB10KFg5J7yK1MLxTXcLdQ.jpeg"
 tag: Artificial Intelligence
 notes: "This is the classic paper that rediscovered back-propagation. Conceptually, back propagation is quite simple and just is a repeated application of chain rule. However, results of applying backprop for multi layer neural networks have been spectacular. This paper reads like a very brief tutorial of deep learning."
 ---
