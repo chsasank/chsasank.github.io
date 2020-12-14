@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Learning representations by back-propagating errors"
+title: "Learning Representations by Back-propagating Errors"
 author: "David E. Rumelhart, Geoffrey E. Hinton and Ronald J. Williams"
 category: classic_papers
 description: 
