@@ -19,4 +19,85 @@ There are a lot of libraries out there to make concurrent programming 'easy'. Th
 <img src="/assets/images/random/nursery.svg" alt="nursery">
 </figure>
 
-In this post, I show how to implement a simple TCP protocol server using the concepts and `trio` library. I intentionally pick the protocols from [twisted's tutorial](https://twistedmatrix.com/documents/current/core/howto/servers.html) here so as to illustrate the differences with twisted, another popular async python library.
+In this post, I show how to implement a simple TCP protocol server using these concepts and illustrate `trio` library. I intentionally pick the protocols from [twisted's tutorial](https://twistedmatrix.com/documents/current/core/howto/servers.html) here so as to illustrate the differences with twisted, another popular async python library. Start with installing trio:
+
+```bash
+$ pip install -U trio
+```
+
+Let's write a very simple program which sleeps asynchronously to see how `nursery` works in `trio`<label for="sn-2" class="margin-toggle sidenote-number"></label><input type="checkbox" id="sn-2" class="margin-toggle"/>
+<span class="sidenote">
+Code snippet taken directly from [trio's tutorial](https://trio.readthedocs.io/en/stable/tutorial.html)</span>:
+
+```python
+# tasks-intro.py
+import trio
+
+async def child1():
+    print("  child1: started! sleeping now...")
+    # do not forget the await!
+    await trio.sleep(1)
+    print("  child1: exiting!")
+
+async def child2():
+    print("  child2: started! sleeping now...")
+    await trio.sleep(1)
+    print("  child2: exiting!")
+
+async def parent():
+    print("parent: started!")
+    async with trio.open_nursery() as nursery:
+        print("parent: spawning child1...")
+        nursery.start_soon(child1)
+
+        print("parent: spawning child2...")
+        nursery.start_soon(child2)
+
+        print("parent: waiting for children to finish...")
+        # -- we exit the nursery block here --
+    print("parent: all done!")
+
+trio.run(parent)
+```
+
+What this does should be fairly obvious: `parent` is running `child1` and `child2` asynchronously. Let's run this:
+
+```
+$ python tasks-intro.py
+parent: started!
+parent: spawning child1...
+parent: spawning child2...
+parent: waiting for children to finish...
+  child2: started! sleeping now...
+  child1: started! sleeping now...
+    [... 1 second passes ...]
+  child1: exiting!
+  child2: exiting!
+parent: all done!
+```
+
+Note how parent waits for its children to finish before exiting the nursery. Let's write very simple echo server: receive a message and write the same message back to the TCP stream. 
+
+```python
+# echo-server.py
+import trio
+
+async def echo_server(server_stream):
+    print("echo_server: started")
+    try:
+        async for data in server_stream:
+            print("echo_server: received data {!r}".format(data))
+            await server_stream.send_all(data)
+        print("echo_server: connection closed")
+
+async def main():
+    await trio.serve_tcp(echo_server, port=12345)
+
+trio.run(main)
+```
+
+Run it using 
+
+```
+$ python echo-server.py
+```
