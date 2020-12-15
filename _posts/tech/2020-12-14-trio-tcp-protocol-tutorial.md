@@ -11,6 +11,8 @@ Let's say you're writing a simple web app i.e. it communicates to the world usin
 
 What if you're now asked to write your app in a completely new protocol?<label for="sn-2" class="margin-toggle sidenote-number"></label><input type="checkbox" id="sn-2" class="margin-toggle"/><span class="sidenote">In my case, this protocol is DICOM.</span> Unlike `http`, may be your protocol is asynchronous by definition -- say WebSocket. You can't rely on your favorite web framework and its abstractions to make your life simple. You have to deal with the complexity of concurrent programming. Add to that additional issues that raw threading, reference counting and error propagation brings. Not the best place to be in.
 
+## Trio and Nursery
+
 There are a lot of libraries out there to make concurrent programming 'easy'. There are a lot of models -- threads, tasks, callbacks and so on. As shown in [this beautiful article by Nathaniel](https://vorpus.org/blog/notes-on-structured-concurrency-or-go-statement-considered-harmful), they all boil down to `goto` statement that Dijkstra so [vehemently opposed](https://chsasank.github.io/classic_papers/goto-statement-considered-harmful.html). No wonder I don't find these models very intuitive. In the same post, Nathaniel proposed an alternative to these models, `nursery` and a library called `trio` which implements it.
 
 <figure>
@@ -76,7 +78,11 @@ parent: waiting for children to finish...
 parent: all done!
 ```
 
-Note how parent waits for its children to finish before exiting the nursery. Let's write very simple echo server: receive a message and write the same message back to the TCP stream. 
+Note how parent waits for its children to finish before exiting the nursery. 
+
+## Echo Server
+
+Let's write very simple echo server: receive a message and write the same message back to the TCP stream. 
 
 ```python
 # echo-server.py
@@ -84,11 +90,11 @@ import trio
 
 async def echo_server(server_stream):
     print("echo_server: started")
-    try:
-        async for data in server_stream:
-            print("echo_server: received data {!r}".format(data))
-            await server_stream.send_all(data)
-        print("echo_server: connection closed")
+    async for data in server_stream:
+        print("echo_server: received data {!r}".format(data))
+        await server_stream.send_all(data)
+
+    print("echo_server: connection closed")
 
 async def main():
     await trio.serve_tcp(echo_server, port=12345)
@@ -96,8 +102,35 @@ async def main():
 trio.run(main)
 ```
 
-Run it using 
+`trio.serve_tcp` creates a nursery internally and listens to TCP connections indefinitely on the specified port and forward them to `echo_server` function. Run the server using 
 
 ```
 $ python echo-server.py
 ```
+
+Use telnet in another terminal to talk to the server. Type 'hello' or 'hi', press enter and you should see that server responds back with 'hello' or 'hi'.
+
+```
+$ telnet localhost 12345
+Trying 127.0.0.1...
+Connected to localhost.
+Escape character is '^]'.
+hello
+hello
+hi
+hi
+^]
+
+telnet> Connection closed.
+```
+
+And the log of your server should look like:
+
+```
+echo_server: started
+echo_server: received data b'hello\r\n'
+echo_server: received data b'hi\r\n'
+echo_server: connection closed
+```
+
+You can try spinning up multiple telnet clients and verify that our server serves multiple requests at the same time.
