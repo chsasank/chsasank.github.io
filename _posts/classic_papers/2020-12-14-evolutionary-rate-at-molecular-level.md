@@ -7,7 +7,7 @@ description: Calculating the rate of evolution in terms of nucleotide substituti
 published: 1968-02-17
 twitter_image: "https://upload.wikimedia.org/wikipedia/commons/a/ae/Darwin%27s_finches_by_Gould.jpg"
 tag: Biology
-notes: This paper, published in 1968, is a prelude to the highly influential *The neutral theory and molecular evolution* published later in 1983. It does some computations about rate of mutations at DNA level. These numbers are so high that we have no choice but to accept that most of the mutation are selectively neutral. This is in contrast to widely held notion that evolution, and therefore mutations, happens *by* natural selection. Selection must just be one of the many evolutionary forces that shape an organism.
+notes: This paper, published in 1968, is a prelude to the highly influential The neutral theory and molecular evolution published later in 1983. This paper does some computations about rate of mutations at DNA level. These numbers turn to be so high that we have no choice but to accept that most of the mutation are selectively neutral. This is in contrast to widely held notion that evolution, and therefore mutations, happens by natural selection. Selection must just be one of the many evolutionary forces that shape an organism.
 ---
 
 ## Abstract
