@@ -4,7 +4,7 @@ title: Concurrent Programming and Trio
 author: Sasank Chilamkurthy
 ---
 
-Concurrent programming is unintuitive and hard. Woefully hard but quite important. People do PhDs, spend careers and win Turing awards doing research on concurrent programming and distributed computing. Yet, most programmers *never* have to deal with it.<label for="sn-1" class="margin-toggle sidenote-number"></label><input type="checkbox" id="sn-1" class="margin-toggle"/>
+Concurrent programming is unintuitive and hard. Pretty hard but quite important. People do PhDs, spend careers and win Turing awards doing research on concurrent programming and distributed computing. Yet, most programmers *never* have to deal with it.<label for="sn-1" class="margin-toggle sidenote-number"></label><input type="checkbox" id="sn-1" class="margin-toggle"/>
 <span class="sidenote">Super consciously anyway. Node.js is all about async programming.</span> Why is that? Because most of the hard work has been done for you by the libraries and programs you use.
 
 Let's say you're writing a simple web app i.e. it communicates to the world using `http` protocol. Your app has to serve multiple requests at the same time. Your app inturn makes multiple database queries at the same time. You're likely using a web framework, say Django, to write your app and host it behind nginx. Django and Nginx likely abstracts out all these concurrencies for you and database itself can handle concurrencies. You therefore end up writing a sequential code.
@@ -133,4 +133,8 @@ echo_server: received data b'hi\r\n'
 echo_server: connection closed
 ```
 
-You can try spinning up multiple telnet clients and verify that our server serves multiple requests at the same time.
+You can try spinning up multiple telnet clients and verify that our server handles multiple requests at the same time.
+
+## Chat Server
+
+That was very simple. Let's write a more complicated protocol -- a chat server like IRC. Our server should allow user to login with a name and all the logged in users should be able to participate in a group chat.
