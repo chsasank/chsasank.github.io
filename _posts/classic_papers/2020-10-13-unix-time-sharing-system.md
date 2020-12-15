@@ -6,11 +6,9 @@ category: classic_papers
 description: "UNIX is a general-purpose, multi-user, interactive operating system for the Digital Equipment Corporation PDP-11/40 and 11/45 computers. It offers a number of features seldom found even in larger operating systems, including: (1) a hierarchical file system incorporating demountable volumes; (2) compatible file, device, and inter-process I/O; (3) the ability to initiate asynchronous processes; (4) system command language select-able on a per-user basis; and (5) over 100 subsystems including a dozen languages. This paper discusses the nature and implementation of the file system and of the user command interface."
 published: 1974-07-01
 twitter_image: https://upload.wikimedia.org/wikipedia/commons/thumb/8/8f/Ken_Thompson_%28sitting%29_and_Dennis_Ritchie_at_PDP-11_%282876612463%29.jpg/1280px-Ken_Thompson_%28sitting%29_and_Dennis_Ritchie_at_PDP-11_%282876612463%29.jpg
+tag: Systems
+notes: This is the 1974 paper that started it all and is highly relevant to this day. The design choices described in this paper significantly influenced the modern OS design. Best of all, it's a breeze to read and it flows like a tutorial.
 ---
-
-<div class="small">
-Note: This is *not* my article. This is a classic paper originally published in *Communications of the ACM*, 1974 by Dennis M. Ritchie and Ken Thompson. Yellow highlights/annotations are my own. <a onclick="disableHighlight()" href='#'>Disable them.</a>
-</div>
 
 ## Abstract
 
