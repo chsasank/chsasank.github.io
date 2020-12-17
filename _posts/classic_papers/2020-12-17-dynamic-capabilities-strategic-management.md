@@ -6,6 +6,7 @@ category: classic_papers
 description: "The dynamic capabilities framework analyzes the sources and methods of wealth creation and capture by private enterprise firms operating in environments of rapid technological change. The competitive advantage of firms is seen as resting on distinctive processes (ways of coordinating and combining), shaped by the firm's (specific) asset positions (such as the firm's portfolio of difficult-to-trade knowledge assets and complementary assets), and the evolution path(s)"
 published: 1997-02-01
 twitter_image: "https://haas.berkeley.edu/wp-content/uploads/29630-c525faaf7c46aad36f953f6d1f4314f4.jpg"
+tag: Organizations
 notes: This paper introduces a new framework which emphasizes organizational endogenous variables to explain competitive advantage of a firm. Three dimensions important to this approach are (1) production, learning and transformational *processes*, (2) technological, structural and reputational *positions* and (3) firm-historical *paths* that lead to the current processes and positions. Firms are seen as unique and it is hard to replicate by itself for expansion and imitate by competition. In fact, evolutionary paths that the firm has taken constrain the future paths available to it. In light of this, capability of an organization to *dynamically* reconfigure in the face of technological and market changes bestows a significant competitive advantage. This approach is in contrast to earlier approaches which see firms as homogenous entities and strategy as 'blocking' competition from the market.
 ---
 
