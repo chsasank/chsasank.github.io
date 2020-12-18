@@ -4,7 +4,7 @@ title: Docker is Object Oriented Programming (OOP) for Systems
 author: Sasank Chilamkurthy
 ---
 
-I was explaining about docker to my colleagues and I was struck by an epiphany: [Docker](https://en.wikipedia.org/wiki/Docker_(software)) is essentially object oriented programming (OOP) for systems programming. For the uninitiated Docker is OS-level virtualization that allow you to package softwares and make the installations easy and reproducible across systems. No more *but it worked on my computer* problems. Follow this [tutorial from Keval](https://kevalnagda.github.io/getting-started-with-docker) to get a better idea of how it works. In this post, I'll quickly review the docker concepts so that we can make the connection to OOP.
+I was explaining about docker to my colleagues and I was struck by an epiphany: [Docker](https://en.wikipedia.org/wiki/Docker_(software)) is essentially object oriented programming (OOP) for systems programming. For the uninitiated Docker is OS-level virtualization that allow you to package softwares and make the installations easy and reproducible across systems. No more *but it worked on my computer* problems. Follow this [tutorial from Keval](https://kevalnagda.github.io/getting-started-with-docker) to get a good idea of how it works. In this post, I'll quickly review the docker concepts so that we can make the connection to OOP.
 
 In docker, you build an *image* by specifying instructions in `Dockerfile` on how to install your application. You can think of an image as packaged file system containing your programs. For example, here's how you build an image.
 
@@ -49,7 +49,7 @@ $ curl localhost:8001/root/input/hi
 hello sasank
 ```
 
-Now why am I calling this object oriented programming? Let's start with clarifying what OOP is. In OOP, we have a *class* which encapsulates the *data* and *methods* of a particular functionality. For example, `Human` can be class whose data is the name and method is `what_is_your_name()`. You'll have to create an *instance* of the `Human` class (say `sasank`) to interact with it. Once instantiated, the only way to interact with this instance is through the method *interface* (e.g., `sasank.what_is_your_name()`). What the class does internally is treated like a black box. A class can *inherit* data and methods from another class (say `Animal`)
+Now why am I calling this object oriented programming? Let's start with clarifying what OOP is. In OOP, we have a *class* which encapsulates the *data* and *methods* of a particular functionality. For example, `Human` can be class whose data is the name and method is `what_is_your_name()`. You'll have to create an *instance* of the `Human` class (say `sasank`) to interact with it. Once instantiated, the only way to interact with this instance is through the method (e.g., `sasank.what_is_your_name()`). What the class does internally is treated like a black box. A class can *inherit* data and methods from another class (say `Animal`)
 
 Docker image is exactly like a class in which you define instructions to install your app. Data of this class is the code to run your app. Methods are what your app does. `FROM` is inheritance where you can inherit data and methods from a previously built image. You instantiate an image by spinning up a container. You interact with your container through filesystem and networking. What the container does internally is not your problem. I summarized the argument below:
 
@@ -61,7 +61,6 @@ Docker image is exactly like a class in which you define instructions to install
 | `CMD` and what your code does | Methods |
 | `FROM`        | Inheritance |
 | Container         | Instance  |
-| Filesystem mounting and networking | Interface |
 
 You usually make different classes interact with each other by *composition* where each interact with other through methods. This is exactly the use case of `docker-compose` where you can make different container interact with each other. For example your backend and front end can be two containers which can be composed in the following way:
 
