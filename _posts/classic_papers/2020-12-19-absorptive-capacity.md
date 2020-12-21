@@ -192,3 +192,68 @@ Our empirical analysis of R&D investment suggested that firms are in fact sensit
 
 An important question from a prescriptive perspective is When is a firm most likely to underinvest in absorptive capacity to its own long-run detriment? Absorptive capacity is more likely to be developed and maintained as a byproduct of routine activity when the knowledge domain that the firm wishes to exploit is closely related to its current knowledge base. When, however, a firm wishes to acquire and use knowledge that is unrelated to its ongoing activity, then the firm must dedicate effort exclusively to creating absorptive capacity (i.e., absorptive capacity is not a byproduct). In this case, absorptive capacity may not even occur to the firm as an investment alternative. Even if it does, due to the intangible nature of absorptive capacity, a firm may be reluctant to sacrifice current output as well as gains from specialization to permit its technical personnel to acquire the requisite breadth of knowledge that would permit absorption of knowledge from new domains. Thus, while the current discussion addresses key features of organizational structure that determine a firm's absorptive capacity and provides evidence that investment is responsive to the need to develop this capability, more research is necessary to understand the decision processes that determine organizations' investments in absorptive capacity.
 
+<div class="small">
+
+### References
+
+* Abernathy, William J. 1978 The Productivity Dilemma. Baltimore: Johns Hopkins University Press.
+* Allen, Thomas J. 1977 Managing the Flow of Technology. Cambridge, MA: MIT Press.
+* Allen, Thomas J., and Stephen D. Cohen 1969 ‘Information flows in R&D labs.’ Administrative Science Quarterly, 20: 12-19.
+* Anderson, John R., Robert Farrell, and Ron Sauers 1984 “Learning to program in LISP.”’ Cognitive Science, 8: 87-129.Arrow, Kenneth J. 1962 ‘’Economic welfare and the allocation of resources for invention.” In R. R. Nelson (ed.), The Rate and Direction of Inventive Activity: 609-625. Princeton, NJ: Princeton University Press.
+* Bower, Gordon H., and Ernest R. Hilgard 1981 Theories of Learning. Englewood Cliffs, NJ: Prentice-Hall.
+* Bradshaw, Gary F., Patrick W. Langley, and Herbert A. Simon 1983 ‘Studying scientific discovery by computer simulation.’ Science, 222: 971-975.
+* Brock, Gerald W. 1975 The U.S. Computer Industry. Cambridge, MA: Ballinger.
+* Burns, Tom, and George M. Stalker 1961 The Management of Innovation. London: Tavistock.
+* Clark, Kim B., and Takahiro Fujimoto 1987 "Overlapping problem solving in product development.” Technical Report, Harvard Business School.
+* Cohen, Wesley M., and Richard C. Levin 1989 "Empirical studies of innovation and market structure.”’ In R. C. Schmalensee and R. Willig (eds.), Handbook of Industrial Organization: 1059-1107. Amsterdam: Elsevier.
+* Cohen, Wesley M., and Daniel A. Levinthal 1987 ‘Participation in cooperative research ventures and the cost of learning.”” Technical Report, Dept. of Social and Decision Sciences, Carnegie Mellon University.
+* Cohen, Wesley M., and Daniel A. Levinthal 1989a ‘Innovation and learning: The two faces of R&D." Economic Journal, 99: 569-596.
+* Cohen, Wesley M., and Daniel A. Levinthal 1989b ‘’Fortune favors the prepared firm.’’ Technical Report, Dept. of Social and Decision Sciences, Carnegie Mellon University
+* Dearborn, R., and Herbert A. Simon 1958 ‘’Selective perception in executives.’’ Sociometry, 21: 140-144.
+* Ellis, Henry Carlton 1965 The Transfer of Learning. New York: MacMillan.
+* Estes, William Kaye 1970 Learning Theory and Mental Development. New York: Academic Press.
+* Hamberg, Daniel 1963 ‘Invention in the industrial research laboratory.”’ Journal of Political Economy, 71: 95-115.
+* Harlow, H. F. 1949 “The formation of learning sets.’’ Psychological Review, 56: 51-65.
+* Harlow, H. F. 1959 ‘Learning set and error factor theory.’’ In S. Koch (ed.), Psychology: A Study of Science, 2: 492—537. New York: McGraw-Hill.
+* Johnston, R., and M. Gibbons 1975 "Characteristics of information usage in technological innovation.” IEEE Transactions on Engineering Management, 27-34, EM-22.
+* Katz, Daniel, and Robert L. Kahn 1966 The Social Psychology of Organizations. New York: Wiley.
+* Katz, Ralph 1982 ‘The effects of group longevity on project communication and performance.” Administrative Science Quarterly, 27: 81-104.
+* Katz, Ralph, and Thomas J. Allen 1982 "Investigating the not invented here (NIH) syndrome: A look at the performance, tenure, and communication patterns of 50 R&D project groups.’ R&D Management, 12: 7-12.
+* Lee, Denis M. S., and Thomas J. Allen 1982 ‘Integrating new technical staff: Implications for acquiring new technology.’’ Management Science, 28: 1405-1420.
+* Levin, Richard C. 1981 ‘Toward an empirical model of Schumpeterian competition.’’ Technical Report, Dept. of Economics, Yale University.
+* Levin, Richard C., Alvin K. Klevorick, Richard R. Nelson, and Sidney G. Winter 1983 ‘Questionnaire on industrial research and development.”’ Dept. of Economics, Yale University. 
+* Levin, Richard C., Alvin K. Klevorick, Richard R. Nelson, and Sidney G. Winter 1987 ‘Appropriating the returns from industrial R&D.” Brookings Papers on Economic Activity, 783-820.
+* Levitt, Barbara, and James G. March 1988 ‘Organizational learning.’’ Annual Review of Sociology, 14: 319-340.
+* Lindsay, Peter H., and Donald A. Norman 1977 Human Information Processing. Orlando, FL: Academic Press.
+* Link, Albert N. 1987 “Cooperative research activity in U.S. Manufacturing.”’ Technical Report, University of North Carolina, Greensboro, Final report submitted to the National Science Foundation under grant PRA 85-212664.
+* Majumdar, Bodiul Alam 1982 Innovations, Product Developments and Technology Transfers: An Empirical Study of Dynamic Competitive Advantage, The Case of Electronic Calculators. Lanham, MD: University Press of America.Mansfield, Edwin 1968 Economics of Technological Change. New York: Norton. 
+* Mansfield, Edwin 1988 ‘The speed and cost of industrial innovation in Japan and the United States: External vs. internal technology.’’ Management Science, 34(10): 1157-1168.
+* March, James G., and Herbert A. Simon 1958 Organizations. New York: Wiley.
+* Mowery, David C. 1983 "The relationship between intrafirm and contractual forms of industrial research in American manufacturing, 1900—1940."" Explorations in Economic History, 20: 351-374.
+* Mowery, David C., and Nathan Rosenberg 1989 Technology and the Pursuit of Economic Growth. New York: Cambridge University Press.
+* Mueller, Willard F. 1962 ‘’The origins of the basic inventions underlying DuPont's major product and process innovations, 1920 to 1950.” In R. R. Nelson (ed.), The Rate and Direction of Inventive Activity: 8323-358. Princeton: Princeton University Press.
+* Myers, Sumner, and Donald C. Marquis 1969 ‘Successful industrial innovations.’’ Washington, DC: National Science Foundation, NSF 69-17.
+* Nelson, Richard R. 1959 ‘The simple economics of basic research." Journal of Political Economy, 67: 297-306.
+* Nelson, Richard R., and Sidney Winter 1982 An Evolutionary Theory of Economic Change. Cambridge, MA: Harvard University Press.
+* Peck, Merton J. 1962 ‘Inventions in the postwar American aluminum industry.”’ In R. R. Nelson (ed.), The Rate and Direction of Inventive Activity: 279-298. Princeton: Princeton University Press.
+* Pirolli, Peter L., and John R. Anderson 1985 ‘The role of learning from example in the acquisition of recursive programming skill.”’ Canadian Journal of Psychology, 39: 240-272.
+* Reich, Robert B. 1987 ‘The rise of techno-nationalism.”’ Atlantic, May: 63-69.
+* Rosenberg, Nathan 1982 Inside the Black Box: Technology and Economics. New York: Cambridge University Press.
+* Rosenberg, Nathan 1982 1990 ''Why do firms do basic research (with their own money)?’’ Research Policy (in press)
+* Rosenberg, Nathan, and W. Edward Steinmueller 1988 ‘Why are Americans such poor imitators?’ American Economic Review, 78(2): 229-234.
+* Schumpeter, Joseph A. 1942 Capitalism, Socialism and Democracy. New York: Harper and Row.
+* Simon, Herbert A. 1985 “What we know about the creative process.” In R. L. Kuhn (ed.), Frontiers in Creative and Innovative Management: 3-20. Cambridge, MA: Ballinger.
+* Smith, Gordon, Wesley M. Cohen, William Hefley, and Daniel A. Levinthal 1989 ‘Understanding the adoption of Ada: A field study report.” Technical Report, Software Engineering Institute, Carnegie Mellon University.
+* Spence, A. Michael 1984 ‘Cost reduction, competition, and industry performance.’ Econometrica, 52: 101-122.
+* Tilton, John E. 1971 International Diffusion of Technology: The Case of Semiconductors. Washington, DC: Brookings Institution.
+* Tushman, Michael L. 1977 ‘Special boundary roles in the innovation process.”’ Administrative Science Quarterly, 22: 587-605.
+* Tushman, Michael L. 1978 ‘Technical communication in R&D laboratories: The impact of project work characteristics.’’ Administrative Science Quarterly, 21: 624-644.
+* Tushman, Michael L., and Philip Anderson 1986 ‘Technological discontinuities and organizational environ‘ments.’’ Administrative Science Quarterly, 31: 439-465.
+* Utterback, James M. 1971 ‘The process of technological innovation within the firm.” Academy of Management Journal, 12: 75-88.
+* von Hippel, Eric 1978 ‘Successful industrial products from customer ideas.”’ Journal of Marketing, 42: 39-49. 1988 The Sources of Innovation. New York: Oxford University Press.
+* Vyssotsky, V. A. 1977 "The innovation process at Bell Labs.’’ Technical Report, Bell Laboratories.
+* Westney, D. Eleanor, and Kiyonori  Sakakibara 1986 “The role of Japan-based R&D in global technology strategy.” In M. Hurowitch (ed.), Technology in the Modern Corporation: 217—232, London: Pergamon.
+* Williamson, Oliver E. 1975 Markets and Hierarchies: Analysis and Antitrust Implications. New York: Free Press.
+* Zenger, Todd R., and Barbara S. Lawrence 1989 ‘Organizational demography: The differential effects of age and tenure distributions on technical communication." Academy of Management Journal, 32: 353-376.
+
+</div>
