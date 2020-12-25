@@ -6,10 +6,6 @@ layout: post
 title: తమిళ అంకెలు మరియు బహువచనాలు
 categories:
 - தமிழ்
-tags:
-- தமிழ்
-- తెలుగు
-- వ్యాకరణం
 ---
 
 ఈ పోస్ట్ లో తమిళ్ లో అంకెలు మరియు బహువచనాలు ఎలా ఉంటాయో చూద్దాం. ఇది అంకెలతో మొదలపెడదాము. ఇది [27వ పాఠము](https://www.youtube.com/watch?v=Dz4V5Zlelas&list=PL8tGEXJ3tG9oB06SWyVGIXpkLKvizb7Ac&index=27).
