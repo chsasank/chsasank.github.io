@@ -5,7 +5,8 @@ author: Marvin Minsky
 category: project_turing
 description: 
 published: 1970-04-01
-twitter_image: https://upload.wikimedia.org/wikipedia/en/5/59/Alan_Perlis.jpg
+twitter_image: 
+tag: Project Turing
 ---
 
 ## Abstract
@@ -13,6 +14,8 @@ twitter_image: https://upload.wikimedia.org/wikipedia/en/5/59/Alan_Perlis.jpg
 An excessive preoccupation with formalism is impeding the development of
 computer science. Form-content confusion is discussed relative to three
 areas: theory of computation, programming languages, and education.
+
+## Introduction
 
 The trouble with computer science today is an obsessive concern with form
 instead of content.
@@ -105,7 +108,7 @@ where $@$ stands for multiplying by $10^{n/2}$. (The left-shift operation is con
 
 $$ N=@@ AC + BD + @(A + B)(C + D)- @(AC + BD).$$
 
-This involves only three half-length multiplications, instead of the four that one might suppose were needed. For large $n$, the reduction can obviously be reapplied over and over to the smaller numbers. The price is a growing number of additions. By compounding this and other ideas, Cook showed that for any $\epsilon$ and large enough $n$, multiplication requires less than $n^{1+\epsilon}$ products, instead of the expected $n^2$. Similarly, V. Strassen showed recently that to multiply two m X m matrices, the number of products could be reduced to the order of $m^{\log_27}$, when it was always believed that the number must be cubic because there are $m^2$ terms in the result and each would seem to need a separate inner product with $m$ multiplications. In both cases ordinary intuition has been wrong for a long time, so wrong that apparently no one looked for better methods. We still do not have a set of proof methods adequate for establishing exactly what is the minimum trade-off exchange, in the matrix ease, between multiplying and adding.
+This involves only three half-length multiplications, instead of the four that one might suppose were needed. For large $n$, the reduction can obviously be reapplied over and over to the smaller numbers. The price is a growing number of additions. By compounding this and other ideas, Cook showed that for any $\epsilon$ and large enough $n$, multiplication requires less than $n^{1+\epsilon}$ products, instead of the expected $n^2$. Similarly, V. Strassen showed recently that to multiply two $m \times m$ matrices, the number of products could be reduced to the order of $m^{\log_27}$, when it was always believed that the number must be cubic because there are $m^2$ terms in the result and each would seem to need a separate inner product with $m$ multiplications. In both cases ordinary intuition has been wrong for a long time, so wrong that apparently no one looked for better methods. We still do not have a set of proof methods adequate for establishing exactly what is the minimum trade-off exchange, in the matrix ease, between multiplying and adding.
 
 The multiply-add exchange may not seem vitally important in itself, but if we cannot thoroughly understand something so simple, we can expect serious trouble with anything more complicated.
 
