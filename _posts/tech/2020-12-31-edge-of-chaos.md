@@ -5,7 +5,7 @@ author: Sasank Chilamkurthy
 twitter_image: "https://en.wikipedia.org/wiki/File:Shish-kebab-skewer-60458_640.jpg"
 ---
 
-In the paper, [*Self-Organized Criticality: An Explanation of 1/f Noise*](https://chsasank.github.io/classic_papers/self-organized-criticality.html), authors show a very simple iterative procedure which generates some interesting results. These procedures are quite easy to code up and we can verify the results. What is this procedure and what's so interesting about the results anyway?
+In the paper, [*Self-Organized Criticality: An Explanation of 1/f Noise*](https://chsasank.github.io/classic_papers/self-organized-criticality.html), authors show a very simple iterative procedure which generates some interesting results. This procedure is quite easy to code up and we can verify the results. What is this procedure and what's so interesting about the results anyway? Let's dive into it.
 
 Consider an integer array $z$, that uses the following evolution rule if for any $(x, y)$, $z(x, y) > 4$:
 
@@ -60,7 +60,7 @@ def evolve_until_stable(arr):
     return num_steps
 ```
 
-Let's initialize the array randomly with a large maximum vale and evolve it until stable.
+Let's initialize the array randomly with a large maximum value and evolve it until stable.
 
 ```
 n = 20
@@ -68,7 +68,7 @@ arr = np.random.randint(low=0, high=10, size=(n, n))
 evolve_until_stable(arr)
 ```
 
-Array stops evolving when it is barely stable. Authors of the above paper call this state 'self-organized criticality'. This is how it looks like?
+Array stops evolving when it is barely stable. Authors of the above paper call this state 'self-organized criticality'. This is how it looks like:
 
 <figure>
 <label for="mn-fig-1" class="margin-toggle">⊕</label><input type="checkbox" id="mn-fig-1" class="margin-toggle">
@@ -76,7 +76,7 @@ Array stops evolving when it is barely stable. Authors of the above paper call t
 <img src="/assets/images/soc/soc.png" alt="Self organized criticality">
 </figure>
 
-How does adding another 'sand grain' to this state i.e. $z(x, y) \rightarrow z(x, y) + 1$, affect the system? If the grain falls at the places where height is <3, nothing happens. But, we can see that there are a fair bit of 3s in the array. Some of them are next to each other and they can cause a chain reaction ('avalanche') destroying the whole state!
+How does adding another 'sand grain' to this state i.e. $z(x, y) \rightarrow z(x, y) + 1$, affect the system? If the grain falls at the places where height is <3, nothing happens. We can see that there are a fair bit of 3s are next to each other. If the sand grain falls on these clusters, they can cause a chain reaction ('avalanche') dramatically changing the state!
 
 <figure>
 <label for="mn-fig-2" class="margin-toggle">⊕</label><input type="checkbox" id="mn-fig-2" class="margin-toggle">
@@ -125,7 +125,7 @@ Most of the avalanches are small but there are a few really large avalanches. No
 </figure>
 
 That's weird -- we see a line!<label for="sn-1" class="margin-toggle sidenote-number"></label><input type="checkbox" id="sn-1" class="margin-toggle"/>
-<span class="sidenote">Tail does follow the line exactly because of boundary effects and sampling errors (sample size is $10^5$ in this case).</span> If we represent the size of avalanche by $n$, we have
+<span class="sidenote">Tail does not follow the line exactly because of boundary effects and sampling errors (sample size is $10^5$ in this case).</span> If we represent the size of avalanche by $n$, we have
 
 $$ \log{p(n)} = c - \alpha \log{n}, $$
 
@@ -133,7 +133,7 @@ $$ p(n) = e^{(c - \alpha \log{n})}, $$
 
 $$ p(n) = p_0 n^{-\alpha}. $$
 
-This distribution is what is called *power law*. There are a lot of names to this distribution: mathematicians call it pareto distribution, while physicians call it $1/f$ noise. It shows up in lot of places starting from economics, geology to world wide web. Pareto law, which states 20% events cause 80% consequences follows from the power law.
+This distribution is what is called *power law*. There are a lot of names to this distribution: mathematicians call it pareto distribution, while physicians call it $1/f$ noise. It shows up in lot of places from economics, geology to world wide web. Pareto law, which states 20% events cause 80% consequences follows from the power law.
 
 <figure>
 <label for="mn-fig-4" class="margin-toggle">⊕</label><input type="checkbox" id="mn-fig-4" class="margin-toggle">
@@ -143,4 +143,6 @@ Cumulative distributions or “rank/frequency plots” of twelve quantities repu
 <img src="/assets/images/soc/power_law_universal.png" alt="Power law">
 </figure>
 
-Perturbations to a minimally stable state seems to be generating an universal: power laws. Is this the mechanism underlying the complex systems like earthquakes and life? This idea is not new. Ilya Prigogine, a physicist and Nobel laureate Stuart Kauffman, a mathematical biologist suggest that life and other complex systems seem to be operating at [edge of chaos and order](https://en.wikipedia.org/wiki/Edge_of_chaos). Author of the paper in question, Per Bak goes as far as to suggest brain is a self-organized criticality. I wonder if we'll ever get to the answer!
+Perturbations to a minimally stable state seems to be generating an universal: power laws. Is this the mechanism underlying the complex systems like earthquakes and life?
+
+This idea is not new. Ilya Prigogine, a physicist and Nobel laureate Stuart Kauffman, a mathematical biologist suggest that life and other complex systems seem to be operating at [edge of chaos and order](https://en.wikipedia.org/wiki/Edge_of_chaos). Author of the paper in question, Per Bak goes as far as to suggest brain is a self-organized criticality. I wonder if we'll ever get to the answer!
