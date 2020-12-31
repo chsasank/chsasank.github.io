@@ -1,7 +1,8 @@
 ---
 layout: post
-title: "Edge of Chaos"
+title: "Edge of Chaos: Self-Organized Criticality"
 author: Sasank Chilamkurthy
+twitter_image: "https://en.wikipedia.org/wiki/File:Shish-kebab-skewer-60458_640.jpg"
 ---
 
 In the paper, [*Self-Organized Criticality: An Explanation of 1/f Noise*](https://chsasank.github.io/classic_papers/self-organized-criticality.html), authors show a very simple iterative procedure which generates some interesting results. These procedures are quite easy to code up and we can verify the results. What is this procedure and what's so interesting about the results anyway?
@@ -142,4 +143,4 @@ Cumulative distributions or “rank/frequency plots” of twelve quantities repu
 <img src="/assets/images/soc/power_law_universal.png" alt="Power law">
 </figure>
 
-So what is interesting about this simple model is that perturbations to a minimally stable state seems to be generating an universal: power laws. Is this the mechanism underlying the complex systems like earthquakes and life? This idea is not new. Ilya Prigogine, a physicist and Nobel laureate Stuart Kauffman, a mathematical biologist suggest that life and other complex systems seem to be operating at [edge of chaos and order](https://en.wikipedia.org/wiki/Edge_of_chaos). Author of the paper in question, Per Bak goes as far as to suggest brain is a self-organized criticality. I wonder if we'll ever get to the answer!
+Perturbations to a minimally stable state seems to be generating an universal: power laws. Is this the mechanism underlying the complex systems like earthquakes and life? This idea is not new. Ilya Prigogine, a physicist and Nobel laureate Stuart Kauffman, a mathematical biologist suggest that life and other complex systems seem to be operating at [edge of chaos and order](https://en.wikipedia.org/wiki/Edge_of_chaos). Author of the paper in question, Per Bak goes as far as to suggest brain is a self-organized criticality. I wonder if we'll ever get to the answer!
