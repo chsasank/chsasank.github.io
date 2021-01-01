@@ -165,11 +165,6 @@ th {
   display: inline-block;
 }
 
-blockquote p {
-  font-size: 1.7rem;
-  line-height: 2rem;
-  color: #2373be;
-}
 
 .small p,
 .small li {
