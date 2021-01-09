@@ -5,11 +5,11 @@ author: Sasank Chilamkurthy
 ---
 
 Concurrent programming is unintuitive and hard. Pretty hard but quite important. People do PhDs, spend careers and win Turing awards doing research on concurrent programming and distributed computing. Yet, most programmers *never* have to deal with it.<label for="sn-1" class="margin-toggle sidenote-number"></label><input type="checkbox" id="sn-1" class="margin-toggle"/>
-<span class="sidenote">Super consciously anyway. Node.js is all about async programming.</span> Why is that? Because most of the hard work has been done for you by the libraries and programs you use.
+<span class="sidenote">Super consciously anyway. Node.js is all about async programming.</span> Why is that? Because most of the hard work has been done for us by the libraries and programs we use.
 
-Let's say you're writing a simple web app i.e. it communicates to the world using `http` protocol. Your app has to serve multiple requests at the same time. Your app inturn makes multiple database queries at the same time. You're likely using a web framework, say Django, to write your app and host it behind nginx. Django and Nginx likely abstracts out all these concurrencies for you and database itself can handle concurrencies. You therefore end up writing a sequential code.
+Let's say we're writing a simple web app i.e. it communicates to the world using `http` protocol. Our app has to serve multiple requests at the same time. Our app inturn makes multiple database queries at the same time. We're likely using a web framework, say Django, to write our app and host it behind nginx. Django and Nginx likely abstracts out all these concurrencies for us and database itself can handle concurrencies. We therefore end up writing a sequential code.
 
-What if you're now asked to write your app in a completely new protocol?<label for="sn-2" class="margin-toggle sidenote-number"></label><input type="checkbox" id="sn-2" class="margin-toggle"/><span class="sidenote">In my case, this protocol is DICOM.</span> Unlike `http`, may be your protocol is asynchronous by definition -- say WebSocket. You can't rely on your favorite web framework and its abstractions to make your life simple. You have to deal with the complexity of concurrent programming. Add to that additional issues that raw threading, reference counting and error propagation brings. Not the best place to be in.
+What if we're now asked to write our app in a completely new protocol?<label for="sn-2" class="margin-toggle sidenote-number"></label><input type="checkbox" id="sn-2" class="margin-toggle"/><span class="sidenote">In my case, this protocol is DICOM.</span> Unlike `http`, may be our protocol is asynchronous by definition -- say WebSocket. We can't rely on our favorite web framework and its abstractions to make our life simple. We have to deal with the complexity of concurrent programming. Add to that additional issues that raw threading, reference counting and error propagation brings. Not the best place to be in.
 
 ## Trio and Nursery
 
@@ -108,7 +108,7 @@ trio.run(main)
 $ python echo-server.py
 ```
 
-Use telnet in another terminal to talk to the server. Type 'hello' or 'hi', press enter and you should see that server responds back with 'hello' or 'hi'.
+Use telnet in another terminal to talk to the server. Type 'hello' or 'hi', press enter and we should see that server responds back with 'hello' or 'hi'.
 
 ```
 $ telnet localhost 12345
@@ -124,7 +124,7 @@ hi
 telnet> Connection closed.
 ```
 
-And the log of your server should look like:
+And the log of our server should look like:
 
 ```
 echo_server: started
@@ -133,7 +133,7 @@ echo_server: received data b'hi\r\n'
 echo_server: connection closed
 ```
 
-You can try spinning up multiple telnet clients and verify that our server handles multiple requests at the same time.
+We can try spinning up multiple telnet clients and verify that our server handles multiple requests at the same time.
 
 ## Chat Server
 
