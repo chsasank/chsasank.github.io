@@ -2,6 +2,7 @@
 layout: post
 title: Concurrent Programming and Trio 
 author: Sasank Chilamkurthy
+twitter_image: "https://miro.medium.com/max/6000/1*FhZ9Ur1h_oZ8ULRvayBpEg.png"
 ---
 
 Concurrent programming is unintuitive and hard, but quite important. People do PhDs, spend careers and win Turing awards researching on concurrent programming and distributed computing. Yet, most programmers *never* have to deal with it.<label for="sn-1" class="margin-toggle sidenote-number"></label><input type="checkbox" id="sn-1" class="margin-toggle"/>
