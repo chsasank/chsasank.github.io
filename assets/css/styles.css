@@ -221,3 +221,7 @@ img {
   background: #121212;
   color: #eee;
 }
+
+.box h1, .box h2, .box h3{
+  width: 100%;
+}
