@@ -3,7 +3,7 @@ layout: post
 title: "Firm Resources and Sustained Competitive Advantage"
 author: "Jay Barney"
 category: classic_papers
-description: "the assumptions that strategic resources are heterogeneously distributed across firms and that these differences are stable over time, this article examines the link between firm resources and sustained competitive advantage. Four empirical indicators of the potential of firm resources to generate sustained competitive advantage—value, rareness, imitability, and substitutability—are discussed. The model is applied by analyzing the potential of several firm resources for generating sustained competitive advantages. The article concludes by examining implications of this firm resource model of sustained competitive advantage for other business disciplines."
+description: "Understanding sources of sustained competitive advantage has become a major area of research in strategic management. Building on the assumptions that strategic resources are heterogeneously distributed across firms and that these differences are stable over time, this article examines the link between firm resources and sustained competitive advantage. Four empirical indicators of the potential of firm resources to generate sustained competitive advantage—value, rareness, imitability, and substitutability—are discussed. The model is applied by analyzing the potential of several firm resources for generating sustained competitive advantages. The article concludes by examining implications of this firm resource model of sustained competitive advantage for other business disciplines."
 published: 1991-03-01
 twitter_image: https://chsasank.github.io/assets/images/classic_papers/firm_resources/fig2.png
 tag: Organizations
@@ -12,8 +12,7 @@ notes: This work is pivotal for the emergence of the resource-based view of the 
 
 ## Abstract
 
-Understanding sources of sustained competitive advantage has become a major area of research in strategic management. Building on
-the assumptions that strategic resources are heterogeneously distributed across firms and that these differences are stable over time, this article examines the link between firm resources and sustained competitive advantage. Four empirical indicators of the potential of firm resources to generate sustained competitive advantage—value, rareness, imitability, and substitutability—are discussed. The model is applied by analyzing the potential of several firm resources for generating sustained competitive advantages. The article concludes by examining implications of this firm resource model of sustained competitive advantage for other business disciplines.
+Understanding sources of sustained competitive advantage has become a major area of research in strategic management. Building on the assumptions that strategic resources are heterogeneously distributed across firms and that these differences are stable over time, this article examines the link between firm resources and sustained competitive advantage. Four empirical indicators of the potential of firm resources to generate sustained competitive advantage—value, rareness, imitability, and substitutability—are discussed. The model is applied by analyzing the potential of several firm resources for generating sustained competitive advantages. The article concludes by examining implications of this firm resource model of sustained competitive advantage for other business disciplines.
 
 ## Introduction
 
