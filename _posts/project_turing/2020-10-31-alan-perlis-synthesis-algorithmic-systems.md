@@ -6,6 +6,7 @@ category: project_turing
 description: Both knowledge and wisdom extend man's reach. Knowledge led to computers, wisdom to chopsticks. Unfortunately our association is over involved with the former. The latter will have to wait for a more sublime day.
 published: 1967-01-01
 twitter_image: https://upload.wikimedia.org/wikipedia/en/5/59/Alan_Perlis.jpg
+tag: Project Turing
 ---
 
 ## Introduction
