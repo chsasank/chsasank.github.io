@@ -10,7 +10,7 @@ GEM
       eventmachine (>= 0.12.9)
       http_parser.rb (~> 0.6.0)
     eventmachine (1.2.7)
-    ffi (1.13.1)
+    ffi (1.14.2)
     forwardable-extended (2.6.0)
     http_parser.rb (0.6.0)
     i18n (1.8.5)
@@ -73,4 +73,4 @@ DEPENDENCIES
   jekyll-textile-converter
 
 BUNDLED WITH
-   2.1.2
+   2.1.4
