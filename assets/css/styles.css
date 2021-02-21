@@ -15,6 +15,7 @@ header {
   font-size: 1.5rem;
 }
 
+h3,
 h2,
 h1,
 .post-meta,
@@ -38,6 +39,7 @@ pre {
   padding-top: 1.25rem;
   padding-bottom: 1.25rem;
   background-color: #f8f8f8;
+  color: #111;
   overflow: hidden;
 }
 
@@ -57,8 +59,19 @@ code {
   font-size: 1rem;
 }
 
-p code {
+p code, li code {
   color: #d9534f;
+}
+
+
+.box {
+  border: 1px solid;
+  padding: 1rem;
+  width: 55%
+}
+
+.small {
+  width: 55%;
 }
 
 @media screen and (max-width: 760px) {
@@ -68,6 +81,7 @@ p code {
   h2,
   h3,
   .post-meta,
+  .small,
   footer {
     width: 100%;
   }
@@ -78,7 +92,7 @@ p code {
   pre {
     width: 100% !important;
   }
-  body {
+  body, .box, .small{
     width: 90%;
     padding-left: 5%;
     padding-right: 5%;
@@ -151,11 +165,6 @@ th {
   display: inline-block;
 }
 
-blockquote p {
-  font-size: 1.7rem;
-  line-height: 2rem;
-  color: #2373be;
-}
 
 .small p,
 .small li {
@@ -186,8 +195,9 @@ blockquote p {
 
 /* Misc */
 
-mark {
+mark, span.mark {
   background: rgba(255, 255, 0, 0.2);
+  color: inherit;
 }
 
 .MathJax_Display {
@@ -197,4 +207,21 @@ mark {
 ul.archive {
   line-height: 2em;
   font-size: 1.5em;
+}
+
+a {
+  text-shadow: none !important;
+}
+
+img {
+  background: #fffff8;
+}
+
+.dark-mode {
+  background: #121212;
+  color: #eee;
+}
+
+.box h1, .box h2, .box h3{
+  width: 100%;
 }

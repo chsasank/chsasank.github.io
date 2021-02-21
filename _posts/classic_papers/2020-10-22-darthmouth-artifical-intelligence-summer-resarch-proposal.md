@@ -15,17 +15,14 @@ these problems if a carefully selected group of scientists work on it together
 for a summer."
 published: 1955-08-31
 twitter_image: https://miro.medium.com/max/930/0*3jGv1es40NHPcTE3.jpg
----
-
-> In 1955, four computer scientists wrote the following proposal for a
+tag: Artificial Intelligence
+notes: "In 1955, four computer scientists wrote the following proposal for a
 [workshop](https://en.wikipedia.org/wiki/Dartmouth_workshop) to lay groundwork
 for Artificial Intelligence. This workshop is considered to be the founding
 event of AI as a field. Ideas from this proposal remain highly relevant to the
-day.
-> 
-> Yellow highlights/annotations are my own. You can <a onclick="disableHighlight()"
-href='#'>disable them.</a> I also added side notes with my thoughts and the
-connections I could trace to the more modern AI ideas.
+day. I added side notes with my thoughts and the connections I could trace to the more modern AI ideas."
+---
+
 
 We propose that a 2 month, 10 man study of artificial intelligence be carried
 out during the summer of 1956 at Dartmouth College in Hanover, New Hampshire.

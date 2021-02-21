@@ -6,9 +6,9 @@ category: classic_papers
 description: For a number of years I have been familiar with the observation that the quality of programmers is a decreasing function of the density of `go to` statements in the programs they produce. More recently I discovered why the use of the `go to` statement has such disastrous effects, and I became convinced that the `go to` statement should be abolished from all "higher level" programming languages (i.e. everything except, perhaps, plain machine code). At that time I did not attach too much importance to this discovery; I now submit my considerations for publication because in very recent discussions in which the subject turned up, I have been urged to do so.
 published: 1968-03-01
 twitter_image: https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Edsger_Wybe_Dijkstra.jpg/220px-Edsger_Wybe_Dijkstra.jpg
+tag: Systems
+notes: This is a classic paper originally published in *Communications of the ACM*, 1968 by Edsger W. Dijkstra  and a mirror of [another mirror](https://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.92.4846&rep=rep1&type=pdf). Yes, that Dijkstra of the graph theory algorithm. I just learnt that he is a big systems guy too.
 ---
-
-> **NOTE**: This is *not* my article. This is a classic paper originally published in *Communications of the ACM*, 1968 by Edsger W. Dijkstra  and a mirror of [another mirror](https://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.92.4846&rep=rep1&type=pdf). Yellow highlights/annotations are my own. <a onclick="disableHighlight()" href='#'>Disable them.</a>
 
 Editor,
 
