@@ -2,7 +2,7 @@
 layout: post
 title: What I Learnt at IIT Bombay
 author: Sasank Chilamkurthy
-twitter_image: https://chsasank.github.io/assets/images/internship/thumbnail.png
+twitter_image: https://chsasank.github.io/assets/images/random/iitb_initial_days.jpg
 ---
 
 *I graduated from electrical engineering at IIT Bombay in 2015*. This is a matter of pride *and* insecurity for me. It enabled me to work and research on artificial intelligence, software engineering and computers in general for around six years now. Yet, it always gnaws me somewhere that I don't know how exactly compilers, databases or operating systems work. I am keenly aware of this lack of knowledge in these areas of computer science. In this post, I want to detail what I learnt during my days at the college.
