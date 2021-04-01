@@ -1,6 +1,6 @@
 ---
 layout: post
-title: History is Repeating Itself and Why Should You Care
+title: History is Repeating Itself and Why You Should Care
 author: Sasank Chilamkurthy
 twitter_image: https://chsasank.github.io/assets/images/random/iitb_initial_days.jpg
 ---
@@ -23,13 +23,14 @@ In my naive opinion, relevant history to be studied are [start of the original c
 
 One of the best outcomes of the cold war was the phasing out of direct confrontation between super powers. World has been remarkably peaceful since the second world war thanks to the doctrine of mutually assured destruction. Instead the super-powers resorted to proxy warfare between smaller powers and competition for technology domination. These will likely continue, but contours of warfare have significantly changed since the cold war. I see three main strands of competition: economy, cybersecurity and technology. 
 
-*Economy*: Global economy and trade is interconnected than ever before. Almost every major power enjoys a leverage over every other country in terms of trade and supply chain. We can see this happening when China [blocked](https://www.ft.com/content/9ed5f582-423d-41c4-ba23-0441f7dee165) Australia's wine and coal exports because of a diplomatic spat over the origins of COVID-19. US and allies seem to be pressuring China by [blocking export](https://www.ft.com/content/6bdc2df6-04c0-4f10-b5b4-9169e3d1a536) of semiconductors and chips to it. China, in turn, considered [banning](https://www.ft.com/content/d3ed83f4-19bc-4d16-b510-415749c032c1) rare earth exports to hurt US defence industry.
-
 <figure class="fullwidth">
 <a href="https://www.theguardian.com/news/datablog/ng-interactive/2021/mar/14/trade-war-fallout-how-reliant-is-australias-economy-on-china">
 <img src="/assets/images/random/australia_trade.png" alt="Australia Trade">
 </a>
 </figure>
+
+
+*Economy*: Global economy and trade is interconnected than ever before. Almost every major power enjoys a leverage over every other country in terms of trade and supply chain. We can see this happening when China [blocked](https://www.ft.com/content/9ed5f582-423d-41c4-ba23-0441f7dee165) Australia's wine and coal exports because of a diplomatic spat over the origins of COVID-19. US and allies seem to be pressuring China by [blocking export](https://www.ft.com/content/6bdc2df6-04c0-4f10-b5b4-9169e3d1a536) of semiconductors and chips to it. China, in turn, considered [banning](https://www.ft.com/content/d3ed83f4-19bc-4d16-b510-415749c032c1) rare earth exports to hurt US defence industry.
 
 *Technology*: Today's economy is driven by technology. Whoever controls the technology and standards controls the world. This is especially true for emerging technologies like artificial intelligence, 5G communications and clean technology. This is driving competition between the world powers. Many countries blocked Huawei or see it with suspicion from their 5G telecom hardware. First thing India did when China attacked her is to [ban](https://www.ft.com/content/08e15c26-48e0-4540-a040-1a8782e84f2e) TikTok and other Chinese apps. US is putting together [techno-alliances](https://www.hindustantimes.com/opinion/embracing-techno-alliances-of-the-future-101615382128995.html) to ensure its preeminence. Cold war competition has put men on the Moon -- I wonder what'll happen this time around.
 
