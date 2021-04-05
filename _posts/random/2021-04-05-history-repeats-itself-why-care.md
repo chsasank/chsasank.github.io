@@ -2,7 +2,7 @@
 layout: post
 title: History is Repeating Itself and Why You Should Care
 author: Sasank Chilamkurthy
-twitter_image: https://chsasank.github.io/assets/images/random/iitb_initial_days.jpg
+twitter_image: https://d1e00ek4ebabms.cloudfront.net/production/8d0ad66f-58c6-4309-9604-bcfb9d7c4127.jpg
 ---
 
 I get a sense of Déjà vu as I read the news these days. Recent tensions between India, China and the United States harken back to the cold war of 1950s and 60s. The parallels are uncanny: ideological warfare, authoritarianism vs democracy, polarizing forces on rest of the world, technology competition and so on. There are some differences of course: weaponized supply chains and trade, actual technologies being competed on and so on. But history seems to be repeating itself.
