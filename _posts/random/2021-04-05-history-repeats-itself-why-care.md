@@ -5,7 +5,7 @@ author: Sasank Chilamkurthy
 twitter_image: https://d1e00ek4ebabms.cloudfront.net/production/8d0ad66f-58c6-4309-9604-bcfb9d7c4127.jpg
 ---
 
-I get a sense of Déjà vu as I read the news these days. Recent tensions between India, China and the United States harken back to the cold war of 1950s and 60s. The parallels are uncanny: ideological warfare, authoritarianism vs democracy, polarizing forces on rest of the world, technology competition and so on. There are some differences of course: weaponized supply chains and trade, actual technologies being competed on and so on. But history seems to be repeating itself.
+I get a sense of déjà vu as I read the news these days. Recent tensions between India, China and the United States harken back to the cold war of 1950s and 60s. The parallels are uncanny: ideological warfare, authoritarianism vs democracy, polarizing forces on rest of the world, technology competition and so on. There are some differences of course: weaponized supply chains and trade, actual technologies being competed on and so on. But history seems to be repeating itself.
 
 <figure>
 <label for="mn-fig-1" class="margin-toggle">⊕</label><input type="checkbox" id="mn-fig-1" class="margin-toggle">
@@ -15,7 +15,7 @@ I get a sense of Déjà vu as I read the news these days. Recent tensions betwee
 
 There's a good reason why past has lessons for the present. History influences culture, ideology and people and that constrains a group in terms of options they have at hand. Both advantages and disadvantages a group of people have is rooted in their historical paths. This is true as much to a society as it is to an organization.
 
-This makes history an important area to study. It helps us predict some of the patterns we might see in the future of this new cold war. And there are many questions we need answer for. The old cold war lasted four decades. Will the new one last that long? What will be the role of different states? What are the commercial and technological implications of the cold war? How was the life under mutually assured destruction? 
+This makes history an important area to study. It helps us predict some of the patterns we might see in the future of this new cold war. And there are many questions we need answer for. The old cold war lasted four decades. Will the new one last that long? What will be the role of different states? What are the commercial and technological implications of the cold war?
 
 
 ## Changing Nature of Warfare
