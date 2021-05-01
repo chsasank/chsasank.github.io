@@ -2,7 +2,7 @@
 layout: post
 title: Technology is a Source of Socioeconomic Inequality
 author: Sasank Chilamkurthy
-twitter_image: https://upload.wikimedia.org/wikipedia/commons/d/dc/Powerloom_weaving_in_1835.jpg
+twitter_image: https://assets.thehansindia.com/h-upload/2021/01/02/1022337-covid-vaccination.jpg
 ---
 
 It is well accepted that new technologies and innovations drive human progress. Industrial revolution, green revolution and information revolution made human life easier than ever before and created wealth for everyone. However, inequality seems to have grown with every technological revolution. The picture of exploited London workers during the industrial revolution comes to mind. In this post, I describe one of the possible sociological mechanisms that lead to such inequalities among people as new technologies are adopted.
