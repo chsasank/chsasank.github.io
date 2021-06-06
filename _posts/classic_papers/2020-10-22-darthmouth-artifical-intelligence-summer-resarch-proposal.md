@@ -15,7 +15,7 @@ these problems if a carefully selected group of scientists work on it together
 for a summer."
 published: 1955-08-31
 twitter_image: https://miro.medium.com/max/930/0*3jGv1es40NHPcTE3.jpg
-tag: Artificial Intelligence
+tag: Computer Science
 notes: "In 1955, four computer scientists wrote the following proposal for a
 [workshop](https://en.wikipedia.org/wiki/Dartmouth_workshop) to lay groundwork
 for Artificial Intelligence. This workshop is considered to be the founding

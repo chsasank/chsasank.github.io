@@ -2,11 +2,11 @@
 layout: post
 title: One Man's View of Computer Science
 author: Richard W. Hamming
-category: project_turing
+category: classic_papers
 description: A number of observations and comments are directed toward suggesting that more than the usual engineering flavor be given to computer science. The engineering aspect is important because most present difficulties in this field do not involve the theoretical question of whether certain things can be done, but rather the practical question of how can they be accomplished well and simply°
 published: 1969-01-01
 twitter_image: https://en.wikipedia.org/wiki/File:Richard_Hamming.jpg
-tag: Project Turing
+tag: Computer Science (Misc)
 notes: This is the 1968 Turing award lecture by Richard Hamming. His citation reads "For his work on numerical methods, automatic coding systems, and error-detecting and error-correcting codes."
 ---
 

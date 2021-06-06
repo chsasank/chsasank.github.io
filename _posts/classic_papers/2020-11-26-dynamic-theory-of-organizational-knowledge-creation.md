@@ -6,7 +6,7 @@ category: classic_papers
 description: "This paper proposes a paradigm for managing the dynamic aspects of organizational knowledge creating processes. Its central theme is that organizational knowledge is created through a  continuous dialogue between tacit and explicit knowledge. The nature of this dialogue is examined and four patterns of interaction involving tacit and explicit knowledge are identified. It is argued that while new knowledge is developed by individuals, organizations play a critical role in articulating and amplifying that knowledge. A theoretical framework is developed which provides an analytical perspective on the constituent dimensions of knowledge creation. This framework is then applied in two operational models for facilitating the dynamic creation of appropriate organizational knowledge"
 published: 1994-02-01
 twitter_image: "https://www.toolshero.com/wp-content/uploads/2018/08/ikujiro-nonaka-toolshero.jpg"
-tag: Organizations
+tag: Management
 notes: "This paper, originally published in Organization Science in 1994, is highly influential on knowledge based view of the organization. Given how modern organizations sell software services (and ideas) as opposed to goods, this view is highly relevant. This papers starts with an epistemological view of knowledge or innovation, emphasizes on processes which create knowledge and presents an organizational design incorporating these processes. Highly interesting is the perspective of embodiment of knowledge and how innovation arises as an interaction between tacit and explicit knowledges."
 ---
 
