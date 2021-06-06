@@ -6,7 +6,7 @@ category: classic_papers
 description:  "Extreme Programming turns the conventional software process sideways. Rather than planning, analyzing, and designing for the far-flung future, XP programmers do all of these activities -- a little at a time -- throughout development."
 published: 1999-10-01
 twitter_image: https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Kent_Beck_no_Workshop_Mapping_XP.jpg/220px-Kent_Beck_no_Workshop_Mapping_XP.jpg
-tag: Systems
+tag: Computer Science
 notes: "In the late 90s, right before dotcom bubble, people started finding software engineering hard. Many methodologies to do software engineering were published but Kent Beck's Extreme Programming was one of the most influential. The current paper was originally published in IEEE computer in 1999. Beck followed up this paper with a highly cited book *Extreme Programming: Embrace Change*."
 ---
 

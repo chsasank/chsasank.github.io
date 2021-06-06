@@ -2,11 +2,11 @@
 layout: post
 title: Computers Then and Now
 author: Maurice V. Wilkes
-category: project_turing
+category: classic_papers
 description: 
 published: 1968-01-01
 twitter_image: https://upload.wikimedia.org/wikipedia/commons/3/36/Maurice_Vincent_Wilkes_1980_%283%2C_cropped%29.jpg
-tag: Project Turing
+tag: Computer Science (Misc)
 notes: "This is the 1967 Turing award lecture by Maurice V. Wilkes. From [Wikipedia](https://en.wikipedia.org/wiki/Turing_Award), Wilkes is best known as the builder and designer of the EDSAC, the first computer with an internally stored program. This lecture does a wide survey of computer as they were in 1968 and makes many accurate predictions."
 ---
 

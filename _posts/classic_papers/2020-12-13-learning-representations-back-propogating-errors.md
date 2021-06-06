@@ -6,7 +6,7 @@ category: classic_papers
 description: "We describe a new learning procedure, back-propagation, for networks of neurone-like units. The procedure repeatedly adjusts the weights of the connections in the network so as to minimize a measure of the difference between the actual output vector of the net and the desired output vector. As a result of the weight adjustments, internal 'hidden' units which are not part of the input or output come to represent important features of the task domain, and the regularities in the task are captured by the interactions of these units. The ability to create useful new features distinguishes back-propagation from earlier, simpler methods such as the perceptron-convergence procedure[1]."
 published: 1986-12-09
 twitter_image: "https://miro.medium.com/max/1050/1*LB10KFg5J7yK1MLxTXcLdQ.jpeg"
-tag: Artificial Intelligence
+tag: Computer Science
 notes: "This is the classic paper that rediscovered back-propagation. Conceptually, back propagation is quite simple and just is a repeated application of chain rule. However, results of applying backprop for multi layer neural networks have been spectacular. This paper reads like a very brief tutorial of deep learning."
 ---
 

@@ -6,7 +6,7 @@ category: classic_papers
 description: "Getting a new idea adopted, even when it has obvious advantages, is difficult.</span> Many innovations require a lengthy period of many years from the time when they become available to the time when they are widely adopted. Therefore, a common problem for many individuals and organizations is how to speed up the rate of diffusion of an innovation. The following case illustration provides insight into some common difficulties facing diffusion campaigns."
 published: 1962-01-01
 twitter_image: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Edison_and_phonograph_edit2.jpg/800px-Edison_and_phonograph_edit2.jpg"
-tag: "Social Science"
+tag: Social Science
 notes: The following is the first chapter in the landmark communication studies book *Diffusion of innovations*. This book, one of the most cited in social sciences, makes for an essential reading for anyone in a startup. Engineers usually assume technological innovations speak for themselves and they will be adopted automatically and rapidly. Nothing can be farther from truth, with many innovations take forever to (or never) get adopted. Diffusion of innovation is inherently a social process where communication and social structure play as much role as the innovation itself. This chapter gives an overview of this process.
 ---
 

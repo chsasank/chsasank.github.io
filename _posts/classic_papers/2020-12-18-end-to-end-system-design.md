@@ -6,7 +6,7 @@ category: classic_papers
 description: "This paper presents a design principle that helps guide placement of functions among the modules of a distributed computer system. The principle, called the end-to-end argument, suggests that functions placed at low levels of a system may be redundant or of little value when compared with the cost of providing them at that low level. Examples discussed in the paper include bit-error recovery, security using encryption, duplicate message suppression, recovery from system crashes, and delivery acknowledgment. Low-level mechanisms to support these functions are justified only as performance enhancements."
 published: 1981-04-08
 twitter_image: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/End-to-end_Concept-en.svg/2880px-End-to-end_Concept-en.svg.png"
-tag: Systems
+tag: Computer Science
 notes: "This paper is essentially the design philosophy of internet and its protocols. In the context of layered systems, end-to-end principle is that you should *not* make lower layers feature-rich and should leave the features to higher-level subsystems. For example, there's no point having your communication *channel* doing the encryption. Lower levels should be simple and need not be perfect. Design tradeoffs to make a low-level subsystem perfect are usually not worth it. This design principle applies not only to network but also to file systems, operating systems and even processor design. It's strikingly similar to Unix design philosophy: *do one thing and do it well*."
 ---
 

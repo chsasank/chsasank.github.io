@@ -2,11 +2,11 @@
 layout: post
 title: The Synthesis of Algorithmic Systems 
 author: Alan J. Perlis
-category: project_turing
+category: classic_papers
 description: Both knowledge and wisdom extend man's reach. Knowledge led to computers, wisdom to chopsticks. Unfortunately our association is over involved with the former. The latter will have to wait for a more sublime day.
 published: 1967-01-01
 twitter_image: https://upload.wikimedia.org/wikipedia/en/5/59/Alan_Perlis.jpg
-tag: Project Turing
+tag: Computer Science (Misc)
 ---
 
 ## Introduction

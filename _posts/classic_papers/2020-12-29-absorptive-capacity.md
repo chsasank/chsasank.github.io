@@ -5,7 +5,7 @@ author: "Wesley M. Cohen And Daniel A. Levinthal"
 category: classic_papers
 published: 1990-03-01
 twitter_image: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Mercedes_Benz_Research_Development_North_America_%2813896049248%29.jpg/1280px-Mercedes_Benz_Research_Development_North_America_%2813896049248%29.jpg"
-tag: Organizations
+tag: Management
 description: "In this paper, we argue that the ability of a firm to recognize the value of new, external information, assimilate it, and apply it to commercial ends is critical to its innovative capabilities. We label this capability a firm's absorptive capacity and suggest that it is largely a function of the firm's level of prior related knowledge. The discussion focuses first on the cognitive basis for an individual's absorptive capacity including, in particular, prior related knowledge and diversity of background."
 notes: "It's easier to learn new things in a topic we already know. It's hard to appreciate advances in a topic if we don't know much about that topic. Therefore, more knowledge we have, easier it is to absorb new knowledge and innovate. There is also a [exploration vs exploitation](https://chsasank.github.io/classic_papers/exploration-exploitation-organizational-learning.html) tradeoff: Hierarchy, increased communication and specialization leads exploitation of existing knowledge. Flat structure and diversity encourages exploration of new knowledge and increases the absorptive capacity in the new topics. Another consequence of non-linearity of knowledge acquisition is that firm's evolutionary history both encourages and constrains the kind of knowledge it can acquire in the future."
 ---
