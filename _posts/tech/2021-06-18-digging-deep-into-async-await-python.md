@@ -2,7 +2,7 @@
 layout: post
 title: Demystifying Asynchronous Programming in Python
 author: Sasank Chilamkurthy
-twitter_image:
+twitter_image: "https://www.modernescpp.com/images/blog/Cpp20/co_return/FunctionsVersusCoroutines.png"
 ---
 
 `asyncio` is all the rage these days in Python because we can write high performance io code in a single thread. While there are a lot of tutorials on `asyncio` library itself, there is little explanation on how it works internally. Although  `asyncio` library uses the `async`/`await` syntax, the syntax is independent of the library.
