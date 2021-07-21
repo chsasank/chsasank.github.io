@@ -53,3 +53,15 @@ You can also visit the OpenStack dashboard at http://10.20.20.1:80
 
 
 ![image](https://user-images.githubusercontent.com/9305875/126458800-a796576a-d03e-4315-80ab-8f869bb0f8b6.png)
+
+
+https://computingforgeeks.com/adding-images-openstack-glance/
+
+```
+wget http://cloud-images.ubuntu.com/focal/current/focal-server-cloudimg-amd64.img 
+microstack.openstack image create \
+    --container-format bare \
+    --disk-format qcow2 \
+    --file focal-server-cloudimg-amd64.img \
+    Ubuntu-20.04
+```
