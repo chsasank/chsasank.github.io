@@ -58,10 +58,14 @@ You can also visit the OpenStack dashboard at http://10.20.20.1:80
 https://computingforgeeks.com/adding-images-openstack-glance/
 
 ```
-wget http://cloud-images.ubuntu.com/focal/current/focal-server-cloudimg-amd64.img 
-microstack.openstack image create \
+$ wget http://cloud-images.ubuntu.com/focal/current/focal-server-cloudimg-amd64.img 
+$ microstack.openstack image create \
     --container-format bare \
     --disk-format qcow2 \
     --file focal-server-cloudimg-amd64.img \
     Ubuntu-20.04
+```
+
+```
+$ microstack launch  -f m1.medium ubuntu  
 ```
