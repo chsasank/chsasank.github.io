@@ -39,5 +39,17 @@ Waiting for 192.168.0.119:9292
 2021-07-21 13:59:22,138 - microstack_init - INFO - Configuring the Cinder services...                 
 2021-07-21 14:00:19,567 - microstack_init - INFO - Running Cinder DB migrations...
 2021-07-21 14:00:33,849 - microstack_init - INFO - restarting libvirt and virtlogd ...                
-2021-07-21 14:00:46,745 - microstack_init - INFO - Complete. Marked microstack as initialized!      
+2021-07-21 14:00:46,745 - microstack_init - INFO - Complete. Marked microstack as initialized!   
+
+(base) sasank@ubuntu-G752VS:~/infra-dev$ microstack launch cirros --name test                                                                                                                               
+Creating local "microstack" ssh key at /home/sasank/snap/microstack/common/.ssh/id_microstack                                                                                                               
+Launching server ...                                                                                                                                                                                        
+Allocating floating ip ...                                                                                                                                                                                  
+Server test launched! (status is BUILD)                                                                                                                                                                     
+                                                                                                                                                                                                            
+Access it with `ssh -i /home/sasank/snap/microstack/common/.ssh/id_microstack cirros@10.20.20.238`                                                                                                          
+You can also visit the OpenStack dashboard at http://10.20.20.1:80       
 ```
+
+
+![image](https://user-images.githubusercontent.com/9305875/126458800-a796576a-d03e-4315-80ab-8f869bb0f8b6.png)
