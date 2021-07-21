@@ -69,3 +69,6 @@ $ microstack.openstack image create \
 ```
 $ microstack launch  -f m1.medium ubuntu  
 ```
+
+Internet not working from instances: https://stackoverflow.com/questions/64320242/microstack-my-vms-cannot-access-the-internet
+
