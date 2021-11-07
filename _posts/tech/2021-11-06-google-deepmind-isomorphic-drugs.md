@@ -13,11 +13,11 @@ He can't be bluffing, right? Even more interestingly, Google says it'll use arti
 
 We need to start at the basics of biochemistry and macromolecules. Next, we'll see how a protein's shape allows it to do its functions. This will allow us to appreciate the discovery that is AlphaFold. Finally, we'll understand how our body is really made up of protein-protein interactions and is kind of a network, not unlike neural networks. This should help us understand why Google is getting into drug discovery business.
 
-## Macromolecules
+## Biomolecules and Macromolecules
 
-All known living organisms, including ourselves, are built up of and run by molecules containing carbon -- the same carbon present in coal and diamonds. These molecules are called 'organic' because they are related to life. Think of these organic molecules as nut, bolts, frame and engine of a car that is our body. There are many way to classify vast number of molecules present in our body based on their size and building blocks. 
+All known living organisms, including ourselves, are built up of and run by molecules containing carbon -- the same carbon present in coal and diamonds. These molecules are called 'organic' because they are related to life. There are multiple ways to classify vast number of molecules present in our body based on their size and building blocks. 
 
-Let's start with relatively simple one: large and small. Micro molecules or [monomers](https://en.wikipedia.org/wiki/Monomer) are small size molecules that usually contain less than 100 atoms. Examples include glucose (C₆H₁₂O₆), glycine (C₂H₅NO₂) and adenine (C₅H₅N₅). [Macromolecules](https://en.wikipedia.org/wiki/Macromolecule) or polymers are formed by repeating or putting together monomers using chemical bonds, usually in a chain. For example, cellulose, main structural component of plants (think wood) is nothing but repetition of glucose molecules up to 10,000 times. 
+Let's start with size. Micro molecules or [monomers](https://en.wikipedia.org/wiki/Monomer) are small size molecules that usually contain less than 100 atoms. Examples include glucose (C₆H₁₂O₆), glycine (C₂H₅NO₂) and adenine (C₅H₅N₅). [Macromolecules](https://en.wikipedia.org/wiki/Macromolecule) or polymers are formed by repeating or putting together monomers using chemical bonds, usually in a chain. For example, cellulose, main structural component of plants (think wood) is nothing but repetition of glucose molecules up to 10,000 times. 
 
 <figure>
 <label for="mn-fig-1" class="margin-toggle">⊕</label><input type="checkbox" id="mn-fig-1" class="margin-toggle">
@@ -25,7 +25,7 @@ Let's start with relatively simple one: large and small. Micro molecules or [mon
 <img src="assets/images/protein_drugs/cellulose.png" alt="">
 </figure>
 
-While cellulose can get really large with more than hundreds of thousands of atoms, it's a simple repetition of a single unit. Things get lot more complicated if macromolecules are a non-repeating sequence of more than one building block. That gets us to next type of classification based on building blocks. Nucleic acids and proteins are long chains of simpler molecules called nucleotides and amino acids respectively. Lipids and polysaccharides are made up of hydrocarbons and sugars respectively.
+While cellulose can get really large with more than hundreds of thousands of atoms, it's a simple repetition of a single unit. Things get lot more complicated if macromolecules are a non-repeating sequence of more than one building block. That gets us to next type of classification based on building blocks. Here are the major types of macromolecules and their building blocks.
 
 
 | Macromolecule  (Polymer)   | Building Block  (Monomer)   | 
@@ -47,12 +47,12 @@ Similar to nucleic acids, a protein is a sequences of amino acids. There are 20 
 <img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Protein_folding.png" alt="">
 </figure>
 
-So, what exactly do proteins do anyway? They dramatically speed up chemical reactions that make up life including photosynthesis, metabolism, movement or vision. So much so that these bio-chemical reactions do not happen without the presence<label for="sn-1" class="margin-toggle sidenote-number"></label><input type="checkbox" id="sn-1" class="margin-toggle"/>
+So, what exactly proteins do? They dramatically speed up chemical reactions that make up life including photosynthesis, metabolism, movement and vision. So much so that these biochemical reactions do not happen without the presence<label for="sn-1" class="margin-toggle sidenote-number"></label><input type="checkbox" id="sn-1" class="margin-toggle"/>
 <span class="sidenote">
 If you're computer engineer like me, you can think of protein as a gate of [transistor](https://en.wikipedia.org/wiki/Transistor). Without gate potential, transistor doesn't let the current pass. Similarly without the presence of a protein, reaction doesn't happen.
 </span> of the protein. This process is called as [enzyme catalysis](https://en.wikipedia.org/wiki/Enzyme_catalysis). Each reaction step has its own protein enzyme and these enzymes are extraordinarily specific: a protein can catalyze only one or two reactions.
 
-How does this enzyme catalysis thing work anyway? It works based on shape of the protein! When a protein is folded, its varied shape and local amino acid presence can create so-called 'active sites'. These active sites are purpose built for both shape and chemistry of a specific substrate. Finally active site can make the reactions happen. See the below animation for schematic of how this works.
+How does this enzyme catalysis thing work? It works based on shape of the protein! When a protein is folded, its varied shape and local amino acid presence can create so-called 'active sites'. These active sites are purpose built for both shape and chemistry of a specific substrate. Finally active site can make the reactions happen. See the below animation for schematic of how this works.
 
 <figure>
 <label for="mn-fig-3" class="margin-toggle">⊕</label><input type="checkbox" id="mn-fig-3" class="margin-toggle">
@@ -60,7 +60,7 @@ How does this enzyme catalysis thing work anyway? It works based on shape of the
 <img src="https://www.mrdubuque.com/uploads/2/4/5/0/24509062/x2xgpu-orig_orig.gif" alt="">
 </figure>
 
-You can see how shape of proteins is all-important for its functioning. How do we then guess the shape of a protein given the sequence of amino acid? This is not straightforward at all yet pritein holding happens almost instantaneously. Protein folding been a unsolved problem for years. However last year, Deepmind, AI research division of Google, [announced](https://deepmind.com/blog/article/AlphaFold-Using-AI-for-scientific-discovery) solving it with very high accuracy using deep learning.
+You can see how shape of proteins is all-important for its functioning. How do we then guess the shape of a protein given the sequence of amino acid? This is not straightforward at all yet protein holding happens almost instantaneously. Protein folding been a unsolved problem for years. However last year, Deepmind, AI research division of Google, [announced](https://deepmind.com/blog/article/AlphaFold-Using-AI-for-scientific-discovery) solving it with very high accuracy using deep learning.
 
 
 <figure>
