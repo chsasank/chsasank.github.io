@@ -11,6 +11,72 @@ Google's parent company Alphabet [just](https://www.ft.com/content/499debf2-4643
 
 He can't be bluffing, right? Even more interestingly, Google says it'll use artificial intelligence (AI) to discover drugs to cure humanity's diseases. AI and drugs? They must be crazy now. Well, not really. Google does have a trick by its sleeve and it's called AlphaFold. It can be used to predict the shape of protein with great accuracy. So what? How does that help solve humanity's most devastating diseases? Well that's the point of this post -- I'll explain how our body *really* works, why AlphaFold is a breakthrough and finally how it can help find new drugs.
 
-We need to start at the basics of molecular biology and DNA. We will then get to [central dogma of molecular biology](https://en.wikipedia.org/wiki/Central_dogma_of_molecular_biology): how DNA is 'translated' into proteins. Next, we'll see how a protein's shape allows it to do its functions. This will allow us to appreciate the discovery that is AlphaFold. Finally, we'll understand how our body is really made up of protein-protein interactions and is kind of a network, not unlike neural networks. This should help us understand why Google is getting into drug discovery business.
+We need to start at the basics of biochemistry and macromolecules. Next, we'll see how a protein's shape allows it to do its functions. This will allow us to appreciate the discovery that is AlphaFold. Finally, we'll understand how our body is really made up of protein-protein interactions and is kind of a network, not unlike neural networks. This should help us understand why Google is getting into drug discovery business.
 
-## Basics of Molecular Biology
+## Macromolecules
+
+All known living organisms, including ourselves, are built up of and run by molecules containing carbon -- the same carbon present in coal and diamonds. These molecules are called 'organic' because they are related to life. Think of these organic molecules as nut, bolts, frame and engine of a car that is our body. There are many way to classify vast number of molecules present in our body based on their size and building blocks. 
+
+Let's start with relatively simple one: large and small. Micro molecules or [monomers](https://en.wikipedia.org/wiki/Monomer) are small size molecules that usually contain less than 100 atoms. Examples include glucose (C₆H₁₂O₆), glycine (C₂H₅NO₂) and adenine (C₅H₅N₅). [Macromolecules](https://en.wikipedia.org/wiki/Macromolecule) or polymers are formed by repeating or putting together monomers using chemical bonds, usually in a chain. For example, cellulose, main structural component of plants (think wood) is nothing but repetition of glucose molecules up to 10,000 times. 
+
+<figure>
+<label for="mn-fig-1" class="margin-toggle">⊕</label><input type="checkbox" id="mn-fig-1" class="margin-toggle">
+<span class="marginnote">Cellulose chemical structure. Building block of cellulose (green) is glucose (red). Only a small portion of cellulose is shown here. Full structure repeats glucose thousands of times.</span>
+<img src="assets/images/protein_drugs/cellulose.png" alt="">
+</figure>
+
+While cellulose can get really large with more than hundreds of thousands of atoms, it's a simple repetition of a single unit. Things get lot more complicated if macromolecules are a non-repeating sequence of more than one building block. That gets us to next type of classification based on building blocks. Nucleic acids and proteins are long chains of simpler molecules called nucleotides and amino acids respectively. Lipids and polysaccharides are made up of hydrocarbons and sugars respectively.
+
+
+| Macromolecule  (Polymer)   | Building Block  (Monomer)   | 
+|---|---|---|
+| Nucleic acids  | Nucleotides | 
+| Proteins  | Amino acids  | 
+| Polysaccharides  | Monosaccharides |
+| Lipids (Fats)  | Hydrocarbons | 
+
+Nucleic acids are sequences of four nucleotides -- adenine [A], thymine [T], cytosine [C] and guanine [G]. Most well known nucleic acid is probably Deoxyribonucleic acid or DNA. The sequence of nucleotides is *not* repetitive (like that of cellulose) which makes them perfect for storage of information. Think how a book is nothing but a sequence of alphabet. DNA, for example, contains information required for development and functioning of a organism written in the alphabet of 'ATCG'. We'll discuss the information part and DNA later in a later post.
+
+## Proteins
+
+Similar to nucleic acids, a protein is a sequences of amino acids. There are 20 of them and some of them are attracted to water while others get repelled by water. This property is important because, unlike DNA which has famous double helical structure, 3D structure of proteins is not straight forward. Because of attractions and repulsion between amino acids and life's main solvent water, proteins 'fold' into a vast number of different three-dimensional shapes based on the sequence. This structure is what makes a protein biologically functional.
+
+<figure>
+<label for="mn-fig-3" class="margin-toggle">⊕</label><input type="checkbox" id="mn-fig-3" class="margin-toggle">
+<span class="marginnote">Protein before and after folding.</span>
+<img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Protein_folding.png" alt="">
+</figure>
+
+So, what exactly do proteins do anyway? They dramatically speed up chemical reactions that make up life including photosynthesis, metabolism, movement or vision. So much so that these bio-chemical reactions do not happen without the presence<label for="sn-1" class="margin-toggle sidenote-number"></label><input type="checkbox" id="sn-1" class="margin-toggle"/>
+<span class="sidenote">
+If you're computer engineer like me, you can think of protein as a gate of [transistor](https://en.wikipedia.org/wiki/Transistor). Without gate potential, transistor doesn't let the current pass. Similarly without the presence of a protein, reaction doesn't happen.
+</span> of the protein. This process is called as [enzyme catalysis](https://en.wikipedia.org/wiki/Enzyme_catalysis). Each reaction step has its own protein enzyme and these enzymes are extraordinarily specific: a protein can catalyze only one or two reactions.
+
+How does this enzyme catalysis thing work anyway? It works based on shape of the protein! When a protein is folded, its varied shape and local amino acid presence can create so-called 'active sites'. These active sites are purpose built for both shape and chemistry of a specific substrate. Finally active site can make the reactions happen. See the below animation for schematic of how this works.
+
+<figure>
+<label for="mn-fig-3" class="margin-toggle">⊕</label><input type="checkbox" id="mn-fig-3" class="margin-toggle">
+<span class="marginnote">How enzymes work. [Source](https://www.mrdubuque.com/home/biodub-my-gifs-to-you-enzyme-reactions)</span>
+<img src="https://www.mrdubuque.com/uploads/2/4/5/0/24509062/x2xgpu-orig_orig.gif" alt="">
+</figure>
+
+You can see how shape of proteins is all-important for its functioning. How do we then guess the shape of a protein given the sequence of amino acid? This is not straightforward at all yet pritein holding happens almost instantaneously. Protein folding been a unsolved problem for years. However last year, Deepmind, AI research division of Google, [announced](https://deepmind.com/blog/article/AlphaFold-Using-AI-for-scientific-discovery) solving it with very high accuracy using deep learning.
+
+
+<figure>
+<label for="mn-fig-3" class="margin-toggle">⊕</label><input type="checkbox" id="mn-fig-3" class="margin-toggle">
+<span class="marginnote">A schematic of the architecture of the AlphaFold system predicting structure from protein sequence. [Source](https://deepmind.com/blog/article/AlphaFold-Using-AI-for-scientific-discovery)</span>
+<img src="
+https://kstatic.googleusercontent.com/files/7f0ce54218f3f56f78f544146d261f4010f04390e00edf680434a8dc1e34bcb10255605db91a9e339335050a52261ae3523725cc1512095e221befb6f1cf2504
+" alt="">
+</figure>
+
+Rightly so, this is touted as one of [the](https://www.embl.org/news/science/alphafold-potential-impacts/) [biggest](https://www.nature.com/articles/d41586-020-03348-4) [breakthroughs](https://www.forbes.com/sites/robtoews/2021/10/03/alphafold-is-the-most-important-achievement-in-ai-ever/). Deepmind later [published](https://www.nature.com/articles/s41586-021-03819-2) their methods in Nature and [opensourced](https://github.com/deepmind/alphafold) the code to predict protein structure. While protein is important, it doesn't fully explain why Google is getting into drug discovery. We need to understand bit more biology and current drug discovery process.
+ 
+## Systems Biology
+
+References:
+1. https://en.wikipedia.org/wiki/Macromolecule
+2. https://en.wikipedia.org/wiki/Protein_folding
+3. https://app.getpocket.comhttps://en.wikipedia.org/wiki/Enzyme_catalysis
+4. https://en.wikipedia.org/wiki/Genetic_code
