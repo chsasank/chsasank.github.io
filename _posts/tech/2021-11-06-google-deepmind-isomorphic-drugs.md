@@ -5,7 +5,7 @@ author: Sasank Chilamkurthy
 twitter_image: "https://hatrabbits.com/wp-content/uploads/2017/01/random.jpg"
 ---
 
-Google's parent company Alphabet [just](https://www.ft.com/content/499debf2-4643-449c-83e4-20a532624bbd) [announced](https://www.cnbc.com/2021/11/05/isomorphic-labs-deepmind-ceo-to-lead-new-alphabet-drug-discovery-lab.html) that it has launched a new drug discovery company called [Isomorphic Labs](https://www.isomorphiclabs.com/). At the first sight, this doesn't make any sense. Why is a computer technology company taking on well-entrenched pharmaceutical companies like Pfizer and Roche? See the confidence exuded by one of the Google's executives:
+Google's parent company named Alphabet [just](https://www.ft.com/content/499debf2-4643-449c-83e4-20a532624bbd) [announced](https://www.cnbc.com/2021/11/05/isomorphic-labs-deepmind-ceo-to-lead-new-alphabet-drug-discovery-lab.html) that it has launched a new drug discovery company called [Isomorphic Labs](https://www.isomorphiclabs.com/). At the first sight, this doesn't make any sense. Why is a computer technology company taking on well-entrenched pharmaceutical companies like Pfizer and Roche? See the confidence exuded by one of the Google's executives:
 
 > UK-registered Isomorphic Labs will use technology from its sister company DeepMind “to accelerate drug discovery, and ultimately, find cures for some of humanity’s most devastating diseases,” said Demis Hassabis, the head of DeepMind, in a blog post.
 
