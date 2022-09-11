@@ -225,3 +225,7 @@ img {
 .box h1, .box h2, .box h3{
   width: 100%;
 }
+
+header h2 {
+  font-style: normal;
+}
