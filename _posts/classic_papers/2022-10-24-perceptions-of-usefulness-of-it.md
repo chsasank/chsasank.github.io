@@ -20,6 +20,8 @@ I have decided to shake up the formula of classic papers by using my Samsung tab
 
 ## Annotated Paper
 
+[Download the annotated pdf](/assets/images/classic_papers/usefulness_of_it/usefulness-of-it-annotated.pdf)
+
 <object data=
 "/assets/images/classic_papers/usefulness_of_it/usefulness-of-it-annotated.pdf" 
     style="width:55%;height:700px;"> 
