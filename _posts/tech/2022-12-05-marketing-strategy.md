@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Marketing Strategy
+title: Marketing Strategy From First Principles
 author: Sasank Chilamkurthy
 twitter_image: "https://www.investopedia.com/thmb/eFPSi2HqXfh44skpQbxdkJxAVa4=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/terms_m_marketing-strategy_FINAL-86aa7d267bab450db9dbf9d04fa82eb3.jpg"
 ---
