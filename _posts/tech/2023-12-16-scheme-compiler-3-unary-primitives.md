@@ -191,3 +191,176 @@ $ guile tests.scm
 (char->integer (integer->char 12)): passed
 (integer->char (char->integer x)): passed
 ```
+
+## Predicates
+
+We will now implement predicates `zero?`, `null?` and `not`. These are not as simple as above. We need to use more x86 instructions/registers for comparison:
+
+* `cmpl`: compare operands and set zero flag if equal
+* `cmp`: Same as `cmpl` but for bytes
+* `sete`: Sets destination if zero flag is set from previous instructions
+* `%al`: Lower 8 bits of register `%eax`
+
+To check for zero, we will use following instructions:
+
+```assembly
+; compare 0 to result and set zero flag if true
+cmpl $0, %eax
+; make eax 0
+movl $0, %eax
+; set lower byte of eax register to 0/1 based on zeroflag
+sete %al
+; convert 0/1 in eax to bool
+sall $7, %eax
+orl $63, %eax
+```
+
+Of these, instructions after the first one create boolean from whether zero bit is set. This routine is useful for other predicates too. So we'll extract it into a procedure:
+
+```
+(define (zeroflag-to-bool)
+    ; convert zeroflag set by cmp to boolean
+    ; used in other primitives
+    ; make eax 0
+    (emit "movl $0, %eax")
+    ; set lower byte of eax register to 0/1 based on zeroflag
+    (emit "sete %al")
+    ; convert 0/1 in eax to bool
+    (emit "sall $~a, %eax" bool-shift)
+    (emit "orl $~a, %eax" bool-tag))
+```
+
+Now writing predicates become quite easy
+
+```scheme
+; in compiler.asm
+(define-primitive (zero? arg)
+    (emit-expr arg)
+    ; compare 0 to result and set zero flag if true
+    (emit "cmpl $0, %eax")
+    (zeroflag-to-bool))
+
+(define-primitive (null? arg)
+    (emit-expr arg)
+    ; compare null value bits to result and set zero flag if true
+    (emit "cmpl $~a, %eax" null-val)
+    (zeroflag-to-bool))
+
+(define-primitive (not arg)
+    ; return true only if arg is #f
+    (emit-expr arg)
+    ; compare immediate rep of #f to result
+    ; set zero flag if true
+    (emit "cmpl $~a, %eax" (immediate-rep #f))
+    (zeroflag-to-bool))
+
+(define-primitive (integer? arg)
+    (emit-expr arg)
+    ; apply fixnum mask (1 bits fixnum-shift times)
+    (emit "and $~s, %al" (- (ash 1 fixnum-shift) 1))
+    (emit "cmp $~s, %al" #b00)
+    (zeroflag-to-bool))
+
+(define-primitive (char? arg)
+    (emit-expr arg)
+    ; apply fixnum mask (1 bits char-shift times)
+    (emit "and $~s, %al" (- (ash 1 char-shift) 1))
+    (emit "cmp $~s, %al" char-tag)
+    (zeroflag-to-bool))
+
+(define-primitive (boolean? arg)
+    (emit-expr arg)
+    ; apply fixnum mask (1 bits bool-shift times)
+    (emit "and $~s, %al" (- (ash 1 bool-shift) 1))
+    (emit "cmp $~s, %al" bool-tag)
+    (zeroflag-to-bool))
+```
+
+Add following test cases:
+
+```scheme
+; add in tests.scm
+
+; zero?
+(run-test '(zero? 0) "#t\n")
+(run-test '(zero? 1) "#f\n")
+(run-test '(zero? -1) "#f\n")
+(run-test '(zero? (sub1 1)) "#t\n")
+; null?
+(run-test '(null? ()) "#t\n")
+(run-test '(null? #f) "#f\n")
+(run-test '(null? #t) "#f\n")
+(run-test '(null? (null? ())) "#f\n")
+(run-test '(null? #\a) "#f\n")
+(run-test '(null? 0) "#f\n")
+(run-test '(null? -10) "#f\n")
+(run-test '(null? 10) "#f\n")
+; integer?
+(run-test '(integer? 0) "#t\n")
+(run-test '(integer? 1) "#t\n")
+(run-test '(integer? -1) "#t\n")
+(run-test '(integer? 37287) "#t\n")
+(run-test '(integer? -23873) "#t\n")
+(run-test '(integer? 536870911) "#t\n")
+(run-test '(integer? -536870912) "#t\n")
+(run-test '(integer? #t) "#f\n")
+(run-test '(integer? #f) "#f\n")
+(run-test '(integer? ()) "#f\n")
+(run-test '(integer? #\Q) "#f\n")
+(run-test '(integer? (integer? 12)) "#f\n")
+(run-test '(integer? (integer? #f)) "#f\n")
+(run-test '(integer? (integer? #\A)) "#f\n")
+(run-test '(integer? (char->integer #\r)) "#t\n")
+(run-test '(integer? (integer->char 12)) "#f\n")
+; char?
+(run-test '(char? #\a) "#t\n")
+(run-test '(char? #\Z) "#t\n")
+(run-test '(char? #t) "#f\n")
+(run-test '(char? #f) "#f\n")
+(run-test '(char? ()) "#f\n")
+(run-test '(char? (char? #t)) "#f\n")
+(run-test '(char? 0) "#f\n")
+(run-test '(char? 23870) "#f\n")
+(run-test '(char? -23789) "#f\n")
+; boolean?
+(run-test '(boolean? #t) "#t\n")
+(run-test '(boolean? #f) "#t\n")
+(run-test '(boolean? 0) "#f\n")
+(run-test '(boolean? 1) "#f\n")
+(run-test '(boolean? -1) "#f\n")
+(run-test '(boolean? ()) "#f\n")
+(run-test '(boolean? #\a) "#f\n")
+(run-test '(boolean? (boolean? 0)) "#t\n")
+(run-test '(boolean? (integer? (boolean? 0))) "#t\n")
+; not
+(run-test '(not #t) "#f\n")
+(run-test '(not #f) "#t\n")
+(run-test '(not 15) "#f\n")
+(run-test '(not ()) "#f\n")
+(run-test '(not #\A) "#f\n")
+(run-test '(not (not #t)) "#t\n")
+(run-test '(not (not #f)) "#f\n")
+(run-test '(not (not 15)) "#t\n")
+(run-test '(not (integer? 15)) "#f\n")
+(run-test '(not (integer? #f)) "#t\n")
+```
+
+Run tests
+
+```
+$ guile tests.scm
+...
+(boolean? (integer? (boolean? 0))): passed
+(not #t): passed
+(not #f): passed
+(not 15): passed
+(not ()): passed
+(not A): passed
+(not (not #t)): passed
+(not (not #f)): passed
+(not (not 15)): passed
+(not (integer? 15)): passed
+(not (integer? #f)): passed
+```
+
+That's all for this post, folks! We added primitives with single arguments to the language. We upgraded our compiler infrastructure to easily add primitives. Unary primitives were especially easy to handle because we could just use `%eax` register for value of the argument. This won't be possible if there are more than one arguments. That'll be topic of the next post.
