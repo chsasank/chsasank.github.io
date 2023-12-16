@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Scheme Compiler in Incremental Steps
+title: "Scheme Compiler in Incremental Steps: Compiling Integers"
 author: Sasank Chilamkurthy
 twitter_image: "https://miro.medium.com/v2/resize:fit:500/1*Qbm5_d5EYIbYa1-jN4JmSg.jpeg"
 ---
@@ -41,20 +41,20 @@ However modular this makes the compiler construction, such frameworks are a terr
 
 In this tutorial, we follow this approach to compile a subset of scheme. We will also use scheme as our implementation language.
 
-## Integers
+## Compiling Integers
 
 Let's start with integers or fixnums. We'll take help from `gcc` to find the relevant assembly code.
 
 ```c
-// ctest.c
+// test.c
 int scheme_entry(){
     return 42;
 }
 ```
 
 ```bash
-$ gcc -O3 --omit-frame-pointer -S ctest.c
-$ cat ctest.s
+$ gcc -O3 --omit-frame-pointer -S test.c
+$ cat test.s
 	.file	"test.c"
 	.text
 	.p2align 4
@@ -81,3 +81,78 @@ ret
 ```
 
 Rest of the assembly code is boilerplate. The register %eax serves as the return value register. Simple to emit this in scheme:
+
+```scheme
+(define (compile-program x)
+    (emit "movl $~a, %eax" x)
+    (emit "ret"))
+```
+
+## Linker and Runtime
+
+To execute this we need to create linker or runtime that takes above instructions and runs it. To do that let's create a `runtime.c` that takes in a `scheme_entry` function and runs it:
+
+```c
+//runtime.c
+#include <stdio.h>
+
+int main(int argc, char** argv){
+    printf("%d\n", scheme_entry());
+    return 0;
+}
+```
+
+Now we need to create assembly file containing `scheme_entry` function. Then that assembly file needs to be linked with above runtime. We'll then get executable which can be run. Following scheme script does the job:
+
+```scheme
+; linker.scm
+(load "./compiler.scm")
+(use-modules (ice-9 textual-ports))
+
+(define output-file-param (make-parameter #f))
+
+(define (emit format-string . args)
+  ; Format the assembly code using format
+  (apply format (output-file-param) format-string args)
+  (newline (output-file-param)))
+
+(define (build x)
+    (define output-file (open-output-file "/tmp/scheme_entry.s"))
+    (output-file-param output-file)
+    (display (string-append 
+        ".text\n"
+        ".p2align 4\n"
+        ".globl	scheme_entry\n"        
+        ".type	scheme_entry, @function\n"
+        "scheme_entry:\n")
+        output-file)
+
+    (compile-program x)
+
+    (display (string-append 
+        ".LFE0:\n"
+        ".size	scheme_entry, .-scheme_entry\n"
+        ".section	.note.GNU-stack,\"\",@progbits\n")
+        output-file)
+    
+    (close-output-port output-file))
+
+(define (run x)
+    (build x)
+    (system "gcc -w runtime.c /tmp/scheme_entry.s -o /tmp/scheme_entry")
+    (system "/tmp/scheme_entry > /tmp/scheme_entry.out")
+    (call-with-input-file "/tmp/scheme_entry.out"
+        get-string-all))
+```
+
+To run this:
+
+```
+$ guile 
+GNU Guile 3.0.8
+scheme@(guile-user)> (load "linker.scm")
+scheme@(guile-user)> (run 2)
+$1 = "2\n"
+```
+
+And that's all for today folks. We have generated assembly instructions for compiling a integer, linked to a simple runtime and ran it. In the next part, we'll continue with compiling constants and other features.
