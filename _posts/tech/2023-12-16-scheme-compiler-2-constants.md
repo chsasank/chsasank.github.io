@@ -7,7 +7,7 @@ twitter_image: "https://1010jms.github.io/images/scheme.png"
 
 In the previous part, we compiled integers and created linker and runtime. In this part, we'll add few more language features to our compiler
 
-## Immediate Constants
+## Compile Immediate Constants
 
 In scheme, we have values other than fixnum integers. We have immediate values that can be stored directly in a machine word: Booleans, characters and the empty list. We can not use fixnums to denote booleans or characters because they are disjoin types. These types must also be available at runtime to print them nicely.
 
@@ -50,9 +50,14 @@ We need to extend our compiler `compile-program` to handle immediate types appro
         (else (error "no immediate representation for" x))))
 
 (define (compile-program x)
-    (emit "movl $~a, %eax" (immediate-rep x))
+    (cond
+        ((immediate? x)
+         (emit "movl $~a, %eax" (immediate-rep x)))
+        (else (error "syntax error")))
     (emit "ret"))
 ```
+
+## Runtime
 
 We also need to modify runtime so that we can print the right string representation of the tagged values.
 
@@ -93,6 +98,8 @@ int main(int argc, char** argv){
     return 0;
 }
 ```
+
+## Tests
 
 Finally add tests to `tests.scm` check if everything works fine
 
