@@ -41,7 +41,7 @@ However modular this makes the compiler construction, such frameworks are a terr
 
 In this tutorial, we follow this approach to compile a subset of scheme. We will also use scheme as our implementation language.
 
-### Compiling Integers
+## Compiling Integers
 
 Let's start with integers or fixnums. We'll take help from `gcc` to find the relevant assembly code.
 
@@ -88,7 +88,7 @@ Rest of the assembly code is boilerplate. The register %eax serves as the return
     (emit "ret"))
 ```
 
-### Linker and Runtime
+## Linker and Runtime
 
 To execute this we need to create linker or runtime that takes above instructions and runs it. To do that let's create a `runtime.c` that takes in a `scheme_entry` function and runs it:
 
@@ -155,7 +155,7 @@ scheme@(guile-user)> (run 2)
 $1 = "2\n"
 ```
 
-### Testing
+## Testing
 
 Since we're adding features incrementally, we want to write tests to ensure that later features don't break the already written code. `run` function from `linker.scm` returns the output of the linked executable. We just have to compare this to expected result for a set of known cases. Here's a simple test driver:
 
