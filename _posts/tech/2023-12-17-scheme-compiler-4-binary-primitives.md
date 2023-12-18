@@ -479,3 +479,5 @@ $ guile tests.scm
 ```
 
 And that's all for today folks! As you can see, majority of the work involved is creating infrastructure for stack. Once infrastructure is created, writing individual primitives is quite easy.
+
+Working code at the end of this step can be found at my [Github repo](https://github.com/chsasank/scheme-incremental-compiler) with tag [`step_4_binary_primitives`](https://github.com/chsasank/scheme-incremental-compiler/releases/tag/step_4_binary_primitives).
