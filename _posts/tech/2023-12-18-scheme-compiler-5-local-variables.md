@@ -220,4 +220,4 @@ Run the tests using `guile tests.scm` and verify that all the tests pass.
 
 That's all for this post folks! We added local variables to our compiler/language by adding compile time `env` variable. Values are actually stored on stack during runtime.
 
-Working code at the end of this step can be found at my [Github repo](https://github.com/chsasank/scheme-incremental-compiler) with tag [`step_4_binary_primitives`](https://github.com/chsasank/scheme-incremental-compiler/releases/tag/step_4_binary_primitives)
+Working code at the end of this step can be found at my [Github repo](https://github.com/chsasank/scheme-incremental-compiler) with tag [`step_4_binary_primitives`](https://github.com/chsasank/scheme-incremental-compiler/releases/tag/step_4_binary_primitives).
