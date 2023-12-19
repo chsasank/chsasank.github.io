@@ -71,7 +71,7 @@ Let's initialize our environment with empty list and pass it around to `emit-exp
 
 (define (emit-stack-save si)
     ; save output of previous instructions to stack
-    (emit "movl %eax, ~a(%rsp)" si))
+    (emit "mov %rax, ~a(%rsp)" si))
 
 ; add env to define-primitive
 (define-primitive (+ si env arg1 arg2)
