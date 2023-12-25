@@ -11,7 +11,7 @@ twitter_image: assets/favicon/sasank51.jpg
 permalink: none
 kramdown:
   parse_block_html: true
-plugins: [jekyll-paginate, jekyll-feed]
+plugins: [jekyll-paginate]
 gems:
   - jekyll-paginate
   - jekyll-compose
