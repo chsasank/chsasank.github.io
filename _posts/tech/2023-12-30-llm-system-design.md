@@ -2,7 +2,7 @@
 layout: post
 title: "Hardware Design for LLM Inference: Von Neumann Bottleneck"
 author: Sasank Chilamkurthy
-twitter_image: "https://1010jms.github.io/images/scheme.png"
+twitter_image: "https://chsasank.com/assets/images/llm-inference/von-neumann-architecture.png"
 ---
 
 I was speaking to [Prof. Veeresh Deshpande](https://www.ee.iitb.ac.in/web/people/veeresh-deshpande/) from IIT Bombay about optimal hardware system design for LLM inference. I explained to him how my 'perfect' hardware should have equal number of floating point operations per second (FLOPS) and memory bandwidth. He was intrigued and asked why this is particularly relevant for the workload of LLM inference. Well, I figured that would make for a great post. Along the way, I would like my readers to understand the basics of hardware design or computer architecture as it's fancily called.
