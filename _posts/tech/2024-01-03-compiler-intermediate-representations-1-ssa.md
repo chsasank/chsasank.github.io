@@ -2,7 +2,7 @@
 layout: post
 title: "Intermediate Representations in Compilers: Static Single Assignment (SSA)"
 author: Sasank Chilamkurthy
-twitter_image: "https://chsasank.com/assets/images/llm-inference/von-neumann-architecture.png"
+twitter_image: "https://chsasank.com/assets/images/scheme_compiler/ssa.png"
 ---
 
 Compilers are program translators -- they translate program from one language to another while preserving the semantics. Usually the source language is higher level programming language like C++ or Java and the target language is machine level language like assembly or virtual machine language like JVM. Although it doesn't have to be like this, target language is almost always at lower level than the source language.
