@@ -36,7 +36,6 @@ To compile this to LLVM IR, you can run the following command: `clang -S -emit-l
 ; ssa.ll
 ; function definition
 define i32 @fun(i32 %x, i32 %y) {
-entry:
     ; temporary variable is created
     ; addtmp = x + y
     %addtmp = add i32 %x, %y
@@ -84,8 +83,7 @@ In this function, x and y are being modified. So we'll need to create temporary 
 ```llvm
 ; ssa.ll
 define i32 @fun(i32 %x, i32 %y) {
-entry:
-    ; x1 = x + 5
+    ; x1 = x * 5
     %x1 = mul nsw i32 %x, 5
     ; x2 = x1 / 3
     %x2 = sdiv i32 %x1, 3
@@ -110,7 +108,6 @@ If you were to do something like this, where x is modified:
 ```llvm
 ; ssa.ll
 define i32 @fun(i32 %x, i32 %y) {
-entry:
     ; this is an error
     %x = mul nsw i32 %x, 5
     %addtmp = add nsw i32 %x, %y

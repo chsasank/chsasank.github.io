@@ -48,6 +48,20 @@ Let's now a pattern matcher and emitter for `if`:
         (emit "~a:" end-label)))
 ```
 
+Modify the top level `emit-expr`:
+
+```scheme
+; edit in compiler.scm
+(define (emit-expr si env expr)
+    (cond
+        ((immediate? expr) (emit-immediate expr))
+        ((variable? expr) (emit-variable-ref env expr))
+        ((let? expr) (emit-let si env expr))
+        ((if? expr) (emit-if si env expr))
+        ((primcall? expr) (emit-primcall si env expr))
+        (else (error "syntax error: " expr))))
+```
+
 Let's add tests:
 
 ```scheme
