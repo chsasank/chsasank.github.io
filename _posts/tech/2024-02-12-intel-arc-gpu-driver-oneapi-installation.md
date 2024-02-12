@@ -2,10 +2,17 @@
 layout: post
 title: "Installing Drivers and Libraries for Intel Arc GPUs on Ubuntu"
 author: Sasank Chilamkurthy
-twitter_image: "https://chsasank.com/assets/images/scheme_compiler/ssa.png"
+twitter_image: "https://www.intel.com/content/dam/www/central-libraries/us/en/images/2023-09/arc-acm128-top.png.rendition.intel.web.1920.1080.png"
 ---
 
 I've been working with Intel Arc GPUs for quite some time and want to document the driver and vendor library installation process in this tutorial. Unfortunately, installing these drivers neither is a single step nor are the packages small. My ultimate aim is to simplify these instructions considerably. Until then we have to make do with these steps.
+
+<figure>
+<label for="mn-fig-1" class="margin-toggle">⊕</label><input type="checkbox" id="mn-fig-1" class="margin-toggle">
+<span class="marginnote">Intel Arc GPUs.</span>
+<img src="https://www.intel.com/content/dam/www/central-libraries/us/en/images/2023-09/arc-acm128-top.png.rendition.intel.web.1920.1080.png
+" alt="Intel Arc GPU">
+</figure>
 
 ## Distrobox
 
