@@ -26,7 +26,7 @@ Blue text, while also a widely recognizable clickable-text indicator, is crass a
 <figure>
 <label for="mn-fig-1" class="margin-toggle">⊕</label><input type="checkbox" id="mn-fig-1" class="margin-toggle">
 <span class="marginnote">From Edward Tufte, page 92.</span>
-<img src="img/exports-imports.png" alt="Exports and Imports to and from Denmark &amp; Norway from 1700 to 1780">
+<img src="img/exports-imports.png" alt="From Edward Tufte, page 92.">
 </figure>
 ```
 

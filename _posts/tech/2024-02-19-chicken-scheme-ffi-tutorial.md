@@ -87,13 +87,7 @@ static C_PTABLE_ENTRY *create_ptable(void);
 
 ## Chicken FFI
 
-Now that we've seen how to use chicken scheme, let's make it talk with a C code. We can use low level FFI API using chicken's [`foreign`](http://wiki.call-cc.org/man/5/Module%20(chicken%20foreign)) module but it requires us to write a bit of [glue code](https://wiki.call-cc.org/man/5/Getting%20started#accessing-c-libraries-). More ergonomic alternative is to use [`bind`](http://wiki.call-cc.org/eggref/5/bind) to automatically generate this glue code. `bind` basically parses a subset of c and c++ code and automatically generates the glue code. Another option is to use [lazy-ffi](http://wiki.call-cc.org/eggref/5/lazy-ffi) which only supports [dynamic loading](https://en.wikipedia.org/wiki/Dynamic_loading). In this post, we will use `bind`.
-
-Install `bind` package using
-
-```bash
-sudo chicken-install bind
-```
+Now that we've seen how to use chicken scheme, let's make it talk with a simple C library. We will use low level FFI API using chicken's [`foreign`](http://wiki.call-cc.org/man/5/Module%20(chicken%20foreign)) module but this option requires us to write a bit of [glue code](https://wiki.call-cc.org/man/5/Getting%20started#accessing-c-libraries-). There are other high level options like [`bind`](http://wiki.call-cc.org/eggref/5/bind) and [`lazy-ffi`](https://wiki.call-cc.org/eggref/5/lazy-ffi) but let's go low level because it is not particularly hard. Besides `bind` uses a parser for restricted subset of C/C++ to automatically generate these wrappers. This parser is incomplete and it might fail.
 
 Here's a very simple C file `fib.c` to calculate fibonacci numbers
 
@@ -112,13 +106,14 @@ int fib(int n) {
 }
 ```
 
-Now, let's use this function in scheme `fib-user.scm`:
+Now, let's use this function in scheme `fib-user.scm`. So we first need to import chicken library called `foreign` to get access to `foreign-lambda`
 
 ```scheme
 ; fib-user.s
-(import bind)
-(bind "#include \"fib.c\"")
-(print (fib 10))
+(import (chicken foreign))
+#>
+  extern int fib(int n);
+<#
 ```
 
 Compile everything and run the fib-user
@@ -128,3 +123,8 @@ $ csc fib-user.s fib.c
 $ ./fib-user
 89
 ```
+
+
+References:
+1. [Chicken getting started](http://wiki.call-cc.org/man/5/Getting%20started)
+2. [Chicken manual for interface with external functions and variables](http://wiki.call-cc.org/man/5/Interface%20to%20external%20functions%20and%20variables)
