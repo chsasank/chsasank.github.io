@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Foreign Function Interface, or How to Expose C Functions in Scheme"
+title: "Foreign Function Interfaces, or How to Expose C Functions in Scheme"
 author: Sasank Chilamkurthy
 twitter_image: 
 ---
@@ -93,6 +93,8 @@ Here's a very simple C file `fib.c` to calculate fibonacci numbers
 
 ```c
 /* fib.c */
+#include <math.h>
+
 int fib(int n) {
   int prev = 0, curr = 1;
   int next; 
@@ -106,25 +108,51 @@ int fib(int n) {
 }
 ```
 
-Now, let's use this function in scheme `fib-user.scm`. So we first need to import chicken library called `foreign` to get access to `foreign-lambda`
+Now, let's use this function in scheme `fib-user.scm`. So we first need to import chicken library called `foreign` to get access to `foreign-lambda`. Then we include actual C code between `#>` and `<#`. In our case, it'll be `extern` function declaration and some other example code. Finally, we expose that function to scheme using `foreign-lambda`.
 
 ```scheme
 ; fib-user.s
+
 (import (chicken foreign))
+; insert actual C code
 #>
+  #include <math.h>
   extern int fib(int n);
+  int lshift(int x, int y){
+    return x << y;
+  }
 <#
+(define xfib (foreign-lambda int "fib" int))
+z(define xsin (foreign-lambda double "sin" double))
+(define xcos (foreign-lambda double "cos" double))
+(define xlshift (foreign-lambda int "lshift" int int))
+
+(print "fib(10) = " (xfib 10))
+(print "sin(0) = "(xsin 0))
+(print "cos(0) = "(xcos 0))
+(print "lshift(3, 2) = "(xlshift 3 2))
 ```
 
-Compile everything and run the fib-user
+Compile everything and run the fib-user:
 
-```
+```bash
 $ csc fib-user.s fib.c
 $ ./fib-user
-89
+fib(10) = 89
+sin(0) = 0.0
+cos(0) = 1.0
+lshift(3, 2) = 12
 ```
 
+As you can see, writing bindings is a fairly repetitive process and same data is presented in the following places:
+1. Function declaration in `fib.c`
+2. `extern` in `fib-user.s`
+3. `foreign-lambda` in `fib-user.s`
+
+This is the price we have to pay to create bridges between two languages. Modules like [`bind`](http://wiki.call-cc.org/eggref/5/bind) automate this process by using macros. But problem with modules like these is that they need to parse the original C code and then generate the above code. A full fledged C parser is usually out of scope for these modules.
 
 References:
 1. [Chicken getting started](http://wiki.call-cc.org/man/5/Getting%20started)
 2. [Chicken manual for interface with external functions and variables](http://wiki.call-cc.org/man/5/Interface%20to%20external%20functions%20and%20variables)
+3. [Chicken-Scheme FFI Examples](https://www.accidentalrebel.com/chicken-scheme-ffi-examples.html)
+4. [Chicken documentation for module (chicken foreign)](http://wiki.call-cc.org/man/5/Module%20(chicken%20foreign))
