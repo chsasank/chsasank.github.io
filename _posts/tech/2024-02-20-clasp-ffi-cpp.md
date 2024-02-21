@@ -5,7 +5,7 @@ author: Sasank Chilamkurthy
 twitter_image: 
 ---
 
-I have tried guile and chicken scheme and I actually hated the FFI experience for the lack of documentation. I am not writing them off yet - Chicken still is so small and nice. But I have decided to try something new: Clasp. [Clasp](https://clasp-developers.github.io/) is a LLVM based common lisp implementation. While not as performant as SBCL, it's still pretty damn good. The killer feature is its C++ interoperability.
+I have tried guile and [chicken scheme](https://chsasank.com/chicken-scheme-ffi-tutorial.html) and I actually hated the FFI experience for the lack of documentation. I am not writing them off yet - Chicken still is so small and nice. But I have decided to try something new: Clasp. [Clasp](https://clasp-developers.github.io/) is a LLVM based common lisp implementation. While not as performant as SBCL, it's still pretty damn good. The killer feature is its C++ interoperability.
 
 [Dr. Meister](https://drmeister.wordpress.com/about/) developed clasp because he wanted lisp but he need it to interface with C++ libraries. So he went around and implemented the whole common lisp in LLVM. By the way, he's your proverbial 'mad scientist' who is using clasp to design molecules. There's a nice [youtube video](https://www.youtube.com/watch?v=8X69_42Mj-g) where he explains motivation and architecture of clasp. Highly recommend.
 
