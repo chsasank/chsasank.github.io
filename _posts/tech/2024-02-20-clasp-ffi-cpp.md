@@ -86,33 +86,45 @@ mkdir -p extensions/my-demo/
 touch extensions/my-demo/my-demo.cc
 ```
 
-Put the following in `my-demo.cc`:
+Put the following in `my-demo.cc`. I explain the code in comments.
 
 ```c++
 // extensions/my-demo/my-demo.cc
 #include <stdio.h>
+// Required to have expose API available
 #include <clasp/clasp.h>
 
+// Function we are exposing
 void my_func()
 {
   printf("This is not the greatest function in the world. It's just a tribute!\n");
 }
 
+// This is a standard Common Lisp package
 PACKAGE_USE("COMMON-LISP");
+// Nickname of the package is MD
 PACKAGE_NICKNAME("MD");
-NAMESPACE_PACKAGE_ASSOCIATION(hw,HWPkg,"MY-DEMO");
+// MY-DEMO package corresponds to c++ name space md.
+// MDPKg is used to refer to the package
+NAMESPACE_PACKAGE_ASSOCIATION(md, MDPkg, "MY-DEMO");
 
+// Our package will go into namespace to avoid conflicts
 namespace md {
-CL_EXPOSE
-void my_demo_startup() {
-  printf("Entered %s:%d:%s\n", __FILE__, __LINE__, __FUNCTION__ );
-  using namespace clbind;
-  package_ sc(HWPkg);
-  sc.def("my-func", &my_func);
+  // Preprocessor macro to identify the startup function
+  CL_EXPOSE
+  // This function name doesn't matter
+  void my_demo_startup() {
+    // executed on starting of clasp
+    printf("Entered %s:%d:%s\n", __FILE__, __LINE__, __FUNCTION__ );
+    // sc local variable is MDPkg defined earlier
+    clbind::package_ sc(MDPkg);
+    // Expose C++ my_func to lisp my-func
+    sc.def("my-func", &my_func);
+  }
 }
 ```
 
-Add another lisp file at `extensions/my-demo/cscript.lisp`
+Add another lisp file at `extensions/my-demo/cscript.lisp` so that builder identifies the source files.
 
 ```commonlisp
 ; extensions/my-demo/cscript.lisp
@@ -141,7 +153,7 @@ Now we need to build this using `clasp`
 ninja -C build
 ```
 
-You can verify if the extension works fine by running the following:
+You can verify if the extension works fine by running the following. You can see the print statement we have put in our startup function.
 
 ```
 $ ./build/boehmprecise/clasp
@@ -155,3 +167,9 @@ COMMON-LISP-USER>
 ```
 
 We're building clasp extensions but these are not distributable as libraries. This is an issue because we want to be able to distribute our extension as libraries. But this might not be a real issue because very few people will be using clasp! It's as if we're built our version of lisp - which sounds cool but it really is not.
+
+References:
+1. [clasp wiki: building from source](https://github.com/clasp-developers/clasp/wiki/Building-and-Installing-from-Source)
+2. [clbind manual](https://clasp-developers.github.io/clbind-doc.html)
+3. [Clasp IRC channel](https://irclog.tymoon.eu/libera/%23clasp?from=1708435499)
+4. [Github Clasp extension examples](https://github.com/clasp-developers/demo-clasp-cxx-interoperation)
