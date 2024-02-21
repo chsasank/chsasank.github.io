@@ -123,7 +123,7 @@ Now, let's use this function in scheme `fib-user.scm`. So we first need to impor
   }
 <#
 (define xfib (foreign-lambda int "fib" int))
-z(define xsin (foreign-lambda double "sin" double))
+(define xsin (foreign-lambda double "sin" double))
 (define xcos (foreign-lambda double "cos" double))
 (define xlshift (foreign-lambda int "lshift" int int))
 
