@@ -5,7 +5,7 @@ author: Sasank Chilamkurthy
 twitter_image: https://upload.wikimedia.org/wikipedia/commons/thumb/e/eb/Matrix_multiplication_diagram_2.svg/546px-Matrix_multiplication_diagram_2.svg.png
 ---
 
-I've been focusing on AI inferencing hardware over the past few months. In an earlier post, I have described the [optimal hardware design](https://chsasank.com/llm-system-design.html) for LLM inference. In a [recent post](https://chsasank.com/chicken-scheme-ffi-tutorial.html), I have touched upon how PyTorch is an interpreter over CUDA code. In fact, it's an interpreter over not just any cuda code but specific libraries from Nvidia like `cuBLAS` and `cuDNN`.
+I've been focusing on AI inferencing hardware over the past few months. In an earlier post, I have described the [optimal hardware design](https://chsasank.com/llm-system-design.html) for LLM inference. In a [recent post](https://chsasank.com/chicken-scheme-ffi-tutorial.html), I have touched upon how PyTorch is an interpreter over CUDA code. In fact, it's an interpreter over not just any cuda code but specific libraries from Nvidia like `cuBLAS` and `cuDNN`. In this post, we will build and benchmark a vendor neutral opensource implementation of BLAS called [PortBLAS](https://github.com/codeplaysoftware/portBLAS). 
 
 ## Background
 
@@ -255,7 +255,7 @@ EOF
 That's it, this should run matrix multiplication (gemm) on the GPU and print some statistics. I have written a quick python script to extract out the relevant information from the json file. I compare it with vendor libraries using yet another benchmark I have written [here](https://github.com/chsasank/device-benchmarks).
 
 
-| GPU | Matrix Size | PortBlas GFLOP/s | Vendor Libraries GLOP/s | PortBlas/Vendor |
+| GPU | Matrix Size | PortBlas GFLOP/s | Vendor Libraries GFLOP/s | PortBlas/Vendor |
 |---|---|---|---|---|
 | Nvidia GTX 1650M | 1024 | 1284 | 1483 | 87% |
 |  | 2048 | 2299 | 2700 | 85% |
