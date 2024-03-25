@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "AdaptiveCPP: A Portable Alternative to CUDA"
+title: "SYCL: A Portable Alternative to CUDA"
 author: Sasank Chilamkurthy
 twitter_image: 
 ---
@@ -35,3 +35,68 @@ AdaptiveCPP abstracted out this requirement and created two stages of compilatio
 <img src="/assets/images/random/acpp-sscp-ssmp.png" alt="Comparison between single source single compiler pass and single source multiple compiler pass">
 </figure>
 
+### Installing AdaptiveCPP
+
+As usual, let's distrobox to create a new environment and install acpp and its dependencies inside. We'll try to keep the dependencies minimal to understand what's really required.
+
+```bash
+distrobox create --name acpp-reactor --image ubuntu:22.04
+distrobox enter acpp-reactor
+```
+
+Let's start with installing LLVM. We'll follow instructions from [here](https://github.com/AdaptiveCpp/AdaptiveCpp/blob/develop/doc/install-llvm.md).
+
+```bash
+sudo apt update && sudo apt install -y lsb-release wget software-properties-common gnupg
+wget https://apt.llvm.org/llvm.sh #Convenience script that sets up the repositories
+chmod +x llvm.sh
+sudo ./llvm.sh 16 #Set up repositories for clang 16
+sudo apt update && sudo apt install -y libclang-16-dev clang-tools-16 libomp-16-dev llvm-16-dev lld-16
+```
+
+Next let's install other dependencies of `acpp`:
+
+```bash
+sudo apt install -y python3 cmake libboost-all-dev git build-essential
+```
+
+It's time to install drivers for our GPU. I use Intel Arc 770 for this build. For other devices, you can follow instructions from my [earlier post](https://chsasank.com/portblas-portable-blas-across-gpus.html):
+
+```bash
+# Drivers for Intel GPUs
+wget -qO - https://repositories.intel.com/gpu/intel-graphics.key | \
+  sudo gpg --dearmor --output /usr/share/keyrings/intel-graphics.gpg
+echo "deb [arch=amd64,i386 signed-by=/usr/share/keyrings/intel-graphics.gpg] https://repositories.intel.com/gpu/ubuntu jammy client" | \
+  sudo tee /etc/apt/sources.list.d/intel-gpu-jammy.list
+sudo apt update
+sudo apt install -y \
+  intel-opencl-icd intel-level-zero-gpu level-zero \
+  intel-media-va-driver-non-free libmfx1 libmfxgen1 libvpl2 \
+  libegl-mesa0 libegl1-mesa libegl1-mesa-dev libgbm1 libgl1-mesa-dev libgl1-mesa-dri \
+  libglapi-mesa libgles2-mesa-dev libglx-mesa0 libigdgmm12 libxatracker2 mesa-va-drivers \
+  mesa-vdpau-drivers mesa-vulkan-drivers va-driver-all vainfo hwinfo clinfo xpu-smi
+sudo apt install -y \
+  libigc-dev intel-igc-cm libigdfcl-dev libigfxcmrt-dev level-zero-dev
+```
+
+Now clone `acpp` and build it:
+
+```bash
+git clone https://github.com/AdaptiveCpp/AdaptiveCpp
+cd AdaptiveCpp
+mkdir build && cd build
+cmake ..
+make -j
+sudo make install
+```
+
+Now check the available devices using 
+
+```bash
+$ acpp-info -l
+=================Backend information===================
+Loaded backend 0: OpenMP
+  Found device: hipSYCL OpenMP host device
+Loaded backend 1: Level Zero
+  Found device: Intel(R) Arc(TM) A770 Graphics
+```
