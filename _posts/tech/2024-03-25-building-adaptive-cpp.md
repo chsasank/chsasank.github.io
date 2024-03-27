@@ -5,7 +5,7 @@ author: Sasank Chilamkurthy
 twitter_image: 
 ---
 
-As you probably know, many of the AI frameworks [depend on CUDA](https://chsasank.com/chicken-scheme-ffi-tutorial.html) to make AI work on GPUs. CUDA is a language extension to C that [only works](https://chsasank.com/nvidia-arm-aquisition-ai-explained.html) for Nvidia GPUs. People recognize this dependency and there is quite some work being done to create a portable alternative to CUDA. [ZLUDA](https://github.com/vosen/ZLUDA) recently made [news](https://www.techradar.com/pro/a-lone-developer-just-open-sourced-a-tool-that-could-bring-an-end-to-nvidias-ai-hegemony-amd-financed-it-for-months-but-abruptly-ended-its-support-nobody-knows-why) as a portable version of CUDA but it is not funded anymore. More reasonable and by now fairly well adopted alternative to CUDA comes from Khronos group called [SYCL](https://www.khronos.org/sycl/).
+As you probably know, many of the AI frameworks [depend on CUDA](https://chsasank.com/chicken-scheme-ffi-tutorial.html) to make AI work on GPUs. CUDA is a language extension to C that [only works](https://chsasank.com/nvidia-arm-aquisition-ai-explained.html) for Nvidia GPUs. Industry [recognizes this dependency](https://www.reuters.com/technology/behind-plot-break-nvidias-grip-ai-by-targeting-software-2024-03-25/) and there is quite some work being done to create a portable alternative to CUDA. [ZLUDA](https://github.com/vosen/ZLUDA) recently made [news](https://www.techradar.com/pro/a-lone-developer-just-open-sourced-a-tool-that-could-bring-an-end-to-nvidias-ai-hegemony-amd-financed-it-for-months-but-abruptly-ended-its-support-nobody-knows-why) as a portable version of CUDA but it is not funded anymore. More reasonable and by now fairly well adopted alternative to CUDA comes from Khronos group called [SYCL](https://www.khronos.org/sycl/).
 
 ## SYCL
 
@@ -19,7 +19,7 @@ Khronos group is a non profit industry consortium that creates interoperability 
 <img src="https://www.khronos.org/assets/uploads/apis/2020-05-sycl-landing-page-02a_2.jpg" alt="SYCL and some of its implementations">
 </figure>
 
-Since SYCL is an API spec/standard, there are multiple projects implementing SYCL. Some notable ones include [DPC++](https://github.com/intel/llvm), [AdaptiveCPP](https://github.com/AdaptiveCpp/AdaptiveCpp) and [ComputeCPP](https://developer.codeplay.com/products/computecpp/ce/home/). DPC++ is Intel's SYCL implementation that works for most of their devices along with Nvidia/AMD cards. I have earlier [used it](https://chsasank.com/portblas-portable-blas-across-gpus.html) and benchmarked BLAS across different GPUs. It actually works and performs quite well! This proved to me that a portable implementation of CUDA is indeed possible. While well documented, I did not like the behemoth of the codebase too much -- after all it's a fork of LLVM monorepo.
+Since SYCL is an API spec/standard, there are multiple projects implementing SYCL. Some notable ones include [DPC++](https://github.com/intel/llvm), [AdaptiveCPP](https://github.com/AdaptiveCpp/AdaptiveCpp) and [ComputeCPP](https://developer.codeplay.com/products/computecpp/ce/home/). DPC++ is Intel's SYCL implementation that works for most of their devices along with Nvidia/AMD cards. I have earlier [used it](https://chsasank.com/portblas-portable-blas-across-gpus.html) and benchmarked BLAS across different GPUs. It actually works and performs quite well! This proved to me that a portable implementation of CUDA is indeed possible. While well documented, I was not a fan of behemoth of the codebase too much -- after all it's a fork of LLVM monorepo.
 
 ## AdaptiveCPP
 
@@ -35,7 +35,7 @@ AdaptiveCPP abstracted out this requirement and created two stages of compilatio
 <img src="/assets/images/random/acpp-sscp-ssmp.png" alt="Comparison between single source single compiler pass and single source multiple compiler pass">
 </figure>
 
-### Installing AdaptiveCPP
+### Building AdaptiveCPP
 
 As usual, let's distrobox to create a new environment and install acpp and its dependencies inside. We'll try to keep the dependencies minimal to understand what's really required.
 
@@ -85,7 +85,7 @@ Now clone `acpp` and build it:
 git clone https://github.com/AdaptiveCpp/AdaptiveCpp
 cd AdaptiveCpp
 mkdir build && cd build
-cmake ..
+cmake -DWITH_LEVEL_ZERO_BACKEND=ON ..
 make -j
 sudo make install
 ```
@@ -99,4 +99,86 @@ Loaded backend 0: OpenMP
   Found device: hipSYCL OpenMP host device
 Loaded backend 1: Level Zero
   Found device: Intel(R) Arc(TM) A770 Graphics
+```
+
+## Data Parallel C++
+
+As I explained before, DPC++ or Data Parallel C++ is SYCL implementation from Intel. While Intel compilers have a long history, they recently acquired this company called [CodePlay](https://codeplay.com/) to develop SYCL further. Even if the implementation is funded by Intel, it actually works amazingly well for all GPUs. For most people, this should be the vanilla SYCL distribution because ecosystem is fairly advanced by now. There are many libraries that interoperate with DPC++ implementation including OneMKL for linear algebra routines and OneDNN for neural network routines.
+
+Implementation of DPC++ works is inside a [fork of LLVM monorepo](https://arxiv.org/abs/2312.13170). Unfortunately this means lot of code to review to understand what's happening inside the repo. Monorepos are amazing for tight integration but are intimidating to new comers. While the code base might not be as well designed as AdaptiveCPPs, it is certainly feature rich and amount of throughput is immense. There is also some very interesting research that comes out of the group. [One paper](https://arxiv.org/abs/2312.13170) that caught my eye was implementation of SYCL that uses [MLIR](https://mlir.llvm.org/) -- another project from LLVM group. Unfortunately, I couldn't figure out how I would hack on it and my issue about that is [unanswered](https://github.com/intel/llvm/issues/12990) for about 2 weeks now.
+
+<figure>
+<label for="mn-fig-1" class="margin-toggle">⊕</label><input type="checkbox" id="mn-fig-1" class="margin-toggle">
+<span class="marginnote">How DPC++ fits in. [Source](https://spec.oneapi.io/level-zero/latest/core/INTRO.html)</span>
+<img src="https://spec.oneapi.io/level-zero/latest/_images/one_api_sw_stack.png
+" alt="How DPC++ fits in.">
+</figure>
+
+
+### Building DPC++
+
+This is the distribution of SYCL I recommend for most people. There are easy ways to install this without building from source by using Intel's binary repositories. I have written about that in an earlier [post](https://chsasank.com/intel-arc-gpu-driver-oneapi-installation.html). But let's [build from source](https://github.com/intel/llvm/blob/sycl/sycl/doc/GetStartedGuide.md) because it's fun :).
+
+Let's create a distrobox as before:
+
+```bash
+distrobox create --name dpcpp-reactor --image ubuntu:22.04
+distrobox enter dpcpp-reactor
+```
+
+and Install GPU drivers:
+
+```bash
+# Drivers for Intel GPUs
+wget -qO - https://repositories.intel.com/gpu/intel-graphics.key | \
+  sudo gpg --dearmor --output /usr/share/keyrings/intel-graphics.gpg
+echo "deb [arch=amd64,i386 signed-by=/usr/share/keyrings/intel-graphics.gpg] https://repositories.intel.com/gpu/ubuntu jammy client" | \
+  sudo tee /etc/apt/sources.list.d/intel-gpu-jammy.list
+sudo apt update
+sudo apt install -y \
+  intel-opencl-icd intel-level-zero-gpu level-zero \
+  intel-media-va-driver-non-free libmfx1 libmfxgen1 libvpl2 \
+  libegl-mesa0 libegl1-mesa libegl1-mesa-dev libgbm1 libgl1-mesa-dev libgl1-mesa-dri \
+  libglapi-mesa libgles2-mesa-dev libglx-mesa0 libigdgmm12 libxatracker2 mesa-va-drivers \
+  mesa-vdpau-drivers mesa-vulkan-drivers va-driver-all vainfo hwinfo clinfo xpu-smi
+sudo apt install -y \
+  libigc-dev intel-igc-cm libigdfcl-dev libigfxcmrt-dev level-zero-dev
+```
+
+Install dependencies of dpc++:
+
+```bash
+sudo apt update
+sudo apt install -y build-essential git cmake ninja-build python3 pkg-config
+```
+
+Let's make a workspace and clone the repo into it:
+
+```bash
+mkdir sycl_workspace
+cd sycl_workspace
+export DPCPP_HOME=`pwd`
+git clone https://github.com/intel/llvm -b sycl
+```
+
+Now compile using the following. Because DPC++ is structured as a fork of LLVM monorepo, this means that whole LLVM will be built along with DPC++. So get a coffee or something -- this is gonna take some time.
+
+```bash
+python $DPCPP_HOME/llvm/buildbot/configure.py
+python $DPCPP_HOME/llvm/buildbot/compile.py
+```
+
+Once done, execute the following to install it in the $PATH. I recommend adding to `~/.bashrc` if you want this to be permanent:
+
+```bash
+export PATH=$DPCPP_HOME/llvm/build/bin:$PATH
+export LD_LIBRARY_PATH=$DPCPP_HOME/llvm/build/lib:$LD_LIBRARY_PATH
+```
+
+Check the available devices using:
+
+```bash
+$ sycl-ls
+[opencl:gpu][opencl:0] Intel(R) OpenCL Graphics, Intel(R) Arc(TM) A370M Graphics OpenCL 3.0 NEO  [23.35.27191.42]
+[opencl:gpu][opencl:1] Intel(R) OpenCL Graphics, Intel(R) Iris(R) Xe Graphics OpenCL 3.0 NEO  [23.35.27191.42]
 ```
