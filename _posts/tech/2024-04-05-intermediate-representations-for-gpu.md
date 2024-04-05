@@ -2,7 +2,7 @@
 layout: post
 title: "Intermediate Representations for GPUs: LLVM Does Not Cut it"
 author: Sasank Chilamkurthy
-twitter_image: 
+twitter_image: https://chsasank.com/assets/images/random/llvm-gpu-ir.png
 ---
 
 + Compilers are like dragons, and wrapping my head around their complexity has been challenging. Adding to the challenge, I've chosen a particularly tough topic within this complexity: AI compilers. What sets AI apart are GPUs and matrix multiplication kernels. In this post, I will talk about compilers for GPUs and will leave matrix multiplication kernels to another post. In this post, we will examine LLVM compiler framework for CPUs and contrast it with for GPUs. We'll show that LLVM is not a reasonable IR for GPU. 
@@ -67,6 +67,15 @@ Thus, LLVM IR generated for `x86` works almost seamlessly on `arm64`. This is th
 The title of this section might be controversial, but I will explain why. The above design, unfortunately, doesn't work for GPUs.
 
 II'm not saying that such a model cannot be implemented for GPUs. Instead, what I mean is that LLVM doesn't actually implement it for GPUs. This is because LLVM relies on [intrinsics](https://llvm.org/docs/LangRef.html#intrinsic-functions) that are specific to [each](https://llvm.org/docs/NVPTXUsage.html#nvptx-intrinsics) [architecture](https://llvm.org/docs/AMDGPUUsage.html#introduction). It has become the job of a frontend to use the right intrinsics and conventions for your target GPU. Besides, runtimes are also not abstracted and you need to use driver APIs to execute compiled GPU code.Therefore, generating vanilla LLVM IR doesn't provide a backend for all GPUs as seamlessly as it does for CPUs.
+
+<figure>
+<label for="mn-fig-1" class="margin-toggle">⊕</label><input type="checkbox" id="mn-fig-1" class="margin-toggle">
+<span class="marginnote">Summary why LLVM doesn't cut it for GPUs</span>
+<img src="assets/images/random/llvm-gpu-ir.png" alt="Summary why LLVM doesn't cut it for GPUs">
+</figure>
+
+
+
 
 To examine this, we'll write a simple vector-add program in SYCL and compile it with AdaptiveCPP, which is a compiler based on LLVM that works for all GPUs. I have shown how to set it up for different architectures in a [previous post](https://chsasank.com/sycl-portable-cuda-alternative.html). To recap, a single source code written in SYCL can compile to all GPUs if we use AdaptiveCPP. Here's a simple vector-add program written in SYCL.
 
