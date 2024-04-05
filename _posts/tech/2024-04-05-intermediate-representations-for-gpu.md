@@ -209,4 +209,4 @@ Thus, from a compiler writer's perspective, runtime is an extra, non-portable co
 
 In this post, we have observed the power of LLVM IR for CPUs. The abstraction of chip architectures in the IR enabled a highly portable intermediate representation, compiling without changes for x86 and ARM64 CPUs. On GPUs, however, this portability doesn't apply due to device-specific intrinsics and runtime code. LLVM IR, therefore, unfortunately doesn't have the same power on GPU as it has on CPUs. Further work is required to create this portable IR.
 
-P.S.: Attentive readers might object, saying the single-source single-compiler (SSCP) flow of AdaptiveCPP solved the issue. You picked up the plot for a later post :).
+P.S.: Attentive readers might object, saying the single-source single-compiler (SSCP) flow of AdaptiveCPP solved the issue. You picked up the plot for a later post :). Code for this post is available [here](https://github.com/chsasank/chsasank.github.io/tree/master/code/gpu-ir)
