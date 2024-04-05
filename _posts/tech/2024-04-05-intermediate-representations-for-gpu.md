@@ -18,9 +18,9 @@ A good review of architecture of LLVM can be found in the book [The Architecture
 " alt="LLVM Architecture">
 </figure>
 
-The original design of LLVM allowed any programming language implementation to translate code into LLVM intermediate representation (IR), LLVM library handed optimizations and generating assembly code for the target architecture. In other words, the backend is automated by the LLVM library, assuming you adhere to the IR contract. This design does work for CPUs -- x86, ARM and PowerPC and what not. Programming language implementors need not worry about the details of device architecture. They can restrict their attention to what is called as frontend.
+The original design of LLVM allowed any programming language implementation to translate code into target independent LLVM intermediate representation (IR). LLVM library handed optimizations and generating assembly code for the target architecture. In other words, the backend is automated by the LLVM library, assuming you adhere to the IR contract. This design does work for CPUs -- architectures such as x86, ARM and PowerPC and what not are well supported. Programming language implementors need not worry about the details of device architecture. They can restrict their attention to what is called as frontend.
 
-To examine this, let's take the following vector add program:
+To examine this design, let's take the following vector add program:
 
 ```c
 // vector-add.c
@@ -66,16 +66,13 @@ Thus, LLVM IR generated for `x86` works almost seamlessly on `arm64`. This is th
 
 The title of this section might be controversial, but I will explain why. The above design, unfortunately, doesn't work for GPUs.
 
-II'm not saying that such a model cannot be implemented for GPUs. Instead, what I mean is that LLVM doesn't actually implement it for GPUs. This is because LLVM relies on [intrinsics](https://llvm.org/docs/LangRef.html#intrinsic-functions) that are specific to [each](https://llvm.org/docs/NVPTXUsage.html#nvptx-intrinsics) [architecture](https://llvm.org/docs/AMDGPUUsage.html#introduction). It has become the job of a frontend to use the right intrinsics and conventions for your target GPU. Besides, runtimes are also not abstracted and you need to use driver APIs to execute compiled GPU code.Therefore, generating vanilla LLVM IR doesn't provide a backend for all GPUs as seamlessly as it does for CPUs.
+I'm not saying that such a model cannot be implemented for GPUs. Instead, what I mean is that LLVM doesn't actually implement it for GPUs. This is because LLVM relies on [intrinsics](https://llvm.org/docs/LangRef.html#intrinsic-functions) that are specific to [each](https://llvm.org/docs/NVPTXUsage.html#nvptx-intrinsics) [architecture](https://llvm.org/docs/AMDGPUUsage.html#introduction). It has become the job of a frontend to use the right intrinsics and conventions for your target GPU. Besides, runtimes are also not abstracted and you need to use device specific driver APIs to execute compiled GPU code. Therefore, generating vanilla LLVM IR doesn't provide a backend for all GPUs as seamlessly as it does for CPUs.
 
 <figure>
 <label for="mn-fig-1" class="margin-toggle">⊕</label><input type="checkbox" id="mn-fig-1" class="margin-toggle">
 <span class="marginnote">Summary why LLVM doesn't cut it for GPUs</span>
 <img src="assets/images/random/llvm-gpu-ir.png" alt="Summary why LLVM doesn't cut it for GPUs">
 </figure>
-
-
-
 
 To examine this, we'll write a simple vector-add program in SYCL and compile it with AdaptiveCPP, which is a compiler based on LLVM that works for all GPUs. I have shown how to set it up for different architectures in a [previous post](https://chsasank.com/sycl-portable-cuda-alternative.html). To recap, a single source code written in SYCL can compile to all GPUs if we use AdaptiveCPP. Here's a simple vector-add program written in SYCL.
 

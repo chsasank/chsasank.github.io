@@ -201,5 +201,5 @@ Errata:
 Thanks to the review from Aksel, here are some corrections:
 
 1. ComputeCpp is dead after Intel acquired CodePlay
-2. AdaptiveCpp started as personal project of Aksel, but are university students paid to work on it
+2. AdaptiveCpp started as personal project of Aksel. Now there are university students paid to work on it along with external contributors
 3. AdaptiveCpp has extensions that DPC++ doesn't have like C++ offloading support
