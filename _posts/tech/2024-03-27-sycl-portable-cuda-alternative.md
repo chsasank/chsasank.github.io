@@ -19,15 +19,15 @@ Khronos group is a non profit industry consortium that creates interoperability 
 <img src="https://www.khronos.org/assets/uploads/apis/2020-05-sycl-landing-page-02a_2.jpg" alt="SYCL and some of its implementations">
 </figure>
 
-Since SYCL is an API spec/standard, there are multiple projects implementing SYCL. Some notable ones include [DPC++](https://github.com/intel/llvm), [AdaptiveCPP](https://github.com/AdaptiveCpp/AdaptiveCpp) and [ComputeCPP](https://developer.codeplay.com/products/computecpp/ce/home/). DPC++ is Intel's SYCL implementation that works for most of their devices along with Nvidia/AMD cards. I have earlier [used it](https://chsasank.com/portblas-portable-blas-across-gpus.html) and benchmarked BLAS across different GPUs. It actually works and performs quite well. This convinced me that a portable CUDA implementation is indeed possible. While well-documented, I was not too fond of the behemoth codebase -- after all, it's a fork of the LLVM monorepo.
+Since SYCL is an API spec/standard, there are multiple projects implementing SYCL. Some notable ones include [DPC++](https://github.com/intel/llvm), [AdaptiveCpp](https://github.com/AdaptiveCpp/AdaptiveCpp) and [ComputeCPP](https://developer.codeplay.com/products/computecpp/ce/home/). DPC++ is Intel's SYCL implementation that works for most of their devices along with Nvidia/AMD cards. I have earlier [used it](https://chsasank.com/portblas-portable-blas-across-gpus.html) and benchmarked BLAS across different GPUs. It actually works and performs quite well. This convinced me that a portable CUDA implementation is indeed possible. While well-documented, I was not too fond of the behemoth codebase -- after all, it's a fork of the LLVM monorepo.
 
-## AdaptiveCPP
+## AdaptiveCpp
 
-Enter AdaptiveCPP! Formerly it was called hipSYCL because it started as an implementation targeting AMD GPUs in addition to Nvidia GPUs. However, it is not actually a product of AMD and is actually a project by [Aksel Alpay](https://emcl.iwr.uni-heidelberg.de/people/alpay-aksel) from [University of Heidelberg](https://en.wikipedia.org/wiki/Heidelberg_University). The fact that it's a project by a single person meant the architecture had to be robust and the codebase manageable. This contrasts with Intel's implementation, where they can afford to allocate more personnel to the project. AdaptiveCPP caught my eye when the [latest release](https://github.com/AdaptiveCpp/AdaptiveCpp/releases/tag/v24.02.0) started to outperform Intel's DPC++.
+Enter AdaptiveCpp! Formerly it was called hipSYCL because it started as an implementation targeting AMD GPUs in addition to Nvidia GPUs. However, it is not actually a product of AMD and is actually a project by [Aksel Alpay](https://emcl.iwr.uni-heidelberg.de/people/alpay-aksel) from [University of Heidelberg](https://en.wikipedia.org/wiki/Heidelberg_University). The fact that it's a project by a single person meant the architecture had to be robust and the codebase manageable. This contrasts with Intel's implementation, where they can afford to allocate more personnel to the project. AdaptiveCpp caught my eye when the [latest release](https://github.com/AdaptiveCpp/AdaptiveCpp/releases/tag/v24.02.0) started to outperform Intel's DPC++.
 
-I was really sold on AdaptiveCPP (`acpp` henceforth) when I [read](https://dl.acm.org/doi/abs/10.1145/3585341.3585351) that it can now do single source, single pass compilation! The importance of this is hard to understate if you understand how other SYCL compilers operate. While SYCL standard requires you to have single source to be shared for host and device, compilers can implement multiple passes on the same source. For example, DPC++ compiles same SYCL file twice: once for the CPU and once for the GPU. DPC++ later links the host binary with device binary and creates a fat binary.
+I was really sold on AdaptiveCpp (`acpp` henceforth) when I [read](https://dl.acm.org/doi/abs/10.1145/3585341.3585351) that it can now do single source, single pass compilation! The importance of this is hard to understate if you understand how other SYCL compilers operate. While SYCL standard requires you to have single source to be shared for host and device, compilers can implement multiple passes on the same source. For example, DPC++ compiles same SYCL file twice: once for the CPU and once for the GPU. DPC++ later links the host binary with device binary and creates a fat binary.
 
-AdaptiveCPP abstracted out this requirement and created two stages of compilation -- one for ahead of time (AOT) and another for run time (RT). AOT stage parses the SYCL source file in one single go and creates an intermediate representation to be passed to RT stage. This representation is independent of devices and is translated to actual device code during runtime at RT stage. This design not only significantly speeds up compilations but is also aesthetically pleasing. In other words, `acpp` can do just-in-time or JIT compilation. See the below figure for comparison between `acpp` (figure 1, SSCP) and DPC++ (figure 2, SMCP):
+AdaptiveCpp abstracted out this requirement and created two stages of compilation -- one for ahead of time (AOT) and another for run time (RT). AOT stage parses the SYCL source file in one single go and creates an intermediate representation to be passed to RT stage. This representation is independent of devices and is translated to actual device code during runtime at RT stage. This design not only significantly speeds up compilations but is also aesthetically pleasing. In other words, `acpp` can do just-in-time or JIT compilation. See the below figure for comparison between `acpp` (figure 1, SSCP) and DPC++ (figure 2, SMCP):
 
 <figure>
 <label for="mn-fig-1" class="margin-toggle">⊕</label><input type="checkbox" id="mn-fig-1" class="margin-toggle">
@@ -35,7 +35,7 @@ AdaptiveCPP abstracted out this requirement and created two stages of compilatio
 <img src="/assets/images/random/acpp-sscp-ssmp.png" alt="Comparison between single source single compiler pass and single source multiple compiler pass">
 </figure>
 
-### Building AdaptiveCPP
+### Building AdaptiveCpp
 
 As usual, let's distrobox to create a new environment and install acpp and its dependencies inside. We'll try to keep the dependencies minimal to understand what's really required.
 
@@ -105,7 +105,7 @@ Loaded backend 1: Level Zero
 
 As I previously explained, DPC++ or Data Parallel C++ is Intel's SYCL implementation. Although Intel compilers have a long history, Intel recently acquired a company called [CodePlay](https://codeplay.com/) to further develop SYCL. Despite being funded by Intel, the implementation works amazingly well across all GPUs. For most people, this should be the go-to SYCL distribution because the ecosystem is quite advanced by now. Many libraries interoperate with the DPC++ implementation, including OneMKL for linear algebra routines and OneDNN for neural network routines.
 
-The DPC++ implementation resides inside a [fork of the LLVM monorepo](https://arxiv.org/abs/2312.13170). Unfortunately, this means there's a lot of code to review to understand what's happening inside the repo. Monorepos are excellent for tight integration but can be intimidating for newcomers. While the codebase might not be as elegantly designed as AdaptiveCPP's, it is certainly feature-rich, with immense development throughput. The group also produces some very interesting research. [One paper](https://arxiv.org/abs/2312.13170) that caught my eye was implementation of SYCL that uses [MLIR](https://mlir.llvm.org/) -- another project from LLVM group. Unfortunately, I couldn't figure out how to hack on it, and my issue has been [unanswered](https://github.com/intel/llvm/issues/12990) for about two weeks now.
+The DPC++ implementation resides inside a [fork of the LLVM monorepo](https://arxiv.org/abs/2312.13170). Unfortunately, this means there's a lot of code to review to understand what's happening inside the repo. Monorepos are excellent for tight integration but can be intimidating for newcomers. While the codebase might not be as elegantly designed as AdaptiveCpp's, it is certainly feature-rich, with immense development throughput. The group also produces some very interesting research. [One paper](https://arxiv.org/abs/2312.13170) that caught my eye was implementation of SYCL that uses [MLIR](https://mlir.llvm.org/) -- another project from LLVM group. Unfortunately, I couldn't figure out how to hack on it, and my issue has been [unanswered](https://github.com/intel/llvm/issues/12990) for about two weeks now.
 
 <figure>
 <label for="mn-fig-1" class="margin-toggle">⊕</label><input type="checkbox" id="mn-fig-1" class="margin-toggle">
@@ -194,4 +194,12 @@ $ sycl-ls
 
 ## Conclusion
 
-A strong alternative standard/framework to CUDA, funded by the broader industry, aims to dethrone Nvidia's dominance in AI. The Khronos Group created the standard, and there are a few competing implementations. AdaptiveCPP offers a more elegant but somewhat incomplete implementation, while DPC++ is more feature-rich. Future efforts in this area should focus on creating [portable and performant GPU kernels](https://chsasank.com/portblas-portable-blas-across-gpus.html) compatible with all GPUs.
+A strong alternative standard/framework to CUDA, funded by the broader industry, aims to dethrone Nvidia's dominance in AI. The Khronos Group created the standard, and there are a few competing implementations. AdaptiveCpp offers a more elegant but somewhat incomplete implementation, while DPC++ is more feature-rich. Future efforts in this area should focus on creating [portable and performant GPU kernels](https://chsasank.com/portblas-portable-blas-across-gpus.html) compatible with all GPUs.
+
+Errata:
+
+Thanks to the review from Aksel, here are some corrections:
+
+1. ComputeCpp is dead after Intel acquired CodePlay
+2. AdaptiveCpp started as personal project of Aksel, but are university students paid to work on it
+3. AdaptiveCpp has extensions that DPC++ doesn't have like C++ offloading support
