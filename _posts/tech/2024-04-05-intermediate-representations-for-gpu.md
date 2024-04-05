@@ -189,7 +189,7 @@ You might wonder why we need a CPU part of the code when we're compiling for GPU
 3. Wait for the results to be ready on GPU
 4. Transfer the data from GPU to CPU
 
-Code to execute all these tasks are usually written in the driver. In the case of CPU, this is generally called as runtime! Here's a excerpt about runtime from the venerable [Dragon Book](https://en.wikipedia.org/wiki/Compilers:_Principles,_Techniques,_and_Tools):
+Code to execute all these tasks are usually written in the driver. In the case of CPU, this is generally called as runtime! Here's an excerpt about runtime from the venerable [Dragon Book](https://en.wikipedia.org/wiki/Compilers:_Principles,_Techniques,_and_Tools):
 
 > The compiler must cooperate with the operating system and other systems software to support these abstractions on the target machine. 
 > To do so, the compiler creates and manages a run-time environment in which it assumes its target programs are being executed. This environment deals with a variety of issues such as the layout and allocation of storage locations for the objects named in the source program, the mechanisms used by the target program to access variables, the linkages between procedures, the mechanisms for passing parameters, and the interfaces to the operating system, input/output devices, and other programs.
