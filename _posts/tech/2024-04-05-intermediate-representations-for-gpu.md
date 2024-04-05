@@ -5,7 +5,7 @@ author: Sasank Chilamkurthy
 twitter_image: https://chsasank.com/assets/images/random/llvm-gpu-ir.png
 ---
 
-+ Compilers are like dragons, and wrapping my head around their complexity has been challenging. Adding to the challenge, I've chosen a particularly tough topic within this complexity: AI compilers. What sets AI apart are GPUs and matrix multiplication kernels. In this post, I will talk about compilers for GPUs and will leave matrix multiplication kernels to another post. In this post, we will examine LLVM compiler framework for CPUs and contrast it with for GPUs. We'll show that LLVM is not a reasonable IR for GPU. 
+Compilers are like dragons, and wrapping my head around their complexity has been challenging. Adding to the challenge, I've chosen a particularly tough topic within this complexity: AI compilers. What sets AI apart are GPUs and matrix multiplication kernels. In this post, I will talk about compilers for GPUs and will leave matrix multiplication kernels to another post. In this post, we will examine LLVM compiler framework for CPUs and contrast it with for GPUs. We'll show that LLVM is not a reasonable IR for GPU. 
 
 ## How LLVM works
 
