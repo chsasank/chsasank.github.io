@@ -56,15 +56,15 @@ hello world
 #;2>
 ```
 
-Ok how about compiling? Let's create a file `hello.s` and compile it:
+Ok how about compiling? Let's create a file `hello.scm` and compile it:
 
 ```
-$ cat << EOF > hello.s
+$ cat << EOF > hello.scm
 (display "hello world\n")                  
 EOF
-$ csc hello.s
+$ csc hello.scm
 $ ls
-hello  hello.s
+hello  hello.scm
 $ ./hello
 hello world
 ```
@@ -72,12 +72,12 @@ hello world
 You can also observe the actual generated C code:
 
 ```
-$ csc hello.s -to-stdout | head
-/* Generated from hello.s by the CHICKEN compiler
+$ csc hello.scm -to-stdout | head
+/* Generated from hello.scm by the CHICKEN compiler
    http://www.call-cc.org
    Version 5.3.0 (rev e31bbee5)
    linux-unix-gnu-x86-64 [ 64bit dload ptables ]
-   command line: hello.s -to-stdout -to-stdout
+   command line: hello.scm -to-stdout -to-stdout
    uses: eval library
 */
 #include "chicken.h"
@@ -108,10 +108,10 @@ int fib(int n) {
 }
 ```
 
-Now, let's use this function in scheme `fib-user.scm`. So we first need to import chicken library called `foreign` to get access to `foreign-lambda`. Then we include actual C code between `#>` and `<#`. In our case, it'll be `extern` function declaration and some other example code. Finally, we expose that function to scheme using `foreign-lambda`.
+Now, let's use this function in scheme `fib-user.scmcm`. So we first need to import chicken library called `foreign` to get access to `foreign-lambda`. Then we include actual C code between `#>` and `<#`. In our case, it'll be `extern` function declaration and some other example code. Finally, we expose that function to scheme using `foreign-lambda`.
 
 ```scheme
-; fib-user.s
+; fib-user.scm
 
 (import (chicken foreign))
 ; insert actual C code
@@ -136,7 +136,7 @@ Now, let's use this function in scheme `fib-user.scm`. So we first need to impor
 Compile everything and run the fib-user:
 
 ```bash
-$ csc fib-user.s fib.c
+$ csc fib-user.scm fib.c
 $ ./fib-user
 fib(10) = 89
 sin(0) = 0.0
@@ -146,8 +146,8 @@ lshift(3, 2) = 12
 
 As you can see, writing bindings is a fairly repetitive process and same data is presented in the following places:
 1. Function declaration in `fib.c`
-2. `extern` in `fib-user.s`
-3. `foreign-lambda` in `fib-user.s`
+2. `extern` in `fib-user.scm`
+3. `foreign-lambda` in `fib-user.scm`
 
 This is the price we have to pay to create bridges between two languages. Modules like [`bind`](http://wiki.call-cc.org/eggref/5/bind) automate this process by using macros. But problem with modules like these is that they need to parse the original C code and then generate the above code. A full fledged C parser is usually out of scope for these modules.
 
